@@ -1,9 +1,9 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmMenu
-	Inherits System.Windows.Forms.Form
+        'Inherits System.Windows.Forms.Form
 
-	'Descartar substituições de formulário para limpar a lista de componentes.
-	<System.Diagnostics.DebuggerNonUserCode()>
+        'Descartar substituições de formulário para limpar a lista de componentes.
+        <System.Diagnostics.DebuggerNonUserCode()>
 	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
 		Try
 			If disposing AndAlso components IsNot Nothing Then
@@ -22,10 +22,10 @@ Partial Class FrmMenu
 	'Não o modifique usando o editor de códigos.
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
-		Me.components = New System.ComponentModel.Container()
-		Dim Label11 As System.Windows.Forms.Label
-		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMenu))
-		Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+	      Me.components = New System.ComponentModel.Container()
+	      Dim Label11 As System.Windows.Forms.Label
+	      Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMenu))
+		Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.TbProdutoVenda1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
 		Me.SistemaGEDataSet = New ControleOS.SistemaGEDataSet()
 		Me.TbProdutoVenda1TableAdapter = New ControleOS.SistemaGEDataSetTableAdapters.tbProdutoVenda1TableAdapter()
@@ -67,12 +67,12 @@ Partial Class FrmMenu
 		Me.OSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.RELATÓRIOSToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.AGENDAToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+		Me.FERRAMENTASToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.CONSULTACNPJToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.RightToolStripPanel = New System.Windows.Forms.ToolStripPanel()
 		Me.LeftToolStripPanel = New System.Windows.Forms.ToolStripPanel()
 		Me.ContentPanel = New System.Windows.Forms.ToolStripContentPanel()
 		Me.lblPesquisaFilaProducao = New System.Windows.Forms.Label()
-		Me.lblCargo = New System.Windows.Forms.Label()
-		Me.lblNomeUsuario = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Label8 = New System.Windows.Forms.Label()
 		Me.Label7 = New System.Windows.Forms.Label()
@@ -86,9 +86,7 @@ Partial Class FrmMenu
 		Me.tmAtualizarRelatorio = New System.Windows.Forms.Timer(Me.components)
 		Me.atividadeSegundoPlano = New System.ComponentModel.BackgroundWorker()
 		Me.tmAtualizar = New System.Windows.Forms.Timer(Me.components)
-		Me.lblHora = New System.Windows.Forms.Label()
 		Me.hora = New System.Windows.Forms.Timer(Me.components)
-		Me.lblData = New System.Windows.Forms.Label()
 		Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.ContextMenuStrip3 = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.pnDockPrincipal = New System.Windows.Forms.Panel()
@@ -112,19 +110,19 @@ Partial Class FrmMenu
 		Me.PictureBox12 = New System.Windows.Forms.PictureBox()
 		Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
 		Me.dgvEntrega = New System.Windows.Forms.DataGridView()
-		Me.Label9 = New System.Windows.Forms.Label()
-		Me.Label10 = New System.Windows.Forms.Label()
 		Me.PictureBox8 = New System.Windows.Forms.PictureBox()
 		Me.PictureBox2 = New System.Windows.Forms.PictureBox()
 		Me.pctSair = New System.Windows.Forms.PictureBox()
 		Me.PicColaborador = New System.Windows.Forms.PictureBox()
 		Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-		Me.Label12 = New System.Windows.Forms.Label()
 		Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-		Me.Button2 = New System.Windows.Forms.Button()
-		Me.FERRAMENTASToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-		Me.CONSULTACNPJToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.lblHora = New MaterialSkin.Controls.MaterialLabel()
+		Me.lblData = New MaterialSkin.Controls.MaterialLabel()
+		Me.lblNomeUsuario = New MaterialSkin.Controls.MaterialLabel()
+		Me.lblCargo = New MaterialSkin.Controls.MaterialLabel()
+		Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
+		Me.MaterialLabel3 = New MaterialSkin.Controls.MaterialLabel()
 		Label11 = New System.Windows.Forms.Label()
 		CType(Me.TbProdutoVenda1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.SistemaGEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -260,7 +258,7 @@ Partial Class FrmMenu
 		Me.MenuStrip1.Location = New System.Drawing.Point(9, 130)
 		Me.MenuStrip1.Name = "MenuStrip1"
 		Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-		Me.MenuStrip1.Size = New System.Drawing.Size(1075, 24)
+		Me.MenuStrip1.Size = New System.Drawing.Size(955, 24)
 		Me.MenuStrip1.TabIndex = 40
 		Me.MenuStrip1.Text = "MenuStrip1"
 		Me.MenuStrip1.Visible = False
@@ -474,6 +472,20 @@ Partial Class FrmMenu
 		Me.AGENDAToolStripMenuItem1.Size = New System.Drawing.Size(65, 20)
 		Me.AGENDAToolStripMenuItem1.Text = "AGENDA"
 		'
+		'FERRAMENTASToolStripMenuItem
+		'
+		Me.FERRAMENTASToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CONSULTACNPJToolStripMenuItem})
+		Me.FERRAMENTASToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaption
+		Me.FERRAMENTASToolStripMenuItem.Name = "FERRAMENTASToolStripMenuItem"
+		Me.FERRAMENTASToolStripMenuItem.Size = New System.Drawing.Size(102, 20)
+		Me.FERRAMENTASToolStripMenuItem.Text = "FERRAMENTAS"
+		'
+		'CONSULTACNPJToolStripMenuItem
+		'
+		Me.CONSULTACNPJToolStripMenuItem.Name = "CONSULTACNPJToolStripMenuItem"
+		Me.CONSULTACNPJToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+		Me.CONSULTACNPJToolStripMenuItem.Text = "CONSULTA CNPJ"
+		'
 		'RightToolStripPanel
 		'
 		Me.RightToolStripPanel.Location = New System.Drawing.Point(0, 0)
@@ -503,30 +515,6 @@ Partial Class FrmMenu
 		Me.lblPesquisaFilaProducao.Name = "lblPesquisaFilaProducao"
 		Me.lblPesquisaFilaProducao.Size = New System.Drawing.Size(0, 13)
 		Me.lblPesquisaFilaProducao.TabIndex = 21
-		'
-		'lblCargo
-		'
-		Me.lblCargo.AutoSize = True
-		Me.lblCargo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.lblCargo.ForeColor = System.Drawing.Color.White
-		Me.lblCargo.Location = New System.Drawing.Point(481, 63)
-		Me.lblCargo.Name = "lblCargo"
-		Me.lblCargo.Size = New System.Drawing.Size(40, 15)
-		Me.lblCargo.TabIndex = 3
-		Me.lblCargo.Text = "Cargo"
-		Me.lblCargo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		'
-		'lblNomeUsuario
-		'
-		Me.lblNomeUsuario.AutoSize = True
-		Me.lblNomeUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.lblNomeUsuario.ForeColor = System.Drawing.Color.White
-		Me.lblNomeUsuario.Location = New System.Drawing.Point(481, 37)
-		Me.lblNomeUsuario.Name = "lblNomeUsuario"
-		Me.lblNomeUsuario.Size = New System.Drawing.Size(16, 15)
-		Me.lblNomeUsuario.TabIndex = 1
-		Me.lblNomeUsuario.Text = "N"
-		Me.lblNomeUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'Label2
 		'
@@ -620,9 +608,10 @@ Partial Class FrmMenu
 		'Label1
 		'
 		Me.Label1.AutoSize = True
+		Me.Label1.BackColor = System.Drawing.Color.Transparent
 		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.ForeColor = System.Drawing.Color.DarkGray
-		Me.Label1.Location = New System.Drawing.Point(4, 58)
+		Me.Label1.Location = New System.Drawing.Point(19, 51)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(109, 16)
 		Me.Label1.TabIndex = 3
@@ -631,9 +620,10 @@ Partial Class FrmMenu
 		'lblQuantClientes
 		'
 		Me.lblQuantClientes.AutoSize = True
+		Me.lblQuantClientes.BackColor = System.Drawing.Color.Transparent
 		Me.lblQuantClientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.lblQuantClientes.ForeColor = System.Drawing.Color.DarkGray
-		Me.lblQuantClientes.Location = New System.Drawing.Point(4, 5)
+		Me.lblQuantClientes.Location = New System.Drawing.Point(6, 4)
 		Me.lblQuantClientes.Name = "lblQuantClientes"
 		Me.lblQuantClientes.Size = New System.Drawing.Size(24, 25)
 		Me.lblQuantClientes.TabIndex = 2
@@ -654,32 +644,10 @@ Partial Class FrmMenu
 		'
 		Me.tmAtualizar.Interval = 5000
 		'
-		'lblHora
-		'
-		Me.lblHora.AutoSize = True
-		Me.lblHora.Font = New System.Drawing.Font("Arial", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.lblHora.ForeColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
-		Me.lblHora.Location = New System.Drawing.Point(4, 23)
-		Me.lblHora.Name = "lblHora"
-		Me.lblHora.Size = New System.Drawing.Size(212, 55)
-		Me.lblHora.TabIndex = 44
-		Me.lblHora.Text = "00:00:00"
-		'
 		'hora
 		'
 		Me.hora.Enabled = True
 		Me.hora.Interval = 1000
-		'
-		'lblData
-		'
-		Me.lblData.AutoSize = True
-		Me.lblData.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.lblData.ForeColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(184, Byte), Integer), CType(CType(206, Byte), Integer))
-		Me.lblData.Location = New System.Drawing.Point(13, 79)
-		Me.lblData.Name = "lblData"
-		Me.lblData.Size = New System.Drawing.Size(202, 22)
-		Me.lblData.TabIndex = 45
-		Me.lblData.Text = "01 de Janeiro de 2020"
 		'
 		'ContextMenuStrip2
 		'
@@ -695,19 +663,20 @@ Partial Class FrmMenu
 		'
 		Me.pnDockPrincipal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
 			Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+		Me.pnDockPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
 		Me.pnDockPrincipal.Controls.Add(Me.btnNavegador)
 		Me.pnDockPrincipal.Controls.Add(Me.btnFinanceiro)
 		Me.pnDockPrincipal.Controls.Add(Me.btnAbrirPDV)
 		Me.pnDockPrincipal.Controls.Add(Me.btnOrcamento)
 		Me.pnDockPrincipal.Controls.Add(Me.Button1)
-		Me.pnDockPrincipal.Location = New System.Drawing.Point(11, 127)
+		Me.pnDockPrincipal.Location = New System.Drawing.Point(11, 130)
 		Me.pnDockPrincipal.Name = "pnDockPrincipal"
-		Me.pnDockPrincipal.Size = New System.Drawing.Size(63, 474)
+		Me.pnDockPrincipal.Size = New System.Drawing.Size(63, 471)
 		Me.pnDockPrincipal.TabIndex = 47
 		'
 		'btnNavegador
 		'
-		Me.btnNavegador.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
+		Me.btnNavegador.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
 		Me.btnNavegador.FlatAppearance.BorderColor = System.Drawing.Color.White
 		Me.btnNavegador.FlatAppearance.BorderSize = 0
 		Me.btnNavegador.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -725,7 +694,7 @@ Partial Class FrmMenu
 		'
 		'btnFinanceiro
 		'
-		Me.btnFinanceiro.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
+		Me.btnFinanceiro.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
 		Me.btnFinanceiro.FlatAppearance.BorderColor = System.Drawing.Color.White
 		Me.btnFinanceiro.FlatAppearance.BorderSize = 0
 		Me.btnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -743,7 +712,7 @@ Partial Class FrmMenu
 		'
 		'btnAbrirPDV
 		'
-		Me.btnAbrirPDV.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
+		Me.btnAbrirPDV.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
 		Me.btnAbrirPDV.DialogResult = System.Windows.Forms.DialogResult.Cancel
 		Me.btnAbrirPDV.FlatAppearance.BorderColor = System.Drawing.Color.White
 		Me.btnAbrirPDV.FlatAppearance.BorderSize = 0
@@ -762,7 +731,7 @@ Partial Class FrmMenu
 		'
 		'btnOrcamento
 		'
-		Me.btnOrcamento.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
+		Me.btnOrcamento.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
 		Me.btnOrcamento.FlatAppearance.BorderColor = System.Drawing.Color.White
 		Me.btnOrcamento.FlatAppearance.BorderSize = 0
 		Me.btnOrcamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -780,7 +749,7 @@ Partial Class FrmMenu
 		'
 		'Button1
 		'
-		Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
+		Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
 		Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.White
 		Me.Button1.FlatAppearance.BorderSize = 0
 		Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -822,16 +791,17 @@ Partial Class FrmMenu
 		Me.Panel4.Controls.Add(Me.PictureBox3)
 		Me.Panel4.Controls.Add(Me.Label1)
 		Me.Panel4.Controls.Add(Me.lblQuantClientes)
-		Me.Panel4.Location = New System.Drawing.Point(92, 163)
+		Me.Panel4.Location = New System.Drawing.Point(93, 163)
 		Me.Panel4.Name = "Panel4"
 		Me.Panel4.Size = New System.Drawing.Size(152, 77)
 		Me.Panel4.TabIndex = 50
 		'
 		'PictureBox3
 		'
+		Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
 		Me.PictureBox3.BackgroundImage = Global.ControleOS.My.Resources.Resources.Usuarios
 		Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-		Me.PictureBox3.Location = New System.Drawing.Point(102, 11)
+		Me.PictureBox3.Location = New System.Drawing.Point(110, 4)
 		Me.PictureBox3.Name = "PictureBox3"
 		Me.PictureBox3.Size = New System.Drawing.Size(36, 27)
 		Me.PictureBox3.TabIndex = 2
@@ -940,17 +910,17 @@ Partial Class FrmMenu
 		Me.dgvEntrega.AllowUserToResizeRows = False
 		Me.dgvEntrega.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.dgvEntrega.BackgroundColor = System.Drawing.Color.Black
+		Me.dgvEntrega.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
 		Me.dgvEntrega.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
 		Me.dgvEntrega.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-		DataGridViewCellStyle2.BackColor = System.Drawing.Color.Black
-		DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-		DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-		Me.dgvEntrega.DefaultCellStyle = DataGridViewCellStyle2
+		DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+		DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
+		DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+		DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+		DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+		DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+		Me.dgvEntrega.DefaultCellStyle = DataGridViewCellStyle1
 		Me.dgvEntrega.GridColor = System.Drawing.Color.Silver
 		Me.dgvEntrega.Location = New System.Drawing.Point(404, 163)
 		Me.dgvEntrega.Name = "dgvEntrega"
@@ -964,35 +934,10 @@ Partial Class FrmMenu
 		Me.dgvEntrega.Size = New System.Drawing.Size(564, 243)
 		Me.dgvEntrega.TabIndex = 54
 		'
-		'Label9
-		'
-		Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.Label9.AutoSize = True
-		Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label9.ForeColor = System.Drawing.Color.White
-		Me.Label9.Location = New System.Drawing.Point(881, 106)
-		Me.Label9.Name = "Label9"
-		Me.Label9.Size = New System.Drawing.Size(50, 15)
-		Me.Label9.TabIndex = 56
-		Me.Label9.Text = "Entrada"
-		Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		'
-		'Label10
-		'
-		Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.Label10.AutoSize = True
-		Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label10.ForeColor = System.Drawing.Color.White
-		Me.Label10.Location = New System.Drawing.Point(796, 106)
-		Me.Label10.Name = "Label10"
-		Me.Label10.Size = New System.Drawing.Size(39, 15)
-		Me.Label10.TabIndex = 57
-		Me.Label10.Text = "Saída"
-		Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		'
 		'PictureBox8
 		'
 		Me.PictureBox8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.PictureBox8.BackColor = System.Drawing.Color.Transparent
 		Me.PictureBox8.BackgroundImage = Global.ControleOS.My.Resources.Resources.seta_verde_esquerda
 		Me.PictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
 		Me.PictureBox8.Location = New System.Drawing.Point(854, 102)
@@ -1004,6 +949,7 @@ Partial Class FrmMenu
 		'PictureBox2
 		'
 		Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
 		Me.PictureBox2.BackgroundImage = Global.ControleOS.My.Resources.Resources.seta_vermelha
 		Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
 		Me.PictureBox2.Location = New System.Drawing.Point(769, 102)
@@ -1027,9 +973,9 @@ Partial Class FrmMenu
 		'
 		Me.PicColaborador.BackgroundImage = Global.ControleOS.My.Resources.Resources.usuario3
 		Me.PicColaborador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-		Me.PicColaborador.Location = New System.Drawing.Point(404, 37)
+		Me.PicColaborador.Location = New System.Drawing.Point(93, 71)
 		Me.PicColaborador.Name = "PicColaborador"
-		Me.PicColaborador.Size = New System.Drawing.Size(64, 64)
+		Me.PicColaborador.Size = New System.Drawing.Size(48, 50)
 		Me.PicColaborador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
 		Me.PicColaborador.TabIndex = 0
 		Me.PicColaborador.TabStop = False
@@ -1052,52 +998,103 @@ Partial Class FrmMenu
 		Me.PictureBox1.TabIndex = 0
 		Me.PictureBox1.TabStop = False
 		'
-		'Label12
-		'
-		Me.Label12.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.Label12.AutoSize = True
-		Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label12.ForeColor = System.Drawing.Color.White
-		Me.Label12.Location = New System.Drawing.Point(883, 56)
-		Me.Label12.Name = "Label12"
-		Me.Label12.Size = New System.Drawing.Size(54, 15)
-		Me.Label12.TabIndex = 59
-		Me.Label12.Text = "Atualizar"
-		Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-		'
 		'PictureBox9
 		'
 		Me.PictureBox9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.PictureBox9.BackColor = System.Drawing.Color.Transparent
 		Me.PictureBox9.BackgroundImage = Global.ControleOS.My.Resources.Resources.Atualizar
 		Me.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-		Me.PictureBox9.Location = New System.Drawing.Point(842, 51)
+		Me.PictureBox9.Location = New System.Drawing.Point(933, 71)
 		Me.PictureBox9.Name = "PictureBox9"
 		Me.PictureBox9.Size = New System.Drawing.Size(35, 27)
 		Me.PictureBox9.TabIndex = 58
 		Me.PictureBox9.TabStop = False
 		'
-		'Button2
+		'lblHora
 		'
-		Me.Button2.Location = New System.Drawing.Point(565, 60)
-		Me.Button2.Name = "Button2"
-		Me.Button2.Size = New System.Drawing.Size(75, 23)
-		Me.Button2.TabIndex = 60
-		Me.Button2.Text = "Button2"
-		Me.Button2.UseVisualStyleBackColor = True
+		Me.lblHora.AutoSize = True
+		Me.lblHora.BackColor = System.Drawing.Color.Transparent
+		Me.lblHora.Depth = 0
+		Me.lblHora.Font = New System.Drawing.Font("Roboto", 11.0!)
+		Me.lblHora.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+		Me.lblHora.Location = New System.Drawing.Point(7, 33)
+		Me.lblHora.MouseState = MaterialSkin.MouseState.HOVER
+		Me.lblHora.Name = "lblHora"
+		Me.lblHora.Size = New System.Drawing.Size(65, 19)
+		Me.lblHora.TabIndex = 61
+		Me.lblHora.Text = "00:00:00"
 		'
-		'FERRAMENTASToolStripMenuItem
+		'lblData
 		'
-		Me.FERRAMENTASToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CONSULTACNPJToolStripMenuItem})
-		Me.FERRAMENTASToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaption
-		Me.FERRAMENTASToolStripMenuItem.Name = "FERRAMENTASToolStripMenuItem"
-		Me.FERRAMENTASToolStripMenuItem.Size = New System.Drawing.Size(102, 20)
-		Me.FERRAMENTASToolStripMenuItem.Text = "FERRAMENTAS"
+		Me.lblData.AutoSize = True
+		Me.lblData.BackColor = System.Drawing.Color.Transparent
+		Me.lblData.Depth = 0
+		Me.lblData.Font = New System.Drawing.Font("Roboto", 11.0!)
+		Me.lblData.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+		Me.lblData.Location = New System.Drawing.Point(98, 33)
+		Me.lblData.MouseState = MaterialSkin.MouseState.HOVER
+		Me.lblData.Name = "lblData"
+		Me.lblData.Size = New System.Drawing.Size(65, 19)
+		Me.lblData.TabIndex = 62
+		Me.lblData.Text = "00:00:00"
 		'
-		'CONSULTACNPJToolStripMenuItem
+		'lblNomeUsuario
 		'
-		Me.CONSULTACNPJToolStripMenuItem.Name = "CONSULTACNPJToolStripMenuItem"
-		Me.CONSULTACNPJToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-		Me.CONSULTACNPJToolStripMenuItem.Text = "CONSULTA CNPJ"
+		Me.lblNomeUsuario.AutoSize = True
+		Me.lblNomeUsuario.BackColor = System.Drawing.Color.Transparent
+		Me.lblNomeUsuario.Depth = 0
+		Me.lblNomeUsuario.Font = New System.Drawing.Font("Roboto", 11.0!)
+		Me.lblNomeUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+		Me.lblNomeUsuario.Location = New System.Drawing.Point(147, 71)
+		Me.lblNomeUsuario.MouseState = MaterialSkin.MouseState.HOVER
+		Me.lblNomeUsuario.Name = "lblNomeUsuario"
+		Me.lblNomeUsuario.Size = New System.Drawing.Size(126, 19)
+		Me.lblNomeUsuario.TabIndex = 63
+		Me.lblNomeUsuario.Text = "Nome de Usuario"
+		'
+		'lblCargo
+		'
+		Me.lblCargo.AutoSize = True
+		Me.lblCargo.BackColor = System.Drawing.Color.Transparent
+		Me.lblCargo.Depth = 0
+		Me.lblCargo.Font = New System.Drawing.Font("Roboto", 11.0!)
+		Me.lblCargo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+		Me.lblCargo.Location = New System.Drawing.Point(147, 90)
+		Me.lblCargo.MouseState = MaterialSkin.MouseState.HOVER
+		Me.lblCargo.Name = "lblCargo"
+		Me.lblCargo.Size = New System.Drawing.Size(49, 19)
+		Me.lblCargo.TabIndex = 64
+		Me.lblCargo.Text = "Cargo"
+		'
+		'MaterialLabel1
+		'
+		Me.MaterialLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.MaterialLabel1.AutoSize = True
+		Me.MaterialLabel1.BackColor = System.Drawing.Color.Transparent
+		Me.MaterialLabel1.Depth = 0
+		Me.MaterialLabel1.Font = New System.Drawing.Font("Roboto", 11.0!)
+		Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+		Me.MaterialLabel1.Location = New System.Drawing.Point(798, 106)
+		Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
+		Me.MaterialLabel1.Name = "MaterialLabel1"
+		Me.MaterialLabel1.Size = New System.Drawing.Size(46, 19)
+		Me.MaterialLabel1.TabIndex = 65
+		Me.MaterialLabel1.Text = "Saída"
+		'
+		'MaterialLabel3
+		'
+		Me.MaterialLabel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.MaterialLabel3.AutoSize = True
+		Me.MaterialLabel3.BackColor = System.Drawing.Color.Transparent
+		Me.MaterialLabel3.Depth = 0
+		Me.MaterialLabel3.Font = New System.Drawing.Font("Roboto", 11.0!)
+		Me.MaterialLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+		Me.MaterialLabel3.Location = New System.Drawing.Point(883, 106)
+		Me.MaterialLabel3.MouseState = MaterialSkin.MouseState.HOVER
+		Me.MaterialLabel3.Name = "MaterialLabel3"
+		Me.MaterialLabel3.Size = New System.Drawing.Size(60, 19)
+		Me.MaterialLabel3.TabIndex = 67
+		Me.MaterialLabel3.Text = "Entrada"
 		'
 		'FrmMenu
 		'
@@ -1109,12 +1106,13 @@ Partial Class FrmMenu
 		Me.CausesValidation = False
 		Me.ClientSize = New System.Drawing.Size(980, 602)
 		Me.ControlBox = False
-		Me.Controls.Add(Me.MenuStrip1)
-		Me.Controls.Add(Me.Button2)
-		Me.Controls.Add(Me.Label12)
+		Me.Controls.Add(Me.MaterialLabel3)
+		Me.Controls.Add(Me.MaterialLabel1)
+		Me.Controls.Add(Me.lblCargo)
+		Me.Controls.Add(Me.lblNomeUsuario)
+		Me.Controls.Add(Me.lblData)
+		Me.Controls.Add(Me.lblHora)
 		Me.Controls.Add(Me.PictureBox9)
-		Me.Controls.Add(Me.Label10)
-		Me.Controls.Add(Me.Label9)
 		Me.Controls.Add(Me.PictureBox8)
 		Me.Controls.Add(Me.PictureBox2)
 		Me.Controls.Add(Me.dgvEntrega)
@@ -1125,16 +1123,12 @@ Partial Class FrmMenu
 		Me.Controls.Add(Me.Panel5)
 		Me.Controls.Add(Label11)
 		Me.Controls.Add(Me.pctSair)
-		Me.Controls.Add(Me.Panel4)
 		Me.Controls.Add(Me.Panel3)
 		Me.Controls.Add(Me.PicColaborador)
-		Me.Controls.Add(Me.lblCargo)
-		Me.Controls.Add(Me.lblNomeUsuario)
-		Me.Controls.Add(Me.lblData)
-		Me.Controls.Add(Me.lblHora)
 		Me.Controls.Add(Me.lblPesquisaFilaProducao)
+		Me.Controls.Add(Me.Panel4)
+		Me.Controls.Add(Me.MenuStrip1)
 		Me.ForeColor = System.Drawing.Color.White
-		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
 		Me.MaximizeBox = False
 		Me.Name = "FrmMenu"
@@ -1212,9 +1206,8 @@ Partial Class FrmMenu
 	Friend WithEvents RELATÓRIOSToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents OSToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents lblPesquisaFilaProducao As Label
-	Friend WithEvents lblNomeUsuario As Label
-	Friend WithEvents PicColaborador As PictureBox
-	Friend WithEvents lblQuantClientes As Label
+        Friend WithEvents PicColaborador As PictureBox
+        Friend WithEvents lblQuantClientes As Label
 	Friend WithEvents PictureBox4 As PictureBox
 	Friend WithEvents Label3 As Label
 	Friend WithEvents lblSaldoCritico As Label
@@ -1229,49 +1222,48 @@ Partial Class FrmMenu
 	Friend WithEvents Label7 As Label
 	Friend WithEvents Label8 As Label
 	Friend WithEvents btnNavegador As Button
-	Friend WithEvents lblCargo As Label
-	Friend WithEvents pctSair As PictureBox
-	Friend WithEvents tmAtualizarRelatorio As Timer
-	Friend WithEvents INSERIRAGENDAMENTODEVISITAToolStripMenuItem As ToolStripMenuItem
-	Friend WithEvents PictureBox12 As PictureBox
-	Friend WithEvents Label2 As Label
-	Friend WithEvents btnAbrirPDV As Button
-	Friend WithEvents btnOrcamento As Button
-	Friend WithEvents btnFinanceiro As Button
-	Friend WithEvents Button1 As Button
-	Friend WithEvents RELATÓRIOSToolStripMenuItem1 As ToolStripMenuItem
-	Friend WithEvents atividadeSegundoPlano As System.ComponentModel.BackgroundWorker
-	Friend WithEvents tmAtualizar As Timer
-	Friend WithEvents lblHora As Label
-	Friend WithEvents hora As Timer
-	Friend WithEvents lblData As Label
-	Friend WithEvents PictureBox1 As PictureBox
-	Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
-	Friend WithEvents ContextMenuStrip3 As ContextMenuStrip
-	Friend WithEvents pnDockPrincipal As Panel
-	Friend WithEvents Panel3 As Panel
-	Friend WithEvents Panel4 As Panel
-	Friend WithEvents Panel5 As Panel
-	Friend WithEvents BottomToolStripPanel As ToolStripPanel
-	Friend WithEvents TopToolStripPanel As ToolStripPanel
-	Friend WithEvents RightToolStripPanel As ToolStripPanel
-	Friend WithEvents LeftToolStripPanel As ToolStripPanel
-	Friend WithEvents ContentPanel As ToolStripContentPanel
-	Friend WithEvents Panel2 As Panel
-	Friend WithEvents Panel6 As Panel
-	Friend WithEvents tmMinDock As Timer
-	Friend WithEvents Panel1 As Panel
-	Friend WithEvents ImageList1 As ImageList
-	Friend WithEvents dgvEntrega As DataGridView
-	Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
-	Friend WithEvents PictureBox2 As PictureBox
-	Friend WithEvents PictureBox8 As PictureBox
-	Friend WithEvents Label9 As Label
-	Friend WithEvents Label10 As Label
-	Friend WithEvents Label12 As Label
-	Friend WithEvents PictureBox9 As PictureBox
-	Friend WithEvents Button2 As Button
-	Friend WithEvents AGENDAToolStripMenuItem1 As ToolStripMenuItem
-	Friend WithEvents FERRAMENTASToolStripMenuItem As ToolStripMenuItem
-	Friend WithEvents CONSULTACNPJToolStripMenuItem As ToolStripMenuItem
+        Friend WithEvents pctSair As PictureBox
+        Friend WithEvents tmAtualizarRelatorio As Timer
+        Friend WithEvents INSERIRAGENDAMENTODEVISITAToolStripMenuItem As ToolStripMenuItem
+        Friend WithEvents PictureBox12 As PictureBox
+        Friend WithEvents Label2 As Label
+        Friend WithEvents btnAbrirPDV As Button
+        Friend WithEvents btnOrcamento As Button
+        Friend WithEvents btnFinanceiro As Button
+        Friend WithEvents Button1 As Button
+        Friend WithEvents RELATÓRIOSToolStripMenuItem1 As ToolStripMenuItem
+        Friend WithEvents atividadeSegundoPlano As System.ComponentModel.BackgroundWorker
+        Friend WithEvents tmAtualizar As Timer
+        Friend WithEvents hora As Timer
+        Friend WithEvents PictureBox1 As PictureBox
+        Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
+        Friend WithEvents ContextMenuStrip3 As ContextMenuStrip
+        Friend WithEvents pnDockPrincipal As Panel
+        Friend WithEvents Panel3 As Panel
+        Friend WithEvents Panel4 As Panel
+        Friend WithEvents Panel5 As Panel
+        Friend WithEvents BottomToolStripPanel As ToolStripPanel
+        Friend WithEvents TopToolStripPanel As ToolStripPanel
+        Friend WithEvents RightToolStripPanel As ToolStripPanel
+        Friend WithEvents LeftToolStripPanel As ToolStripPanel
+        Friend WithEvents ContentPanel As ToolStripContentPanel
+        Friend WithEvents Panel2 As Panel
+        Friend WithEvents Panel6 As Panel
+        Friend WithEvents tmMinDock As Timer
+        Friend WithEvents Panel1 As Panel
+        Friend WithEvents ImageList1 As ImageList
+        Friend WithEvents dgvEntrega As DataGridView
+        Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
+        Friend WithEvents PictureBox2 As PictureBox
+        Friend WithEvents PictureBox8 As PictureBox
+        Friend WithEvents PictureBox9 As PictureBox
+        Friend WithEvents AGENDAToolStripMenuItem1 As ToolStripMenuItem
+        Friend WithEvents FERRAMENTASToolStripMenuItem As ToolStripMenuItem
+        Friend WithEvents CONSULTACNPJToolStripMenuItem As ToolStripMenuItem
+        Friend WithEvents lblHora As MaterialSkin.Controls.MaterialLabel
+        Friend WithEvents lblData As MaterialSkin.Controls.MaterialLabel
+        Friend WithEvents lblNomeUsuario As MaterialSkin.Controls.MaterialLabel
+        Friend WithEvents lblCargo As MaterialSkin.Controls.MaterialLabel
+        Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
+        Friend WithEvents MaterialLabel3 As MaterialSkin.Controls.MaterialLabel
 End Class

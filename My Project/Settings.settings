@@ -46,5 +46,8 @@
     <Setting Name="LocIcone" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Users\Usuário\Desktop\ControleOS\Resources\NLG.png</Value>
     </Setting>
+    <Setting Name="Tema" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Light</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

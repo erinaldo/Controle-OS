@@ -1,6 +1,7 @@
 ﻿Imports System.Data.OleDb
 Imports Tulpep.NotificationWindow
-Imports tulpep
+Imports Tulpep
+Imports MaterialSkin
 
 
 Module SQL
@@ -29,6 +30,8 @@ Module SQL
         Public hdr As OleDbDataReader
         Public Ident As Double
         Public Valor As Double
+        Public CorFundo As Color
+        Public CorTexto As Color
 
         Public Sub Comando()
                 If lSQL <> "" Then
@@ -183,5 +186,27 @@ Module SQL
                 texto = texto.ToUpper
                 Return texto
         End Function
+        ''' <summary>
+        ''' 
+        ''' 
+        ''' </summary>
+        ''' <param name="formulario">formulario para aplicar o tema</param>
+        ''' <param name="modo">Dark para tema escuro ou Light para tema claro</param>
+        Public Sub DefinirTema(formulario As Form, modo As String)
+                Select Case modo
+                        Case = "Light"
+                                Dim MaterialSkinManeger As MaterialSkinManager = MaterialSkinManager.Instance
+                                MaterialSkinManeger.AddFormToManage(formulario)
+                                MaterialSkinManeger.Theme = MaterialSkinManager.Themes.DARK
+                                MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE)
+                        Case = "Dark"
+                                Dim MaterialSkinManeger As MaterialSkinManager = MaterialSkinManager.Instance
+                                MaterialSkinManeger.AddFormToManage(formulario)
+                                MaterialSkinManeger.Theme = MaterialSkinManager.Themes.DARK
+                                MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.BLACK)
+                        Case Else
+
+                End Select
+        End Sub
 
 End Module

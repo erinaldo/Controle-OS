@@ -1,10 +1,14 @@
 ﻿Imports System.ComponentModel
 Imports System.IO
 Imports System.Data.OleDb
+Imports MaterialSkin
 
 Public Class FrmMenu
 
-    Private Sub btnColaborador_Click(sender As Object, e As EventArgs)
+        Inherits Controls.MaterialForm
+
+
+        Private Sub btnColaborador_Click(sender As Object, e As EventArgs)
         FormAcesso(FrmClientes, "FrmClientes", "mdi")
     End Sub
 
@@ -183,7 +187,51 @@ Public Class FrmMenu
                 'STATUS DE HORA E DATA PRINCIPAL
                 lblData.Text = WeekdayName(Today.DayOfWeek) & " , " & Today.Day.ToString & " de " & MonthName(Today.Month) & " de " & Today.Year
 
+                Dim modo As String = My.Settings.Tema
+                Select Case modo
+                        Case = "Light"
+                                Dim MaterialSkinManeger As MaterialSkinManager = MaterialSkinManager.Instance
+                                ' MaterialSkinManeger.AddFormToManage(Me)
+                                MaterialSkinManeger.Theme = MaterialSkinManager.Themes.LIGHT
+                                MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE)
+                                'txtUsuario.BackColor = Color.White
+                        Case = "Dark"
+                                Dim MaterialSkinManeger As MaterialSkinManager = MaterialSkinManager.Instance
+                                ' MaterialSkinManeger.AddFormToManage(Me)
+                                MaterialSkinManeger.Theme = MaterialSkinManager.Themes.DARK
+                                MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE)
+                                ' txtUsuario.BackColor = Color.Black
+                        Case Else
+                End Select
+                With pnDockPrincipal
+                        .BackColor = CorFundo
+                        .ForeColor = CorTexto
+                End With
 
+                With btnAbrirPDV
+                        .BackColor = CorFundo
+                        .ForeColor = CorTexto
+                End With
+
+                With btnOrcamento
+                        .BackColor = CorFundo
+                        .ForeColor = CorTexto
+                End With
+
+                With btnFinanceiro
+                        .BackColor = CorFundo
+                        .ForeColor = CorTexto
+                End With
+
+                With Button1
+                        .BackColor = CorFundo
+                        .ForeColor = CorTexto
+                End With
+
+                With btnNavegador
+                        .BackColor = CorFundo
+                        .ForeColor = CorTexto
+                End With
         End Sub
 
         'QUANTIDADE DE CLIENTES CADASTRADOS
@@ -373,7 +421,7 @@ Public Class FrmMenu
         SQL.Notificao("", "Atualizado com Sucesso")
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Private Sub Button2_Click(sender As Object, e As EventArgs)
                 FrmAgendaEntrega.Show()
         End Sub
 
@@ -385,9 +433,9 @@ Public Class FrmMenu
                 FrmAgendaEntrega.ShowDialog()
         End Sub
 
-    Private Sub lblHora_Click(sender As Object, e As EventArgs) Handles lblHora.Click
+        Private Sub lblHora_Click(sender As Object, e As EventArgs)
 
-    End Sub
+        End Sub
 
         Private Sub tmAtualizarRelatorio_Tick(sender As Object, e As EventArgs) Handles tmAtualizarRelatorio.Tick
 

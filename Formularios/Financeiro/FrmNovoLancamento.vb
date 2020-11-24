@@ -1,6 +1,10 @@
 ﻿Imports System.Data.OleDb
+Imports MaterialSkin
 
 Public Class FrmNovoLancamento
+
+        Inherits Controls.MaterialForm
+
         Public FocoDataInicial As Boolean
         Public FocoDataFinal As Boolean
         Public ConsultaFiltro As String
@@ -55,6 +59,20 @@ Public Class FrmNovoLancamento
                 Filtro()
                 txtFiltroIdentificacao.Text = 0
                 AtualizarRegistro()
+
+                pnDockLeft.BackColor = CorFundo
+                With btnAddLancamento
+                        .BackColor = CorFundo
+                        .ForeColor = CorTexto
+                End With
+                With btnFechar
+                        .BackColor = CorFundo
+                        .ForeColor = CorTexto
+                End With
+                With btnGerarRelatorio
+                        .BackColor = CorFundo
+                        .ForeColor = CorTexto
+                End With
 
         End Sub
 
@@ -464,7 +482,7 @@ line6:
         Public Sub ExpDockTop()
                 Select Case PnDockTop.Height
                         Case > 200
-                                PnDockTop.Height = 110
+                                PnDockTop.Height = 5
                         Case < 150
                                 PnDockTop.Height = 350
                         Case Else
@@ -518,7 +536,7 @@ line6:
         End Sub
 
         Private Sub dgvFinanceiro_MouseEnter(sender As Object, e As EventArgs) Handles dgvFinanceiro.MouseEnter
-                PnDockTop.Height = 110
+                PnDockTop.Height = 10
         End Sub
 
         Private Sub FrmNovoLancamento_MouseMove(sender As Object, e As MouseEventArgs) Handles Me.MouseMove
@@ -540,11 +558,11 @@ line6:
                 MovPoup()
         End Sub
 
-        Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+        Private Sub GroupBox1_Enter(sender As Object, e As EventArgs)
 
         End Sub
 
-        Private Sub GroupBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles GroupBox1.MouseMove
+        Private Sub GroupBox1_MouseMove(sender As Object, e As MouseEventArgs)
                 MovPoup()
         End Sub
 

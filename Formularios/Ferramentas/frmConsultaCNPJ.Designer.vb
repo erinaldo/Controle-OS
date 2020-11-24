@@ -29,10 +29,11 @@ Partial Class frmConsultaCNPJ
 	      Me.btnConsultarCNPJ = New System.Windows.Forms.Button()
 	      Me.Label1 = New System.Windows.Forms.Label()
 	      Me.txtNomeFantasia = New System.Windows.Forms.TextBox()
-	      Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
 	      Me.MaterialSingleLineTextField1 = New MaterialSkin.Controls.MaterialSingleLineTextField()
 	      Me.MaterialFlatButton1 = New MaterialSkin.Controls.MaterialFlatButton()
+	      Me.picCap = New System.Windows.Forms.PictureBox()
 	      CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).BeginInit()
+	      CType(Me.picCap, System.ComponentModel.ISupportInitialize).BeginInit()
 	      Me.SuspendLayout()
 	      '
 	      'picCaptcha
@@ -92,19 +93,6 @@ Partial Class frmConsultaCNPJ
 	      Me.txtNomeFantasia.Size = New System.Drawing.Size(133, 20)
 	      Me.txtNomeFantasia.TabIndex = 6
 	      '
-	      'MaterialLabel1
-	      '
-	      Me.MaterialLabel1.AutoSize = True
-	      Me.MaterialLabel1.Depth = 0
-	      Me.MaterialLabel1.Font = New System.Drawing.Font("Roboto", 11.0!)
-	      Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-	      Me.MaterialLabel1.Location = New System.Drawing.Point(329, 133)
-	      Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
-	      Me.MaterialLabel1.Name = "MaterialLabel1"
-	      Me.MaterialLabel1.Size = New System.Drawing.Size(108, 19)
-	      Me.MaterialLabel1.TabIndex = 7
-	      Me.MaterialLabel1.Text = "MaterialLabel1"
-	      '
 	      'MaterialSingleLineTextField1
 	      '
 	      Me.MaterialSingleLineTextField1.Depth = 0
@@ -136,14 +124,23 @@ Partial Class frmConsultaCNPJ
 	      Me.MaterialFlatButton1.Text = "MaterialFlatButton1"
 	      Me.MaterialFlatButton1.UseVisualStyleBackColor = True
 	      '
+	      'picCap
+	      '
+	      Me.picCap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+	      Me.picCap.Location = New System.Drawing.Point(12, 69)
+	      Me.picCap.Name = "picCap"
+	      Me.picCap.Size = New System.Drawing.Size(168, 50)
+	      Me.picCap.TabIndex = 10
+	      Me.picCap.TabStop = False
+	      '
 	      'frmConsultaCNPJ
 	      '
 	      Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 	      Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 	      Me.ClientSize = New System.Drawing.Size(800, 450)
+	      Me.Controls.Add(Me.picCap)
 	      Me.Controls.Add(Me.MaterialFlatButton1)
 	      Me.Controls.Add(Me.MaterialSingleLineTextField1)
-	      Me.Controls.Add(Me.MaterialLabel1)
 	      Me.Controls.Add(Me.txtNomeFantasia)
 	      Me.Controls.Add(Me.Label1)
 	      Me.Controls.Add(Me.btnConsultarCNPJ)
@@ -154,6 +151,7 @@ Partial Class frmConsultaCNPJ
 	      Me.Name = "frmConsultaCNPJ"
 	      Me.Text = "Consulta de CNPJ"
 	      CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).EndInit()
+	      CType(Me.picCap, System.ComponentModel.ISupportInitialize).EndInit()
 	      Me.ResumeLayout(False)
 	      Me.PerformLayout()
 
@@ -166,7 +164,7 @@ Partial Class frmConsultaCNPJ
         Friend WithEvents btnConsultarCNPJ As Button
         Friend WithEvents Label1 As Label
         Friend WithEvents txtNomeFantasia As TextBox
-        Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
         Friend WithEvents MaterialSingleLineTextField1 As MaterialSkin.Controls.MaterialSingleLineTextField
         Friend WithEvents MaterialFlatButton1 As MaterialSkin.Controls.MaterialFlatButton
+        Friend WithEvents picCap As PictureBox
 End Class
