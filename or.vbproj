@@ -1,0 +1,1273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
+    <PublishUrl>C:\Users\macks\Documents\installer\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\192.168.0.200\Servidor\</UpdateUrl>
+    <ProductName>ERPMAX</ProductName>
+    <PublisherName>Mackson R. Santos</PublisherName>
+    <SuiteName>Enterprise Resource Planning</SuiteName>
+    <MinimumRequiredVersion>1.1.1.2</MinimumRequiredVersion>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsUrl>C:\MeuApp</BootstrapperComponentsUrl>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130</SSDTPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>ControleOS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>ControleOS.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8E9AFC5-AA7F-4361-AB39-A487A75B0793}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ControleOS.My.MyApplication</StartupObject>
+    <RootNamespace>ControleOS</RootNamespace>
+    <AssemblyName>ControleOS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ControleOS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ControleOS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>ControleOS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>ControleOS.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C35D48932C59886C989D1744EFD645CFFC6D440E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>or_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.AcroPDFLib">
+      <HintPath>..\..\..\Desktop\Interop.AcroPDFLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\Desktop\iTextSharp\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\..\Desktop\iTextSharp\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Formularios\Financeiro\clsLancamento.vb" />
+    <Compile Include="Formularios\Financeiro\FrmAddNovoLancamento.Designer.vb">
+      <DependentUpon>FrmAddNovoLancamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmAddNovoLancamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmMovFinanceira.Designer.vb">
+      <DependentUpon>FrmMovFinanceira.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmMovFinanceira.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmRelatorioFinanceiro.Designer.vb">
+      <DependentUpon>FrmRelatorioFinanceiro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmRelatorioFinanceiro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\Module1.vb" />
+    <Compile Include="Formularios\Orcamento\FrmResumoComodo.Designer.vb">
+      <DependentUpon>FrmResumoComodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmResumoComodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmContexCarregarPedido.Designer.vb">
+      <DependentUpon>FrmContexCarregarPedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmContexCarregarPedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Organizacao\FrmMovProduto.Designer.vb">
+      <DependentUpon>FrmMovProduto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Organizacao\FrmMovProduto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\PDV\Class1.vb" />
+    <Compile Include="Modulos\clsPessoa.vb" />
+    <Compile Include="Formularios\PDV\FrmAddLembrete.Designer.vb">
+      <DependentUpon>FrmAddLembrete.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmAddLembrete.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmAgendaEntrega.Designer.vb">
+      <DependentUpon>FrmAgendaEntrega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmAgendaEntrega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmCodBarras.Designer.vb">
+      <DependentUpon>FrmCodBarras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmCodBarras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Programa\clsUsuarioAtual.vb" />
+    <Compile Include="Formularios\Programa\FrmCarregando.Designer.vb">
+      <DependentUpon>FrmCarregando.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmCarregando.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\modGeral.vb" />
+    <Compile Include="Formularios\PDV\FrmMenuContex.Designer.vb">
+      <DependentUpon>FrmMenuContex.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmMenuContex.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmLeitorPDF.Designer.vb">
+      <DependentUpon>FrmLeitorPDF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmLeitorPDF.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmVisita.Designer.vb">
+      <DependentUpon>FrmVisita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmVisita.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\AppSettings.vb" />
+    <Compile Include="Danew.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Danew.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Danew.vb">
+      <DependentUpon>Danew.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataISO.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataISO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmConfiguracaoADM.Designer.vb">
+      <DependentUpon>FrmConfiguracaoADM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmConfiguracaoADM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\modRelatorio.vb" />
+    <Compile Include="Modulos\AcaoExMi.vb" />
+    <Compile Include="Modulos\ApplicationEvents.vb" />
+    <Compile Include="Modulos\ConDB.vb" />
+    <Compile Include="Modulos\Conexao.vb" />
+    <Compile Include="Modulos\Connect.vb" />
+    <Compile Include="DataSet\DataPdv.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataPdv.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataPdv.vb">
+      <DependentUpon>DataPdv.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetAgenda.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAgenda.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetX.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetX.vb">
+      <DependentUpon>DataSetX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetY1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetY.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmAndamentoDaOS.Designer.vb">
+      <DependentUpon>FrmAndamentoDaOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmAndamentoDaOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Organizacao\FrmCalendario.Designer.vb">
+      <DependentUpon>FrmCalendario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Organizacao\FrmCalendario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmCarregarPedido.Designer.vb">
+      <DependentUpon>FrmCarregarPedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmCarregarPedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmCarregarPedidoVinc.Designer.vb">
+      <DependentUpon>FrmCarregarPedidoVinc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmCarregarPedidoVinc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmConfiguracao.Designer.vb">
+      <DependentUpon>FrmConfiguracao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmConfiguracao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmConfirmarSenha.Designer.vb">
+      <DependentUpon>FrmConfirmarSenha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmConfirmarSenha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmDesenhoOS.Designer.vb">
+      <DependentUpon>FrmDesenhoOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmDesenhoOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmDesingOS.Designer.vb">
+      <DependentUpon>FrmDesingOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmDesingOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmDetLan.Designer.vb">
+      <DependentUpon>FrmDetLan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmDetLan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmEnderecoEntrega.Designer.vb">
+      <DependentUpon>FrmEnderecoEntrega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmEnderecoEntrega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmEntregaOS.Designer.vb">
+      <DependentUpon>FrmEntregaOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmEntregaOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FRMFormaPagamentoOS.Designer.vb">
+      <DependentUpon>FRMFormaPagamentoOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FRMFormaPagamentoOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FRMFormaPagamentoPDV.Designer.vb">
+      <DependentUpon>FRMFormaPagamentoPDV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FRMFormaPagamentoPDV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmImpOrcamento .Designer.vb">
+      <DependentUpon>FrmImpOrcamento .vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmImpOrcamento .vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmImpOS.Designer.vb">
+      <DependentUpon>FrmImpOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmImpOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmImpPagamento.Designer.vb">
+      <DependentUpon>FrmImpPagamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmImpPagamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmImpressaoContrato.Designer.vb">
+      <DependentUpon>FrmImpressaoContrato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmImpressaoContrato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmLancar.Designer.vb">
+      <DependentUpon>FrmLancar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmLancar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmLiberacaoMedicao.Designer.vb">
+      <DependentUpon>FrmLiberacaoMedicao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmLiberacaoMedicao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmConfig.Designer.vb">
+      <DependentUpon>FrmConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmJustificativa.Designer.vb">
+      <DependentUpon>FrmJustificativa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmJustificativa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmDiarioObra.Designer.vb">
+      <DependentUpon>FrmDiarioObra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmDiarioObra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Organizacao\FrmMedicaoEspecifica.Designer.vb">
+      <DependentUpon>FrmMedicaoEspecifica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Organizacao\FrmMedicaoEspecifica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmNavegador.Designer.vb">
+      <DependentUpon>FrmNavegador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmNavegador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmNovoLancamento.Designer.vb">
+      <DependentUpon>FrmNovoLancamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmNovoLancamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmPagamentos.Designer.vb">
+      <DependentUpon>FrmPagamentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmPagamentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmEditProduto.Designer.vb">
+      <DependentUpon>FrmEditProduto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmEditProduto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmCarregarOS.Designer.vb">
+      <DependentUpon>FrmCarregarOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmCarregarOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Organizacao\FrmFilaProducao.Designer.vb">
+      <DependentUpon>FrmFilaProducao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Organizacao\FrmFilaProducao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmMedicoes.Designer.vb">
+      <DependentUpon>FrmMedicoes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmMedicoes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmAdicionarPagamento.Designer.vb">
+      <DependentUpon>FrmAdicionarPagamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmAdicionarPagamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmCadastroOS.Designer.vb">
+      <DependentUpon>FrmCadastroOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmCadastroOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmCadastroEndereco.Designer.vb">
+      <DependentUpon>FrmCadastroEndereco.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmCadastroEndereco.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmAdicionarProdutos.Designer.vb">
+      <DependentUpon>FrmAdicionarProdutos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmAdicionarProdutos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmPagMedPersonalizada.Designer.vb">
+      <DependentUpon>FrmPagMedPersonalizada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmPagMedPersonalizada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmPDV.Designer.vb">
+      <DependentUpon>FrmPDV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmPDV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmPrestadores.Designer.vb">
+      <DependentUpon>FrmPrestadores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmPrestadores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Organizacao\FrmProdutos.Designer.vb">
+      <DependentUpon>FrmProdutos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Organizacao\FrmProdutos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmMenu.Designer.vb">
+      <DependentUpon>FrmMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmAdicionarRecebimento.Designer.vb">
+      <DependentUpon>FrmAdicionarRecebimento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Financeiro\FrmAdicionarRecebimento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmAdicionarCliente.Designer.vb">
+      <DependentUpon>FrmAdicionarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmAdicionarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmCliente.Designer.vb">
+      <DependentUpon>FrmCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmMdiHome.Designer.vb">
+      <DependentUpon>FrmMdiHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmMdiHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmLogin.Designer.vb">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Programa\FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmRelatorios.Designer.vb">
+      <DependentUpon>FrmRelatorios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmRelatorios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmRelatorioVisita.Designer.vb">
+      <DependentUpon>FrmRelatorioVisita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmRelatorioVisita.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmRelPDV.Designer.vb">
+      <DependentUpon>FrmRelPDV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmRelPDV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmSelCaixa.Designer.vb">
+      <DependentUpon>FrmSelCaixa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\PDV\FrmSelCaixa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Organizacao\FrmVisualizadorAnexos.Designer.vb">
+      <DependentUpon>FrmVisualizadorAnexos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Organizacao\FrmVisualizadorAnexos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSet\LoginDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Logs.vb" />
+    <Compile Include="Modulos\modUF.vb" />
+    <Compile Include="Modulos\Module1.vb" />
+    <Compile Include="Modulos\Module2.vb" />
+    <Compile Include="Modulos\Module3.vb" />
+    <Compile Include="Modulos\Module4.vb" />
+    <Compile Include="Modulos\ModuloImpressao.vb" />
+    <Compile Include="DataSet\Notificacao.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Notificacao.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\PacoteVinculo.vb" />
+    <Compile Include="Modulos\Permissao.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="DataSet\SistemaGEDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SistemaGEDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\SistemaGEDataSet.vb">
+      <DependentUpon>SistemaGEDataSet.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Formularios\Financeiro\FrmAddNovoLancamento.resx">
+      <DependentUpon>FrmAddNovoLancamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Financeiro\FrmMovFinanceira.resx">
+      <DependentUpon>FrmMovFinanceira.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Financeiro\FrmRelatorioFinanceiro.resx">
+      <DependentUpon>FrmRelatorioFinanceiro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmAndamentoDaOS.resx">
+      <DependentUpon>FrmAndamentoDaOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmResumoComodo.resx">
+      <DependentUpon>FrmResumoComodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Organizacao\FrmCalendario.resx">
+      <DependentUpon>FrmCalendario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Organizacao\FrmMovProduto.resx">
+      <DependentUpon>FrmMovProduto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PDV\FrmAddLembrete.resx">
+      <DependentUpon>FrmAddLembrete.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PDV\FrmAgendaEntrega.resx">
+      <DependentUpon>FrmAgendaEntrega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PDV\FrmCarregarPedido.resx">
+      <DependentUpon>FrmCarregarPedido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PDV\FrmCarregarPedidoVinc.resx">
+      <DependentUpon>FrmCarregarPedidoVinc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Financeiro\FrmContexCarregarPedido.resx">
+      <DependentUpon>FrmContexCarregarPedido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PDV\FrmCodBarras.resx">
+      <DependentUpon>FrmCodBarras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PDV\FrmMenuContex.resx">
+      <DependentUpon>FrmMenuContex.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Programa\FrmCarregando.resx">
+      <DependentUpon>FrmCarregando.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Programa\FrmConfiguracao.resx">
+      <DependentUpon>FrmConfiguracao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Programa\FrmConfiguracaoADM.resx">
+      <DependentUpon>FrmConfiguracaoADM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Programa\FrmConfirmarSenha.resx">
+      <DependentUpon>FrmConfirmarSenha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmDesenhoOS.resx">
+      <DependentUpon>FrmDesenhoOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmDesingOS.resx">
+      <DependentUpon>FrmDesingOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Financeiro\FrmDetLan.resx">
+      <DependentUpon>FrmDetLan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmEnderecoEntrega.resx">
+      <DependentUpon>FrmEnderecoEntrega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmEntregaOS.resx">
+      <DependentUpon>FrmEntregaOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FRMFormaPagamentoOS.resx">
+      <DependentUpon>FRMFormaPagamentoOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Financeiro\FRMFormaPagamentoPDV.resx">
+      <DependentUpon>FRMFormaPagamentoPDV.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PDV\FrmImpOrcamento .resx">
+      <DependentUpon>FrmImpOrcamento .vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmImpOS.resx">
+      <DependentUpon>FrmImpOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Financeiro\FrmImpPagamento.resx">
+      <DependentUpon>FrmImpPagamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmImpressaoContrato.resx">
+      <DependentUpon>FrmImpressaoContrato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Financeiro\FrmLancar.resx">
+      <DependentUpon>FrmLancar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administracao\FrmLiberacaoMedicao.resx">
+      <DependentUpon>FrmLiberacaoMedicao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Programa\FrmConfig.resx">
+      <DependentUpon>FrmConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Programa\FrmJustificativa.resx">
+      <DependentUpon>FrmJustificativa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmDiarioObra.resx">
+      <DependentUpon>FrmDiarioObra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Organizacao\FrmMedicaoEspecifica.resx">
+      <DependentUpon>FrmMedicaoEspecifica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Programa\FrmLeitorPDF.resx">
+      <DependentUpon>FrmLeitorPDF.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Programa\FrmNavegador.resx">
+      <DependentUpon>FrmNavegador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Financeiro\FrmNovoLancamento.resx">
+      <DependentUpon>FrmNovoLancamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Financeiro\FrmPagamentos.resx">
+      <DependentUpon>FrmPagamentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmEditProduto.resx">
+      <DependentUpon>FrmEditProduto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmCarregarOS.resx">
+      <DependentUpon>FrmCarregarOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Organizacao\FrmFilaProducao.resx">
+      <DependentUpon>FrmFilaProducao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmMedicoes.resx">
+      <DependentUpon>FrmMedicoes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Financeiro\FrmAdicionarPagamento.resx">
+      <DependentUpon>FrmAdicionarPagamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administracao\FrmAdicionarProdutos.resx">
+      <DependentUpon>FrmAdicionarProdutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administracao\FrmAdicionarCliente.resx">
+      <DependentUpon>FrmAdicionarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Financeiro\FrmAdicionarRecebimento.resx">
+      <DependentUpon>FrmAdicionarRecebimento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administracao\FrmCadastroEndereco.resx">
+      <DependentUpon>FrmCadastroEndereco.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmCadastroOS.resx">
+      <DependentUpon>FrmCadastroOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmPagMedPersonalizada.resx">
+      <DependentUpon>FrmPagMedPersonalizada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PDV\FrmPDV.resx">
+      <DependentUpon>FrmPDV.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administracao\FrmPrestadores.resx">
+      <DependentUpon>FrmPrestadores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Organizacao\FrmProdutos.resx">
+      <DependentUpon>FrmProdutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administracao\FrmCliente.resx">
+      <DependentUpon>FrmCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Programa\FrmMenu.resx">
+      <DependentUpon>FrmMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Programa\FrmMdiHome.resx">
+      <DependentUpon>FrmMdiHome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Programa\FrmLogin.resx">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administracao\FrmRelatorios.resx">
+      <DependentUpon>FrmRelatorios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmRelatorioVisita.resx">
+      <DependentUpon>FrmRelatorioVisita.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PDV\FrmSelCaixa.resx">
+      <DependentUpon>FrmSelCaixa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Organizacao\FrmVisualizadorAnexos.resx">
+      <DependentUpon>FrmVisualizadorAnexos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Programa\FrmVisita.resx">
+      <DependentUpon>FrmVisita.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include="DataSet\DataPdv.xsc">
+      <DependentUpon>DataPdv.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataPdv.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataPdv.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataPdv.xss">
+      <DependentUpon>DataPdv.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetAgenda.xsc">
+      <DependentUpon>DataSetAgenda.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetAgenda.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAgenda.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetAgenda.xss">
+      <DependentUpon>DataSetAgenda.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetX.xsc">
+      <DependentUpon>DataSetX.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetX.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetX.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSetX.xss">
+      <DependentUpon>DataSetX.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetY.xsc">
+      <DependentUpon>DataSetY.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetY.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetY1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSetY.xss">
+      <DependentUpon>DataSetY.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\LoginDataSet.xsc">
+      <DependentUpon>LoginDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\LoginDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoginDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\LoginDataSet.xss">
+      <DependentUpon>LoginDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Danew.xsc">
+      <DependentUpon>Danew.xsd</DependentUpon>
+    </None>
+    <None Include="Danew.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Danew.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Danew.xss">
+      <DependentUpon>Danew.xsd</DependentUpon>
+    </None>
+    <None Include="DataISO.xsc">
+      <DependentUpon>DataISO.xsd</DependentUpon>
+    </None>
+    <None Include="DataISO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataISO.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataISO.xss">
+      <DependentUpon>DataISO.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="DataSet\Notificacao.xsc">
+      <DependentUpon>Notificacao.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Notificacao.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Notificacao.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\Notificacao.xss">
+      <DependentUpon>Notificacao.xsd</DependentUpon>
+    </None>
+    <None Include="or_TemporaryKey.pfx" />
+    <None Include="DataSet\SistemaGEDataSet.xsc">
+      <DependentUpon>SistemaGEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\SistemaGEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SistemaGEDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\SistemaGEDataSet.xss">
+      <DependentUpon>SistemaGEDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="CICLib">
+      <Guid>{3D5905E0-523C-11D1-9FEA-00600832DB4A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\typings\agenda\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup Condition="$(VisualStudioVersion) == '16.0'">
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTesting, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\StyledTextbox\css\styledText.css" />
+    <Content Include="App_Plugins\StyledTextbox\html\styledText.html" />
+    <Content Include="App_Plugins\StyledTextbox\js\styledTextController.js" />
+    <Content Include="Formularios\PDV\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Content>
+    <Content Include="Formularios\PDV\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Formularios\PDV\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Content>
+    <Content Include="Formularios\PDV\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\trena.jpg" />
+    <None Include="Resources\seta_verde_esquerda.png" />
+    <None Include="Resources\SubVerde.png" />
+    <None Include="Resources\pago.png" />
+    <None Include="Resources\seta_verde1.png" />
+    <None Include="Resources\seta_verde.png" />
+    <None Include="Resources\seta_vermelha.png" />
+    <None Include="Resources\mim.jpg" />
+    <None Include="Resources\funcionario.jpg" />
+    <Content Include="Resources\NLG2.png" />
+    <None Include="Resources\settings-1.png" />
+    <None Include="Resources\miniimizar23.png" />
+    <None Include="Resources\miniimizar.jpg" />
+    <None Include="Resources\minimizar1.png" />
+    <None Include="Resources\minimizar.png" />
+    <None Include="Resources\1492790945-39minimize_84242.png" />
+    <None Include="Resources\Desligar.png" />
+    <None Include="Resources\1491579542-yumminkysocialmedia22_83078.png" />
+    <None Include="Resources\Google-Mail-Icon_icon-icons.com_52847.png" />
+    <None Include="Resources\1490889652-facebook_82510.png" />
+    <None Include="Resources\locked-padlock-rounded-black-tool-security-interface-symbol_icon-icons.com_544971.png" />
+    <None Include="Resources\locked-padlock-rounded-black-tool-security-interface-symbol_icon-icons.com_54497.png" />
+    <None Include="Resources\user-blue_253251.png" />
+    <None Include="Resources\usuario.png" />
+    <None Include="Resources\lockedpadlockincircularbutton_80106.ico" />
+    <None Include="Resources\user_843081.png" />
+    <None Include="Resources\user_84308.png" />
+    <None Include="Resources\user-blue_25325.png" />
+    <None Include="Resources\friends_link_send_share_icon_123609 %281%29.ico" />
+    <None Include="Resources\friends_link_send_share_icon_123609.ico" />
+    <None Include="Resources\Sub.png" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\calendario.png" />
+    <None Include="Resources\setas.png" />
+    <None Include="Resources\box-p-ID.png" />
+    <None Include="Resources\box-p-Receita.png" />
+    <None Include="Resources\box-p-SituacaoPagamento.png" />
+    <None Include="Resources\box-p-FormaPagamento.png" />
+    <None Include="Resources\box-p-planoConta.png" />
+    <None Include="Resources\box-p-cliente.png" />
+    <None Include="Resources\box-p-data.png" />
+    <None Include="Resources\quadrado-para-banner-verde-claro2.png" />
+    <None Include="Resources\quadrado-para-banner-verde-escuro.png" />
+    <None Include="Resources\quadrado-para-banner-laranjaclaro.png" />
+    <None Include="Resources\quadrado-para-banner-amarelo-claro.png" />
+    <None Include="Resources\quadrado-para-banner-verde-claro1.png" />
+    <None Include="Resources\quadrado-para-banner-verde-claro.png" />
+    <None Include="Resources\quadrado-para-banner-vermelho-claro.png" />
+    <None Include="Resources\quadrado-para-banner-vermelho.png" />
+    <None Include="Resources\quadrado-para-banner-azul.png" />
+    <None Include="Resources\id_icon-icons.com_64188.ico" />
+    <None Include="Resources\business-color_money-coins_icon-icons.com_53446.ico" />
+    <None Include="Resources\Banner_status-only.png" />
+    <None Include="Resources\banner-separador.png" />
+    <None Include="Resources\textboxFundo1-removebg-preview.png" />
+    <None Include="Resources\quadrado-para-banner.png" />
+    <None Include="Resources\textboxFundo1.png" />
+    <None Include="Resources\desenho.png" />
+    <None Include="Resources\Enviar.png" />
+    <None Include="Resources\Info.png" />
+    <None Include="Resources\InfoUsuarios.png" />
+    <None Include="Resources\Imprimir.png" />
+    <None Include="Resources\Confirmar.png" />
+    <None Include="Resources\Cancelar3.png" />
+    <None Include="Resources\Lupa.png" />
+    <None Include="Resources\Filtro.png" />
+    <None Include="Resources\302997.png" />
+    <None Include="Resources\302669.png" />
+    <None Include="Resources\graph-10_icon-icons.com_58030.png" />
+    <None Include="Resources\003-timer.png" />
+    <None Include="Resources\house.png" />
+    <None Include="Resources\grafico2.png" />
+    <None Include="Resources\Grafico.png" />
+    <None Include="Resources\024-shopping cart.png" />
+    <None Include="Resources\usuario3.png" />
+    <None Include="Resources\logo-AIO.png" />
+    <None Include="Resources\Historico.ico" />
+    <None Include="Resources\whatsapp.ico" />
+    <None Include="Resources\Borracha 32.ico" />
+    <None Include="Resources\Cartao5.ico" />
+    <None Include="Resources\Cartao4.ico" />
+    <None Include="Resources\Barras2.ico" />
+    <None Include="Resources\Faturar2.ico" />
+    <None Include="Resources\Cartao3.ico" />
+    <None Include="Resources\Cartao2.ico" />
+    <None Include="Resources\back1.png" />
+    <None Include="Resources\next-1.png" />
+    <None Include="Resources\next.png" />
+    <None Include="Resources\Carregamento1.gif" />
+    <None Include="Resources\carregamento21.gif" />
+    <None Include="Resources\carregamento3.gif" />
+    <None Include="Resources\carregamento2.gif" />
+    <None Include="Resources\Carregamento.gif" />
+    <None Include="Resources\Pagamento.ico" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\SetaCima.ico" />
+    <None Include="Resources\SetaBaixo.ico" />
+    <None Include="Resources\Atualizar.ico" />
+    <None Include="Resources\Notificacao.ico" />
+    <None Include="Resources\Adicionar1.ico" />
+    <None Include="Resources\Barras.ico" />
+    <None Include="Resources\Cartao1.ico" />
+    <None Include="Resources\Boleto3.ico" />
+    <None Include="Resources\Boleto2.ico" />
+    <None Include="Resources\orcamento.ico" />
+    <None Include="Resources\Boletos.png" />
+    <None Include="Resources\Medicao1.ico" />
+    <None Include="Resources\background1.bmp" />
+    <None Include="Resources\Imprimir1.ico" />
+    <None Include="Resources\Vinculo2.ico" />
+    <None Include="Resources\Vinculo.png" />
+    <None Include="Resources\Faturar.ico" />
+    <None Include="Resources\Entrega.ico" />
+    <None Include="Resources\Confirmar.ico" />
+    <None Include="Resources\Carregar.ico" />
+    <None Include="Resources\Voltar2.ico" />
+    <None Include="Resources\Voltar.ico" />
+    <None Include="Resources\Browser.ico" />
+    <None Include="Resources\Cancelar.ico" />
+    <None Include="Resources\Cadeado_Bloqueado.ico" />
+    <None Include="Resources\Cadeado_Desbloquado.ico" />
+    <None Include="Resources\NLG.png" />
+    <None Include="Resources\BackGround Azul Gradiente.jpg" />
+    <None Include="Resources\Usuarios1.ico" />
+    <None Include="Resources\Usuarios.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Adobe.DocumentCloud.Services.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="ControleOS.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="ControleOS.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="itextsharp.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="Pedidos\Venda\" />
+    <Folder Include="Pedidos\Vinculados\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Adobe.DocumentCloud.Services">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="iTextSharp">
+      <Version>5.5.13.2</Version>
+    </PackageReference>
+    <PackageReference Include="Tulpep.NotificationWindow">
+      <Version>1.1.37</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>
+  </PropertyGroup>
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' == ''" />
+</Project>

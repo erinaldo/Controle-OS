@@ -1,0 +1,7 @@
+﻿[*.vb]
+
+# BC42104: A variável é usada antes de receber um valor
+dotnet_diagnostic.BC42104.severity = none
+
+# Default severity for analyzer diagnostics with category 'Globalization'
+dotnet_analyzer_diagnostic.category-Globalization.severity = silent
