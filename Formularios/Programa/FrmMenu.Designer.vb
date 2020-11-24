@@ -123,6 +123,8 @@ Partial Class FrmMenu
 		Me.Label12 = New System.Windows.Forms.Label()
 		Me.PictureBox9 = New System.Windows.Forms.PictureBox()
 		Me.Button2 = New System.Windows.Forms.Button()
+		Me.FERRAMENTASToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.CONSULTACNPJToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Label11 = New System.Windows.Forms.Label()
 		CType(Me.TbProdutoVenda1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.SistemaGEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -254,11 +256,11 @@ Partial Class FrmMenu
 		Me.MenuStrip1.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.MenuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
 		Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-		Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ORÇAMENTOToolStripMenuItem, Me.FINANCEIROToolStripMenuItem, Me.VENDASToolStripMenuItem, Me.CADASTROSToolStripMenuItem, Me.OPÇÕESToolStripMenuItem, Me.PRODUTOSToolStripMenuItem, Me.FILADEPRODUÇÃOToolStripMenuItem, Me.CALENDARIOToolStripMenuItem, Me.RELATÓRIOSToolStripMenuItem, Me.AGENDAToolStripMenuItem1})
-		Me.MenuStrip1.Location = New System.Drawing.Point(39, 339)
+		Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ORÇAMENTOToolStripMenuItem, Me.FINANCEIROToolStripMenuItem, Me.VENDASToolStripMenuItem, Me.CADASTROSToolStripMenuItem, Me.OPÇÕESToolStripMenuItem, Me.PRODUTOSToolStripMenuItem, Me.FILADEPRODUÇÃOToolStripMenuItem, Me.CALENDARIOToolStripMenuItem, Me.RELATÓRIOSToolStripMenuItem, Me.AGENDAToolStripMenuItem1, Me.FERRAMENTASToolStripMenuItem})
+		Me.MenuStrip1.Location = New System.Drawing.Point(9, 130)
 		Me.MenuStrip1.Name = "MenuStrip1"
 		Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-		Me.MenuStrip1.Size = New System.Drawing.Size(853, 24)
+		Me.MenuStrip1.Size = New System.Drawing.Size(1075, 24)
 		Me.MenuStrip1.TabIndex = 40
 		Me.MenuStrip1.Text = "MenuStrip1"
 		Me.MenuStrip1.Visible = False
@@ -693,7 +695,6 @@ Partial Class FrmMenu
 		'
 		Me.pnDockPrincipal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
 			Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-		Me.pnDockPrincipal.Controls.Add(Me.MenuStrip1)
 		Me.pnDockPrincipal.Controls.Add(Me.btnNavegador)
 		Me.pnDockPrincipal.Controls.Add(Me.btnFinanceiro)
 		Me.pnDockPrincipal.Controls.Add(Me.btnAbrirPDV)
@@ -1084,6 +1085,20 @@ Partial Class FrmMenu
 		Me.Button2.Text = "Button2"
 		Me.Button2.UseVisualStyleBackColor = True
 		'
+		'FERRAMENTASToolStripMenuItem
+		'
+		Me.FERRAMENTASToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CONSULTACNPJToolStripMenuItem})
+		Me.FERRAMENTASToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaption
+		Me.FERRAMENTASToolStripMenuItem.Name = "FERRAMENTASToolStripMenuItem"
+		Me.FERRAMENTASToolStripMenuItem.Size = New System.Drawing.Size(102, 20)
+		Me.FERRAMENTASToolStripMenuItem.Text = "FERRAMENTAS"
+		'
+		'CONSULTACNPJToolStripMenuItem
+		'
+		Me.CONSULTACNPJToolStripMenuItem.Name = "CONSULTACNPJToolStripMenuItem"
+		Me.CONSULTACNPJToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.CONSULTACNPJToolStripMenuItem.Text = "CONSULTA CNPJ"
+		'
 		'FrmMenu
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1094,6 +1109,7 @@ Partial Class FrmMenu
 		Me.CausesValidation = False
 		Me.ClientSize = New System.Drawing.Size(980, 602)
 		Me.ControlBox = False
+		Me.Controls.Add(Me.MenuStrip1)
 		Me.Controls.Add(Me.Button2)
 		Me.Controls.Add(Me.Label12)
 		Me.Controls.Add(Me.PictureBox9)
@@ -1130,7 +1146,6 @@ Partial Class FrmMenu
 		Me.MenuStrip1.ResumeLayout(False)
 		Me.MenuStrip1.PerformLayout()
 		Me.pnDockPrincipal.ResumeLayout(False)
-		Me.pnDockPrincipal.PerformLayout()
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
 		CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1257,4 +1272,6 @@ Partial Class FrmMenu
 	Friend WithEvents PictureBox9 As PictureBox
 	Friend WithEvents Button2 As Button
 	Friend WithEvents AGENDAToolStripMenuItem1 As ToolStripMenuItem
+	Friend WithEvents FERRAMENTASToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents CONSULTACNPJToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -392,4 +392,8 @@ Public Class FrmMenu
         Private Sub tmAtualizarRelatorio_Tick(sender As Object, e As EventArgs) Handles tmAtualizarRelatorio.Tick
 
         End Sub
+
+    Private Sub CONSULTACNPJToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CONSULTACNPJToolStripMenuItem.Click
+                frmConsultaCNPJ.Show()
+        End Sub
 End Class
