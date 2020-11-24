@@ -40,11 +40,28 @@ Public Class frmConsultaCNPJ
 
 
 
-        Private Sub MaterialFlatButton1_Click(sender As Object, e As EventArgs) Handles MaterialFlatButton1.Click
-	      Dim MaterialSkinManeger As MaterialSkinManager = MaterialSkinManager.Instance
-	      MaterialSkinManeger.AddFormToManage(Me)
-	      MaterialSkinManeger.Theme = MaterialSkinManager.Themes.LIGHT
-	      MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE)
+        Private Sub MaterialFlatButton1_Click(sender As Object, e As EventArgs)
+                Dim MaterialSkinManeger As MaterialSkinManager = MaterialSkinManager.Instance
+                MaterialSkinManeger.AddFormToManage(Me)
+                MaterialSkinManeger.Theme = MaterialSkinManager.Themes.LIGHT
+                MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE)
+        End Sub
+
+        Private Sub btnAtualizarCap_Click(sender As Object, e As EventArgs) Handles btnAtualizarCap.Click
+                GetCaptcha(picCap)
+        End Sub
+
+        Private Sub btnConsultarCNPJ_Click(sender As Object, e As EventArgs) Handles btnConsultarCNPJ.Click
+                Consulta(txtCnpj.Text, txtCap.Text)
+                txtNomeFantasia.Text = Empresa.NomeFantasia
+                txtTipoEmpresa.Text = Empresa.MatrizFilial
+                txtRazaoSocial.Text = Empresa.RazaoSocial
+                txtAtividadePrimaria.Text = Empresa.AtividadeEconomicaPrimaria
+                txtAtividadeSecundaria.Text = Empresa.AtividadeEconomicaSecundaria
+        End Sub
+
+        Private Sub txtCap_LostFocus(sender As Object, e As EventArgs) Handles txtCap.LostFocus
+                txtCap.Text = txtCap.Text.ToUpper
         End Sub
 End Class
 
