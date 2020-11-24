@@ -25,7 +25,7 @@ Partial Class FrmMenu
 		Me.components = New System.ComponentModel.Container()
 		Dim Label11 As System.Windows.Forms.Label
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMenu))
-		Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.TbProdutoVenda1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
 		Me.SistemaGEDataSet = New ControleOS.SistemaGEDataSet()
 		Me.TbProdutoVenda1TableAdapter = New ControleOS.SistemaGEDataSetTableAdapters.tbProdutoVenda1TableAdapter()
@@ -942,14 +942,14 @@ Partial Class FrmMenu
 		Me.dgvEntrega.BackgroundColor = System.Drawing.Color.Black
 		Me.dgvEntrega.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
 		Me.dgvEntrega.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-		DataGridViewCellStyle3.BackColor = System.Drawing.Color.Black
-		DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-		DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-		DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-		DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-		Me.dgvEntrega.DefaultCellStyle = DataGridViewCellStyle3
+		DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+		DataGridViewCellStyle2.BackColor = System.Drawing.Color.Black
+		DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+		DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+		Me.dgvEntrega.DefaultCellStyle = DataGridViewCellStyle2
 		Me.dgvEntrega.GridColor = System.Drawing.Color.Silver
 		Me.dgvEntrega.Location = New System.Drawing.Point(404, 163)
 		Me.dgvEntrega.Name = "dgvEntrega"

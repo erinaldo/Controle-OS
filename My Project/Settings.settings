@@ -44,7 +44,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="LocIcone" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">C:\Users\Usuário\Desktop\ControleOS\Resources\NLG.png</Value>
     </Setting>
   </Settings>
 </SettingsFile>
