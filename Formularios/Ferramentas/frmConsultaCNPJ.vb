@@ -1,17 +1,33 @@
-﻿Imports DllConsultaCNPJ.ConsultaCNPJReceita
+﻿Imports MaterialSkin
+
+
 
 Public Class frmConsultaCNPJ
+
+
+
+        Inherits MaterialSkin.Controls.MaterialForm
+
+        ' Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        '       Dim MaterialSkinManeger As MaterialSkinManager = MaterialSkinManager.Instance
+        '		    MaterialSkinManeger.AddFormToManage(Me)
+        '		    MaterialSkinManeger.Theme = MaterialSkinManager.Themes.LIGHT
+        '		    MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE)
+        '        End Sub
+
+
         Private Sub frmConsultaCNPJ_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-	      GetCaptcha(picCaptcha)
+	      Dim MaterialSkinManeger As MaterialSkinManager = MaterialSkinManager.Instance
+	      MaterialSkinManeger.AddFormToManage(Me)
+	      MaterialSkinManeger.Theme = MaterialSkinManager.Themes.DARK
+	      MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE)
         End Sub
 
-        Private Sub btnAtualizarCap_Click(sender As Object, e As EventArgs) Handles btnAtualizarCap.Click
-	      GetCaptcha(picCaptcha)
-        End Sub
-
-        Private Sub btnConsultarCNPJ_Click(sender As Object, e As EventArgs) Handles btnConsultarCNPJ.Click
-	      ValidaCampos(txtCnpj.Text, txtCap.Text)
-	      Consulta(txtCnpj.Text, txtCap.Text)
-	      txtNomeFantasia.Text = Empresa.NomeFantasia
+        Private Sub MaterialFlatButton1_Click(sender As Object, e As EventArgs) Handles MaterialFlatButton1.Click
+	      Dim MaterialSkinManeger As MaterialSkinManager = MaterialSkinManager.Instance
+	      MaterialSkinManeger.AddFormToManage(Me)
+	      MaterialSkinManeger.Theme = MaterialSkinManager.Themes.LIGHT
+	      MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE)
         End Sub
 End Class
+
