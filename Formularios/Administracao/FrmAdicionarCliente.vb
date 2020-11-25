@@ -2,6 +2,7 @@
 Imports System.Data.OleDb
 Imports System
 Imports System.ComponentModel
+Imports DllConsultaCNPJ.ConsultaCNPJReceita
 
 Public Class FrmAdicionarCliente
 
@@ -40,11 +41,25 @@ Public Class FrmAdicionarCliente
                         .Add(12)
                 End With
 
-
+                GetCepCombo(cboNaturalidadeUF)
 
 
                 txtColDataAdmissao.Text = Today.ToShortDateString
                 LimparText()
+
+
+                'Dim Csource As AutoCompleteSource
+
+
+
+                ' Dim Cidades As New List(Of String)
+                Dim CidDR As OleDbDataReader = GetDR_semRead("SELECT Município FROM tbMunicipio")
+
+                While CidDR.Read
+                        txtColNaturalidade.AutoCompleteCustomSource.Add(CidDR(0))
+                End While
+
+                GetCaptcha(picCaptcha)
 
         End Sub
 
@@ -70,52 +85,76 @@ Public Class FrmAdicionarCliente
         End Function
 
         Public Sub InserirPessoaFisica()
-                Dim vezes As Double = 0
-                Dim cn As New OleDb.OleDbConnection
-                cn.ConnectionString = sConnectionString
-                Try
-                        cn.Open()
-                        pbProgresso.Value = 20
-                        Dim arrImage() As Byte
-                        Dim strImage As String
-                        Dim myMs As New MemoryStream
-                        '
-                        If Not IsNothing(Me.picPessoaFisica.Image) Then
-                                Me.picPessoaFisica.Image.Save(myMs, Me.picPessoaFisica.Image.RawFormat)
-                                arrImage = myMs.GetBuffer
-                                strImage = "?"
-                        Else
-                                pbProgresso.Value = 30
-                                arrImage = Nothing
-                                strImage = "NULL"
-                        End If
-                        Dim cmd As New OleDb.OleDbCommand
-                        cmd.Connection = cn
-                        cmd.CommandText = "INSERT INTO tbClientes (RG,Tipo,Nome,Sobrenome,CPF,Imagem)" & "VALUES (""" & txtPFRG.Text & """,""" & "Pessoa Fisica" &
+
+                Dim listControl As New List(Of Control)
+
+                With listControl
+                        .Add(txtPFNome)
+                        .Add(txtPFSobrenome)
+                        .Add(txtPFCPF)
+                        .Add(txtPFRG)
+                End With
+
+                If ControleObrigatorio(listControl) = True Then
+
+
+
+                        Dim vezes As Double = 0
+                        Dim cn As New OleDb.OleDbConnection
+                        cn.ConnectionString = sConnectionString
+                        Try
+                                cn.Open()
+                                pbProgresso.Value = 20
+                                Dim arrImage() As Byte
+                                Dim strImage As String
+                                Dim myMs As New MemoryStream
+                                '
+                                If Not IsNothing(Me.picPessoaFisica.Image) Then
+                                        Me.picPessoaFisica.Image.Save(myMs, Me.picPessoaFisica.Image.RawFormat)
+                                        arrImage = myMs.GetBuffer
+                                        strImage = "?"
+                                Else
+                                        pbProgresso.Value = 30
+                                        arrImage = Nothing
+                                        strImage = "NULL"
+                                End If
+                                Dim cmd As New OleDb.OleDbCommand
+                                cmd.Connection = cn
+                                cmd.CommandText = "INSERT INTO tbClientes (RG,Tipo,Nome,Sobrenome,CPF,Imagem)" & "VALUES (""" & txtPFRG.Text & """,""" & "Pessoa Fisica" &
                     """,""" & txtPFNome.Text & """,""" & txtPFSobrenome.Text & """,""" & CDbl(txtPFCPF.Text) & """,?)"
-                        pbProgresso.Value = 50
-                        If strImage = "?" Then
-                                cmd.Parameters.Clear()
-                                cmd.Parameters.Add(strImage, OleDb.OleDbType.Binary).Value = arrImage
+                                pbProgresso.Value = 50
+                                If strImage = "?" Then
+                                        cmd.Parameters.Clear()
+                                        cmd.Parameters.Add(strImage, OleDb.OleDbType.Binary).Value = arrImage
+                                End If
+                                cmd.ExecuteNonQuery()
+                        Catch ex As Exception
+                                MsgBox(ex.Message)
+                        Finally
+                                cn.Close()
+                                pbProgresso.Value = 60
+                        End Try
+                        LimparTextPessoaFisica()
+                        SQL.Notificao("NOVA LITORAL GESSO", "CLIENTE CADASTRADO COM SUCESSO")
+
+                        For Each Controle In listControl
+                                Controle.Text = ""
+                        Next
+
+
+                        FrmClientes.CarregarTables()
+                        LimparTextPessoaJuridica()
+                        pbProgresso.Value = 80
+                        If chkMultiCadastro.Checked = False Then
+                                Me.Close()
+                        Else
+                                LimparText()
                         End If
-                        cmd.ExecuteNonQuery()
-                Catch ex As Exception
-                        MsgBox(ex.Message)
-                Finally
-                        cn.Close()
-                        pbProgresso.Value = 60
-                End Try
-                LimparTextPessoaFisica()
-                SQL.Notificao("NOVA LITORAL GESSO", "CLIENTE CADASTRADO COM SUCESSO")
-                FrmClientes.CarregarTables()
-                LimparTextPessoaJuridica()
-                pbProgresso.Value = 80
-                If chkMultiCadastro.Checked = False Then
-                        Me.Close()
+                        pbProgresso.Value = 100
                 Else
-                        LimparText()
+
                 End If
-                pbProgresso.Value = 100
+
         End Sub
 
         Public Sub LimparText()
@@ -155,6 +194,15 @@ Public Class FrmAdicionarCliente
     End Sub
 
         Public Sub InserirPessoaJuridica()
+
+
+
+
+
+
+
+
+
                 Dim cn As New OleDb.OleDbConnection
                 cn.ConnectionString = sConnectionString
                 Try
@@ -176,7 +224,6 @@ Public Class FrmAdicionarCliente
                         Dim cmd As New OleDb.OleDbCommand
                         cmd.Connection = cn
 
-                        '  cmd.CommandText = "UPDATE tbClientes SET Imagem=" & strImage & " WHERE Código=" & Codigo
                         cmd.CommandText = "INSERT INTO tbClientes (Nome,InscricaoMunicipal,InscricaoEstadual,RazaoSocial,Tipo,CPF,Imagem)" & "VALUES (""" &
         txtPJNomeFantasia.Text & """,""" & txtPJIM.Text & """,""" & txtPJIE.Text & """,""" &
     txtPJRazaoSocial.Text & """,""" & "Pessoa Juridica" & """,""" & CDbl(txtPJCNPJ.Text) & """,?)"
@@ -204,69 +251,124 @@ Public Class FrmAdicionarCliente
         ''' INSERIR COLABORADOR NO BANCO DE DADOS
         ''' </summary>
         Public Sub InserirPessoaColaborador()
+                Dim CamposObrigatorios As New List(Of Control)
+                Dim CamposPreenchidos As Boolean = True
+                Dim NomeCampoIncorreto As New List(Of String)
 
-                Dim ColCad As New Colaborador
-
-                With ColCad 'COLABORADOR QUE SERÁ CADASTRADO NO BANCO DE DADOS
-                        .Nome = txtColNome.Text
-                        .Sobrenome = txtColSobrenome.Text
-                        .Nacionalidade = txtColNacionalidade.Text
-                        .Naturalidade = txtColNaturalidade.Text
-                        .NaturalidadeUF = cboNaturalidadeUF.Text
-                        .CPF = txtColCPF.Text
-                        .RG = txtColRG.Text
-                        .Cargo = txtColCargo.Text
-                        .Setor = txtColSetor.Text
-                        .CNH = txtColCNH.Text
-                        .TituloEleitor = txtColTituloEleitor.Text
-                        .CTPS = txtColCTPS.Text
-                        .ValorRemuneracao = txtColValorRemuneracao.Text
-                        .JornadaTrabalho = cboColPeriodoTrabalho.Text
-                        .EstadoCivil = txtColEstadoCivil.Text
-                        .DataNasc = txtColtDataNasc.Text
-                        .DataAdmissao = txtColDataAdmissao.Text
+                With CamposObrigatorios
+                        .Add(txtColNome)
+                        .Add(txtColSobrenome)
+                        .Add(txtColNacionalidade)
+                        .Add(txtColNaturalidade)
+                        .Add(txtColCPF)
+                        .Add(txtColRG)
+                        .Add(txtColCargo)
+                        .Add(cboNaturalidadeUF)
                 End With
 
-                Dim cn As New OleDb.OleDbConnection
-                cn.ConnectionString = sConnectionString
-                Try
-                        cn.Open()
-                        pbProgresso.Value = 30
-                        Dim arrImage() As Byte
-                        Dim strImage As String
-                        Dim myMs As New IO.MemoryStream
-                        If Not IsNothing(Me.PicColaborador.Image) Then
-                                pbProgresso.Value = 40
-                                Me.PicColaborador.Image.Save(myMs, Me.PicColaborador.Image.RawFormat)
-
-                                arrImage = myMs.GetBuffer
-                                strImage = "?"
+                'VERIFICAR E PINTAR BACKCOLOR CASO O CONTROLE ESTEJA INCORRETO
+                For Each controle In CamposObrigatorios
+                        If controle.Text = "" Then
+                                CamposPreenchidos = False
+                                controle.BackColor = Color.Red
                         Else
-                                arrImage = Nothing
-                                strImage = "NULL"
+                                controle.BackColor = Color.FromArgb(34, 36, 49)
                         End If
-                        Dim cmd As New OleDb.OleDbCommand
-                        cmd.Connection = cn
-                        pbProgresso.Value = 60
-                        cmd.CommandText = "INSERT INTO tbClientes (Nome,CPF,Tipo,Sobrenome,RG,EstadoCivil,Nacionalidade,Cargo,CNH,CTPS,TituloEleitor,DataAdmissao,JornadaTrabalho,ValorRemun,Imagem,NaturalidadeUF)" &
+                Next
+
+                'CONFIRMAR SE TODOS OS CAMPOS FORAM PREENCHIDOS
+                If CamposPreenchidos = True Then
+
+                        'CONVERTER PARA NUMERO CAMPOS VAZIOS NÃO OBRIGATORIOS
+                        Dim ListTxtNumber As New List(Of Control)
+
+                        With ListTxtNumber
+                                .Add(txtColCNH)
+                                .Add(txtColCTPS)
+                                .Add(txtColTituloEleitor)
+                                .Add(txtColValorRemuneracao)
+                                .Add(cboColPeriodoTrabalho)
+
+                        End With
+
+                        For Each Controle In ListTxtNumber
+                                If IsNumeric(Controle) = False Then
+                                        Controle.Text = 0
+                                End If
+                        Next
+
+                        Dim ColCad As New Colaborador
+
+                        With ColCad 'COLABORADOR QUE SERÁ CADASTRADO NO BANCO DE DADOS
+                                .Nome = txtColNome.Text
+                                .Sobrenome = txtColSobrenome.Text
+                                .Nacionalidade = txtColNacionalidade.Text
+                                .Naturalidade = txtColNaturalidade.Text
+                                .NaturalidadeUF = cboNaturalidadeUF.Text
+                                .CPF = txtColCPF.Text
+                                .RG = txtColRG.Text
+                                .Cargo = txtColCargo.Text
+                                .Setor = txtColSetor.Text
+                                .CNH = txtColCNH.Text
+                                .TituloEleitor = txtColTituloEleitor.Text
+                                .CTPS = txtColCTPS.Text
+                                .ValorRemuneracao = txtColValorRemuneracao.Text
+                                If cboColPeriodoTrabalho.Text = "" Then
+                                        .JornadaTrabalho = 0
+                                End If
+                                .EstadoCivil = txtColEstadoCivil.Text
+                                .DataNasc = txtColtDataNasc.Text
+                                .DataAdmissao = txtColDataAdmissao.Text
+                        End With
+
+                        Dim cn As New OleDb.OleDbConnection
+                        cn.ConnectionString = sConnectionString
+                        Try
+                                cn.Open()
+                                pbProgresso.Value = 30
+                                Dim arrImage() As Byte
+                                Dim strImage As String
+                                Dim myMs As New IO.MemoryStream
+                                If Not IsNothing(Me.PicColaborador.Image) Then
+                                        pbProgresso.Value = 40
+                                        Me.PicColaborador.Image.Save(myMs, Me.PicColaborador.Image.RawFormat)
+
+                                        arrImage = myMs.GetBuffer
+                                        strImage = "?"
+                                Else
+                                        arrImage = Nothing
+                                        strImage = "NULL"
+                                End If
+                                Dim cmd As New OleDb.OleDbCommand
+                                cmd.Connection = cn
+                                pbProgresso.Value = 60
+                                cmd.CommandText = "INSERT INTO tbClientes (Nome,CPF,Tipo,Sobrenome,RG,EstadoCivil,Nacionalidade,Cargo,CNH,CTPS,TituloEleitor,DataAdmissao,JornadaTrabalho,ValorRemun,Imagem,NaturalidadeUF)" &
                         "VALUES (""" & ColCad.Nome & """, """ & ColCad.CPF & """,""" & "Colaborador" & """,""" & ColCad.Sobrenome & """,""" & ColCad.RG &
                         """,""" & ColCad.EstadoCivil & """,""" & ColCad.Nacionalidade & """,""" & ColCad.Cargo & """,""" & ColCad.CNH &
                         """,""" & txtColCTPS.Text & """,""" & ColCad.TituloEleitor &
                         """,""" & ColCad.DataAdmissao & """,""" & ColCad.JornadaTrabalho & """,""" & ColCad.ValorRemuneracao & """,?, """ & ColCad.NaturalidadeUF & """)"
 
-                        If strImage = "?" Then
-                                cmd.Parameters.Add(strImage, OleDb.OleDbType.Binary).Value = arrImage
-                        End If
-                        pbProgresso.Value = 70
-                        cmd.ExecuteNonQuery()
-                        LimparTextColaborador()
-                        SQL.Notificao("NOVA LITORAL GESSO", "CLIENTE CADASTRADO COM SUCESSO")
+                                If strImage = "?" Then
+                                        cmd.Parameters.Add(strImage, OleDb.OleDbType.Binary).Value = arrImage
+                                End If
+                                pbProgresso.Value = 70
+                                cmd.ExecuteNonQuery()
+                                LimparTextColaborador()
+                                SQL.Notificao("NOVA LITORAL GESSO", "CLIENTE CADASTRADO COM SUCESSO")
 
-                Catch ex As Exception
-                        MsgBox(ex.Message)
-                Finally
-                        cn.Close()
-                End Try
+                                'CONTINUAR CADASTRANDO SEM FECHAR A PAGINA 
+                                If chkMultiCadastro.Checked = False Then
+                                        Me.Close()
+                                End If
+
+                        Catch ex As Exception
+                                MsgBox(ex.Message)
+                        Finally
+                                cn.Close()
+                        End Try
+                Else
+                        MsgBox("Um ou mais campos obrigatórios não foram preenchidos")
+                End If
                 pbProgresso.Value = 80
                 FrmClientes.CarregarTables()
                 pbProgresso.Value = 100
@@ -286,21 +388,11 @@ Public Class FrmAdicionarCliente
         End Sub
 
         Private Sub frmAlunos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-                Dim cn As New OleDb.OleDbConnection
-                cn.ConnectionString = sConnectionString
-                Try
-                        Dim cmd As New OleDb.OleDbCommand
-                        cmd.Connection = cn
-                        cmd.CommandText = "SELECT * FROM tbAnexos"
-                        cn.Open()
-                        Dim reader As OleDb.OleDbDataReader = cmd.ExecuteReader()
-                        If reader.HasRows Then
-                                Dim dt As New DataTable()
-                                dt.Load(reader)
-                        End If
-                Finally
-                        cn.Close()
-                End Try
+
+
+
+
+
         End Sub
 
         Private Sub llbLocalizar_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles llbLocalizar.LinkClicked
@@ -506,8 +598,18 @@ Public Class FrmAdicionarCliente
         End Sub
 
         Private Sub FrmAdicionarCliente_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        FrmMenu.AtualizarRelatorio()
-    End Sub
+                FrmMenu.AtualizarRelatorio()
+                With FrmClientes
+                        .txtLogradouro.Text = ""
+                        .txtNumero.Text = ""
+                        .txtCPF.Text = ""
+                        .cboUF.Text = ""
+                        .txtComplemento.Text = ""
+                        .txtCodEnd.Text = ""
+                        .cboTipo.Text = ""
+                        .txtCEP.Text = ""
+                End With
+        End Sub
 
         Private Sub txtNome_Click(sender As Object, e As EventArgs)
                 txtColNome.BackColor = Color.White
@@ -540,25 +642,40 @@ Public Class FrmAdicionarCliente
         Private Sub btnCadPF_Click(sender As Object, e As EventArgs) Handles btnCadPF.Click
                 InserirPessoaFisica()
                 FrmClientes.btnAtualizar.PerformClick()
-                If chkMultiCadastro.Checked = False Then
-                        Me.Close()
-                End If
+
         End Sub
 
         Private Sub btnConcluirPJ_Click(sender As Object, e As EventArgs) Handles btnConcluirPJ.Click
                 InserirPessoaJuridica()
                 FrmClientes.btnAtualizar.PerformClick()
-                If chkMultiCadastro.Checked = False Then
-                        Me.Close()
+                If RetornoCNPJ = True Then
+                        Try
+                                Threading.Thread.Sleep(2000)
+                                Dim hr As OleDbDataReader = GetDR_semRead("SELECT Código FROM tbClientes WHERE CPF=" & Empresa.Cnpj)
+
+                                hr.Read()
+
+                                InstrucaoDireta("INSERT INTO tbEnd (CodEnd,Logradouro,EndNumero,Bairro,Cidade,UF,Complemento,CEP,Tipo)" & "Values (""" & hr.Item("Código") &
+                                """,""" & Empresa.Endereco & """,""" & Empresa.Numero & """,""" & Empresa.Bairro & """,""" & Empresa.Cidade & """,""" & Empresa.UF &
+                                """,""" & Empresa.Complemento & """,""" & Empresa.CEP & """,""" & "Comercial" & """)")
+
+                                InstrucaoDireta("INSERT INTO tbContato (ContatoID,DDD,Numero,Tipo)" & "VALUES(""" & hr.Item("Código") & """,""" & 0 & """,""" & Empresa.Telefones & """,""" & "Comercial" & """)")
+
+                                Threading.Thread.Sleep(2000)
+                                FrmClientes.btnAtualizar.PerformClick()
+                        Catch
+                                MsgBox("Não foi possivel vincular dados (endereço e contato) ao clinete, por favor realize o procedimento manualmente")
+                        End Try
                 End If
+
+
+
         End Sub
 
         Private Sub btnConcluirCadCol_Click(sender As Object, e As EventArgs) Handles btnConcluirCadCol.Click
                 InserirPessoaColaborador()
                 FrmClientes.btnAtualizar.PerformClick()
-                If chkMultiCadastro.Checked = False Then
-                        Me.Close()
-                End If
+
         End Sub
 
         Public Sub LimparTextColaborador()
@@ -755,4 +872,46 @@ Public Class FrmAdicionarCliente
         txtColValorRemuneracao.Text = Dinheiro(txtColValorRemuneracao.Text)
     End Sub
 
+        Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
+        End Sub
+
+        Private Sub txtCap_Click(sender As Object, e As EventArgs) Handles txtCap.Click
+
+        End Sub
+
+        Private Sub txtCap_LostFocus(sender As Object, e As EventArgs) Handles txtCap.LostFocus
+                txtCap.Text = txtCap.Text.ToUpper
+        End Sub
+
+        Public RetornoCNPJ As Boolean = False
+
+        Private Sub btnConsultaCnpj_Click(sender As Object, e As EventArgs) Handles btnConsultaCnpj.Click
+
+
+                Try
+                        If txtPJCNPJ.Text <> "" And txtCap.Text <> "" Then
+                                Consulta(txtPJCNPJ.Text, txtCap.Text)
+                                txtPJNomeFantasia.Text = Empresa.NomeFantasia
+                                txtPJRazaoSocial.Text = Empresa.RazaoSocial
+                                txtPJIE.Text = 0
+                                txtPJIM.Text = 0
+                                If Empresa.NomeFantasia <> "" Then
+                                        RetornoCNPJ = True
+                                Else
+                                        RetornoCNPJ = False
+                                End If
+                        End If
+                Catch
+                        MsgBox("possivel erro na busca")
+                End Try
+        End Sub
+
+        Private Sub btnAtualizarCap_Click(sender As Object, e As EventArgs) Handles btnAtualizarCap.Click
+                GetCaptcha(picCaptcha)
+        End Sub
+
+        Private Sub btnShowWBsintegra_Click(sender As Object, e As EventArgs)
+                frmNavSintegra.Show()
+        End Sub
 End Class

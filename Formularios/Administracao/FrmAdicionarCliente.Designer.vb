@@ -1,27 +1,27 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmAdicionarCliente
-    Inherits System.Windows.Forms.Form
+	Inherits System.Windows.Forms.Form
 
-    'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()>
-    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-        Try
-            If disposing AndAlso components IsNot Nothing Then
-                components.Dispose()
-            End If
-        Finally
-            MyBase.Dispose(disposing)
-        End Try
-    End Sub
+	'Descartar substituições de formulário para limpar a lista de componentes.
+	<System.Diagnostics.DebuggerNonUserCode()>
+	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+		Try
+			If disposing AndAlso components IsNot Nothing Then
+				components.Dispose()
+			End If
+		Finally
+			MyBase.Dispose(disposing)
+		End Try
+	End Sub
 
-    'Exigido pelo Windows Form Designer
-    Private components As System.ComponentModel.IContainer
+	'Exigido pelo Windows Form Designer
+	Private components As System.ComponentModel.IContainer
 
-    'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
-    'Pode ser modificado usando o Windows Form Designer.  
-    'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()>
-    Private Sub InitializeComponent()
+	'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
+	'Pode ser modificado usando o Windows Form Designer.  
+	'Não o modifique usando o editor de códigos.
+	<System.Diagnostics.DebuggerStepThrough()>
+	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAdicionarCliente))
 		Me.lblCPFcnpj = New System.Windows.Forms.Label()
@@ -61,6 +61,8 @@ Partial Class FrmAdicionarCliente
 		Me.TabPage1 = New System.Windows.Forms.TabPage()
 		Me.btnConcluirCadCol = New System.Windows.Forms.Button()
 		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.cboNaturalidadeUF = New System.Windows.Forms.ComboBox()
+		Me.Label6 = New System.Windows.Forms.Label()
 		Me.btnRemFoto = New System.Windows.Forms.Button()
 		Me.btnAddFoto = New System.Windows.Forms.Button()
 		Me.pbColValorRemuneracao = New System.Windows.Forms.ProgressBar()
@@ -112,7 +114,11 @@ Partial Class FrmAdicionarCliente
 		Me.pbPFNome = New System.Windows.Forms.ProgressBar()
 		Me.picPessoaFisica = New System.Windows.Forms.PictureBox()
 		Me.TabPage3 = New System.Windows.Forms.TabPage()
+		Me.btnAtualizarCap = New System.Windows.Forms.Button()
+		Me.txtCap = New MaterialSkin.Controls.MaterialSingleLineTextField()
+		Me.picCaptcha = New System.Windows.Forms.PictureBox()
 		Me.Panel1 = New System.Windows.Forms.Panel()
+		Me.btnConsultaCnpj = New System.Windows.Forms.Button()
 		Me.Label21 = New System.Windows.Forms.Label()
 		Me.lblIM = New System.Windows.Forms.Label()
 		Me.lblRazaoSocial = New System.Windows.Forms.Label()
@@ -134,8 +140,6 @@ Partial Class FrmAdicionarCliente
 		Me.btnConcluirPJ = New System.Windows.Forms.Button()
 		Me.pbProgresso = New System.Windows.Forms.ProgressBar()
 		Me.tmAnimacaoText = New System.Windows.Forms.Timer(Me.components)
-		Me.cboNaturalidadeUF = New System.Windows.Forms.ComboBox()
-		Me.Label6 = New System.Windows.Forms.Label()
 		Me.GroupBox3.SuspendLayout()
 		CType(Me.PicFoto, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.dgvDados, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -147,6 +151,7 @@ Partial Class FrmAdicionarCliente
 		Me.Panel2.SuspendLayout()
 		CType(Me.picPessoaFisica, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.TabPage3.SuspendLayout()
+		CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel1.SuspendLayout()
 		CType(Me.picPessoaJuridica, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
@@ -335,7 +340,7 @@ Partial Class FrmAdicionarCliente
 		Me.Label1.CausesValidation = False
 		Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.ForeColor = System.Drawing.Color.White
-		Me.Label1.Location = New System.Drawing.Point(698, 15)
+		Me.Label1.Location = New System.Drawing.Point(687, 15)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(65, 15)
 		Me.Label1.TabIndex = 57
@@ -349,12 +354,13 @@ Partial Class FrmAdicionarCliente
 		Me.txtPessoaID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.txtPessoaID.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.txtPessoaID.ForeColor = System.Drawing.Color.White
-		Me.txtPessoaID.Location = New System.Drawing.Point(701, 33)
+		Me.txtPessoaID.Location = New System.Drawing.Point(678, 33)
 		Me.txtPessoaID.Name = "txtPessoaID"
 		Me.txtPessoaID.ReadOnly = True
-		Me.txtPessoaID.Size = New System.Drawing.Size(62, 20)
+		Me.txtPessoaID.Size = New System.Drawing.Size(85, 20)
 		Me.txtPessoaID.TabIndex = 58
 		Me.txtPessoaID.Text = "9"
+		Me.txtPessoaID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.txtPessoaID.Visible = False
 		'
 		'Button2
@@ -475,6 +481,7 @@ Partial Class FrmAdicionarCliente
 		'cboColPeriodoTrabalho
 		'
 		Me.cboColPeriodoTrabalho.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
+		Me.cboColPeriodoTrabalho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboColPeriodoTrabalho.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.cboColPeriodoTrabalho.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.cboColPeriodoTrabalho.ForeColor = System.Drawing.Color.White
@@ -525,6 +532,7 @@ Partial Class FrmAdicionarCliente
 		'txtColEstadoCivil
 		'
 		Me.txtColEstadoCivil.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
+		Me.txtColEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.txtColEstadoCivil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.txtColEstadoCivil.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.txtColEstadoCivil.ForeColor = System.Drawing.Color.White
@@ -638,6 +646,30 @@ Partial Class FrmAdicionarCliente
 		Me.Panel3.Size = New System.Drawing.Size(903, 412)
 		Me.Panel3.TabIndex = 1
 		'
+		'cboNaturalidadeUF
+		'
+		Me.cboNaturalidadeUF.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
+		Me.cboNaturalidadeUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.cboNaturalidadeUF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.cboNaturalidadeUF.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.cboNaturalidadeUF.ForeColor = System.Drawing.Color.White
+		Me.cboNaturalidadeUF.FormattingEnabled = True
+		Me.cboNaturalidadeUF.Location = New System.Drawing.Point(471, 80)
+		Me.cboNaturalidadeUF.Name = "cboNaturalidadeUF"
+		Me.cboNaturalidadeUF.Size = New System.Drawing.Size(94, 22)
+		Me.cboNaturalidadeUF.TabIndex = 169
+		'
+		'Label6
+		'
+		Me.Label6.AutoSize = True
+		Me.Label6.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label6.ForeColor = System.Drawing.Color.White
+		Me.Label6.Location = New System.Drawing.Point(473, 62)
+		Me.Label6.Name = "Label6"
+		Me.Label6.Size = New System.Drawing.Size(20, 15)
+		Me.Label6.TabIndex = 170
+		Me.Label6.Text = "UF"
+		'
 		'btnRemFoto
 		'
 		Me.btnRemFoto.BackColor = System.Drawing.Color.Indigo
@@ -745,6 +777,7 @@ Partial Class FrmAdicionarCliente
 		Me.txtColTituloEleitor.Name = "txtColTituloEleitor"
 		Me.txtColTituloEleitor.Size = New System.Drawing.Size(218, 13)
 		Me.txtColTituloEleitor.TabIndex = 10
+		Me.txtColTituloEleitor.Text = " e"
 		'
 		'pbColCNH
 		'
@@ -912,6 +945,9 @@ Partial Class FrmAdicionarCliente
 		'
 		'txtColNacionalidade
 		'
+		Me.txtColNacionalidade.AutoCompleteCustomSource.AddRange(New String() {"brasileiro"})
+		Me.txtColNacionalidade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+		Me.txtColNacionalidade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
 		Me.txtColNacionalidade.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
 		Me.txtColNacionalidade.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.txtColNacionalidade.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -952,6 +988,8 @@ Partial Class FrmAdicionarCliente
 		'
 		'txtColNaturalidade
 		'
+		Me.txtColNaturalidade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+		Me.txtColNaturalidade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
 		Me.txtColNaturalidade.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
 		Me.txtColNaturalidade.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.txtColNaturalidade.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1190,6 +1228,9 @@ Partial Class FrmAdicionarCliente
 		'TabPage3
 		'
 		Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
+		Me.TabPage3.Controls.Add(Me.btnAtualizarCap)
+		Me.TabPage3.Controls.Add(Me.txtCap)
+		Me.TabPage3.Controls.Add(Me.picCaptcha)
 		Me.TabPage3.Controls.Add(Me.Panel1)
 		Me.TabPage3.Controls.Add(Me.Button6)
 		Me.TabPage3.Controls.Add(Me.btnAddFotoPJ)
@@ -1202,9 +1243,44 @@ Partial Class FrmAdicionarCliente
 		Me.TabPage3.TabIndex = 2
 		Me.TabPage3.Text = " Cadastro de Pessoa Juridica"
 		'
+		'btnAtualizarCap
+		'
+		Me.btnAtualizarCap.BackgroundImage = Global.ControleOS.My.Resources.Resources.Atualizar
+		Me.btnAtualizarCap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+		Me.btnAtualizarCap.Location = New System.Drawing.Point(202, 251)
+		Me.btnAtualizarCap.Name = "btnAtualizarCap"
+		Me.btnAtualizarCap.Size = New System.Drawing.Size(33, 29)
+		Me.btnAtualizarCap.TabIndex = 152
+		Me.btnAtualizarCap.Text = " "
+		Me.btnAtualizarCap.UseVisualStyleBackColor = True
+		'
+		'txtCap
+		'
+		Me.txtCap.Depth = 0
+		Me.txtCap.Hint = ""
+		Me.txtCap.Location = New System.Drawing.Point(6, 350)
+		Me.txtCap.MouseState = MaterialSkin.MouseState.HOVER
+		Me.txtCap.Name = "txtCap"
+		Me.txtCap.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+		Me.txtCap.SelectedText = ""
+		Me.txtCap.SelectionLength = 0
+		Me.txtCap.SelectionStart = 0
+		Me.txtCap.Size = New System.Drawing.Size(190, 23)
+		Me.txtCap.TabIndex = 150
+		Me.txtCap.UseSystemPasswordChar = False
+		'
+		'picCaptcha
+		'
+		Me.picCaptcha.Location = New System.Drawing.Point(6, 251)
+		Me.picCaptcha.Name = "picCaptcha"
+		Me.picCaptcha.Size = New System.Drawing.Size(190, 83)
+		Me.picCaptcha.TabIndex = 149
+		Me.picCaptcha.TabStop = False
+		'
 		'Panel1
 		'
 		Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.Panel1.Controls.Add(Me.btnConsultaCnpj)
 		Me.Panel1.Controls.Add(Me.Label21)
 		Me.Panel1.Controls.Add(Me.lblIM)
 		Me.Panel1.Controls.Add(Me.lblRazaoSocial)
@@ -1224,6 +1300,16 @@ Partial Class FrmAdicionarCliente
 		Me.Panel1.Name = "Panel1"
 		Me.Panel1.Size = New System.Drawing.Size(579, 197)
 		Me.Panel1.TabIndex = 148
+		'
+		'btnConsultaCnpj
+		'
+		Me.btnConsultaCnpj.BackgroundImage = Global.ControleOS.My.Resources.Resources.Lupa
+		Me.btnConsultaCnpj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+		Me.btnConsultaCnpj.Location = New System.Drawing.Point(246, 129)
+		Me.btnConsultaCnpj.Name = "btnConsultaCnpj"
+		Me.btnConsultaCnpj.Size = New System.Drawing.Size(33, 23)
+		Me.btnConsultaCnpj.TabIndex = 151
+		Me.btnConsultaCnpj.UseVisualStyleBackColor = True
 		'
 		'Label21
 		'
@@ -1450,29 +1536,6 @@ Partial Class FrmAdicionarCliente
 		Me.pbProgresso.Style = System.Windows.Forms.ProgressBarStyle.Continuous
 		Me.pbProgresso.TabIndex = 78
 		'
-		'cboNaturalidadeUF
-		'
-		Me.cboNaturalidadeUF.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
-		Me.cboNaturalidadeUF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.cboNaturalidadeUF.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.cboNaturalidadeUF.ForeColor = System.Drawing.Color.White
-		Me.cboNaturalidadeUF.FormattingEnabled = True
-		Me.cboNaturalidadeUF.Location = New System.Drawing.Point(481, 80)
-		Me.cboNaturalidadeUF.Name = "cboNaturalidadeUF"
-		Me.cboNaturalidadeUF.Size = New System.Drawing.Size(94, 22)
-		Me.cboNaturalidadeUF.TabIndex = 169
-		'
-		'Label6
-		'
-		Me.Label6.AutoSize = True
-		Me.Label6.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label6.ForeColor = System.Drawing.Color.White
-		Me.Label6.Location = New System.Drawing.Point(478, 58)
-		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(66, 15)
-		Me.Label6.TabIndex = 170
-		Me.Label6.Text = "Estado Civil*"
-		'
 		'FrmAdicionarCliente
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1508,6 +1571,7 @@ Partial Class FrmAdicionarCliente
 		Me.Panel2.PerformLayout()
 		CType(Me.picPessoaFisica, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.TabPage3.ResumeLayout(False)
+		CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel1.PerformLayout()
 		CType(Me.picPessoaJuridica, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1516,115 +1580,119 @@ Partial Class FrmAdicionarCliente
 
 	End Sub
 	Friend WithEvents lblCPFcnpj As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents cboColPeriodoTrabalho As ComboBox
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents PicColaborador As PictureBox
-    Friend WithEvents PicFoto As PictureBox
-    Friend WithEvents dgvDados As DataGridView
-    Friend WithEvents ofd As OpenFileDialog
-    Friend WithEvents llbLocalizar As LinkLabel
-    Friend WithEvents btnLocalizar As Button
-    Friend WithEvents btnAdicionar As Button
-    Friend WithEvents txtDesAnexo As TextBox
-    Friend WithEvents txtAnexoID As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents cboDocs As ComboBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents txtPessoaID As MaskedTextBox
-    Friend WithEvents btnAnRG As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents txtColEstadoCivil As ComboBox
-    Friend WithEvents chkMultiCadastro As CheckBox
-    Friend WithEvents btnLimparText As Button
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents pbProgresso As ProgressBar
-    Friend WithEvents picPessoaFisica As PictureBox
-    Friend WithEvents txtPJRazaoSocial As TextBox
-    Friend WithEvents lblIE As Label
-    Friend WithEvents lblRazaoSocial As Label
-    Friend WithEvents lblIM As Label
-    Friend WithEvents Label21 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents btnConcluirPJ As Button
-    Friend WithEvents picPessoaJuridica As PictureBox
-    Friend WithEvents txtColtDataNasc As DateTimePicker
-    Friend WithEvents txtColDataAdmissao As DateTimePicker
-    Friend WithEvents pbRazaoSocial As ProgressBar
-    Friend WithEvents tmAnimacaoText As Timer
-    Friend WithEvents pbPJNomeFantasia As ProgressBar
-    Friend WithEvents txtPJNomeFantasia As TextBox
-    Friend WithEvents pbPJCNPJ As ProgressBar
-    Friend WithEvents txtPJCNPJ As TextBox
-    Friend WithEvents pbPJIE As ProgressBar
-    Friend WithEvents txtPJIE As TextBox
-    Friend WithEvents pbPJIM As ProgressBar
-    Friend WithEvents txtPJIM As TextBox
-    Friend WithEvents Button8 As Button
-    Friend WithEvents btnAddFotoPF As Button
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label22 As Label
-    Friend WithEvents Label23 As Label
-    Friend WithEvents Label24 As Label
-    Friend WithEvents Label26 As Label
-    Friend WithEvents pbPFCFP As ProgressBar
-    Friend WithEvents txtPFSobrenome As TextBox
-    Friend WithEvents txtPFCPF As TextBox
-    Friend WithEvents pbPFSobrenome As ProgressBar
-    Friend WithEvents pbPFRG As ProgressBar
-    Friend WithEvents txtPFNome As TextBox
-    Friend WithEvents txtPFRG As TextBox
-    Friend WithEvents pbPFNome As ProgressBar
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button6 As Button
-    Friend WithEvents btnAddFotoPJ As Button
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents pbColCPF As ProgressBar
-    Friend WithEvents txtColCPF As TextBox
-    Friend WithEvents Label25 As Label
-    Friend WithEvents pbColNacionalidade As ProgressBar
-    Friend WithEvents txtColSobrenome As TextBox
-    Friend WithEvents txtColNacionalidade As TextBox
-    Friend WithEvents pbColSobrenome As ProgressBar
-    Friend WithEvents pbColNaturalidade As ProgressBar
-    Friend WithEvents txtColNome As TextBox
-    Friend WithEvents txtColNaturalidade As TextBox
-    Friend WithEvents pbColNome As ProgressBar
-    Friend WithEvents btnCadPF As Button
-    Friend WithEvents pbColValorRemuneracao As ProgressBar
-    Friend WithEvents txtColValorRemuneracao As TextBox
-    Friend WithEvents pbColCTPS As ProgressBar
-    Friend WithEvents txtColCTPS As TextBox
-    Friend WithEvents pbColTituloEleitor As ProgressBar
-    Friend WithEvents txtColTituloEleitor As TextBox
-    Friend WithEvents pbColCNH As ProgressBar
-    Friend WithEvents txtColCNH As TextBox
-    Friend WithEvents pbColSetor As ProgressBar
-    Friend WithEvents txtColSetor As TextBox
-    Friend WithEvents pbColCargo As ProgressBar
-    Friend WithEvents txtColCargo As TextBox
-    Friend WithEvents pbColRG As ProgressBar
-    Friend WithEvents txtColRG As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents btnConcluirCadCol As Button
-    Friend WithEvents btnRemFoto As Button
-    Friend WithEvents btnAddFoto As Button
+	Friend WithEvents Button2 As Button
+	Friend WithEvents Label7 As Label
+	Friend WithEvents Label9 As Label
+	Friend WithEvents Label11 As Label
+	Friend WithEvents Label10 As Label
+	Friend WithEvents Label12 As Label
+	Friend WithEvents Label15 As Label
+	Friend WithEvents Label14 As Label
+	Friend WithEvents Label16 As Label
+	Friend WithEvents cboColPeriodoTrabalho As ComboBox
+	Friend WithEvents Label18 As Label
+	Friend WithEvents Label17 As Label
+	Friend WithEvents PicColaborador As PictureBox
+	Friend WithEvents PicFoto As PictureBox
+	Friend WithEvents dgvDados As DataGridView
+	Friend WithEvents ofd As OpenFileDialog
+	Friend WithEvents llbLocalizar As LinkLabel
+	Friend WithEvents btnLocalizar As Button
+	Friend WithEvents btnAdicionar As Button
+	Friend WithEvents txtDesAnexo As TextBox
+	Friend WithEvents txtAnexoID As TextBox
+	Friend WithEvents Label2 As Label
+	Friend WithEvents cboDocs As ComboBox
+	Friend WithEvents Label1 As Label
+	Friend WithEvents txtPessoaID As MaskedTextBox
+	Friend WithEvents btnAnRG As Button
+	Friend WithEvents Button3 As Button
+	Friend WithEvents GroupBox3 As GroupBox
+	Friend WithEvents Label3 As Label
+	Friend WithEvents txtColEstadoCivil As ComboBox
+	Friend WithEvents chkMultiCadastro As CheckBox
+	Friend WithEvents btnLimparText As Button
+	Friend WithEvents TabControl1 As TabControl
+	Friend WithEvents TabPage1 As TabPage
+	Friend WithEvents TabPage2 As TabPage
+	Friend WithEvents TabPage3 As TabPage
+	Friend WithEvents pbProgresso As ProgressBar
+	Friend WithEvents picPessoaFisica As PictureBox
+	Friend WithEvents txtPJRazaoSocial As TextBox
+	Friend WithEvents lblIE As Label
+	Friend WithEvents lblRazaoSocial As Label
+	Friend WithEvents lblIM As Label
+	Friend WithEvents Label21 As Label
+	Friend WithEvents Label13 As Label
+	Friend WithEvents btnConcluirPJ As Button
+	Friend WithEvents picPessoaJuridica As PictureBox
+	Friend WithEvents txtColtDataNasc As DateTimePicker
+	Friend WithEvents txtColDataAdmissao As DateTimePicker
+	Friend WithEvents pbRazaoSocial As ProgressBar
+	Friend WithEvents tmAnimacaoText As Timer
+	Friend WithEvents pbPJNomeFantasia As ProgressBar
+	Friend WithEvents txtPJNomeFantasia As TextBox
+	Friend WithEvents pbPJCNPJ As ProgressBar
+	Friend WithEvents txtPJCNPJ As TextBox
+	Friend WithEvents pbPJIE As ProgressBar
+	Friend WithEvents txtPJIE As TextBox
+	Friend WithEvents pbPJIM As ProgressBar
+	Friend WithEvents txtPJIM As TextBox
+	Friend WithEvents Button8 As Button
+	Friend WithEvents btnAddFotoPF As Button
+	Friend WithEvents Panel2 As Panel
+	Friend WithEvents Label22 As Label
+	Friend WithEvents Label23 As Label
+	Friend WithEvents Label24 As Label
+	Friend WithEvents Label26 As Label
+	Friend WithEvents pbPFCFP As ProgressBar
+	Friend WithEvents txtPFSobrenome As TextBox
+	Friend WithEvents txtPFCPF As TextBox
+	Friend WithEvents pbPFSobrenome As ProgressBar
+	Friend WithEvents pbPFRG As ProgressBar
+	Friend WithEvents txtPFNome As TextBox
+	Friend WithEvents txtPFRG As TextBox
+	Friend WithEvents pbPFNome As ProgressBar
+	Friend WithEvents Panel1 As Panel
+	Friend WithEvents Button6 As Button
+	Friend WithEvents btnAddFotoPJ As Button
+	Friend WithEvents Panel3 As Panel
+	Friend WithEvents Label4 As Label
+	Friend WithEvents Label5 As Label
+	Friend WithEvents pbColCPF As ProgressBar
+	Friend WithEvents txtColCPF As TextBox
+	Friend WithEvents Label25 As Label
+	Friend WithEvents pbColNacionalidade As ProgressBar
+	Friend WithEvents txtColSobrenome As TextBox
+	Friend WithEvents txtColNacionalidade As TextBox
+	Friend WithEvents pbColSobrenome As ProgressBar
+	Friend WithEvents pbColNaturalidade As ProgressBar
+	Friend WithEvents txtColNome As TextBox
+	Friend WithEvents txtColNaturalidade As TextBox
+	Friend WithEvents pbColNome As ProgressBar
+	Friend WithEvents btnCadPF As Button
+	Friend WithEvents pbColValorRemuneracao As ProgressBar
+	Friend WithEvents txtColValorRemuneracao As TextBox
+	Friend WithEvents pbColCTPS As ProgressBar
+	Friend WithEvents txtColCTPS As TextBox
+	Friend WithEvents pbColTituloEleitor As ProgressBar
+	Friend WithEvents txtColTituloEleitor As TextBox
+	Friend WithEvents pbColCNH As ProgressBar
+	Friend WithEvents txtColCNH As TextBox
+	Friend WithEvents pbColSetor As ProgressBar
+	Friend WithEvents txtColSetor As TextBox
+	Friend WithEvents pbColCargo As ProgressBar
+	Friend WithEvents txtColCargo As TextBox
+	Friend WithEvents pbColRG As ProgressBar
+	Friend WithEvents txtColRG As TextBox
+	Friend WithEvents Label8 As Label
+	Friend WithEvents btnConcluirCadCol As Button
+	Friend WithEvents btnRemFoto As Button
+	Friend WithEvents btnAddFoto As Button
 	Friend WithEvents cboNaturalidadeUF As ComboBox
 	Friend WithEvents Label6 As Label
+	Friend WithEvents picCaptcha As PictureBox
+	Friend WithEvents txtCap As MaterialSkin.Controls.MaterialSingleLineTextField
+	Friend WithEvents btnConsultaCnpj As Button
+	Friend WithEvents btnAtualizarCap As Button
 End Class

@@ -12,17 +12,22 @@ Public Class FrmClientes
                 TableEnd(ClienteID)
                 TableCliente()
                 Progresso(80)
+
                 With cboTipoContato.Items
                         .Add("RESIDENCIAL")
                         .Add("COMERCIAL")
                         .Add("PARTICULAR")
                 End With
+
                 With cboTipo.Items
                         .Add("COBRANÇA")
                         .Add("PARTICULAR")
                         .Add("ENTREGA")
+                        .Add("Comercial")
                 End With
+
                 Progresso(100)
+
                 'CARREGAR SILGAS DOS ESTADOS
                 With cboUF.Items
                         .Add("SP")
@@ -274,7 +279,7 @@ Public Class FrmClientes
         End Sub
 
         Public Sub TableEnd(ByVal ClienteID As Double)
-                Dim consulta As String = "SELECT Logradouro, EndNumero as N, Bairro, Cidade, UF, Complemento as Compl, Tipo, ID FROM tbEnd WHERE CodEnd=" & ClienteID
+                Dim consulta As String = "SELECT Logradouro, EndNumero as N, Bairro, Cidade, UF, Complemento as Compl, Tipo, ID, CEP FROM tbEnd WHERE CodEnd=" & ClienteID
                 Dim strConn As String = sConnectionString
                 Dim conexao As New OleDbConnection(strConn)
                 Dim comando As New OleDbCommand(consulta, conexao)
@@ -404,6 +409,7 @@ Public Class FrmClientes
                 txtComplemento.Text = DataGridView2.CurrentRow.Cells(5).Value
                 cboTipo.Text = DataGridView2.CurrentRow.Cells(6).Value
                 txtCodEnd.Text = DataGridView2.CurrentRow.Cells(7).Value
+                txtCEP.Text = DataGridView2.CurrentRow.Cells(8).Value
         End Sub
 
         Private Sub FrmClientes_Closed(sender As Object, e As EventArgs) Handles Me.Closed
@@ -419,6 +425,10 @@ Public Class FrmClientes
         End Sub
 
         Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+        End Sub
+
+        Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
 
         End Sub
 End Class

@@ -209,4 +209,50 @@ Module SQL
                 End Select
         End Sub
 
+        Public Sub GetCepCombo(combobox As ComboBox)
+                With combobox.Items
+                        .Clear()
+                        .Add("AC")
+                        .Add("AL")
+                        .Add("AP")
+                        .Add("AM")
+                        .Add("BA")
+                        .Add("CE")
+                        .Add("DF")
+                        .Add("ES")
+                        .Add("GO")
+                        .Add("MA")
+                        .Add("MT")
+                        .Add("MS")
+                        .Add("MG")
+                        .Add("PA")
+                        .Add("PB")
+                        .Add("PR")
+                        .Add("PE")
+                        .Add("PI")
+                        .Add("RJ")
+                        .Add("RN")
+                        .Add("RS")
+                        .Add("RO")
+                        .Add("RR")
+                        .Add("SC")
+                        .Add("SP")
+                        .Add("SE")
+                        .Add("TO")
+                End With
+        End Sub
+
+        Public Function ControleObrigatorio(CamposObrigatorios As List(Of Control))
+                Dim CamposPreenchidos As String
+                For Each Controle In CamposObrigatorios
+                        If Controle.Text = "" Then
+                                CamposPreenchidos = False
+                                Controle.BackColor = Color.Red
+                        Else
+                                Controle.BackColor = Color.FromArgb(34, 36, 49)
+                        End If
+                Next
+                Return CamposPreenchidos
+        End Function
+
 End Module

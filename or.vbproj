@@ -212,6 +212,12 @@
     <Compile Include="Formularios\Ferramentas\frmConsultaCNPJ.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Ferramentas\frmNavSintegra.Designer.vb">
+      <DependentUpon>frmNavSintegra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmNavSintegra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Financeiro\clsLancamento.vb" />
     <Compile Include="Formularios\Financeiro\FrmAddNovoLancamento.Designer.vb">
       <DependentUpon>FrmAddNovoLancamento.vb</DependentUpon>
@@ -689,6 +695,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Formularios\Ferramentas\frmConsultaCNPJ.resx">
       <DependentUpon>frmConsultaCNPJ.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ferramentas\frmNavSintegra.resx">
+      <DependentUpon>frmNavSintegra.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Financeiro\FrmAddNovoLancamento.resx">
       <DependentUpon>FrmAddNovoLancamento.vb</DependentUpon>

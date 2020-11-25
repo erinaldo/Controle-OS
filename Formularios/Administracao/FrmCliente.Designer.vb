@@ -110,6 +110,9 @@ Partial Class FrmClientes
 		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.pbPesquisar = New System.Windows.Forms.ProgressBar()
 		Me.txtPesquisa = New System.Windows.Forms.TextBox()
+		Me.Label21 = New System.Windows.Forms.Label()
+		Me.txtCEP = New System.Windows.Forms.TextBox()
+		Me.ProgressBar12 = New System.Windows.Forms.ProgressBar()
 		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.TbClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.SistemaGEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -242,6 +245,7 @@ Partial Class FrmClientes
 		'
 		Me.cboTipo.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
 		Me.cboTipo.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TbClientestbEndBindingSource, "Tipo", True))
+		Me.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.cboTipo.ForeColor = System.Drawing.Color.White
 		Me.cboTipo.FormattingEnabled = True
@@ -276,6 +280,7 @@ Partial Class FrmClientes
 		'
 		Me.cboUF.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
 		Me.cboUF.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TbClientestbEndBindingSource, "UF", True))
+		Me.cboUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboUF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.cboUF.ForeColor = System.Drawing.Color.White
 		Me.cboUF.FormattingEnabled = True
@@ -438,6 +443,7 @@ Partial Class FrmClientes
 		'
 		Me.cboTipoContato.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
 		Me.cboTipoContato.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TbClientestbContatoBindingSource1, "Tipo", True))
+		Me.cboTipoContato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cboTipoContato.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.cboTipoContato.FormattingEnabled = True
 		Me.cboTipoContato.Location = New System.Drawing.Point(507, 28)
@@ -911,6 +917,7 @@ Partial Class FrmClientes
 		Me.txtLogradouro.Name = "txtLogradouro"
 		Me.txtLogradouro.Size = New System.Drawing.Size(176, 13)
 		Me.txtLogradouro.TabIndex = 0
+		Me.txtLogradouro.Text = " "
 		'
 		'ProgressBar8
 		'
@@ -1058,6 +1065,9 @@ Partial Class FrmClientes
 		'Panel2
 		'
 		Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.Panel2.Controls.Add(Me.Label21)
+		Me.Panel2.Controls.Add(Me.txtCEP)
+		Me.Panel2.Controls.Add(Me.ProgressBar12)
 		Me.Panel2.Controls.Add(Me.txtBairro)
 		Me.Panel2.Controls.Add(Me.Label7)
 		Me.Panel2.Controls.Add(Me.ProgressBar6)
@@ -1131,6 +1141,37 @@ Partial Class FrmClientes
 		Me.txtPesquisa.Name = "txtPesquisa"
 		Me.txtPesquisa.Size = New System.Drawing.Size(308, 13)
 		Me.txtPesquisa.TabIndex = 177
+		'
+		'Label21
+		'
+		Me.Label21.AutoSize = True
+		Me.Label21.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label21.ForeColor = System.Drawing.Color.White
+		Me.Label21.Location = New System.Drawing.Point(764, 1)
+		Me.Label21.Name = "Label21"
+		Me.Label21.Size = New System.Drawing.Size(26, 15)
+		Me.Label21.TabIndex = 167
+		Me.Label21.Text = "CEP"
+		'
+		'txtCEP
+		'
+		Me.txtCEP.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
+		Me.txtCEP.BorderStyle = System.Windows.Forms.BorderStyle.None
+		Me.txtCEP.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.txtCEP.ForeColor = System.Drawing.Color.White
+		Me.txtCEP.Location = New System.Drawing.Point(767, 20)
+		Me.txtCEP.Name = "txtCEP"
+		Me.txtCEP.Size = New System.Drawing.Size(73, 13)
+		Me.txtCEP.TabIndex = 166
+		'
+		'ProgressBar12
+		'
+		Me.ProgressBar12.ForeColor = System.Drawing.Color.Red
+		Me.ProgressBar12.Location = New System.Drawing.Point(767, 35)
+		Me.ProgressBar12.Name = "ProgressBar12"
+		Me.ProgressBar12.Size = New System.Drawing.Size(73, 1)
+		Me.ProgressBar12.Style = System.Windows.Forms.ProgressBarStyle.Continuous
+		Me.ProgressBar12.TabIndex = 168
 		'
 		'FrmClientes
 		'
@@ -1270,4 +1311,7 @@ Partial Class FrmClientes
 	Friend WithEvents btnEditRecebimento As Button
 	Friend WithEvents pbPesquisar As ProgressBar
 	Friend WithEvents txtPesquisa As TextBox
+	Friend WithEvents Label21 As Label
+	Friend WithEvents txtCEP As TextBox
+	Friend WithEvents ProgressBar12 As ProgressBar
 End Class
