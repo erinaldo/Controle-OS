@@ -173,7 +173,18 @@ Public Class FrmRelatorioFinanceiro
                         My.Settings.LocIcone = ofdLocIcone.FileName
                 End If
 
-                Dim png As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(New Uri(My.Settings.LocIcone))
+                Dim png As iTextSharp.text.Image
+
+                Try
+                        png = Image.GetInstance(New Uri(My.Settings.LocIcone))
+                Catch
+                        Dim f As FileDialog()
+                        '   f.Filter = ".ico"
+                        ofdLocIcone.ShowDialog()
+                        My.Settings.LocIcone = ofdLocIcone.FileName
+                        png = Image.GetInstance(New Uri(My.Settings.LocIcone))
+                End Try
+
                 png.ScaleToFit(80.0F, 80.0F)
                 png.Alignment = Image.TEXTWRAP & Image.ALIGN_LEFT
                 png.IndentationLeft = 7.0F
@@ -442,8 +453,11 @@ sair:
 
                 Dim ValorTotal As Double
 
-                On Error Resume Next
-                ValorTotal = cdr("Total")
+                Try
+                        ValorTotal = cdr("Total")
+                Catch
+                        ValorTotal = 0
+                End Try
 
                 Dim FraseValor = "Total de Gastos  " & Dinheiro(ValorTotal)
 

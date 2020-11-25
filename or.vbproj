@@ -153,7 +153,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DllConsultaCNPJ">
-      <HintPath>bin\x86\Debug\DLL\DllConsultaCNPJ.dll</HintPath>
+      <HintPath>DLLs\DllConsultaCNPJ.dll</HintPath>
     </Reference>
     <Reference Include="Interop.AcroPDFLib">
       <HintPath>..\..\..\Desktop\Interop.AcroPDFLib.dll</HintPath>
