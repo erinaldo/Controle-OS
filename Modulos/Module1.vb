@@ -255,4 +255,8 @@ Module SQL
                 Return CamposPreenchidos
         End Function
 
+        Public Sub DesingText(controle As Control)
+                controle.BackColor = CorFundo
+                controle.ForeColor = CorTexto
+        End Sub
 End Module

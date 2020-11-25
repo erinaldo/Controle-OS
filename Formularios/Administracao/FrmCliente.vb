@@ -1,7 +1,10 @@
 ﻿Imports System.Data.OleDb
 Imports System.IO
+Imports MaterialSkin
 
 Public Class FrmClientes
+
+        Inherits Controls.MaterialForm
 
         Public ClienteID As Double
 
@@ -58,6 +61,10 @@ Public Class FrmClientes
                         .Add("SE")
                         .Add("TO")
                 End With
+
+                DesingText(Label17)
+                DesingText(Label19)
+                DesingText(Label20)
         End Sub
 
         Public Sub CarregarTables()

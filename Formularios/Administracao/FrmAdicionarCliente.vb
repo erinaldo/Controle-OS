@@ -3,8 +3,11 @@ Imports System.Data.OleDb
 Imports System
 Imports System.ComponentModel
 Imports DllConsultaCNPJ.ConsultaCNPJReceita
+Imports MaterialSkin
 
 Public Class FrmAdicionarCliente
+
+        Inherits Controls.MaterialForm
 
         Public listaFisica As New List(Of TextBox)
         Public listaJuridica As New List(Of TextBox)
@@ -60,6 +63,11 @@ Public Class FrmAdicionarCliente
                 End While
 
                 GetCaptcha(picCaptcha)
+
+                With chkMultiCadastro
+                        .BackColor = CorFundo
+                        .ForeColor = CorTexto
+                End With
 
         End Sub
 
