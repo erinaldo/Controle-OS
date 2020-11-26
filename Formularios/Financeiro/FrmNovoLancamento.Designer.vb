@@ -23,8 +23,8 @@ Partial Class FrmNovoLancamento
         <System.Diagnostics.DebuggerStepThrough()>
         Private Sub InitializeComponent()
 	      Me.components = New System.ComponentModel.Container()
-		Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmNovoLancamento))
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Label5 = New System.Windows.Forms.Label()
@@ -57,13 +57,9 @@ Partial Class FrmNovoLancamento
 		Me.Valor = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.PlanoContas = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.DataLancamento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.TbFinanceiroBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-		Me.DataSetX = New ControleOS.DataSetX()
 		Me.btnAplicarFiltro = New System.Windows.Forms.Button()
 		Me.txtFiltroIdentificacao = New System.Windows.Forms.TextBox()
 		Me.mcCalendar = New System.Windows.Forms.MonthCalendar()
-		Me.TableAdapterManager = New ControleOS.DataSetXTableAdapters.TableAdapterManager()
-		Me.TbFinanceiroTableAdapter = New ControleOS.DataSetXTableAdapters.tbFinanceiroTableAdapter()
 		Me.cboSituacaoPag = New System.Windows.Forms.ComboBox()
 		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -71,25 +67,9 @@ Partial Class FrmNovoLancamento
 		Me.txtIdentificacao = New System.Windows.Forms.Label()
 		Me.txtCliente = New System.Windows.Forms.TextBox()
 		Me.cboFormaPagamento = New System.Windows.Forms.ComboBox()
-		Me.TbFormaPagamentoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-		Me.DataSetyBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-		Me.DataSety = New ControleOS.DataSety()
 		Me.cboTipoLancamento = New System.Windows.Forms.ComboBox()
 		Me.cboPlanoContas = New System.Windows.Forms.ComboBox()
-		Me.TbPlanoContaBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
 		Me.btnLimparFiltro = New System.Windows.Forms.Button()
-		Me.OpcoesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-		Me.SistemaGEDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-		Me.SistemaGEDataSet = New ControleOS.SistemaGEDataSet()
-		Me.TbPlanoContaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-		Me.TbClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-		Me.TbClientesTableAdapter = New ControleOS.SistemaGEDataSetTableAdapters.tbClientesTableAdapter()
-		Me.maxAdaptador = New ControleOS.DataSetXTableAdapters.OpcoesTableAdapter()
-		Me.TbOSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-		Me.TbOSTableAdapter = New ControleOS.DataSetyTableAdapters.tbOSTableAdapter()
-		Me.OpcoesTableAdapter = New ControleOS.SistemaGEDataSetTableAdapters.OpcoesTableAdapter()
-		Me.TbPlanoContaTableAdapter = New ControleOS.DataSetyTableAdapters.tbPlanoContaTableAdapter()
-		Me.TbFormaPagamentoTableAdapter = New ControleOS.DataSetyTableAdapters.tbFormaPagamentoTableAdapter()
 		Me.Panel13 = New System.Windows.Forms.Panel()
 		Me.Panel12 = New System.Windows.Forms.Panel()
 		Me.Panel11 = New System.Windows.Forms.Panel()
@@ -128,20 +108,8 @@ Partial Class FrmNovoLancamento
 		Me.chkMovPoup = New System.Windows.Forms.CheckBox()
 		Me.grpSoma = New System.Windows.Forms.GroupBox()
 		CType(Me.dgvFinanceiro, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.TbFinanceiroBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.DataSetX, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.TbFormaPagamentoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.DataSetyBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.DataSety, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.TbPlanoContaBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.OpcoesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.SistemaGEDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.SistemaGEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.TbPlanoContaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.TbClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.TbOSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel13.SuspendLayout()
 		Me.Panel12.SuspendLayout()
 		Me.Panel11.SuspendLayout()
@@ -343,9 +311,9 @@ Partial Class FrmNovoLancamento
 		'
 		Me.dgvFinanceiro.AllowUserToAddRows = False
 		Me.dgvFinanceiro.AllowUserToDeleteRows = False
-		DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-		DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-		Me.dgvFinanceiro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+		DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+		DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+		Me.dgvFinanceiro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
 		Me.dgvFinanceiro.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
 			Or System.Windows.Forms.AnchorStyles.Left) _
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -400,9 +368,9 @@ Partial Class FrmNovoLancamento
 		'Valor
 		'
 		Me.Valor.DataPropertyName = "Valor"
-		DataGridViewCellStyle4.Format = "C2"
-		DataGridViewCellStyle4.NullValue = Nothing
-		Me.Valor.DefaultCellStyle = DataGridViewCellStyle4
+		DataGridViewCellStyle2.Format = "C2"
+		DataGridViewCellStyle2.NullValue = Nothing
+		Me.Valor.DefaultCellStyle = DataGridViewCellStyle2
 		Me.Valor.HeaderText = "Valor"
 		Me.Valor.Name = "Valor"
 		Me.Valor.ReadOnly = True
@@ -421,17 +389,6 @@ Partial Class FrmNovoLancamento
 		Me.DataLancamento.Name = "DataLancamento"
 		Me.DataLancamento.ReadOnly = True
 		'
-		'TbFinanceiroBindingSource
-		'
-		Me.TbFinanceiroBindingSource.DataMember = "tbFinanceiro"
-		Me.TbFinanceiroBindingSource.DataSource = Me.DataSetX
-		Me.TbFinanceiroBindingSource.Filter = ""
-		'
-		'DataSetX
-		'
-		Me.DataSetX.DataSetName = "DataSetX"
-		Me.DataSetX.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-		'
 		'btnAplicarFiltro
 		'
 		Me.btnAplicarFiltro.BackColor = System.Drawing.Color.Transparent
@@ -449,7 +406,6 @@ Partial Class FrmNovoLancamento
 		'
 		'txtFiltroIdentificacao
 		'
-		Me.txtFiltroIdentificacao.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TbFinanceiroBindingSource, "Identificacao", True))
 		Me.txtFiltroIdentificacao.Location = New System.Drawing.Point(68, 19)
 		Me.txtFiltroIdentificacao.Name = "txtFiltroIdentificacao"
 		Me.txtFiltroIdentificacao.Size = New System.Drawing.Size(152, 20)
@@ -461,28 +417,6 @@ Partial Class FrmNovoLancamento
 		Me.mcCalendar.Name = "mcCalendar"
 		Me.mcCalendar.TabIndex = 66
 		Me.mcCalendar.Visible = False
-		'
-		'TableAdapterManager
-		'
-		Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-		Me.TableAdapterManager.FormaPagamentoTableAdapter = Nothing
-		Me.TableAdapterManager.OpcoesTableAdapter = Nothing
-		Me.TableAdapterManager.tbAdicionalPagoTableAdapter = Nothing
-		Me.TableAdapterManager.tbCalendarioTableAdapter = Nothing
-		Me.TableAdapterManager.tbEntregaTableAdapter = Nothing
-		Me.TableAdapterManager.tbFinanceiroTableAdapter = Me.TbFinanceiroTableAdapter
-		Me.TableAdapterManager.tbHistoricoMedicaoTableAdapter = Nothing
-		Me.TableAdapterManager.tbInicialPagoTableAdapter = Nothing
-		Me.TableAdapterManager.tbLancamentosTableAdapter = Nothing
-		Me.TableAdapterManager.tbObservacaoTableAdapter = Nothing
-		Me.TableAdapterManager.tbOSTableAdapter = Nothing
-		Me.TableAdapterManager.tbProdutoVendaTableAdapter = Nothing
-		Me.TableAdapterManager.tbRelatorioVisitaTableAdapter = Nothing
-		Me.TableAdapterManager.UpdateOrder = ControleOS.DataSetXTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-		'
-		'TbFinanceiroTableAdapter
-		'
-		Me.TbFinanceiroTableAdapter.ClearBeforeFill = True
 		'
 		'cboSituacaoPag
 		'
@@ -547,7 +481,6 @@ Partial Class FrmNovoLancamento
 		Me.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.txtCliente.CausesValidation = False
 		Me.txtCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-		Me.txtCliente.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TbFinanceiroBindingSource, "Identificacao", True))
 		Me.txtCliente.Location = New System.Drawing.Point(61, 25)
 		Me.txtCliente.Name = "txtCliente"
 		Me.txtCliente.Size = New System.Drawing.Size(171, 13)
@@ -556,29 +489,12 @@ Partial Class FrmNovoLancamento
 		'cboFormaPagamento
 		'
 		Me.cboFormaPagamento.BackColor = System.Drawing.Color.White
-		Me.cboFormaPagamento.DataSource = Me.TbFormaPagamentoBindingSource
-		Me.cboFormaPagamento.DisplayMember = "FormaPagamento"
 		Me.cboFormaPagamento.FormattingEnabled = True
 		Me.cboFormaPagamento.Location = New System.Drawing.Point(68, 15)
 		Me.cboFormaPagamento.Name = "cboFormaPagamento"
 		Me.cboFormaPagamento.Size = New System.Drawing.Size(164, 21)
 		Me.cboFormaPagamento.TabIndex = 82
 		Me.cboFormaPagamento.TabStop = False
-		'
-		'TbFormaPagamentoBindingSource
-		'
-		Me.TbFormaPagamentoBindingSource.DataMember = "tbFormaPagamento"
-		Me.TbFormaPagamentoBindingSource.DataSource = Me.DataSetyBindingSource
-		'
-		'DataSetyBindingSource
-		'
-		Me.DataSetyBindingSource.DataSource = Me.DataSety
-		Me.DataSetyBindingSource.Position = 0
-		'
-		'DataSety
-		'
-		Me.DataSety.DataSetName = "DataSety"
-		Me.DataSety.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
 		'
 		'cboTipoLancamento
 		'
@@ -594,19 +510,12 @@ Partial Class FrmNovoLancamento
 		'cboPlanoContas
 		'
 		Me.cboPlanoContas.BackColor = System.Drawing.Color.White
-		Me.cboPlanoContas.DataSource = Me.TbPlanoContaBindingSource1
-		Me.cboPlanoContas.DisplayMember = "Nome"
 		Me.cboPlanoContas.FormattingEnabled = True
 		Me.cboPlanoContas.Location = New System.Drawing.Point(61, 15)
 		Me.cboPlanoContas.Name = "cboPlanoContas"
 		Me.cboPlanoContas.Size = New System.Drawing.Size(171, 21)
 		Me.cboPlanoContas.TabIndex = 78
 		Me.cboPlanoContas.TabStop = False
-		'
-		'TbPlanoContaBindingSource1
-		'
-		Me.TbPlanoContaBindingSource1.DataMember = "tbPlanoConta"
-		Me.TbPlanoContaBindingSource1.DataSource = Me.DataSetyBindingSource
 		'
 		'btnLimparFiltro
 		'
@@ -622,55 +531,6 @@ Partial Class FrmNovoLancamento
 		Me.btnLimparFiltro.Text = "Limpar Filtros"
 		Me.btnLimparFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 		Me.btnLimparFiltro.UseVisualStyleBackColor = False
-		'
-		'OpcoesBindingSource
-		'
-		Me.OpcoesBindingSource.DataMember = "Opcoes"
-		Me.OpcoesBindingSource.DataSource = Me.SistemaGEDataSetBindingSource
-		'
-		'SistemaGEDataSetBindingSource
-		'
-		Me.SistemaGEDataSetBindingSource.DataSource = Me.SistemaGEDataSet
-		Me.SistemaGEDataSetBindingSource.Position = 0
-		'
-		'SistemaGEDataSet
-		'
-		Me.SistemaGEDataSet.DataSetName = "SistemaGEDataSet"
-		Me.SistemaGEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-		'
-		'TbPlanoContaBindingSource
-		'
-		Me.TbPlanoContaBindingSource.DataMember = "tbPlanoConta"
-		Me.TbPlanoContaBindingSource.DataSource = Me.DataSetyBindingSource
-		'
-		'TbClientesTableAdapter
-		'
-		Me.TbClientesTableAdapter.ClearBeforeFill = True
-		'
-		'maxAdaptador
-		'
-		Me.maxAdaptador.ClearBeforeFill = True
-		'
-		'TbOSBindingSource
-		'
-		Me.TbOSBindingSource.DataMember = "tbOS"
-		Me.TbOSBindingSource.DataSource = Me.DataSety
-		'
-		'TbOSTableAdapter
-		'
-		Me.TbOSTableAdapter.ClearBeforeFill = True
-		'
-		'OpcoesTableAdapter
-		'
-		Me.OpcoesTableAdapter.ClearBeforeFill = True
-		'
-		'TbPlanoContaTableAdapter
-		'
-		Me.TbPlanoContaTableAdapter.ClearBeforeFill = True
-		'
-		'TbFormaPagamentoTableAdapter
-		'
-		Me.TbFormaPagamentoTableAdapter.ClearBeforeFill = True
 		'
 		'Panel13
 		'
@@ -1124,21 +984,9 @@ Partial Class FrmNovoLancamento
 		Me.Name = "FrmNovoLancamento"
 		Me.Text = " "
 		CType(Me.dgvFinanceiro, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.TbFinanceiroBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.DataSetX, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.TbFormaPagamentoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.DataSetyBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.DataSety, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.TbPlanoContaBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.OpcoesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.SistemaGEDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.SistemaGEDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.TbPlanoContaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.TbClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.TbOSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel13.ResumeLayout(False)
 		Me.Panel13.PerformLayout()
 		Me.Panel12.ResumeLayout(False)
@@ -1182,36 +1030,16 @@ Partial Class FrmNovoLancamento
         Friend WithEvents ValorPagoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
         Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
         Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
-        Friend WithEvents TableAdapterManager As DataSetXTableAdapters.TableAdapterManager
-        Friend WithEvents TbFinanceiroTableAdapter As DataSetXTableAdapters.tbFinanceiroTableAdapter
-        Friend WithEvents dgvFinanceiro As DataGridView
-        Friend WithEvents DataSetX As DataSetX
-        Friend WithEvents TbFinanceiroBindingSource As BindingSource
-        Friend WithEvents btnAplicarFiltro As Button
-        Friend WithEvents txtFiltroIdentificacao As TextBox
-        Friend WithEvents mcCalendar As MonthCalendar
-        Friend WithEvents cboSituacaoPag As ComboBox
-        Friend WithEvents cboPlanoContas As ComboBox
-        Friend WithEvents cboTipoLancamento As ComboBox
-        Friend WithEvents TbClientesBindingSource As BindingSource
-        Friend WithEvents TbClientesTableAdapter As SistemaGEDataSetTableAdapters.tbClientesTableAdapter
-        Friend WithEvents cboFormaPagamento As ComboBox
-        Friend WithEvents maxAdaptador As DataSetXTableAdapters.OpcoesTableAdapter
-        Friend WithEvents DataSety As DataSety
-        Friend WithEvents TbOSBindingSource As BindingSource
-        Friend WithEvents TbOSTableAdapter As DataSetyTableAdapters.tbOSTableAdapter
-        Friend WithEvents SistemaGEDataSetBindingSource As BindingSource
-        Friend WithEvents SistemaGEDataSet As SistemaGEDataSet
-        Friend WithEvents OpcoesBindingSource As BindingSource
-        Friend WithEvents OpcoesTableAdapter As SistemaGEDataSetTableAdapters.OpcoesTableAdapter
-        Friend WithEvents DataSetyBindingSource As BindingSource
-        Friend WithEvents TbPlanoContaBindingSource As BindingSource
-        Friend WithEvents TbPlanoContaTableAdapter As DataSetyTableAdapters.tbPlanoContaTableAdapter
-        Friend WithEvents TbFormaPagamentoBindingSource As BindingSource
-        Friend WithEvents TbFormaPagamentoTableAdapter As DataSetyTableAdapters.tbFormaPagamentoTableAdapter
-        Friend WithEvents TbPlanoContaBindingSource1 As BindingSource
-        Friend WithEvents Cliente As DataGridViewTextBoxColumn
-        Friend WithEvents NumeroDocumento As DataGridViewTextBoxColumn
+	Friend WithEvents dgvFinanceiro As DataGridView
+	Friend WithEvents btnAplicarFiltro As Button
+	Friend WithEvents txtFiltroIdentificacao As TextBox
+	Friend WithEvents mcCalendar As MonthCalendar
+	Friend WithEvents cboSituacaoPag As ComboBox
+	Friend WithEvents cboPlanoContas As ComboBox
+	Friend WithEvents cboTipoLancamento As ComboBox
+	Friend WithEvents cboFormaPagamento As ComboBox
+	Friend WithEvents Cliente As DataGridViewTextBoxColumn
+	Friend WithEvents NumeroDocumento As DataGridViewTextBoxColumn
         Friend WithEvents Tipo As DataGridViewTextBoxColumn
         Friend WithEvents Situacao As DataGridViewTextBoxColumn
         Friend WithEvents Vencimento As DataGridViewTextBoxColumn

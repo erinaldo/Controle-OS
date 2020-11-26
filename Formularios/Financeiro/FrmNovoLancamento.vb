@@ -13,23 +13,23 @@ Public Class FrmNovoLancamento
 
         'funções denidas como task para serem atualizadas em paralelo
         Public Async Function tablePagamentoAtualizar() As Task
-                TbFormaPagamentoTableAdapter.Fill(Me.DataSety.tbFormaPagamento)
+                ' TbFormaPagamentoTableAdapter.Fill(Me.DataSety.tbFormaPagamento)
         End Function
 
         Public Async Function tablePlanoContaAtualizar() As Task
-                TbPlanoContaTableAdapter.Fill(Me.DataSety.tbPlanoConta)
+                '  TbPlanoContaTableAdapter.Fill(Me.DataSety.tbPlanoConta)
         End Function
 
         Public Async Function actPlanoConta() As Task
                 'TbPlanoContaTableAdapter.Fill(Me.DataSety.tbPlanoConta)
-                TbFormaPagamentoTableAdapter.Fill(Me.DataSety.tbFormaPagamento)
+                ' TbFormaPagamentoTableAdapter.Fill(Me.DataSety.tbFormaPagamento)
         End Function
 
 
         Private Async Sub FrmNovoLancamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-                Dim med = System.Diagnostics.Stopwatch.StartNew
-                Dim adaptadores As List(Of Task) = New List(Of Task)
+                ' Dim med = System.Diagnostics.Stopwatch.StartNew
+                ' Dim adaptadores As List(Of Task) = New List(Of Task)
 
                 '  With adaptadores
                 'tPlanoConta)
@@ -38,7 +38,7 @@ Public Class FrmNovoLancamento
 
 
 
-                Task.Run(Function() actPlanoConta())
+
 
 
 
@@ -89,9 +89,9 @@ Public Class FrmNovoLancamento
                         txtDataInicial.Text = CDate("01/" & MesAtual & "/" & Ano)
                         txtDataFinal.Text = CDate(DiaAtual & "/" & MesAtual & "/" & Ano).ToShortDateString
                 End If
-                Me.TbClientesTableAdapter.Fill(Me.SistemaGEDataSet.tbClientes)
+                ' Me.TbClientesTableAdapter.Fill(Me.SistemaGEDataSet.tbClientes)
                 '\\FILTRO USANDO O MES ATUAL COMO UNICO FILTRO
-                Me.TbFinanceiroTableAdapter.FillByDataLoad(Me.DataSetX.tbFinanceiro, New System.Nullable(Of Date)(CType(txtDataInicial.Text, Date)), New System.Nullable(Of Date)(CType(txtDataFinal.Text, Date)))
+                ' Me.TbFinanceiroTableAdapter.FillByDataLoad(Me.DataSetX.tbFinanceiro, New System.Nullable(Of Date)(CType(txtDataInicial.Text, Date)), New System.Nullable(Of Date)(CType(txtDataFinal.Text, Date)))
                 LimparFiltros()
                 Filtro()
                 txtFiltroIdentificacao.Text = 0
@@ -110,7 +110,7 @@ Public Class FrmNovoLancamento
                         .BackColor = CorFundo
                         .ForeColor = CorTexto
                 End With
-                med.Stop()
+                ' med.Stop()
 
                 ' MsgBox(med.ElapsedMilliseconds.ToString())
 
@@ -118,10 +118,10 @@ Public Class FrmNovoLancamento
 
         Private Sub FrmNovoLancamento_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
                 Me.Dispose()
-                TbFormaPagamentoTableAdapter.Dispose()
-                TbFinanceiroTableAdapter.Dispose()
-                TbClientesTableAdapter.Dispose()
-                TbPlanoContaTableAdapter.Dispose()
+                '  TbFormaPagamentoTableAdapter.Dispose()
+                ' TbFinanceiroTableAdapter.Dispose()
+                '  TbClientesTableAdapter.Dispose()
+                ' TbPlanoContaTableAdapter.Dispose()
         End Sub
 
         Public Sub AtualizarRegistro()
@@ -194,12 +194,12 @@ line5:
 line6:
         End Sub
 
-        Private Sub btnAplicarFiltro_Click(sender As Object, e As EventArgs) Handles btnAplicarFiltro.Click
+        Private Async Sub btnAplicarFiltro_Click(sender As Object, e As EventArgs) Handles btnAplicarFiltro.Click
                 Filtro()
                 SomaPago()
         End Sub
 
-        Private Sub Filtro()
+        Public Sub Filtro()
                 Progresso(10)
                 ConsultaFiltro = "SELECT Identificacao as Identificação, Cliente, Tipo, NumeroDocumento, Situacao, DataLancamento, Vencimento, Valor, PlanoContas, FormaPagamento as Pagamento FROM tbFinanceiro"
                 Dim NomeCliente As String = "" & txtCliente.Text
@@ -326,6 +326,10 @@ line6:
                         Dim dsbiblio As New DataSet()
                         adaptador.Fill(dsbiblio, "Cliente")
                         dgvFinanceiro.DataSource = dsbiblio.Tables("Cliente")
+                        adaptador = Nothing
+                        dsbiblio = Nothing
+                        ' dsbiblio.Clear()
+
                 End If
                 Progresso(100)
         End Sub
