@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.Data.OleDb
 Imports MaterialSkin
+Imports System.Threading
 
 Public Class FrmLogin
 
@@ -20,7 +21,6 @@ Public Class FrmLogin
         '\\LINK DE CADASTRO DE NOVO USUARIO
         Private Sub linkCadastroUsuario_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
                 tmPressionarEnter.Enabled = False
-                'lblPressEnter.Visible = False
                 GroupBox1.Visible = True
                 tmExpandirCadastro.Enabled = True
                 ExpandirCadastro()
@@ -45,8 +45,12 @@ Public Class FrmLogin
         End Sub
 
         Public Sub btnConectar_Click(sender As Object, e As EventArgs) Handles btnConectar.Click
+                ConectarDB()
+        End Sub
+
+        Public Async Sub ConectarDB()
                 SenhaBD = txtSenhaBD.Text
-                ConexaoDB()
+                Await ConexaoDB()
         End Sub
 
         Public Sub btnBuscarBD_Click(sender As Object, e As EventArgs) Handles btnBuscarBD.Click
@@ -80,9 +84,7 @@ Public Class FrmLogin
 
         '\\EXIBIR CONTROLES DE SENHA E USUARIO
         Public Sub VisibilidadeControles(senha As Boolean, usuarioControl As Boolean)
-                ' lblSenha.Visible = senha
                 txtSenha.Visible = senha
-                ' lblUsuario.Visible = usuarioControl
                 txtUsuario.Visible = usuarioControl
         End Sub
 
@@ -112,23 +114,23 @@ Public Class FrmLogin
                 lblHora.Text = TimeOfDay.ToShortTimeString & "  " & Today.ToShortDateString
         End Sub
 
+
+
+
+
         'AO ABRIR FORMULARIO
         Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
                 Dim culturaPtBr = System.Globalization.CultureInfo.GetCultureInfo("pt-BR")
                 System.Globalization.CultureInfo.DefaultThreadCurrentCulture = culturaPtBr
                 System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = culturaPtBr
 
+                tmTempo.Enabled = True
+
                 txtSenhaBD.Text = ConfigSenhaDB("Select", "")
                 txtCaminhoBD.Text = ConfigCaminhoDB("Select", "")
                 SenhaBD = ConfigSenhaDB("Select", "")
                 CaminhoBD = ConfigCaminhoDB("Select", "")
 
-                'TIMER DE NOTIFICAÇÃO
-                tmTempo.Enabled = True
-                'tmPressionarEnter.Enabled = True
-
-                'INICIAR FORMULARIO NO CENTRO DA TELA
-                Me.CenterToScreen()
                 ServidorConect = False
 
                 'FONTE USADA NA LISTVIEW(LOG)
@@ -151,21 +153,18 @@ Public Class FrmLogin
                                 MaterialSkinManeger.AddFormToManage(Me)
                                 MaterialSkinManeger.Theme = MaterialSkinManager.Themes.LIGHT
                                 MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE)
-                                'txtUsuario.BackColor = Color.White
                         Case = "Dark"
                                 Dim MaterialSkinManeger As MaterialSkinManager = MaterialSkinManager.Instance
                                 MaterialSkinManeger.AddFormToManage(Me)
                                 MaterialSkinManeger.Theme = MaterialSkinManager.Themes.DARK
                                 MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE)
-                                ' txtUsuario.BackColor = Color.Black
                         Case Else
                 End Select
                 cboTema.Text = My.Settings.Tema
-
         End Sub
 
-        Private Sub FrmLogin_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-                sConnectionString = conInicio
+        Private Sub FrmLogin_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing 'verificar essa função em caso de erro
+                '  sConnectionString = conInicio
         End Sub
 
         '\\********************************************************* FUNÇÕES E METODOS ********************************************************************
@@ -176,10 +175,8 @@ Public Class FrmLogin
                         Select Case Operacao
                                 Case "Insert"
                                         My.Settings.CaminhoDB = valor
-
                                 Case "Select"
                                         Return My.Settings.CaminhoDB
-
                                 Case Else
 
                         End Select
@@ -188,17 +185,13 @@ Public Class FrmLogin
 
         'INSERIR OU OBTER SENHA DO BD
         Public Function ConfigSenhaDB(Operacao As String, valor As String)
-
                 If Operacao <> "" Then
                         Select Case Operacao
                                 Case "Insert"
                                         My.Settings.SenhaDB = valor
-
                                 Case "Select"
                                         Return My.Settings.SenhaDB
-
                                 Case Else
-
                         End Select
                 End If
         End Function
@@ -270,14 +263,17 @@ Public Class FrmLogin
                         txtCaminhoBD.Text = ofdProcBD.FileName
 
                         CaminhoBD = ofdProcBD.FileName
+
                 Else
                         MsgBox("Caminho Invalido")
                 End If
         End Sub
 
         'CONEXÃO COM O BANCO DE DADOS
-        Public Sub ConexaoDB()
+        Public Async Function ConexaoDB() As Task
+
                 lstStatusConexao.Items.Add("VERIFICANDO INFORMAÇÕES")
+
                 Dim cdr As OleDbDataReader
                 If txtSenhaBD.Text <> "" Then
                         lstStatusConexao.Items.Add("VERIFICANDO SENHA")
@@ -287,9 +283,7 @@ Public Class FrmLogin
                         lstStatusConexao.Items.Add("ABRINDO CONEXÃO....")
                         Dim ObjCon As New OleDbConnection(conInicio)
                         Dim cont As Integer = 0
-                        Do Until cont >= 500
-                                cont += 1
-                        Loop
+                        ' Thread.Sleep(100)
 
                         If ObjCon.State = ConnectionState.Closed Then
                                 Try
@@ -307,10 +301,6 @@ Public Class FrmLogin
                         sConnectionString = conInicio
                         ConfigSenhaDB("Insert", txtSenhaBD.Text)
                         ConfigCaminhoDB("Insert", txtCaminhoBD.Text)
-                        'Dim objcmd As New OleDbCommand("SELECT * FROM tbChave WHERE Chave>=0", ObjCon)
-                        ' cdr = objcmd.ExecuteReader()
-                        ' cdr.Read()
-
 
 
                         If ObjCon.State = ConnectionState.Open Then
@@ -338,7 +328,6 @@ Public Class FrmLogin
                         End If
 prox:
                 Else
-
                         lblStateConn.Text = "Servidor Desconectado"
                         lblStateConn.ForeColor = Color.Red
                         tmCarregamento.Enabled = False
@@ -346,7 +335,7 @@ prox:
                         lstStatusConexao.Items.Add("VERIFICANDO SENHA....")
                         lstStatusConexao.Items.Add("SENHA INVALIDA!!!")
                 End If
-        End Sub
+        End Function
 
         'Castrar um novo usuario
         Private Sub CadastrarNovaPessoa()
@@ -370,7 +359,8 @@ prox:
                 End If
         End Sub
 
-        'VERIFICA SE A CHAVE DE ACESSO ESTACORRETA
+
+        'VERIFICA SE A CHAVE DE ACESSO ESTACORRETA (revisar essa função)
         Private Sub VerificarChavePadrao()
                 If txtChavePadrao.Text <> "" Then
                         Connect.Conectardb("SELECT * FROM tbChave")
@@ -392,10 +382,6 @@ prox:
                 End If
         End Sub
 
-        Private Sub txtSenha_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
-
-        End Sub
-
         Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
                 If cboTema.Text = "Light" Then
                         CorFundo = Color.White
@@ -407,17 +393,23 @@ prox:
                 BlocoLogin()
         End Sub
 
-        Public Sub BlocoLogin()
-                pbLogin.Value = 20
-                If txtCaminhoBD.Text <> "" Or txtSenhaBD.Text <> "" Then
-                        btnConectar.PerformClick()
-                End If
-                pbLogin.Value = 30
+        '========================================================================================================================
+        ''' <summary>
+        '''       METODO DE LOGIN COM DESEMPENHO
+        ''' </summary>
+        Public Async Sub BlocoLogin()
+                Await VerConnDB()
+
+                'verifica se o banco de dados está conectado
                 If ServidorConect = True Then
+
+                        'verifica se o campo com o nome do usuario esta preenchido
                         If txtUsuario.Text <> "" Then
+
+                                'verifica o campo da senha do usuario
                                 If txtSenha.Text <> "" Then
-                                        pbLogin.Value = 60
-                                        RealizarLogin()
+
+                                        Await RealizarLoginAsync()
                                 Else
                                         txtSenha.BackColor = Color.Red
                                         SQL.Notificao("", "Campo Obrigatório")
@@ -430,27 +422,24 @@ prox:
                         txtSenha.Text = ""
                         MsgBox("Servidor Desconectado", vbOK, "AIO")
                 End If
-                pbLogin.Value = 100
-        End Sub
-
-        Private Sub txtUsuario_PaddingChanged(sender As Object, e As EventArgs)
 
         End Sub
 
-        Private Sub txtUsuario_Click(sender As Object, e As EventArgs)
-                'txtUsuario.BackColor = Color.White
-                'txtSenha.BackColor = Color.White
-                txtUsuario.Text = ""
-        End Sub
+        ''' <summary>
+        '''   verifica se os campos de caminho do banco de dados e de senha estão preenchidos
+        ''' </summary>
+        ''' <returns></returns>
+        Public Async Function VerConnDB() As Task
+                If txtCaminhoBD.Text <> "" Or txtSenhaBD.Text <> "" Then
+                        ConectarDB()
+                End If
+        End Function
 
-        Private Sub Button1_Click(sender As Object, e As EventArgs)
-                Dim tipo As String = "Pessoa Fisica"
-                InstrucaoDireta("UPDATE tbClientes SET Tipo='Pessoa Juridica' WHERE RazaoSocial<>'---'")
-        End Sub
-
-        '\\REALIZAR LOGIN VERIFICANDO A SENHA NO BANCO DE DADOS
-        Public Sub RealizarLogin()
-
+        ''' <summary>
+        '''     REALIZAR LOGIN VERIFICANDO A SENHA NO BANCO DE DADOS
+        ''' </summary>
+        ''' <returns></returns>
+        Public Async Function RealizarLoginAsync() As Task
                 'PARAMETRO COM O NOME DO USUARIO
                 With Para_NomeUsuario
                         .ParameterName = "NomeUsuario"
@@ -488,7 +477,7 @@ prox:
                         If cdr.Item("Nome") = Para_NomeUsuario.Value And cdr.Item("Senha") = Para_Senha.Value Then
                                 Usuario.Nome = cdr.Item("Nome")
                                 Usuario.Identificacao = cdr.Item("Código")
-                                On Error Resume Next
+                                '   On Error Resume Next
                                 Usuario.Cargo = cdr.Item("Cargo") '"Generico" '
                                 Usuario.NivelAcesso = cdr.Item("Nivel")
                                 FrmMenu.lblNomeUsuario.Text = Usuario.Nome
@@ -511,14 +500,17 @@ prox:
                 objInicio.Close()
                 consulta = ""
                 cdr.Close()
+        End Function
+
+        '========================================================================================================================
+
+        Private Sub txtUsuario_Click(sender As Object, e As EventArgs)
+                txtUsuario.Text = ""
         End Sub
-
-
 
         Private Sub txtSenha_Click(sender As Object, e As EventArgs)
                 txtSenha.Text = ""
         End Sub
-
 
         Private Sub txtUsuario_LostFocus(sender As Object, e As EventArgs)
                 If txtUsuario.Text = "" Then
@@ -536,7 +528,7 @@ prox:
 
         End Sub
 
-        Private Sub txtSenha_KeyDown(sender As Object, e As KeyEventArgs)
+        Private Sub txtSenha_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSenha.KeyDown
                 If e.KeyCode = Keys.Enter Then
                         BlocoLogin()
                 End If
@@ -571,7 +563,4 @@ prox:
                 End Select
         End Sub
 
-        Private Sub FrmLogin_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
-
-        End Sub
 End Class

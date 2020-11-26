@@ -1,4 +1,5 @@
-﻿Imports System.Data.OleDb
+﻿Imports System.ComponentModel
+Imports System.Data.OleDb
 Imports MaterialSkin
 
 Public Class FrmNovoLancamento
@@ -10,13 +11,46 @@ Public Class FrmNovoLancamento
         Public ConsultaFiltro As String
         Public WhereAdd As Boolean
 
-        Private Sub FrmNovoLancamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-                Me.TbFormaPagamentoTableAdapter.Fill(Me.DataSety.tbFormaPagamento)
-                Me.TbPlanoContaTableAdapter.Fill(Me.DataSety.tbPlanoConta)
-                'Me.OpcoesTableAdapter.Fill(Me.SistemaGEDataSet.Opcoes)
+        'funções denidas como task para serem atualizadas em paralelo
+        Public Async Function tablePagamentoAtualizar() As Task
+                TbFormaPagamentoTableAdapter.Fill(Me.DataSety.tbFormaPagamento)
+        End Function
+
+        Public Async Function tablePlanoContaAtualizar() As Task
+                TbPlanoContaTableAdapter.Fill(Me.DataSety.tbPlanoConta)
+        End Function
+
+        Public Async Function actPlanoConta() As Task
+                'TbPlanoContaTableAdapter.Fill(Me.DataSety.tbPlanoConta)
+                TbFormaPagamentoTableAdapter.Fill(Me.DataSety.tbFormaPagamento)
+        End Function
+
+
+        Private Async Sub FrmNovoLancamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+                Dim med = System.Diagnostics.Stopwatch.StartNew
+                Dim adaptadores As List(Of Task) = New List(Of Task)
+
+                '  With adaptadores
+                'tPlanoConta)
+                '  .Add(tablePagamentoAtualizar)
+                '  End With
+
+
+
+                Task.Run(Function() actPlanoConta())
+
+
+
+
+
+
+
+
                 If SQL.AddItemPag = False Then
                         '\\MUDAR DEPOIS (MODO TESTE)
                         With cboPeriodo.Items
+                                .Clear()
                                 .Add("Este Mês")
                                 .Add("Mês Passado")
                                 .Add("Mês Antepassado")
@@ -24,16 +58,19 @@ Public Class FrmNovoLancamento
                         End With
                         '\\SITUAÇÃO DE PAGAMENTO (PAGO,NÃO PAGO E TODOS)
                         With cboSituacaoPag.Items
+                                .Clear()
                                 .Add("Todos")
                                 .Add("Foi Pago")
                                 .Add("Não Pago")
                         End With
                         '\\TIPO DE PERIODO (LANÇAMENTO,VENCIMENTO)
                         With cboData.Items
+                                .Clear()
                                 .Add("Vencimento")
                                 .Add("Lançamento")
                         End With
                         With cboTipoLancamento.Items
+                                .Clear()
                                 .Add("Todos")
                                 .Add("Receita")
                                 .Add("Despesa")
@@ -73,7 +110,18 @@ Public Class FrmNovoLancamento
                         .BackColor = CorFundo
                         .ForeColor = CorTexto
                 End With
+                med.Stop()
 
+                ' MsgBox(med.ElapsedMilliseconds.ToString())
+
+        End Sub
+
+        Private Sub FrmNovoLancamento_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+                Me.Dispose()
+                TbFormaPagamentoTableAdapter.Dispose()
+                TbFinanceiroTableAdapter.Dispose()
+                TbClientesTableAdapter.Dispose()
+                TbPlanoContaTableAdapter.Dispose()
         End Sub
 
         Public Sub AtualizarRegistro()
@@ -577,4 +625,6 @@ line6:
         Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
 
         End Sub
+
+
 End Class
