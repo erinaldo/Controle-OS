@@ -257,6 +257,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\PDV\Class1.vb" />
+    <Compile Include="Formularios\PDV\ModPDV.vb" />
     <Compile Include="Modulos\clsPessoa.vb" />
     <Compile Include="Formularios\PDV\FrmAddLembrete.Designer.vb">
       <DependentUpon>FrmAddLembrete.vb</DependentUpon>

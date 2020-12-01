@@ -164,8 +164,8 @@ Public Class FrmCarregarPedido
                         FrmPDV.tmAtualizardgv.Start()
                         FrmPDV.Panel1.Visible = True
                         FrmPDV.Panel4.Visible = False
-                        FrmPDV.SomarProdutos()
-                        FrmPDV.QuantidadeItens()
+                        SomarProdutos(Me)
+                        QuantItens()
                         FrmPDV.btnImprimir.Visible = True
                 Else
                         SQL.Notificao("", "Selecione um Pedido")

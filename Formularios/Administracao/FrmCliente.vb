@@ -416,6 +416,7 @@ Public Class FrmClientes
                 txtComplemento.Text = DataGridView2.CurrentRow.Cells(5).Value
                 cboTipo.Text = DataGridView2.CurrentRow.Cells(6).Value
                 txtCodEnd.Text = DataGridView2.CurrentRow.Cells(7).Value
+                On Error Resume Next
                 txtCEP.Text = DataGridView2.CurrentRow.Cells(8).Value
         End Sub
 

@@ -1,112 +1,15 @@
 ﻿Imports System.ComponentModel
 Imports System.Data.OleDb
+Imports MaterialSkin
 
 Public Class FrmPDV
 
-        Public UltimoID As Double
-        Public TabelaEnviar As String '\\TABELA DE PEDIDO NORMAL OU VINCULADA
-        Public TabelaProduto As String '\\TABELA DE PEDIDO PRODUTO VENDA PDV OU VENDA PDV VINCULADA
-        Public NormalPD As Double
-        Public VinculadoPD As Double
-        Public FaltaEstoque As Boolean = False
+        Inherits Controls.MaterialForm
 
         '\\LOAD
         Private Sub FrmPDV_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-
-
-                FrmSelCaixa.ShowDialog()
-                If PedidoVinculado = True Then
-                        dgvProdutosVinc.Visible = True
-                        dgvProdutos.Visible = False
-                        dgvProdutosSemCusto.Visible = False
-                End If
-                If PedidoVinculado = False Then
-                        lblkPedidoVinculado.Visible = False
-                Else
-                        lblkPedidoVinculado.Visible = True
-                End If
-                If PedidoVinculado = True Then
-                        'btnCancelarVinc.Visible = True
-                        'btnAprovarVinc.Visible = True
-                        dgvProdutosVinc.Visible = True
-                        dgvProdutos.Visible = False
-                Else
-                        'btnCancelarVinc.Visible = False
-                        'btnAprovarVinc.Visible = False
-                        dgvProdutosVinc.Visible = False
-                        dgvProdutos.Visible = True
-                End If
-                Dim Texts As New List(Of TextBox)
-                With Texts
-                        .Clear()
-                        .Add(txtCliente)
-                        .Add(txtCPFCliente)
-                        .Add(txtInscEstadual)
-                        .Add(txtEndID)
-                        .Add(txtContato)
-                        .Add(txtCidade)
-                        .Add(txtUF)
-                        .Add(txtCidade)
-                        .Add(txtBairro)
-                        .Add(txtEndNumero)
-                        .Add(txtLogradouro)
-                        .Add(txtComplemento)
-                        .Add(txtTipo)
-                End With
-                If PedidoVinculado = True Then
-                        With lblkPedidoVinculado
-                                .Text = "Pedido vinculado a OS: " & FrmCadastroOS.txtOSID.Text
-                                .ForeColor = Color.Black
-                                .Visible = True
-                                For Each item In Texts
-                                        item.ReadOnly = True
-                                Next
-                        End With
-                        Me.ControlBox = False
-                Else
-                        With lblkPedidoVinculado
-                                .Visible = False
-                        End With
-                End If
-                If lblNumeroPedido.Text = "" Then
-                        btnImprimir.Visible = False
-                Else
-                        btnImprimir.Visible = True
-                End If
-                Me.TbPedido2TableAdapter.Fill(Me.DataPdv1.tbPedido2)
-                Me.EntregaTableAdapter.Fill(Me.DataPdv.Entrega)
-                Me.TbEndTableAdapter.Fill(Me.DataPdv.tbEnd)
-                Me.TbProdutoPDVTableAdapter.Fill(Me.DataPdv.tbProdutoPDV)
-                Me.TbEndTableAdapter.FillByVazio(Me.DataPdv.tbEnd)
-                Me.TbProdutoPDVTableAdapter.FillByVazio(Me.DataPdv.tbProdutoPDV)
-                txtLogradouro.Text = ""
-                txtCPFCliente.Text = ""
-                With cboTabela.Items
-                        .Clear()
-                        .Add("TABELA A")
-                        .Add("TABELA B")
-                        .Add("TABELA C")
-                End With
-                With cboTabelaPagamento.Items
-                        .Clear()
-                        .Add("A VISTA")
-                        .Add("FATURADO")
-                End With
-                With Me.chkRetirar.Items
-                        .Clear()
-                        .Add("Retirar")
-                        .Add("Entregar")
-                End With
-                txtProduto.Text = ""
-                txtSoma.Text = ""
-
-
+                LoadPDV()
         End Sub
-
-        Public NomeCliente As String
-        Public ClienteIDatual As Integer
 
         '\\PREENCHER CAMPO DO NOME DO CLIENTE AO SELECIONAR NO DATAGRIDVIEW (LISTA)
         Private Sub dgvCliente_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCliente.CellClick
@@ -129,188 +32,7 @@ Public Class FrmPDV
 
         '\\BOTÃO PARA ADICIONAR O PRODUTO A COMPRA
         Private Sub btnAdicionarProduto_Click(sender As Object, e As EventArgs) Handles btnAdicionarProduto.Click
-                PanelProdutos.BringToFront()
-                On Error Resume Next
-                Dim SaldoEstoque As Double = CDbl(txtSaldoEstoque.Text)
-                On Error Resume Next
-                Dim QuantidadeCompra As Double = CDbl(txtQuantidade.Text)
-                If CDbl(txtSaldoEstoque.Text) < CDbl(txtQuantidade.Text) Then 'VERIFICA A SE HÁ ESTOQUE SUFICIENTE PARA REALIZAR A COMPRA
-                        If txtCategoriaProduto.Text = "Producao" Then
-                                lSQL = "INSERTO INTO tbFilaProducao (Origem,ClienteID,ProdutoID,NomeProduto,Quantidade,Unidade,DataOrdemProducao,StatusProducao) " &
-                                        "Values (""" & "Venda PDV Pedido: " & lblNumeroPedido.Text & """,""" & ClienteID & """,""" & txtProdutoID.Text & """,""" & txtProduto.Text & """,""" & txtQuantidade.Text &
-                                        """,""" & txtUnidade.Text & """,""" & Today.ToShortDateString & """,""" & "Aguardando Fabricação" & """)"
-                                SQL.Comando()
-                        Else
-                                SQL.Notificao("", "NÃO HÁ ESTOQUE SUFICIENTE PARA REALIZAR A VENDA")
-                                GoTo prox
-                        End If
-                Else
-                        If txtPrecoFrete.Text = "" Then 'VERIFICA SE FOI COBRADO FRETE
-                                txtPrecoFrete.Text = 0
-                        End If
-                        If txtCliente.Text = "" Then '\\VERIFICA SE O NOME DO CLIENTE FOI PREENCHIDO
-
-                                SQL.Notificao("NOVA LITORAL GESSO", "Preencha os dados do cliente/Selecione um produto")
-                        Else
-                                If txtProdutoID.Text = "" Then '\\VERIFICA SE FOI ESCOLHIDO UM PRODUTO
-                                        SQL.Notificao("NOVA LITORAL GESSO", "Selecione um produto")
-                                Else
-                                        If txtProduto.Text <> "" Then '\\VERIFICA SE O NOME DO PRODUTO ESTÁ PREENCHIDO
-                                                If lblNumeroPedido.Text = "" Then
-                                                        If SQL.PodeEditarPedido = False Then
-                                                                'GoTo LinePularEndEnt
-                                                        End If
-                                                        If chkEntDif.Checked = True Then '\\VERIFICA SE A ENTREGA É DIFERENTE DO ENDEREÇO DO CLIENTE
-                                                                FrmEnderecoEntrega.ShowDialog()
-                                                        End If
-                                                        Dim Entrega As String
-                                                        If chkEntrega.Checked = True Then
-                                                                Entrega = "Sim"
-                                                        Else
-                                                                Entrega = "Não"
-                                                        End If
-                                                        Dim EntregaDif As String
-                                                        If chkEntDif.Checked = True Then
-                                                                EntregaDif = "Sim"
-                                                        Else
-                                                                EntregaDif = "Não"
-                                                        End If
-                                                        Connect.Conectardb("SELECT * FROM tbPedido2 ORDER BY PedidoID Desc")
-                                                        NormalPD = cdr.Item("PedidoID")
-                                                        Connect.Desconectardb()
-                                                        Connect.Conectardb("SELECT * FROM tbPedido2vinc ORDER BY PedidoID Desc")
-                                                        VinculadoPD = cdr.Item("PedidoID")
-                                                        Connect.Desconectardb()
-                                                        If NormalPD > VinculadoPD Then
-                                                                UltimoID = NormalPD
-                                                        Else
-                                                                UltimoID = VinculadoPD
-                                                        End If
-                                                        UltimoID += 1
-                                                        If PedidoVinculado = False Then
-                                                                TabelaEnviar = "tbPedido2"
-                                                                TabelaProduto = "tbProdutoVendaPDV"
-                                                        Else
-                                                                TabelaEnviar = "tbPedido2vinc"
-                                                                TabelaProduto = "tbProdutoVendaPDVvinc"
-                                                        End If
-                                                        If PedidoVinculado = False Then
-                                                                lSQL = "INSERT INTO " & TabelaEnviar & " (DataAbertura,Empresa,Status,Categoria,Vendedor,ClienteID,Cliente,Frete,EndID,EndEntID,EntregaB,EntregaDifB,PedidoID,Desconto)" &
-                                                                                "VALUES (""" & Today.ToShortDateString & """,""" & "Nova Litoral Gesso" & """,""" & "Não Faturado" &
-                                                                                """,""" & "Produto para Revenda" & """,""" & SQL.Usuario & """,""" & txtCodCliente.Text & """,""" & txtCliente.Text &
-                                                                                """,""" & txtPrecoFrete.Text & """,""" & txtEndID.Text & """,""" & EntregaID & """,""" & Entrega & """,""" &
-                                                                                EntregaDif & """,""" & UltimoID & """,""" & 0 & """)"
-                                                        Else
-                                                                lSQL = "INSERT INTO " & TabelaEnviar & " (OSID,DataAbertura,Empresa,Status,Categoria,Vendedor,ClienteID,Cliente,Frete,EndID,EndEntID ,EntregaB,EntregaDifB,PedidoID,Desconto)" &
-                                                                                "VALUES (""" & FrmCadastroOS.txtOSID.Text & """,""" & Today.ToShortDateString &
-                                                                                """,""" & "Nova Litoral Gesso" & """,""" & "Não Faturado" &
-                                                                                """,""" & "Produto para Revenda" & """,""" & SQL.Usuario & """,""" & txtCodCliente.Text & """,""" & txtCliente.Text &
-                                                                                """,""" & txtPrecoFrete.Text & """,""" & txtEndID.Text & """,""" & EntregaID & """,""" & Entrega & """,""" & EntregaDif &
-                                                                                """,""" & UltimoID & """,""" & 0 & """)"
-                                                        End If
-                                                        SQL.Comando()
-                                                        Connect.Conectardb("SELECT * FROM " & TabelaEnviar & " ORDER BY PedidoID Desc")
-                                                        lblNumeroPedido.Text = cdr.Item("PedidoID")
-                                                        SQL.AnexoID = cdr.Item("PedidoID")
-                                                        Connect.Desconectardb()
-                                                        btnImprimir.Visible = True
-                                                        'Log("FOI ABERTO O PEDIDO NÚMERO: " & lblNumeroPedido.Text)
-                                                        SaveNoti("UM NOVO PEDIDO N: " & lblNumeroPedido.Text & " FOI ABERTO POR " & SQL.Usuario)
-                                                End If
-LinePularEndEnt:
-                                                Connect.Conectardb("SELECT * FROM tbPedido2 ORDER BY PedidoID Desc")
-                                                NormalPD = cdr.Item("PedidoID")
-                                                Connect.Desconectardb()
-                                                Connect.Conectardb("SELECT * FROM tbPedido2vinc ORDER BY PedidoID Desc")
-                                                VinculadoPD = cdr.Item("PedidoID")
-                                                Connect.Desconectardb()
-                                                If NormalPD > VinculadoPD Then
-                                                        UltimoID = NormalPD
-                                                Else
-                                                        UltimoID = VinculadoPD
-                                                End If
-                                                ' UltimoID
-                                                If PedidoVinculado = False Then
-                                                        TabelaEnviar = "tbPedido2"
-                                                        TabelaProduto = "tbProdutoVendaPDV"
-                                                Else
-                                                        TabelaEnviar = "tbPedido2vinc"
-                                                        TabelaProduto = "tbProdutoVendaPDVvinc"
-                                                End If
-                                                InstrucaoDireta("INSERT INTO " & TabelaProduto & " (ClienteID,NomeCliente,ProdutoID,PedidoID,CategoriaPadrao,Produto,Genero,Custo,SaldoEstoque,CustoTotal,ValorVenda,Quantidade,Soma,ValorCustoTotal,Retirado)" &
-                                                "VALUES (""" & txtCodCliente.Text & """,""" & txtCliente.Text & """,""" & txtProdutoID.Text & """,""" & UltimoID & """,""" & txtCategoriaProduto.Text & """,""" & txtProduto.Text & """,""" & txtGenero.Text &
-                                                                """,""" & txtCusto.Text & """,""" & txtSaldoEstoque.Text & """,""" & txtCusto.Text & """,""" & txtCustoTotal.Text & """,""" &
-                                                                txtQuantidade.Text & """,""" & txtSoma.Text & """,""" & txtValorVendaTotal.Text & """,""" & chkRetirar.Text & """)")
-                                                'SQL.Comando()
-                                                'Log("VENDA DO PRODUTO " & txtProduto.Text & " (" & cboTabela.Text & ") (" & cboTabelaPagamento.Text & ")")
-                                                '\\DEFINE O NOVO ESTOQUE
-                                                Dim ProxEstoque As Double = CDbl(txtSaldoEstoque.Text) - CDbl(txtQuantidade.Text)
-                                                lSQL = "UPDATE " & TabelaProduto & " SET SaldoEstoque=""" & ProxEstoque & """"
-                                                SQL.Comando()
-
-                                                SomarProdutos()
-prox:
-                                                Me.TbProdutoPDVTableAdapter.Fill(Me.DataPdv.tbProdutoPDV)
-                                                If lblNumeroPedido.Text <> "" Then
-                                                        Me.TbProdutoVendaPDVTableAdapter.FillByPedidoID(Me.DataPdv1.tbProdutoVendaPDV, New System.Nullable(Of Integer)(CType(UltimoID, Integer)))
-                                                End If
-                                                If PedidoVinculado = True Then
-                                                        Me.TbProdutoVendaPDVvincTableAdapter.FillByPedido(Me.DataPdv1.tbProdutoVendaPDVvinc, New System.Nullable(Of Integer)(CType(UltimoID, Integer)))
-                                                End If
-                                                txtCliente.ReadOnly = True
-                                                '\\ALTURA DO DATAGRID EM RELAÇÃO AO NUMERO DE LINHAS
-                                                dgvProdutos.Height = 23 + (dgvProdutos.Rows.Count * 23)
-                                                dgvProdutosSemCusto.Height = 22 + (dgvProdutosSemCusto.Rows.Count * 23)
-                                                dgvProdutosVinc.Height = 23 + (dgvProdutosVinc.Rows.Count * 23)
-                                                dgvProdutosVinc.Height = 23 + (dgvProdutosVinc.Rows.Count * 23)
-                                        End If
-                                End If
-                        End If
-                End If
-                txtCustoTotal.Text = ""
-                txtQuantidade.Text = ""
-                txtProduto.Text = ""
-                txtCategoriaProduto.Text = ""
-                txtProdutoID.Text = ""
-                txtSoma.Text = ""
-                txtValorVendaTotal.Text = ""
-                txtCusto.Text = ""
-                txtGenero.Text = ""
-                txtSaldoEstoque.Text = ""
-                txtQuantidade.Text = ""
-                If lblNumeroPedido.Text <> "" Then
-                End If
-
-                QuantidadeItens()
-
-        End Sub
-
-        Public Sub QuantidadeItens()
-                If dgvProdutos.Visible = True Then
-                        txtItens.Text = dgvProdutos.Rows.Count.ToString
-                End If
-                If dgvProdutosVinc.Visible = True Then
-                        txtItens.Text = dgvProdutosVinc.Rows.Count.ToString
-                End If
-        End Sub
-
-        Public Sub SomarProdutos()
-                '\\SOMA DOS PRODUTOS
-                If PedidoVinculado = False Then
-                        Connect.Conectardb("SELECT * FROM tbProdutoPDVSoma WHERE PedidoID=" & lblNumeroPedido.Text)
-                        'txtSomaTotal'.Text = "R$ " & FormatNumber(cdr.Item("Total de Soma"), 2)
-                        txtSomaTotal.Text = Dinheiro(cdr.Item("Total de Soma"))
-                        lSQL = "UPDATE tbPedido2 SET ValorTotal=""" & cdr.Item("Total de Soma") & """ WHERE PedidoID=" & lblNumeroPedido.Text
-                        SQL.Comando()
-                        Connect.Desconectardb()
-                Else
-                        Connect.Conectardb("SELECT * FROM tbProdutoVendaPDVSomavinc WHERE PedidoID=" & lblNumeroPedido.Text)
-                        ' txtSomaTotal.Text = "R$ " & FormatNumber(cdr.Item("Total de ValorVenda"), 2)
-                        txtSomaTotal.Text = Dinheiro(cdr.Item("Total de ValorVenda"))
-                        lSQL = "UPDATE tbPedido2vinc SET ValorTotal=""" & cdr.Item("Total de ValorVenda") & """ WHERE PedidoID=" & lblNumeroPedido.Text
-                        SQL.Comando()
-                        Connect.Desconectardb()
-                End If
+                AdicionarProduto()
         End Sub
 
         '\\CALCULAR VALOR EM RELAÇÃO A QUANTIDADE
@@ -318,47 +40,10 @@ prox:
                 QuantValor()
         End Sub
 
-        Public Sub QuantValor()
-                On Error Resume Next
-                txtSoma.Text = "R$ " & FormatNumber(CDbl(txtQuantidade.Text) * CDbl(txtCustoTotal.Text), 2)
-                txtValorVendaTotal.Text = "R$ " & FormatNumber(CDbl(txtQuantidade.Text) * CDbl(txtCusto.Text), 2)
-                If txtQuantidade.Text = "" Then
-                        txtQuantidade.Text = 1
-                End If
-                If txtCusto.Text = "" Then
-                        txtCusto.Text = 1
-                End If
-                If txtProduto.Text = "" Then
-                        txtSoma.Text = ""
-                        txtValorVendaTotal.Text = ""
-                End If
-        End Sub
-
-
-
-
         '\\FILTRO DO DATAGRID CLIENTE A CADA CARACTER DIGITADO
         Private Sub txtCliente_TextChanged(sender As Object, e As EventArgs) Handles txtCliente.TextChanged
-                FrmMdiHome.pbStatus.Value = 10
-                Dim Consulta As String = "SELECT Nome,Sobrenome,CPF,Código FROM tbClientes WHERE Nome LIKE '" & txtCliente.Text & "%'"
-                Dim strConn As String = sConnectionString
-                Dim conexao As New OleDbConnection(strConn)
-                Dim comando As New OleDbCommand(Consulta, conexao)
-                Dim adaptador As New OleDbDataAdapter(comando)
-                Dim dsbiblio As New DataSet()
-                adaptador.Fill(dsbiblio, "Cliente")
-                dgvCliente.DataSource = dsbiblio.Tables("Cliente")
-                FrmMdiHome.pbStatus.Value = 100
-
-                'MANTER PROPORÇÃO ENTRE AS COLUNAS NOME E SOBRENOME
-                Dim LarguraTotal As Double = dgvCliente.Width
-                dgvCliente.Columns(0).Width = (LarguraTotal / 3) * 1
-                dgvCliente.Columns(1).Width = (LarguraTotal / 3) * 2
-                dgvCliente.Columns(2).Width = 0
-                dgvCliente.Columns(3).Width = 0
+                FiltroNomesClientes(txtCliente, dgvCliente)
         End Sub
-
-        Public TextPoup As New TextBox
 
         '\\MOSTRAR O DATAGRID LISTA DO CLIENTE NO CLICK
         Private Sub txtCliente_Click(sender As Object, e As EventArgs) Handles txtCliente.Click
@@ -366,7 +51,7 @@ prox:
                 With TextPoup
                         .Width = 250
                         .Height = 100
-                        .Text = "PRESSIONE ENTER PARA CONTINUAR"
+                        '.Text = "PRESSIONE ENTER PARA CONTINUAR"
                         .BackColor = Color.White
                         .ForeColor = Color.Black
                         .Location = New System.Drawing.Size(150, 190)
@@ -399,18 +84,9 @@ prox:
                 dgvEnd.Visible = False
         End Sub
 
-        Private Sub txtProduto_TextChanged(sender As Object, e As EventArgs) Handles txtProduto.TextChanged
-                'On Error Resume Next
-                'Me.TbProdutoPDVTableAdapter.FillByNome(Me.DataPdv.tbProdutoPDV, txtProduto.Text)
-        End Sub
-
         Private Sub txtProduto_Click(sender As Object, e As EventArgs) Handles txtProduto.Click
                 dgvListaProduto.Visible = True
                 Me.TbProdutoPDVTableAdapter.Fill(Me.DataPdv.tbProdutoPDV)
-        End Sub
-
-        Private Sub dgvListaProduto_MouseLeave(sender As Object, e As EventArgs) Handles dgvListaProduto.MouseLeave
-                'dgvListaProduto.Visible = False
         End Sub
 
         Private Sub dgvCliente_MouseLeave(sender As Object, e As EventArgs) Handles dgvCliente.MouseLeave
@@ -427,7 +103,7 @@ prox:
 
         Private Sub txtQuantidade_KeyDown(sender As Object, e As KeyEventArgs) Handles txtQuantidade.KeyDown
                 If e.KeyCode = Keys.Enter Then
-                        btnAdicionarProduto.PerformClick()
+                        AdicionarProduto()
                 End If
         End Sub
 
@@ -436,6 +112,12 @@ prox:
                 Me.Close()
         End Sub
 
+        ''' <summary>
+        ''' Retirar produtos do estoque
+        ''' </summary>
+        ''' <param name="sender"></param>
+        ''' <param name="e"></param>
+        ''' 
         Private Sub btnDebitarEstoque_Click(sender As Object, e As EventArgs)
                 Dim Lin As Integer = dgvProdutos.Rows.Count
                 Dim CodProduto As String
@@ -674,9 +356,6 @@ Prox:
                 VerifEstoque()
         End Sub
 
-
-
-
         Private Sub TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCodBarras.KeyDown
                 If txtCodBarras.Text <> "" Then
                         If e.KeyCode = Keys.Enter Then
@@ -890,8 +569,6 @@ Prox:
                 Me.TbProdutoPDVTableAdapter.FillByNome(Me.DataPdv.tbProdutoPDV, txtPesqProduto.Text)
         End Sub
 
-
-
         Public Sub btnConfirmarEscolha_Click(sender As Object, e As EventArgs) Handles btnConfirmarEscolha.Click
                 'On Error Resume Next
                 'MsgBox("Nome do Produto  " & dgvProdutos.CurrentRow.Cells(0).Value)
@@ -1012,5 +689,9 @@ Prox:
                 If FrmSelCaixa.CaixaAtual.Status = "FECHADO" Then
                         Me.Close()
                 End If
+        End Sub
+
+        Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
         End Sub
 End Class

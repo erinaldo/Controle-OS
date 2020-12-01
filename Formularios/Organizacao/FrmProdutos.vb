@@ -1,5 +1,8 @@
-﻿Public Class FrmProdutos
+﻿Imports MaterialSkin
 
+Public Class FrmProdutos
+
+        Inherits Controls.MaterialForm
         Private Sub FrmProdutos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
                 Me.TbPrecoTabelaTableAdapter.Fill(Me.DataPdv.tbPrecoTabela)
                 Me.TbProdutoPDVTableAdapter.Fill(Me.DataPdv.tbProdutoPDV)

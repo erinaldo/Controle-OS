@@ -243,7 +243,7 @@ Module SQL
         End Sub
 
         Public Function ControleObrigatorio(CamposObrigatorios As List(Of Control))
-                Dim CamposPreenchidos As String
+                Dim CamposPreenchidos As Boolean = True
                 For Each Controle In CamposObrigatorios
                         If Controle.Text = "" Then
                                 CamposPreenchidos = False

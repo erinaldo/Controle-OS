@@ -28,25 +28,6 @@ Public Class FrmNovoLancamento
 
         Private Async Sub FrmNovoLancamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-                ' Dim med = System.Diagnostics.Stopwatch.StartNew
-                ' Dim adaptadores As List(Of Task) = New List(Of Task)
-
-                '  With adaptadores
-                'tPlanoConta)
-                '  .Add(tablePagamentoAtualizar)
-                '  End With
-
-
-
-
-
-
-
-
-
-
-
-
                 If SQL.AddItemPag = False Then
                         '\\MUDAR DEPOIS (MODO TESTE)
                         With cboPeriodo.Items
@@ -326,8 +307,8 @@ line6:
                         Dim dsbiblio As New DataSet()
                         adaptador.Fill(dsbiblio, "Cliente")
                         dgvFinanceiro.DataSource = dsbiblio.Tables("Cliente")
-                        adaptador = Nothing
-                        dsbiblio = Nothing
+                        'adaptador = Nothing
+                        '  dsbiblio = Nothing
                         ' dsbiblio.Clear()
 
                 End If
