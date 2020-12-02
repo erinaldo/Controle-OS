@@ -891,6 +891,7 @@ Public Class FrmAdicionarCliente
 
         Private Sub btnAtualizarCap_Click(sender As Object, e As EventArgs) Handles btnAtualizarCap.Click
 	      GetCaptcha(picCaptcha)
+	      ' GetCaptcha(pic2)
         End Sub
 
         Private Sub btnShowWBsintegra_Click(sender As Object, e As EventArgs)
@@ -898,7 +899,7 @@ Public Class FrmAdicionarCliente
         End Sub
 
         Private Async Sub TabControl1_GotFocus(sender As Object, e As EventArgs) Handles TabControl1.GotFocus
-	      Await GetMunicipiiosParalelo()
+	      ' Await GetMunicipiiosParalelo()
         End Sub
 
         Private Sub btnCadastrarColaborador_Click(sender As Object, e As EventArgs) Handles btnCadastrarColaborador.Click

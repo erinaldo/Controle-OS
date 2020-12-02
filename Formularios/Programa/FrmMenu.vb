@@ -444,4 +444,11 @@ Public Class FrmMenu
     Private Sub CONSULTACNPJToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CONSULTACNPJToolStripMenuItem.Click
                 frmConsultaCNPJ.Show()
         End Sub
+
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+                FrmLogin.Show()
+                FrmLogin.txtSenha.Text = ""
+                Me.Close()
+                FrmMdiHome.Close()
+        End Sub
 End Class

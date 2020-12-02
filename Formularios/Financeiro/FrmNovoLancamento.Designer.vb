@@ -607,6 +607,7 @@ Partial Class FrmNovoLancamento
 		Me.Panel7.Controls.Add(Me.cboPeriodo)
 		Me.Panel7.Controls.Add(Me.Label4)
 		Me.Panel7.Controls.Add(Me.txtDataInicial)
+		Me.Panel7.Controls.Add(Me.grpSoma)
 		Me.Panel7.Controls.Add(Me.cboData)
 		Me.Panel7.Controls.Add(Me.Label3)
 		Me.Panel7.Controls.Add(Me.txtDataFinal)
@@ -899,16 +900,15 @@ Partial Class FrmNovoLancamento
 		'
 		'btnExpDockTop
 		'
-		Me.btnExpDockTop.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.btnExpDockTop.BackColor = System.Drawing.Color.Transparent
 		Me.btnExpDockTop.BackgroundImage = Global.ControleOS.My.Resources.Resources.settings_1
 		Me.btnExpDockTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
 		Me.btnExpDockTop.FlatAppearance.BorderColor = System.Drawing.Color.White
 		Me.btnExpDockTop.FlatAppearance.BorderSize = 0
 		Me.btnExpDockTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnExpDockTop.Location = New System.Drawing.Point(918, 24)
+		Me.btnExpDockTop.Location = New System.Drawing.Point(595, 32)
 		Me.btnExpDockTop.Name = "btnExpDockTop"
-		Me.btnExpDockTop.Size = New System.Drawing.Size(33, 30)
+		Me.btnExpDockTop.Size = New System.Drawing.Size(25, 27)
 		Me.btnExpDockTop.TabIndex = 121
 		Me.btnExpDockTop.UseVisualStyleBackColor = False
 		'
@@ -957,7 +957,7 @@ Partial Class FrmNovoLancamento
 		Me.grpSoma.Controls.Add(Me.lblSomaPago)
 		Me.grpSoma.Controls.Add(Me.lblNPago)
 		Me.grpSoma.Cursor = System.Windows.Forms.Cursors.Default
-		Me.grpSoma.Location = New System.Drawing.Point(604, 28)
+		Me.grpSoma.Location = New System.Drawing.Point(135, 87)
 		Me.grpSoma.Name = "grpSoma"
 		Me.grpSoma.Size = New System.Drawing.Size(117, 65)
 		Me.grpSoma.TabIndex = 121
@@ -976,7 +976,6 @@ Partial Class FrmNovoLancamento
 		Me.Controls.Add(Me.Panel5)
 		Me.Controls.Add(Me.btnExpDockTop)
 		Me.Controls.Add(Me.Panel4)
-		Me.Controls.Add(Me.grpSoma)
 		Me.Controls.Add(Me.PnDockTop)
 		Me.Controls.Add(Me.pnDockLeft)
 		Me.Controls.Add(Me.dgvFinanceiro)

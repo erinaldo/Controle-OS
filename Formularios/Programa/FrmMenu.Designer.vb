@@ -25,7 +25,7 @@ Partial Class FrmMenu
 	      Me.components = New System.ComponentModel.Container()
 	      Dim Label11 As System.Windows.Forms.Label
 	      Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMenu))
-		Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.TbProdutoVenda1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
 		Me.SistemaGEDataSet = New ControleOS.SistemaGEDataSet()
 		Me.TbProdutoVenda1TableAdapter = New ControleOS.SistemaGEDataSetTableAdapters.tbProdutoVenda1TableAdapter()
@@ -123,6 +123,7 @@ Partial Class FrmMenu
 		Me.lblCargo = New MaterialSkin.Controls.MaterialLabel()
 		Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
 		Me.MaterialLabel3 = New MaterialSkin.Controls.MaterialLabel()
+		Me.btnLogout = New MaterialSkin.Controls.MaterialFlatButton()
 		Label11 = New System.Windows.Forms.Label()
 		CType(Me.TbProdutoVenda1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.SistemaGEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -913,14 +914,14 @@ Partial Class FrmMenu
 		Me.dgvEntrega.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer))
 		Me.dgvEntrega.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
 		Me.dgvEntrega.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-		DataGridViewCellStyle1.BackColor = System.Drawing.Color.Black
-		DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-		DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-		DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-		DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-		Me.dgvEntrega.DefaultCellStyle = DataGridViewCellStyle1
+		DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+		DataGridViewCellStyle2.BackColor = System.Drawing.Color.Black
+		DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+		DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+		Me.dgvEntrega.DefaultCellStyle = DataGridViewCellStyle2
 		Me.dgvEntrega.GridColor = System.Drawing.Color.Silver
 		Me.dgvEntrega.Location = New System.Drawing.Point(404, 163)
 		Me.dgvEntrega.Name = "dgvEntrega"
@@ -1096,6 +1097,21 @@ Partial Class FrmMenu
 		Me.MaterialLabel3.TabIndex = 67
 		Me.MaterialLabel3.Text = "Entrada"
 		'
+		'btnLogout
+		'
+		Me.btnLogout.AutoSize = True
+		Me.btnLogout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+		Me.btnLogout.Depth = 0
+		Me.btnLogout.Location = New System.Drawing.Point(590, 88)
+		Me.btnLogout.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+		Me.btnLogout.MouseState = MaterialSkin.MouseState.HOVER
+		Me.btnLogout.Name = "btnLogout"
+		Me.btnLogout.Primary = False
+		Me.btnLogout.Size = New System.Drawing.Size(65, 36)
+		Me.btnLogout.TabIndex = 68
+		Me.btnLogout.Text = "Logout"
+		Me.btnLogout.UseVisualStyleBackColor = True
+		'
 		'FrmMenu
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1106,6 +1122,7 @@ Partial Class FrmMenu
 		Me.CausesValidation = False
 		Me.ClientSize = New System.Drawing.Size(980, 602)
 		Me.ControlBox = False
+		Me.Controls.Add(Me.btnLogout)
 		Me.Controls.Add(Me.MaterialLabel3)
 		Me.Controls.Add(Me.MaterialLabel1)
 		Me.Controls.Add(Me.lblCargo)
@@ -1266,4 +1283,5 @@ Partial Class FrmMenu
         Friend WithEvents lblCargo As MaterialSkin.Controls.MaterialLabel
         Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
         Friend WithEvents MaterialLabel3 As MaterialSkin.Controls.MaterialLabel
+	Friend WithEvents btnLogout As MaterialSkin.Controls.MaterialFlatButton
 End Class
