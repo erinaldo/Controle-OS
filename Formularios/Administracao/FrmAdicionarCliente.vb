@@ -727,6 +727,11 @@ Public Class FrmAdicionarCliente
 
         Private Sub txtPJCNPJ_LostFocus(sender As Object, e As EventArgs) Handles txtPJCNPJ.LostFocus
 	      pbPJCNPJ.Value = 0
+	      If IsNumeric(txtPJCNPJ.Text) = True Then
+		    CadastradoCPF(txtPJCNPJ.Text)
+	      Else
+		    txtPJCNPJ.Text = ""
+	      End If
         End Sub
 
         Private Sub txtPFNome_Click(sender As Object, e As EventArgs) Handles txtPFNome.Enter
@@ -753,6 +758,11 @@ Public Class FrmAdicionarCliente
 
         Private Sub txtPFCPF_LostFocus(sender As Object, e As EventArgs) Handles txtPFCPF.LostFocus
 	      pbPFCFP.Value = 0
+	      If IsNumeric(txtPFCPF.Text) = True Then
+		    CadastradoCPF(CDbl(txtPFCPF.Text))
+	      Else
+		    txtPFCPF.Text = ""
+	      End If
         End Sub
 
         Private Sub txtPFRG_Click(sender As Object, e As EventArgs) Handles txtPFRG.Enter
@@ -803,6 +813,12 @@ Public Class FrmAdicionarCliente
 
         Private Sub txtColCPF_LostFocus(sender As Object, e As EventArgs) Handles txtColCPF.LostFocus
 	      pbColCPF.Value = 0
+	      If IsNumeric(txtColCPF.Text) = True Then
+		    CadastradoCPF(txtColCPF.Text)
+	      Else
+		    SQL.Notificao("", "caracter invalido")
+		    txtColCPF.Text = ""
+	      End If
         End Sub
 
         Private Sub txtColRG_Click(sender As Object, e As EventArgs) Handles txtColRG.Enter
@@ -891,26 +907,71 @@ Public Class FrmAdicionarCliente
 
         Private Sub btnAtualizarCap_Click(sender As Object, e As EventArgs) Handles btnAtualizarCap.Click
 	      GetCaptcha(picCaptcha)
-	      ' GetCaptcha(pic2)
         End Sub
 
         Private Sub btnShowWBsintegra_Click(sender As Object, e As EventArgs)
 	      frmNavSintegra.Show()
         End Sub
 
-        Private Async Sub TabControl1_GotFocus(sender As Object, e As EventArgs) Handles TabControl1.GotFocus
-	      ' Await GetMunicipiiosParalelo()
-        End Sub
-
         Private Sub btnCadastrarColaborador_Click(sender As Object, e As EventArgs) Handles btnCadastrarColaborador.Click
-	      InserirPessoaColaborador()
+	      Try
+		    If CadastradoCPF(CDbl(txtPFCPF.Text)) = False Then
+			  InserirPessoaColaborador()
+		    Else
+			  txtColCPF.Text = ""
+		    End If
+	      Catch
+		    MsgBox("Não foi possivel concluir o cadastro")
+	      End Try
         End Sub
 
         Private Sub btnCadastrarPJ_Click(sender As Object, e As EventArgs) Handles btnCadastrarPJ.Click
-	      InserirPessoaJuridica()
+	      Try
+		    If CadastradoCPF(CDbl(txtPJCNPJ.Text)) = False Then
+			  InserirPessoaJuridica()
+		    Else
+			  txtPJCNPJ.Text = ""
+		    End If
+	      Catch
+		    MsgBox("Não foi possivel concluir o cadastro")
+	      End Try
         End Sub
 
         Private Sub btnCadastrarPF_Click(sender As Object, e As EventArgs) Handles btnCadastrarPF.Click
-	      InserirPessoaFisica()
+	      Try
+		    If CadastradoCPF(CDbl(txtPFCPF.Text)) = False Then
+			  InserirPessoaFisica()
+		    Else
+			  txtPFCPF.Text = 0
+		    End If
+	      Catch
+		    MsgBox("Não foi possivel concluir o cadastro")
+	      End Try
         End Sub
+
+        Private Sub txtPFCPF_TextChanged(sender As Object, e As EventArgs) Handles txtPFCPF.TextChanged
+
+        End Sub
+
+        Public Function CadastradoCPF(NumeroCPF As Double)
+
+	      Dim drCPF As OleDbDataReader = GetDR_semRead("SELECT Nome,Tipo,CPF FROM tbClientes WHERE CPF=" & NumeroCPF)
+	      drCPF.Read()
+	      If drCPF.HasRows = True Then
+		    Dim result As DialogResult = MsgBox("*Este número de CPF ou CNPJ já está sendo usada por outro cadastro." & Chr(13) &
+		    "Deseja excluir o cadastro anterior?" & Chr(13) & "Nome: " & drCPF(0).ToString & Chr(13) & "Tipo: " & drCPF(1), MsgBoxStyle.YesNo)
+		    If result = DialogResult.Yes Then
+			  Dim secResult As DialogResult = MsgBox("A operação não poderá ser desfeita." & Chr(13) & "Continuar?", MsgBoxStyle.YesNo)
+			  If secResult = DialogResult.Yes Then
+				InstrucaoDireta("DELETE FROM tbClientes WHERE CPF=" & NumeroCPF)
+				SQL.Notificao("", "Cadastro excluido com sucesso")
+			  End If
+		    End If
+		    Return True
+	      Else
+		    Return False
+	      End If
+        End Function
+
+
 End Class

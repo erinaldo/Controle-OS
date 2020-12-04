@@ -77,10 +77,10 @@ Partial Class FrmAdicionarCliente
 		Me.pbPFNome = New System.Windows.Forms.ProgressBar()
 		Me.picPessoaFisica = New System.Windows.Forms.PictureBox()
 		Me.TabPage3 = New System.Windows.Forms.TabPage()
+		Me.picCaptcha = New System.Windows.Forms.PictureBox()
 		Me.btnCadastrarPJ = New MaterialSkin.Controls.MaterialFlatButton()
 		Me.btnAtualizarCap = New System.Windows.Forms.Button()
 		Me.txtCap = New MaterialSkin.Controls.MaterialSingleLineTextField()
-		Me.picCaptcha = New System.Windows.Forms.PictureBox()
 		Me.Panel1 = New System.Windows.Forms.Panel()
 		Me.btnConsultaCnpj = New System.Windows.Forms.Button()
 		Me.Label21 = New System.Windows.Forms.Label()
@@ -801,6 +801,14 @@ Partial Class FrmAdicionarCliente
 		Me.TabPage3.TabIndex = 2
 		Me.TabPage3.Text = " Cadastro de Pessoa Juridica"
 		'
+		'picCaptcha
+		'
+		Me.picCaptcha.Location = New System.Drawing.Point(6, 251)
+		Me.picCaptcha.Name = "picCaptcha"
+		Me.picCaptcha.Size = New System.Drawing.Size(190, 83)
+		Me.picCaptcha.TabIndex = 149
+		Me.picCaptcha.TabStop = False
+		'
 		'btnCadastrarPJ
 		'
 		Me.btnCadastrarPJ.AutoSize = True
@@ -841,14 +849,6 @@ Partial Class FrmAdicionarCliente
 		Me.txtCap.Size = New System.Drawing.Size(190, 23)
 		Me.txtCap.TabIndex = 150
 		Me.txtCap.UseSystemPasswordChar = False
-		'
-		'picCaptcha
-		'
-		Me.picCaptcha.Location = New System.Drawing.Point(6, 251)
-		Me.picCaptcha.Name = "picCaptcha"
-		Me.picCaptcha.Size = New System.Drawing.Size(190, 83)
-		Me.picCaptcha.TabIndex = 149
-		Me.picCaptcha.TabStop = False
 		'
 		'Panel1
 		'

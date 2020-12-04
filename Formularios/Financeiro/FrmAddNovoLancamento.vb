@@ -34,6 +34,11 @@ Public Class FrmAddNovoLancamento
                 rdColaborador.Visible = False
                 rdFisica.Checked = True
                 rdFisica.Visible = False
+
+
+
+                GetData("SELECT Nome,Sobrenome,CPF,Tipo FROM tbClientes", dgvListaClientes)
+                cboTipoPessoa.Text = "Todos"
         End Sub
 
         Private Sub btnAvançar_Click(sender As Object, e As EventArgs) Handles btnAvançar1.Click
@@ -379,25 +384,10 @@ Public Class FrmAddNovoLancamento
                 Limpar()
         End Sub
 
-        Private Sub txtNome_TextChanged(sender As Object, e As EventArgs) Handles txtNome.TextChanged
-                If txtNome.Text <> "" Then
-                        Dim nomecliente As String = txtNome.Text
-                        Dim strConn As String = sConnectionString
-                        Dim conexao As New OleDbConnection(strConn)
-                        Dim consulta As String
-                        If rdColaborador.Checked = True Then
-                                consulta = "SELECT Nome,Sobrenome FROM tbGesseiros WHERE Nome Like " & "'" & nomecliente & "%'"
-                                Conectardb("SELECT CPF FROM tbGesseiros WHERE Nome Like " & "'" & nomecliente & "%'")
-                        Else
-                                consulta = "SELECT Nome,RazaoSocial FROM tbClientes WHERE Nome Like " & "'" & nomecliente & "%' OR RazaoSocial Like " & "'" & nomecliente & "%'"
-                        End If
-                        GetData(consulta, dgvClientes)
-                        dgvClientes.RowHeadersVisible = False
-                End If
-        End Sub
 
-        Private Sub dgvClientes_MouseLeave(sender As Object, e As EventArgs) Handles dgvClientes.MouseLeave
-                dgvClientes.Visible = False
+
+        Private Sub dgvClientes_MouseLeave(sender As Object, e As EventArgs) Handles dgvListaClientes.MouseLeave
+                '  dgvListaClientes.Visible = False
         End Sub
 
         Private Sub rdFisica_Click(sender As Object, e As EventArgs) Handles rdFisica.Click
@@ -405,10 +395,10 @@ Public Class FrmAddNovoLancamento
         End Sub
 
         Private Sub txtCliente_Click(sender As Object, e As EventArgs) Handles txtNome.Click
-                dgvClientes.Visible = True
+                dgvListaClientes.Visible = True
         End Sub
 
-        Private Sub dgvClientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvClientes.CellContentClick
+        Private Sub dgvClientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
                 PreencherCliente()
         End Sub
 
@@ -445,7 +435,7 @@ Public Class FrmAddNovoLancamento
                 End If
         End Sub
 
-        Private Sub dgvClientes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvClientes.CellClick
+        Private Sub dgvClientes_CellClick(sender As Object, e As DataGridViewCellEventArgs)
                 PreencherCliente()
         End Sub
 
@@ -544,15 +534,15 @@ reconect:
         End Sub
 
         Public Sub PreencherCliente()
-                Dim Nome As String = dgvClientes.CurrentRow.Cells(0).Value
+                Dim Nome As String = dgvListaClientes.CurrentRow.Cells(0).Value
                 On Error Resume Next
-                Dim Sobrenome As String = dgvClientes.CurrentRow.Cells(1).Value
+                Dim Sobrenome As String = dgvListaClientes.CurrentRow.Cells(1).Value
                 If rdColaborador.Checked = False Then
-                        txtNome.Text = dgvClientes.CurrentCell.Value
+                        txtNome.Text = dgvListaClientes.CurrentCell.Value
                 Else
-                        txtNome.Text = dgvClientes.CurrentRow.Cells(0).Value & " " & dgvClientes.CurrentRow.Cells(1).Value
+                        txtNome.Text = dgvListaClientes.CurrentRow.Cells(0).Value & " " & dgvListaClientes.CurrentRow.Cells(1).Value
                 End If
-                dgvClientes.Visible = False
+                dgvListaClientes.Visible = False
                 If rdFisica.Checked = True Then
                         'Connect.Conectardb("SELECT CPF FROM tbClientes WHERE Nome = " & "'" & Nome & "' OR RazaoSocial='" & Sobrenome & "'")
                         conexao1("SELECT * FROM tbClientes WHERE Nome = " & "'" & Nome & "'") '" & "OR RazaoSocial='" & Sobrenome & "')")
@@ -662,7 +652,7 @@ reconect:
                 FrmAdicionarCliente.ShowDialog()
         End Sub
 
-        Private Sub dgvClientes_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvClientes.CellEnter
+        Private Sub dgvClientes_CellEnter(sender As Object, e As DataGridViewCellEventArgs)
                 PreencherCliente()
         End Sub
 
@@ -671,5 +661,58 @@ reconect:
                 'If txtNome.Text = "" Then
                 ' txtCPF.Text = ""
                 ' End If
+        End Sub
+
+
+        Private Sub txtFiltroNome_TextChanged(sender As Object, e As EventArgs) Handles txtFiltroNome.TextChanged
+                Dim NomeFiltro As String = txtFiltroNome.Text
+                Dim Comando As String
+                If IsNumeric(txtFiltroNome.Text) = True Then
+                        cboTipoPessoa.Text = "Todos"
+                End If
+                Select Case cboTipoPessoa.Text
+                        Case = "Pessoa Fisica"
+                                Comando = "SELECT Nome,Sobrenome,CPF,Tipo FROM tbClientes WHERE Tipo=" & "'Pessoa Fisica'" & " AND Nome Like " & "'%" & NomeFiltro.ToUpper & "%' OR CPF Like '%" & NomeFiltro & "%'"
+                                GetData(Comando, dgvListaClientes)
+
+                        Case = "Pessoa Juridica"
+                                Comando = "SELECT Nome,RazaoSocial,CPF as CNPJ,Tipo FROM tbClientes WHERE Tipo=" & "'Pessoa Juridica'" & " AND (RazaoSocial Like " & "'%" & NomeFiltro.ToUpper & "%' OR Nome Like '%" & NomeFiltro.ToUpper & "%' OR CPF Like '%" & NomeFiltro & "%')"
+                                GetData(Comando, dgvListaClientes)
+
+                        Case = "Colaborador"
+                                Comando = "SELECT Nome,Sobrenome,CPF,Tipo FROM tbClientes WHERE Tipo=" & "'Colaborador'" & " AND Nome Like " & "'%" & NomeFiltro.ToUpper &
+                                        "%' OR CPF Like '%" & NomeFiltro & "%'"
+                                GetData(Comando, dgvListaClientes)
+
+                        Case = "Todos"
+                                Comando = "SELECT Nome,Sobrenome,CPF,Tipo,RazaoSocial FROM tbClientes WHERE Nome Like " & "'%" & NomeFiltro.ToUpper &
+                                        "%' OR CPF Like '%" & NomeFiltro & "%' OR RazaoSocial like '%" & NomeFiltro.ToUpper & "%'"
+                                GetData(Comando, dgvListaClientes)
+
+                        Case Else
+
+                End Select
+        End Sub
+
+        Private Sub txtShowClientes_Click(sender As Object, e As EventArgs) Handles txtShowClientes.Click
+                Select Case gpClientes.Visible
+                        Case = True
+                                gpClientes.Visible = False
+                                txtShowClientes.Text = "MOSTRAR CLIENTES"
+                        Case = False
+                                gpClientes.Visible = True
+                                txtShowClientes.Text = "OCULTAR CLIENTES"
+                        Case Else
+
+                End Select
+        End Sub
+
+        Private Sub dgvListaClientes_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListaClientes.CellDoubleClick
+                txtNome.Text = dgvListaClientes.CurrentRow.Cells(0).Value
+                txtCPF.Text = dgvListaClientes.CurrentRow.Cells(2).Value
+        End Sub
+
+        Private Sub txtFiltroNome_Click(sender As Object, e As EventArgs) Handles txtFiltroNome.Click
+
         End Sub
 End Class
