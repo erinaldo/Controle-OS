@@ -256,10 +256,10 @@ Partial Class FrmMenu
 		Me.MenuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
 		Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
 		Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ORÇAMENTOToolStripMenuItem, Me.FINANCEIROToolStripMenuItem, Me.VENDASToolStripMenuItem, Me.CADASTROSToolStripMenuItem, Me.OPÇÕESToolStripMenuItem, Me.PRODUTOSToolStripMenuItem, Me.FILADEPRODUÇÃOToolStripMenuItem, Me.CALENDARIOToolStripMenuItem, Me.RELATÓRIOSToolStripMenuItem, Me.AGENDAToolStripMenuItem1, Me.FERRAMENTASToolStripMenuItem})
-		Me.MenuStrip1.Location = New System.Drawing.Point(9, 130)
+		Me.MenuStrip1.Location = New System.Drawing.Point(102, 488)
 		Me.MenuStrip1.Name = "MenuStrip1"
 		Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-		Me.MenuStrip1.Size = New System.Drawing.Size(955, 24)
+		Me.MenuStrip1.Size = New System.Drawing.Size(1075, 24)
 		Me.MenuStrip1.TabIndex = 40
 		Me.MenuStrip1.Text = "MenuStrip1"
 		Me.MenuStrip1.Visible = False

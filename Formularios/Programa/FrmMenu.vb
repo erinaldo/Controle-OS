@@ -44,8 +44,9 @@ Public Class FrmMenu
     End Sub
 
     Private Sub ESTOQUEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ESTOQUEToolStripMenuItem.Click
-        FormAcesso(FrmProdutos, "FrmProdutos", "mdi")
-    End Sub
+                ' FormAcesso(FrmProdutos, "FrmProdutos", "mdi")
+                FrmProdutos.ShowDialog()
+        End Sub
 
     Private Sub PRESTADORESToolStripMenuItem_Click(sender As Object, e As EventArgs)
         FormAcesso(FrmPrestadores, "FrmPrestadores", "mdi")

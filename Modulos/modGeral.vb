@@ -190,8 +190,10 @@ Module modGeral
                 Dim comando As New OleDbCommand(Instrucao, conexao)
                 Dim adaptador As New OleDbDataAdapter(comando)
                 Dim dsbiblio As New DataSet()
-                adaptador.Fill(dsbiblio, "Cliente")
-                Return dsbiblio.Tables("Cliente")
+                If IsNothing(dsbiblio.Tables("Cliente")) = False Then
+                        adaptador.Fill(dsbiblio, "Cliente")
+                        Return dsbiblio.Tables("Cliente")
+                End If
                 conexao.Close()
                 adaptador.Dispose()
                 conexao.Dispose()
