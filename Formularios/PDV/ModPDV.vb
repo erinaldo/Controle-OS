@@ -75,9 +75,9 @@ Module ModPDV
                 FrmPDV.TbPedido2TableAdapter.Fill(FrmPDV.DataPdv1.tbPedido2)
                 FrmPDV.EntregaTableAdapter.Fill(FrmPDV.DataPdv.Entrega)
                 FrmPDV.TbEndTableAdapter.Fill(FrmPDV.DataPdv.tbEnd)
-                FrmPDV.TbProdutoPDVTableAdapter.Fill(FrmPDV.DataPdv.tbProdutoPDV)
+                '            FrmPDV.TbProdutoPDVTableAdapter.Fill(FrmPDV.DataPdv.tbProdutoPDV)
                 FrmPDV.TbEndTableAdapter.FillByVazio(FrmPDV.DataPdv.tbEnd)
-                FrmPDV.TbProdutoPDVTableAdapter.FillByVazio(FrmPDV.DataPdv.tbProdutoPDV)
+                '      FrmPDV.TbProdutoPDVTableAdapter.FillByVazio(FrmPDV.DataPdv.tbProdutoPDV)
                 FrmPDV.txtLogradouro.Text = ""
                 FrmPDV.txtCPFCliente.Text = ""
                 With FrmPDV.cboTabela.Items

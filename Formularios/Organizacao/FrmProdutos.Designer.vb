@@ -1,29 +1,29 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmProdutos
-        ' Inherits System.Windows.Forms.Form
+	' Inherits System.Windows.Forms.Form
 
-        'Descartar substituições de formulário para limpar a lista de componentes.
-        <System.Diagnostics.DebuggerNonUserCode()> _
-    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-        Try
-            If disposing AndAlso components IsNot Nothing Then
-                components.Dispose()
-            End If
-        Finally
-            MyBase.Dispose(disposing)
-        End Try
-    End Sub
+	'Descartar substituições de formulário para limpar a lista de componentes.
+	<System.Diagnostics.DebuggerNonUserCode()>
+	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+		Try
+			If disposing AndAlso components IsNot Nothing Then
+				components.Dispose()
+			End If
+		Finally
+			MyBase.Dispose(disposing)
+		End Try
+	End Sub
 
-    'Exigido pelo Windows Form Designer
-    Private components As System.ComponentModel.IContainer
+	'Exigido pelo Windows Form Designer
+	Private components As System.ComponentModel.IContainer
 
-    'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
-    'Pode ser modificado usando o Windows Form Designer.  
-    'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
-    Private Sub InitializeComponent()
-	      Me.components = New System.ComponentModel.Container()
-		Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+	'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
+	'Pode ser modificado usando o Windows Form Designer.  
+	'Não o modifique usando o editor de códigos.
+	<System.Diagnostics.DebuggerStepThrough()>
+	Private Sub InitializeComponent()
+		Me.components = New System.ComponentModel.Container()
+		Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmProdutos))
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -54,6 +54,7 @@ Partial Class FrmProdutos
 		Me.btnAddCodBaras = New System.Windows.Forms.Button()
 		Me.dgvCodBarras = New System.Windows.Forms.DataGridView()
 		Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+		Me.lblStatus = New System.Windows.Forms.Label()
 		Me.Label35 = New System.Windows.Forms.Label()
 		Me.Label8 = New System.Windows.Forms.Label()
 		Me.Label9 = New System.Windows.Forms.Label()
@@ -93,7 +94,7 @@ Partial Class FrmProdutos
 		Me.TbPrecoTabelaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
 		Me.GroupBox3 = New System.Windows.Forms.GroupBox()
 		Me.Label36 = New System.Windows.Forms.Label()
-		Me.lblStatus = New System.Windows.Forms.Label()
+		Me.lblEstoqueID = New System.Windows.Forms.Label()
 		Me.GroupBox1.SuspendLayout()
 		CType(Me.TbProdutoPDVBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.DataPdv, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -270,14 +271,14 @@ Partial Class FrmProdutos
 		Me.TbProdutoPDVDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.TbProdutoPDVDataGridView.BackgroundColor = System.Drawing.Color.White
 		Me.TbProdutoPDVDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-		DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-		DataGridViewCellStyle1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-		DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-		DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-		DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-		Me.TbProdutoPDVDataGridView.DefaultCellStyle = DataGridViewCellStyle1
+		DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+		DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+		DataGridViewCellStyle2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent
+		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Blue
+		DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+		Me.TbProdutoPDVDataGridView.DefaultCellStyle = DataGridViewCellStyle2
 		Me.TbProdutoPDVDataGridView.Location = New System.Drawing.Point(7, 19)
 		Me.TbProdutoPDVDataGridView.Name = "TbProdutoPDVDataGridView"
 		Me.TbProdutoPDVDataGridView.ReadOnly = True
@@ -404,6 +405,17 @@ Partial Class FrmProdutos
 		Me.GroupBox2.Size = New System.Drawing.Size(1154, 382)
 		Me.GroupBox2.TabIndex = 38
 		Me.GroupBox2.TabStop = False
+		'
+		'lblStatus
+		'
+		Me.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+		Me.lblStatus.AutoSize = True
+		Me.lblStatus.BackColor = System.Drawing.Color.Transparent
+		Me.lblStatus.Location = New System.Drawing.Point(84, 355)
+		Me.lblStatus.Name = "lblStatus"
+		Me.lblStatus.Size = New System.Drawing.Size(65, 13)
+		Me.lblStatus.TabIndex = 70
+		Me.lblStatus.Text = "Status Filtro"
 		'
 		'Label35
 		'
@@ -896,16 +908,16 @@ Partial Class FrmProdutos
 		Me.Label36.TabIndex = 67
 		Me.Label36.Text = "Todos"
 		'
-		'lblStatus
+		'lblEstoqueID
 		'
-		Me.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-		Me.lblStatus.AutoSize = True
-		Me.lblStatus.BackColor = System.Drawing.Color.Transparent
-		Me.lblStatus.Location = New System.Drawing.Point(84, 355)
-		Me.lblStatus.Name = "lblStatus"
-		Me.lblStatus.Size = New System.Drawing.Size(65, 13)
-		Me.lblStatus.TabIndex = 70
-		Me.lblStatus.Text = "Status Filtro"
+		Me.lblEstoqueID.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.lblEstoqueID.AutoSize = True
+		Me.lblEstoqueID.BackColor = System.Drawing.Color.Transparent
+		Me.lblEstoqueID.Location = New System.Drawing.Point(977, 239)
+		Me.lblEstoqueID.Name = "lblEstoqueID"
+		Me.lblEstoqueID.Size = New System.Drawing.Size(57, 13)
+		Me.lblEstoqueID.TabIndex = 71
+		Me.lblEstoqueID.Text = "estoque id"
 		'
 		'FrmProdutos
 		'
@@ -915,6 +927,7 @@ Partial Class FrmProdutos
 		Me.BackColor = System.Drawing.SystemColors.MenuBar
 		Me.ClientSize = New System.Drawing.Size(1178, 698)
 		Me.ControlBox = False
+		Me.Controls.Add(Me.lblEstoqueID)
 		Me.Controls.Add(Me.GroupBox3)
 		Me.Controls.Add(Me.btnSair)
 		Me.Controls.Add(Me.Label32)
@@ -954,18 +967,18 @@ Partial Class FrmProdutos
 
 	End Sub
 	Friend WithEvents btnVoltar As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents btnExcluirProduto As Button
-    Friend WithEvents btnEditPagRealizado As Button
-    Friend WithEvents btnAdicionarProduto As Button
-    Friend WithEvents btnAtualizar As Button
+	Friend WithEvents Label1 As Label
+	Friend WithEvents GroupBox1 As GroupBox
+	Friend WithEvents Label7 As Label
+	Friend WithEvents Label6 As Label
+	Friend WithEvents Label5 As Label
+	Friend WithEvents Label4 As Label
+	Friend WithEvents Label3 As Label
+	Friend WithEvents Label2 As Label
+	Friend WithEvents btnExcluirProduto As Button
+	Friend WithEvents btnEditPagRealizado As Button
+	Friend WithEvents btnAdicionarProduto As Button
+	Friend WithEvents btnAtualizar As Button
 	Friend WithEvents DataPdv As DataPdv
 	Friend WithEvents TbProdutoPDVBindingSource As BindingSource
 	Friend WithEvents TbProdutoPDVTableAdapter As DataPdvTableAdapters.tbProdutoPDVTableAdapter
@@ -1022,4 +1035,5 @@ Partial Class FrmProdutos
 	Friend WithEvents GroupBox3 As GroupBox
 	Friend WithEvents Label36 As Label
 	Friend WithEvents lblStatus As Label
+	Friend WithEvents lblEstoqueID As Label
 End Class

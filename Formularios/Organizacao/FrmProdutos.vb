@@ -5,10 +5,9 @@ Public Class FrmProdutos
 
         Inherits Controls.MaterialForm
         Private Sub FrmProdutos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-                'Me.TbPrecoTabelaTableAdapter.Fill(Me.DataPdv.tbPrecoTabela)
-                'Me.TbProdutoPDVTableAdapter.Fill(Me.DataPdv.tbProdutoPDV)
                 GetDataCombo(cboEstoques, "SELECT Nome from tbEstoque")
-                Dim Instrucao As String = "SELECT Produto FROM tbProdutoPDV"
+                cboEstoques.Text = cboEstoques.Items(0).ToString
+                Dim Instrucao As String = "SELECT Produto as PRODUTO,Unidade AS UNIDADE,Custo AS CUSTO,ValorVenda as VENDA,SaldoCritico as ESTOQUE_CRITICO,SaldoEstoque as SALDO_ESTOQUE FROM tbProdutoPDV"
                 Dim strConn As String = sConnectionString
                 Dim conexao As New OleDbConnection(strConn)
                 Dim comando As New OleDbCommand(Instrucao, conexao)
@@ -19,6 +18,9 @@ Public Class FrmProdutos
                 lblStatus.Text = "Exibindo todos os produtos"
                 Label35.Text = ""
                 Label35.Text = "N° Itens : " + TbProdutoPDVDataGridView.Rows.Count.ToString
+                With TbProdutoPDVDataGridView
+                        .Columns(0).Width = 60%
+                End With
         End Sub
 
         Private Sub btnVoltar_Click(sender As Object, e As EventArgs) Handles btnVoltar.Click
@@ -36,8 +38,8 @@ Public Class FrmProdutos
                         lSQL = "DELETE FROM tbProdutoPDV WHERE ProdutoID=" & txtProdutoID.Text
                         SQL.Comando()
                         SQL.Notificao("NOVA LITORAL GESSO", "DELETADO COM SUCESSO")
-                        Me.TbPrecoTabelaTableAdapter.Fill(Me.DataPdv.tbPrecoTabela)
-                        Me.TbProdutoPDVTableAdapter.Fill(Me.DataPdv.tbProdutoPDV)
+                        ' Me.TbPrecoTabelaTableAdapter.Fill(Me.DataPdv.tbPrecoTabela)
+                        ' Me.TbProdutoPDVTableAdapter.Fill(Me.DataPdv.tbProdutoPDV)
                 Else
                         SQL.Notificao("NOVA LITORAL GESSO", "Operação cancelada pelo usuario")
                 End If
@@ -80,6 +82,9 @@ Public Class FrmProdutos
                 Catch
                         MsgBox("erro " & TbProdutoPDVDataGridView.CurrentRow.Cells(0).Value)
                 End Try
+
+
+
         End Sub
 
         Private Sub btnAddCodBaras_Click(sender As Object, e As EventArgs) Handles btnAddCodBaras.Click
@@ -123,7 +128,7 @@ Public Class FrmProdutos
 
         Public Sub FiltroPorIncial(label As Label)
                 Dim Letra As String = label.Text
-                Dim Instrucao As String = "SELECT Produto FROM tbProdutoPDV WHERE Produto LIKE '" & Letra & "%'"
+                Dim Instrucao As String = "SELECT Produto as PRODUTO,Unidade AS UNIDADE,Custo AS CUSTO,ValorVenda as VENDA,SaldoCritico as ESTOQUE_CRITICO,SaldoEstoque as SALDO_ESTOQUE FROM tbProdutoPDV WHERE Estoque=" & EstoqueSelecionado & " AND Produto Like '" & Letra & "%'"
                 Dim strConn As String = sConnectionString
                 Dim conexao As New OleDbConnection(strConn)
                 Dim comando As New OleDbCommand(Instrucao, conexao)
@@ -255,7 +260,7 @@ Public Class FrmProdutos
         End Sub
 
         Private Sub Label36_Click(sender As Object, e As EventArgs) Handles Label36.Click
-                Dim Instrucao As String = "SELECT Produto FROM tbProdutoPDV"
+                Dim Instrucao As String = "SELECT Produto as PRODUTO,Unidade AS UNIDADE,Custo AS CUSTO,ValorVenda as VENDA,SaldoCritico as ESTOQUE_CRITICO,SaldoEstoque as SALDO_ESTOQUE FROM tbProdutoPDV"
                 Dim strConn As String = sConnectionString
                 Dim conexao As New OleDbConnection(strConn)
                 Dim comando As New OleDbCommand(Instrucao, conexao)
@@ -264,5 +269,51 @@ Public Class FrmProdutos
                 adaptador.Fill(dsbiblio, "Cliente")
                 TbProdutoPDVDataGridView.DataSource = dsbiblio.Tables("Cliente")
                 lblStatus.Text = "Exibindo todos os produtos"
+                With TbProdutoPDVDataGridView
+                        .Columns(0).Width = 60%
+                End With
+        End Sub
+
+        Public EstoqueSelecionado As Double
+
+        Private Sub cboEstoques_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboEstoques.SelectedIndexChanged
+                Try
+                        conexao1("SELECT * FROM tbEstoque WHERE Nome='" & cboEstoques.Text & "'")
+                        bdr1.Read()
+                        EstoqueSelecionado = bdr1(0)
+                Catch ex As Exception
+                        MsgBox(ex.ToString)
+                End Try
+
+                Dim Instrucao As String = "SELECT Produto as PRODUTO,Unidade AS UNIDADE,Custo AS CUSTO,ValorVenda as VENDA,SaldoCritico as ESTOQUE_CRITICO,SaldoEstoque as SALDO_ESTOQUE FROM tbProdutoPDV WHERE Estoque=" & EstoqueSelecionado
+                Dim strConn As String = sConnectionString
+                Dim conexao As New OleDbConnection(strConn)
+                Dim comando As New OleDbCommand(Instrucao, conexao)
+                Dim adaptador As New OleDbDataAdapter(comando)
+                Dim dsbiblio As New DataSet()
+                adaptador.Fill(dsbiblio, "Cliente")
+                TbProdutoPDVDataGridView.DataSource = dsbiblio.Tables("Cliente")
+
+        End Sub
+
+        Private Sub Button1_Click_2(sender As Object, e As EventArgs)
+                conexao1("UPDATE tbProdutoPDV SET SaldoEstoque=""" & 10 & """")
+        End Sub
+
+        Private Sub Button2_Click(sender As Object, e As EventArgs)
+
+        End Sub
+
+        Private Sub TbProdutoPDVDataGridView_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles TbProdutoPDVDataGridView.CellFormatting
+                If e.ColumnIndex = 2 Then
+                        If IsNothing(e.Value) Or IsDBNull(e.Value) Then
+                                GoTo Line1
+                        End If
+                        If (e.Value.ToString = ("Receita")) Then
+                                e.CellStyle.BackColor = Color.White
+                                e.CellStyle.ForeColor = Color.Green
+                        End If
+                End If
+Line1:
         End Sub
 End Class

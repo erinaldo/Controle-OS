@@ -57,7 +57,7 @@ Public Class FrmPDV
                         .Location = New System.Drawing.Size(150, 190)
                         .BorderStyle = BorderStyle.Fixed3D
                 End With
-                Me.Controls.Add(TextPoup)
+                '  Me.Controls.Add(TextPoup)
                 TextPoup.BringToFront()
         End Sub
 
@@ -66,7 +66,16 @@ Public Class FrmPDV
                 ' Dim Nome As String = dgvCliente.CurrentRow.Cells(1).Value
                 If NomeCliente <> "" Then
                         If txtCliente.Text <> "" Then
-                                Me.TbEndTableAdapter.FillByEndID(Me.DataPdv.tbEnd, New System.Nullable(Of Integer)(CType(ClienteIDatual, Integer)))
+                                'Me.TbEndTableAdapter.FillByEndID(Me.DataPdv.tbEnd, New System.Nullable(Of Integer)(CType(ClienteIDatual, Integer)))
+
+                                Dim strConn As String = sConnectionString
+                                Dim conexao As New OleDbConnection(strConn)
+                                Dim comando As New OleDbCommand("SELECT Logradouro, EndNumero, Bairro, Cidade, UF, Complemento, CEP, Tipo FROM tbEnd WHERE CodEnd=" & ClienteIDatual, conexao)
+                                Dim adaptador As New OleDbDataAdapter(comando)
+                                Dim dsbiblio As New DataSet()
+                                adaptador.Fill(dsbiblio, "Endereco")
+                                dgvEnd.DataSource = dsbiblio.Tables("Endereco")
+
                                 dgvEnd.Visible = True
                         Else
                                 SQL.Notificao("", "Não foi encontrado endereços para esse cliente")
@@ -566,7 +575,7 @@ Prox:
                 lblEmEstoque.Visible = True
                 PanelProdutos.Visible = True
                 btnConfirmarEscolha.Visible = True
-                Me.TbProdutoPDVTableAdapter.FillByNome(Me.DataPdv.tbProdutoPDV, txtPesqProduto.Text)
+                '  Me.TbProdutoPDVTableAdapter.FillByNome(Me.DataPdv.tbProdutoPDV, txtPesqProduto.Text)
         End Sub
 
         Public Sub btnConfirmarEscolha_Click(sender As Object, e As EventArgs) Handles btnConfirmarEscolha.Click
