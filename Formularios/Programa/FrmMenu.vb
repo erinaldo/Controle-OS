@@ -167,7 +167,6 @@ Public Class FrmMenu
     End Sub
 
         Private Sub FrmMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
                 'CARREGAR TABELA DE MOVIMENTAÇÃO FINANCEIRA
                 MovFinan()
 
@@ -451,5 +450,9 @@ Public Class FrmMenu
                 FrmLogin.txtSenha.Text = ""
                 Me.Close()
                 FrmMdiHome.Close()
+        End Sub
+
+    Private Sub btnVisitas_Click(sender As Object, e As EventArgs) Handles btnVisitas.Click
+                FrmListaVisita.Show()
         End Sub
 End Class

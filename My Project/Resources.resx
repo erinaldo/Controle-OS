@@ -121,14 +121,14 @@
   <data name="quadrado-para-banner-verde-claro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quadrado-para-banner-verde-claro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Info" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="id_icon-icons.com_64188" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\id_icon-icons.com_64188.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="024-shopping cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\024-shopping cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="subtrair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\subtrair.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="quadrado-para-banner-verde-claro2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quadrado-para-banner-verde-claro2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,8 +208,8 @@
   <data name="Cartao5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cartao5.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1491579542-yumminkysocialmedia22_83078" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1491579542-yumminkysocialmedia22_83078.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lupa2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lupa2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,8 +232,8 @@
   <data name="carregamento21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\carregamento21.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="box-p-planoConta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\box-p-planoConta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="editar3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editar3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pagamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pagamento.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,6 +301,9 @@
   <data name="003-timer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\003-timer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="miniimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\miniimizar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Voltar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Voltar.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -312,6 +315,9 @@
   </data>
   <data name="friends_link_send_share_icon_123609 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\friends_link_send_share_icon_123609 (1).ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SetaBaixo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SetaBaixo.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="quadrado-para-banner-verde-claro1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quadrado-para-banner-verde-claro1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -391,11 +397,14 @@
   <data name="Barras2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Barras2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="adicionar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adicionar.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="carregamento3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\carregamento3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user-blue_25325" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-blue_25325.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sub" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sub.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -445,8 +454,11 @@
   <data name="setas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user-blue_25325" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user-blue_25325.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Entrega" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Entrega.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -475,14 +487,14 @@
   <data name="Cancelar3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancelar3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="miniimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\miniimizar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="box-p-planoConta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\box-p-planoConta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1492790945-39minimize_84242" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1492790945-39minimize_84242.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SetaBaixo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SetaBaixo.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1491579542-yumminkysocialmedia22_83078" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1491579542-yumminkysocialmedia22_83078.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Faturar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Faturar2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -490,7 +502,7 @@
   <data name="box-p-SituacaoPagamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\box-p-SituacaoPagamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editar3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editar3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chkbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chkbox.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

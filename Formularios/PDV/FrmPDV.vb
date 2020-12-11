@@ -95,7 +95,15 @@ Public Class FrmPDV
 
         Private Sub txtProduto_Click(sender As Object, e As EventArgs) Handles txtProduto.Click
                 dgvListaProduto.Visible = True
-                Me.TbProdutoPDVTableAdapter.Fill(Me.DataPdv.tbProdutoPDV)
+                'Me.TbProdutoPDVTableAdapter.Fill(Me.DataPdv.tbProdutoPDV)
+
+                Dim strConn As String = sConnectionString
+                Dim conexao As New OleDbConnection(strConn)
+                Dim comando As New OleDbCommand("SELECT Produto, SaldoEstoque FROM tbProdutoPDV", conexao)
+                Dim adaptador As New OleDbDataAdapter(comando)
+                Dim dsbiblio As New DataSet()
+                adaptador.Fill(dsbiblio, "Produto")
+                dgvListaProduto.DataSource = dsbiblio.Tables("Produto")
         End Sub
 
         Private Sub dgvCliente_MouseLeave(sender As Object, e As EventArgs) Handles dgvCliente.MouseLeave
@@ -533,6 +541,14 @@ Prox:
                 End If
                 txtQuantidade.Text = 1
                 txtSoma.Text = txtCustoTotal.Text
+
+                Try
+                        conexao1("SELECT * FROM tbProdutoPDV WHERE Produto='" & dgvListaProduto.CurrentRow.Cells(0).Value)
+                        bdr1.Read()
+                        txtProdutoID.Text = bdr1("ProdutoID")
+                Catch
+                        SQL.Notificao("", "Erro na consulta de produto pelo nome")
+                End Try
         End Sub
 
         Private Sub btnAddPessoa_Click(sender As Object, e As EventArgs) Handles btnAddPessoa.Click
@@ -571,8 +587,8 @@ Prox:
         Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
                 dgvListaProduto.Visible = True
                 lblPesquisarProdutos.Visible = True
-                lblProduto.Visible = True
-                lblEmEstoque.Visible = True
+                'lblProduto.Visible = True
+                'lblEmEstoque.Visible = True
                 PanelProdutos.Visible = True
                 btnConfirmarEscolha.Visible = True
                 '  Me.TbProdutoPDVTableAdapter.FillByNome(Me.DataPdv.tbProdutoPDV, txtPesqProduto.Text)
@@ -583,15 +599,28 @@ Prox:
                 'MsgBox("Nome do Produto  " & dgvProdutos.CurrentRow.Cells(0).Value)
                 dgvListaProduto.Visible = False
                 lblPesquisarProdutos.Visible = False
-                lblProduto.Visible = False
-                lblEmEstoque.Visible = False
+                'lblProduto.Visible = False
+                ' lblEmEstoque.Visible = False
                 PanelProdutos.Visible = False
                 btnConfirmarEscolha.Visible = False
                 dgvRE.Visible = False
         End Sub
 
         Private Sub txtPesqProduto_TextChanged(sender As Object, e As EventArgs) Handles txtPesqProduto.TextChanged
-                Me.TbProdutoPDVTableAdapter.FillByNome(Me.DataPdv.tbProdutoPDV, txtPesqProduto.Text)
+
+                Dim strConn As String = sConnectionString
+                Dim conexao As New OleDbConnection(strConn)
+                Dim comando As New OleDbCommand("SELECT ProdutoID as ID, Produto, SaldoEstoque as Estoque FROM tbProdutoPDV WHERE Produto LIKE '%" & txtPesqProduto.Text & "%'", conexao)
+                Dim adaptador As New OleDbDataAdapter(comando)
+                Dim dsbiblio As New DataSet()
+                adaptador.Fill(dsbiblio, "Endereco")
+                dgvListaProduto.DataSource = dsbiblio.Tables("Endereco")
+
+                With dgvListaProduto
+                        .Columns(0).Width = 0
+                        .Columns(1).Width = 50
+                        .Columns(2).Width = 100
+                End With
         End Sub
 
         Private Sub Label20_Click(sender As Object, e As EventArgs)
@@ -675,7 +704,7 @@ Prox:
 
         End Sub
 
-        Private Sub btnRE_Click(sender As Object, e As EventArgs) Handles btnRE.Click
+        Private Sub btnRE_Click(sender As Object, e As EventArgs)
                 dgvRE.BringToFront()
 
                 'switch visible noVisible
@@ -689,7 +718,7 @@ Prox:
                 End Select
         End Sub
 
-        Private Sub btnAgendarEntrega_Click(sender As Object, e As EventArgs) Handles btnAgendarEntrega.Click
+        Private Sub btnAgendarEntrega_Click(sender As Object, e As EventArgs)
                 FrmAgendaEntrega.Show()
         End Sub
 
@@ -702,5 +731,13 @@ Prox:
 
         Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
 
+        End Sub
+
+        Private Sub txtProduto_TextChanged(sender As Object, e As EventArgs) Handles txtProduto.TextChanged
+                If txtProduto.Text = "" Then
+                        lblProdutoDesc.Visible = True
+                Else
+                        lblProdutoDesc.Visible = False
+                End If
         End Sub
 End Class

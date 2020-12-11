@@ -69,6 +69,7 @@ Partial Class FrmMenu
 		Me.AGENDAToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.FERRAMENTASToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.CONSULTACNPJToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.RightToolStripPanel = New System.Windows.Forms.ToolStripPanel()
 		Me.LeftToolStripPanel = New System.Windows.Forms.ToolStripPanel()
 		Me.ContentPanel = New System.Windows.Forms.ToolStripContentPanel()
@@ -124,6 +125,7 @@ Partial Class FrmMenu
 		Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
 		Me.MaterialLabel3 = New MaterialSkin.Controls.MaterialLabel()
 		Me.btnLogout = New MaterialSkin.Controls.MaterialFlatButton()
+		Me.btnVisitas = New System.Windows.Forms.Button()
 		Label11 = New System.Windows.Forms.Label()
 		CType(Me.TbProdutoVenda1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.SistemaGEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -255,11 +257,11 @@ Partial Class FrmMenu
 		Me.MenuStrip1.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.MenuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
 		Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-		Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ORÇAMENTOToolStripMenuItem, Me.FINANCEIROToolStripMenuItem, Me.VENDASToolStripMenuItem, Me.CADASTROSToolStripMenuItem, Me.OPÇÕESToolStripMenuItem, Me.PRODUTOSToolStripMenuItem, Me.FILADEPRODUÇÃOToolStripMenuItem, Me.CALENDARIOToolStripMenuItem, Me.RELATÓRIOSToolStripMenuItem, Me.AGENDAToolStripMenuItem1, Me.FERRAMENTASToolStripMenuItem})
+		Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ORÇAMENTOToolStripMenuItem, Me.FINANCEIROToolStripMenuItem, Me.VENDASToolStripMenuItem, Me.CADASTROSToolStripMenuItem, Me.OPÇÕESToolStripMenuItem, Me.PRODUTOSToolStripMenuItem, Me.FILADEPRODUÇÃOToolStripMenuItem, Me.CALENDARIOToolStripMenuItem, Me.RELATÓRIOSToolStripMenuItem, Me.AGENDAToolStripMenuItem1, Me.FERRAMENTASToolStripMenuItem, Me.ToolStripMenuItem1})
 		Me.MenuStrip1.Location = New System.Drawing.Point(102, 488)
 		Me.MenuStrip1.Name = "MenuStrip1"
 		Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-		Me.MenuStrip1.Size = New System.Drawing.Size(1075, 24)
+		Me.MenuStrip1.Size = New System.Drawing.Size(967, 24)
 		Me.MenuStrip1.TabIndex = 40
 		Me.MenuStrip1.Text = "MenuStrip1"
 		Me.MenuStrip1.Visible = False
@@ -486,6 +488,11 @@ Partial Class FrmMenu
 		Me.CONSULTACNPJToolStripMenuItem.Name = "CONSULTACNPJToolStripMenuItem"
 		Me.CONSULTACNPJToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
 		Me.CONSULTACNPJToolStripMenuItem.Text = "CONSULTA CNPJ"
+		'
+		'ToolStripMenuItem1
+		'
+		Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+		Me.ToolStripMenuItem1.Size = New System.Drawing.Size(12, 20)
 		'
 		'RightToolStripPanel
 		'
@@ -1112,6 +1119,15 @@ Partial Class FrmMenu
 		Me.btnLogout.Text = "Logout"
 		Me.btnLogout.UseVisualStyleBackColor = True
 		'
+		'btnVisitas
+		'
+		Me.btnVisitas.Location = New System.Drawing.Point(452, 88)
+		Me.btnVisitas.Name = "btnVisitas"
+		Me.btnVisitas.Size = New System.Drawing.Size(75, 23)
+		Me.btnVisitas.TabIndex = 69
+		Me.btnVisitas.Text = "Visitas"
+		Me.btnVisitas.UseVisualStyleBackColor = True
+		'
 		'FrmMenu
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1122,6 +1138,7 @@ Partial Class FrmMenu
 		Me.CausesValidation = False
 		Me.ClientSize = New System.Drawing.Size(980, 602)
 		Me.ControlBox = False
+		Me.Controls.Add(Me.btnVisitas)
 		Me.Controls.Add(Me.btnLogout)
 		Me.Controls.Add(Me.MaterialLabel3)
 		Me.Controls.Add(Me.MaterialLabel1)
@@ -1284,4 +1301,6 @@ Partial Class FrmMenu
         Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
         Friend WithEvents MaterialLabel3 As MaterialSkin.Controls.MaterialLabel
 	Friend WithEvents btnLogout As MaterialSkin.Controls.MaterialFlatButton
+	Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+	Friend WithEvents btnVisitas As Button
 End Class

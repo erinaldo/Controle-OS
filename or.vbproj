@@ -238,6 +238,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Financeiro\Module1.vb" />
+    <Compile Include="Formularios\Orcamento\FrmListaVisita.Designer.vb">
+      <DependentUpon>FrmListaVisita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmListaVisita.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Orcamento\FrmResumoComodo.Designer.vb">
       <DependentUpon>FrmResumoComodo.vb</DependentUpon>
     </Compile>
@@ -712,6 +718,9 @@
     <EmbeddedResource Include="Formularios\Orcamento\FrmAndamentoDaOS.resx">
       <DependentUpon>FrmAndamentoDaOS.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmListaVisita.resx">
+      <DependentUpon>FrmListaVisita.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Orcamento\FrmResumoComodo.resx">
       <DependentUpon>FrmResumoComodo.vb</DependentUpon>
     </EmbeddedResource>
@@ -1103,6 +1112,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\subtrair.ico" />
     <None Include="Resources\trena.jpg" />
     <None Include="Resources\seta_verde_esquerda.png" />
     <None Include="Resources\SubVerde.png" />
@@ -1112,8 +1122,11 @@
     <None Include="Resources\seta_vermelha.png" />
     <None Include="Resources\mim.jpg" />
     <None Include="Resources\funcionario.jpg" />
+    <None Include="Resources\adicionar.ico" />
+    <None Include="Resources\chkbox.ico" />
     <Content Include="Resources\editar.png" />
     <None Include="Resources\editar3.png" />
+    <None Include="Resources\lupa2.ico" />
     <Content Include="Resources\NLG2.png" />
     <None Include="Resources\settings-1.png" />
     <None Include="Resources\miniimizar23.png" />
@@ -1234,42 +1247,42 @@
   <ItemGroup>
     <PublishFile Include="Adobe.DocumentCloud.Services.xml">
       <Visible>False</Visible>
-      <PublishState>DataFile</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="ControleOS.pdb">
       <Visible>False</Visible>
-      <PublishState>DataFile</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="ControleOS.xml">
       <Visible>False</Visible>
-      <PublishState>DataFile</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="itextsharp.xml">
       <Visible>False</Visible>
-      <PublishState>DataFile</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
