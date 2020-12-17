@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FrmAgendaEntrega
+Partial Class FrmAgendaObras
 	Inherits System.Windows.Forms.Form
 
 	'Descartar substituições de formulário para limpar a lista de componentes.
@@ -23,7 +23,7 @@ Partial Class FrmAgendaEntrega
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
-		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAgendaEntrega))
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAgendaObras))
 		Me.l1 = New System.Windows.Forms.ListView()
 		Me.ilFig = New System.Windows.Forms.ImageList(Me.components)
 		Me.l2 = New System.Windows.Forms.ListView()
@@ -52,6 +52,8 @@ Partial Class FrmAgendaEntrega
 		Me.btnSomar = New System.Windows.Forms.Button()
 		Me.btnSubtrair = New System.Windows.Forms.Button()
 		Me.Panel2 = New System.Windows.Forms.Panel()
+		Me.Label20 = New System.Windows.Forms.Label()
+		Me.cboMotorista = New System.Windows.Forms.ComboBox()
 		Me.lblStatus = New System.Windows.Forms.Label()
 		Me.pbCalen = New System.Windows.Forms.ProgressBar()
 		Me.Panel3 = New System.Windows.Forms.Panel()
@@ -93,8 +95,6 @@ Partial Class FrmAgendaEntrega
 		Me.pnItens = New System.Windows.Forms.Panel()
 		Me.Button1 = New System.Windows.Forms.Button()
 		Me.tmPopularCalendario = New System.Windows.Forms.Timer(Me.components)
-		Me.cboMotorista = New System.Windows.Forms.ComboBox()
-		Me.Label20 = New System.Windows.Forms.Label()
 		CType(Me.tbData, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
@@ -362,7 +362,7 @@ Partial Class FrmAgendaEntrega
 		Me.Panel1.Controls.Add(Me.btnSubtrair)
 		Me.Panel1.Location = New System.Drawing.Point(7, 455)
 		Me.Panel1.Name = "Panel1"
-		Me.Panel1.Size = New System.Drawing.Size(1474, 71)
+		Me.Panel1.Size = New System.Drawing.Size(994, 71)
 		Me.Panel1.TabIndex = 24
 		'
 		'btnSomar
@@ -401,6 +401,24 @@ Partial Class FrmAgendaEntrega
 		Me.Panel2.Name = "Panel2"
 		Me.Panel2.Size = New System.Drawing.Size(1010, 103)
 		Me.Panel2.TabIndex = 25
+		'
+		'Label20
+		'
+		Me.Label20.AutoSize = True
+		Me.Label20.Location = New System.Drawing.Point(881, 27)
+		Me.Label20.Name = "Label20"
+		Me.Label20.Size = New System.Drawing.Size(50, 13)
+		Me.Label20.TabIndex = 135
+		Me.Label20.Text = "Motorista"
+		'
+		'cboMotorista
+		'
+		Me.cboMotorista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.cboMotorista.FormattingEnabled = True
+		Me.cboMotorista.Location = New System.Drawing.Point(881, 45)
+		Me.cboMotorista.Name = "cboMotorista"
+		Me.cboMotorista.Size = New System.Drawing.Size(121, 21)
+		Me.cboMotorista.TabIndex = 134
 		'
 		'lblStatus
 		'
@@ -854,24 +872,6 @@ Partial Class FrmAgendaEntrega
 		'
 		Me.tmPopularCalendario.Enabled = True
 		Me.tmPopularCalendario.Interval = 10000
-		'
-		'cboMotorista
-		'
-		Me.cboMotorista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.cboMotorista.FormattingEnabled = True
-		Me.cboMotorista.Location = New System.Drawing.Point(881, 45)
-		Me.cboMotorista.Name = "cboMotorista"
-		Me.cboMotorista.Size = New System.Drawing.Size(121, 21)
-		Me.cboMotorista.TabIndex = 134
-		'
-		'Label20
-		'
-		Me.Label20.AutoSize = True
-		Me.Label20.Location = New System.Drawing.Point(881, 27)
-		Me.Label20.Name = "Label20"
-		Me.Label20.Size = New System.Drawing.Size(50, 13)
-		Me.Label20.TabIndex = 135
-		Me.Label20.Text = "Motorista"
 		'
 		'FrmAgendaEntrega
 		'
