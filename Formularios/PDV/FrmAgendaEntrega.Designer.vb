@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FrmAgendaObras
+Partial Class FrmAgendaEntregas
 	Inherits System.Windows.Forms.Form
 
 	'Descartar substituições de formulário para limpar a lista de componentes.
@@ -23,7 +23,7 @@ Partial Class FrmAgendaObras
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
-		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAgendaObras))
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAgendaEntregas))
 		Me.l1 = New System.Windows.Forms.ListView()
 		Me.ilFig = New System.Windows.Forms.ImageList(Me.components)
 		Me.l2 = New System.Windows.Forms.ListView()
@@ -110,6 +110,7 @@ Partial Class FrmAgendaObras
 		'
 		'l1
 		'
+		Me.l1.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.l1.HideSelection = False
 		Me.l1.Location = New System.Drawing.Point(7, 133)
 		Me.l1.Name = "l1"
@@ -129,6 +130,7 @@ Partial Class FrmAgendaObras
 		'
 		'l2
 		'
+		Me.l2.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.l2.HideSelection = False
 		Me.l2.Location = New System.Drawing.Point(149, 133)
 		Me.l2.Name = "l2"
@@ -139,6 +141,7 @@ Partial Class FrmAgendaObras
 		'
 		'l3
 		'
+		Me.l3.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.l3.HideSelection = False
 		Me.l3.Location = New System.Drawing.Point(291, 133)
 		Me.l3.Name = "l3"
@@ -149,6 +152,7 @@ Partial Class FrmAgendaObras
 		'
 		'l4
 		'
+		Me.l4.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.l4.HideSelection = False
 		Me.l4.Location = New System.Drawing.Point(433, 133)
 		Me.l4.Name = "l4"
@@ -159,6 +163,7 @@ Partial Class FrmAgendaObras
 		'
 		'l5
 		'
+		Me.l5.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.l5.HideSelection = False
 		Me.l5.Location = New System.Drawing.Point(575, 133)
 		Me.l5.Name = "l5"
@@ -169,6 +174,7 @@ Partial Class FrmAgendaObras
 		'
 		'l6
 		'
+		Me.l6.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.l6.HideSelection = False
 		Me.l6.Location = New System.Drawing.Point(718, 133)
 		Me.l6.Name = "l6"
@@ -179,6 +185,7 @@ Partial Class FrmAgendaObras
 		'
 		'l7
 		'
+		Me.l7.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.l7.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.l7.HideSelection = False
 		Me.l7.Location = New System.Drawing.Point(861, 133)
@@ -442,7 +449,6 @@ Partial Class FrmAgendaObras
 		'
 		'Panel3
 		'
-		Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.Panel3.Controls.Add(Me.Label1)
 		Me.Panel3.Controls.Add(Me.sem1)
 		Me.Panel3.Controls.Add(Me.Label2)
@@ -873,7 +879,7 @@ Partial Class FrmAgendaObras
 		Me.tmPopularCalendario.Enabled = True
 		Me.tmPopularCalendario.Interval = 10000
 		'
-		'FrmAgendaEntrega
+		'FrmAgendaEntregas
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -894,7 +900,7 @@ Partial Class FrmAgendaObras
 		Me.Controls.Add(Me.Panel6)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-		Me.Name = "FrmAgendaEntrega"
+		Me.Name = "FrmAgendaEntregas"
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = " "
 		CType(Me.tbData, System.ComponentModel.ISupportInitialize).EndInit()

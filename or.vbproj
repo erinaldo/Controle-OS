@@ -206,6 +206,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Formularios\Administracao\FrmTesteSQL.Designer.vb">
+      <DependentUpon>FrmTesteSQL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administracao\FrmTesteSQL.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Ferramentas\frmConsultaCNPJ.Designer.vb">
       <DependentUpon>frmConsultaCNPJ.vb</DependentUpon>
     </Compile>
@@ -244,6 +250,12 @@
     <Compile Include="Formularios\Orcamento\FrmListaVisita.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Orcamento\FrmNovoOrcamento.Designer.vb">
+      <DependentUpon>FrmNovoOrcamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Orcamento\FrmNovoOrcamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Orcamento\FrmResumoComodo.Designer.vb">
       <DependentUpon>FrmResumoComodo.vb</DependentUpon>
     </Compile>
@@ -254,6 +266,12 @@
       <DependentUpon>FrmContexCarregarPedido.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Financeiro\FrmContexCarregarPedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Organizacao\FrmAgendaObra.Designer.vb">
+      <DependentUpon>FrmAgendaObra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Organizacao\FrmAgendaObra.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Organizacao\FrmMovProduto.Designer.vb">
@@ -700,6 +718,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\Administracao\FrmTesteSQL.resx">
+      <DependentUpon>FrmTesteSQL.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Ferramentas\frmConsultaCNPJ.resx">
       <DependentUpon>frmConsultaCNPJ.vb</DependentUpon>
     </EmbeddedResource>
@@ -721,8 +742,14 @@
     <EmbeddedResource Include="Formularios\Orcamento\FrmListaVisita.resx">
       <DependentUpon>FrmListaVisita.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Orcamento\FrmNovoOrcamento.resx">
+      <DependentUpon>FrmNovoOrcamento.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Orcamento\FrmResumoComodo.resx">
       <DependentUpon>FrmResumoComodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Organizacao\FrmAgendaObra.resx">
+      <DependentUpon>FrmAgendaObra.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Organizacao\FrmCalendario.resx">
       <DependentUpon>FrmCalendario.vb</DependentUpon>
@@ -1294,6 +1321,12 @@
   <ItemGroup>
     <PackageReference Include="Adobe.DocumentCloud.Services">
       <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Chromium.ChromeDriver">
+      <Version>2.37.0</Version>
+    </PackageReference>
+    <PackageReference Include="Firefox">
+      <Version>3.6.6</Version>
     </PackageReference>
     <PackageReference Include="iTextSharp">
       <Version>5.5.13.2</Version>

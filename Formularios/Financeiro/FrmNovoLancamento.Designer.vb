@@ -79,6 +79,10 @@ Partial Class FrmNovoLancamento
 		Me.Panel7 = New System.Windows.Forms.Panel()
 		Me.cboPeriodo = New System.Windows.Forms.ComboBox()
 		Me.txtDataInicial = New System.Windows.Forms.TextBox()
+		Me.grpSoma = New System.Windows.Forms.GroupBox()
+		Me.chkMovPoup = New System.Windows.Forms.CheckBox()
+		Me.lblSomaPago = New System.Windows.Forms.Label()
+		Me.lblNPago = New System.Windows.Forms.Label()
 		Me.cboData = New System.Windows.Forms.ComboBox()
 		Me.txtDataFinal = New System.Windows.Forms.TextBox()
 		Me.Panel5 = New System.Windows.Forms.Panel()
@@ -103,10 +107,6 @@ Partial Class FrmNovoLancamento
 		Me.GroupBox2 = New System.Windows.Forms.GroupBox()
 		Me.btnExpDockTop = New System.Windows.Forms.Button()
 		Me.tmDockMin = New System.Windows.Forms.Timer(Me.components)
-		Me.lblNPago = New System.Windows.Forms.Label()
-		Me.lblSomaPago = New System.Windows.Forms.Label()
-		Me.chkMovPoup = New System.Windows.Forms.CheckBox()
-		Me.grpSoma = New System.Windows.Forms.GroupBox()
 		CType(Me.dgvFinanceiro, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,6 +117,7 @@ Partial Class FrmNovoLancamento
 		Me.Panel9.SuspendLayout()
 		Me.Panel8.SuspendLayout()
 		Me.Panel7.SuspendLayout()
+		Me.grpSoma.SuspendLayout()
 		Me.Panel5.SuspendLayout()
 		CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel4.SuspendLayout()
@@ -125,7 +126,6 @@ Partial Class FrmNovoLancamento
 		Me.pnDockLeft.SuspendLayout()
 		Me.PnDockTop.SuspendLayout()
 		Me.GroupBox2.SuspendLayout()
-		Me.grpSoma.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -635,6 +635,53 @@ Partial Class FrmNovoLancamento
 		Me.txtDataInicial.Size = New System.Drawing.Size(74, 20)
 		Me.txtDataInicial.TabIndex = 67
 		'
+		'grpSoma
+		'
+		Me.grpSoma.Controls.Add(Me.chkMovPoup)
+		Me.grpSoma.Controls.Add(Me.lblSomaPago)
+		Me.grpSoma.Controls.Add(Me.lblNPago)
+		Me.grpSoma.Cursor = System.Windows.Forms.Cursors.Default
+		Me.grpSoma.Location = New System.Drawing.Point(135, 87)
+		Me.grpSoma.Name = "grpSoma"
+		Me.grpSoma.Size = New System.Drawing.Size(117, 65)
+		Me.grpSoma.TabIndex = 121
+		Me.grpSoma.TabStop = False
+		'
+		'chkMovPoup
+		'
+		Me.chkMovPoup.AutoSize = True
+		Me.chkMovPoup.ForeColor = System.Drawing.Color.White
+		Me.chkMovPoup.Location = New System.Drawing.Point(6, 12)
+		Me.chkMovPoup.Name = "chkMovPoup"
+		Me.chkMovPoup.Size = New System.Drawing.Size(56, 17)
+		Me.chkMovPoup.TabIndex = 122
+		Me.chkMovPoup.Text = "Mover"
+		Me.chkMovPoup.UseVisualStyleBackColor = True
+		'
+		'lblSomaPago
+		'
+		Me.lblSomaPago.AutoSize = True
+		Me.lblSomaPago.BackColor = System.Drawing.Color.Transparent
+		Me.lblSomaPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.lblSomaPago.ForeColor = System.Drawing.Color.White
+		Me.lblSomaPago.Location = New System.Drawing.Point(5, 27)
+		Me.lblSomaPago.Name = "lblSomaPago"
+		Me.lblSomaPago.Size = New System.Drawing.Size(80, 16)
+		Me.lblSomaPago.TabIndex = 116
+		Me.lblSomaPago.Text = "Soma Pago"
+		'
+		'lblNPago
+		'
+		Me.lblNPago.AutoSize = True
+		Me.lblNPago.BackColor = System.Drawing.Color.Transparent
+		Me.lblNPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.lblNPago.ForeColor = System.Drawing.Color.White
+		Me.lblNPago.Location = New System.Drawing.Point(5, 44)
+		Me.lblNPago.Name = "lblNPago"
+		Me.lblNPago.Size = New System.Drawing.Size(109, 16)
+		Me.lblNPago.TabIndex = 118
+		Me.lblNPago.Text = "Soma Não Pago"
+		'
 		'cboData
 		'
 		Me.cboData.BackColor = System.Drawing.Color.White
@@ -916,53 +963,6 @@ Partial Class FrmNovoLancamento
 		'
 		Me.tmDockMin.Interval = 3000
 		'
-		'lblNPago
-		'
-		Me.lblNPago.AutoSize = True
-		Me.lblNPago.BackColor = System.Drawing.Color.Transparent
-		Me.lblNPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.lblNPago.ForeColor = System.Drawing.Color.White
-		Me.lblNPago.Location = New System.Drawing.Point(5, 44)
-		Me.lblNPago.Name = "lblNPago"
-		Me.lblNPago.Size = New System.Drawing.Size(109, 16)
-		Me.lblNPago.TabIndex = 118
-		Me.lblNPago.Text = "Soma Não Pago"
-		'
-		'lblSomaPago
-		'
-		Me.lblSomaPago.AutoSize = True
-		Me.lblSomaPago.BackColor = System.Drawing.Color.Transparent
-		Me.lblSomaPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.lblSomaPago.ForeColor = System.Drawing.Color.White
-		Me.lblSomaPago.Location = New System.Drawing.Point(5, 27)
-		Me.lblSomaPago.Name = "lblSomaPago"
-		Me.lblSomaPago.Size = New System.Drawing.Size(80, 16)
-		Me.lblSomaPago.TabIndex = 116
-		Me.lblSomaPago.Text = "Soma Pago"
-		'
-		'chkMovPoup
-		'
-		Me.chkMovPoup.AutoSize = True
-		Me.chkMovPoup.ForeColor = System.Drawing.Color.White
-		Me.chkMovPoup.Location = New System.Drawing.Point(6, 12)
-		Me.chkMovPoup.Name = "chkMovPoup"
-		Me.chkMovPoup.Size = New System.Drawing.Size(56, 17)
-		Me.chkMovPoup.TabIndex = 122
-		Me.chkMovPoup.Text = "Mover"
-		Me.chkMovPoup.UseVisualStyleBackColor = True
-		'
-		'grpSoma
-		'
-		Me.grpSoma.Controls.Add(Me.chkMovPoup)
-		Me.grpSoma.Controls.Add(Me.lblSomaPago)
-		Me.grpSoma.Controls.Add(Me.lblNPago)
-		Me.grpSoma.Cursor = System.Windows.Forms.Cursors.Default
-		Me.grpSoma.Location = New System.Drawing.Point(135, 87)
-		Me.grpSoma.Name = "grpSoma"
-		Me.grpSoma.Size = New System.Drawing.Size(117, 65)
-		Me.grpSoma.TabIndex = 121
-		Me.grpSoma.TabStop = False
-		'
 		'FrmNovoLancamento
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1000,6 +1000,8 @@ Partial Class FrmNovoLancamento
 		Me.Panel8.PerformLayout()
 		Me.Panel7.ResumeLayout(False)
 		Me.Panel7.PerformLayout()
+		Me.grpSoma.ResumeLayout(False)
+		Me.grpSoma.PerformLayout()
 		Me.Panel5.ResumeLayout(False)
 		Me.Panel5.PerformLayout()
 		CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1010,8 +1012,6 @@ Partial Class FrmNovoLancamento
 		Me.pnDockLeft.ResumeLayout(False)
 		Me.PnDockTop.ResumeLayout(False)
 		Me.GroupBox2.ResumeLayout(False)
-		Me.grpSoma.ResumeLayout(False)
-		Me.grpSoma.PerformLayout()
 		Me.ResumeLayout(False)
 
 	End Sub
