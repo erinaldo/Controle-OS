@@ -75,8 +75,8 @@ Module SQL
 		    On Error Resume Next
 		    dr = objcmd.ExecuteReader(CommandBehavior.SingleRow)
 		    dr.Read()
-		    Dim linha As String = dr.HasRo  ws
-		    Debug.Print(linha)
+		    '  Dim linha As String = dr.HasRo  ws
+		    '  Debug.Print(linha)
 		    'OBEJETO.dr.item() '\\SERVE PARA SELECIONAR UM CAMPO EM ESPECIFICO
 		    dr.Close()
 		    dr = Nothing
