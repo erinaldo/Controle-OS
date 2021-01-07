@@ -461,9 +461,7 @@ Partial Class FrmMenu
 	      '
 	      'btnVisita
 	      '
-	      Me.btnVisita.Name = "btnVisita"
-	      Me.btnVisita.Size = New System.Drawing.Size(168, 22)
-	      Me.btnVisita.Text = "Visita"
+
 	      '
 	      'ToolStripMenuItem1
 	      '
@@ -1106,23 +1104,7 @@ Partial Class FrmMenu
 	      '
 	      'Button3
 	      '
-	      Me.Button3.Location = New System.Drawing.Point(864, 89)
-	      Me.Button3.Name = "Button3"
-	      Me.Button3.Size = New System.Drawing.Size(75, 23)
-	      Me.Button3.TabIndex = 70
-	      Me.Button3.Text = "Button3"
-	      Me.Button3.UseVisualStyleBackColor = True
-	      '
-	      'Button4
-	      '
-	      Me.Button4.ForeColor = System.Drawing.Color.Black
-	      Me.Button4.Location = New System.Drawing.Point(426, 86)
-	      Me.Button4.Name = "Button4"
-	      Me.Button4.Size = New System.Drawing.Size(75, 23)
-	      Me.Button4.TabIndex = 71
-	      Me.Button4.Text = "Button4"
-	      Me.Button4.UseVisualStyleBackColor = True
-	      '
+
 	      'Button2
 	      '
 	      Me.Button2.Location = New System.Drawing.Point(314, 91)

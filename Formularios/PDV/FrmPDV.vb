@@ -677,11 +677,6 @@ Prox:
         End Sub
 
 
-        End Sub
-
-
-        End Sub
-
         Private Sub TextBox1_KeyDown_1(sender As Object, e As KeyEventArgs) Handles txtCodePesq.KeyDown
                 If txtCodePesq.Text <> "" Then
                         If e.KeyCode = Keys.Enter Then
@@ -696,11 +691,9 @@ Prox:
         Private Sub TextBox1_Click(sender As Object, e As EventArgs) Handles txtCodePesq.Click
                 txtCodePesq.Text = ""
         End Sub
-                btnAdicionarProduto.PerformClick()
 
-        Private Sub btnAprovarVinc_Click(sender As Object, e As EventArgs)
 
-                btnAdicionarProduto.PerformClick()
+
 
         Private Sub txtAddProduto2_Click(sender As Object, e As EventArgs) Handles txtAddProduto2.Click
                 btnAdicionarProduto.PerformClick()

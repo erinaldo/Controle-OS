@@ -117,7 +117,8 @@ Module ModPDV
                                         SQL.Comando()
                                 Else
                                         SQL.Notificao("", "NÃO HÁ ESTOQUE SUFICIENTE PARA REALIZAR A VENDA")
-                                GoTo prox
+                                        GoTo prox
+                                End If
                         End If
                         '==============================================================================================================================================
                 Else
