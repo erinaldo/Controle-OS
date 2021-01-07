@@ -9,26 +9,50 @@ Public Class FrmPDV
         '\\LOAD
         Private Sub FrmPDV_Load(sender As Object, e As EventArgs) Handles MyBase.Load
                 LoadPDV()
+                tamanhoColuna(dgvListaProduto)
         End Sub
 
         '\\PREENCHER CAMPO DO NOME DO CLIENTE AO SELECIONAR NO DATAGRIDVIEW (LISTA)
+        Public ClienteID1 As Integer
         Private Sub dgvCliente_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCliente.CellClick
                 Dim Nome As String = dgvCliente.CurrentRow.Cells(0).Value
                 On Error Resume Next
                 Dim Sobrenome As String = dgvCliente.CurrentRow.Cells(1).Value
                 Dim CPF As Double = dgvCliente.CurrentRow.Cells(2).Value
                 Dim ClienteID As Integer = dgvCliente.CurrentRow.Cells(3).Value
+                ClienteID1 = dgvCliente.CurrentRow.Cells(3).Value
+                Dim InscricaoEstadual As Double = dgvCliente.CurrentRow.Cells(4).Value
+                Dim Tipo As String = dgvCliente.CurrentRow.Cells(5).Value
+                Dim Contato As String = dgvCliente.CurrentRow.Cells(6).Value
                 NomeCliente = Nome
                 ClienteIDatual = ClienteID
                 txtCodCliente.Text = ClienteID
+                txtCod.Text = ClienteID1
                 txtCliente.Text = Nome & " " & Sobrenome
                 txtCPFCliente.Text = CPF
+                txtInscEstadual.Text = InscricaoEstadual
+                txtTipo.Text = Tipo
+                txtContato.Text = Contato
+
+
                 dgvCliente.Visible = False
                 'conexao1("SELECT CPF FROM tbClientes WHERE Nome=" & Nome)
                 'bdr1.Read()
                 'txtCPFCliente.Text = bdr1.Item("")
                 'Me.TbClientesTableAdapter.FillByNome(Me.DataPdv.tbClientes, Nome)
         End Sub
+        Private Sub btnConsulta_Click(sender As Object, e As EventArgs) Handles btnConsulta.Click
+                dgvContato.Visible = True
+                carrContato(ClienteID1, dgvContato)
+
+        End Sub
+
+        Private Sub dgvContato_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvContato.CellClick
+                Dim ddd As Double = dgvContato.CurrentRow.Cells(0).Value
+                Dim num As Double = dgvContato.CurrentRow.Cells(1).Value
+                txtContato.Text = "(" & (ddd) & ")" & num
+        End Sub
+
 
         '\\BOTÃO PARA ADICIONAR O PRODUTO A COMPRA
         Private Sub btnAdicionarProduto_Click(sender As Object, e As EventArgs) Handles btnAdicionarProduto.Click
@@ -70,11 +94,12 @@ Public Class FrmPDV
 
                                 Dim strConn As String = sConnectionString
                                 Dim conexao As New OleDbConnection(strConn)
-                                Dim comando As New OleDbCommand("SELECT Logradouro, EndNumero, Bairro, Cidade, UF, Complemento, CEP, Tipo FROM tbEnd WHERE CodEnd=" & ClienteIDatual, conexao)
+                                Dim comando As New OleDbCommand("SELECT CodEnd as ID, Logradouro, EndNumero, Bairro, Cidade, UF, Complemento, CEP, Tipo FROM tbEnd WHERE CodEnd=" & ClienteIDatual, conexao)
                                 Dim adaptador As New OleDbDataAdapter(comando)
                                 Dim dsbiblio As New DataSet()
                                 adaptador.Fill(dsbiblio, "Endereco")
                                 dgvEnd.DataSource = dsbiblio.Tables("Endereco")
+
 
                                 dgvEnd.Visible = True
                         Else
@@ -535,20 +560,36 @@ Prox:
         End Sub
 
         Private Sub dgvListaProduto_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListaProduto.CellEnter
-                txtProduto.Text = dgvListaProduto.CurrentRow.Cells(0).Value
+                txtProduto.Text = dgvListaProduto.CurrentRow.Cells(1).Value
                 If lblNumeroPedido.Text = "" Then
                         btnMostraEnd.Visible = True
                 End If
                 txtQuantidade.Text = 1
                 txtSoma.Text = txtCustoTotal.Text
 
-                Try
-                        conexao1("SELECT * FROM tbProdutoPDV WHERE Produto='" & dgvListaProduto.CurrentRow.Cells(0).Value)
-                        bdr1.Read()
-                        txtProdutoID.Text = bdr1("ProdutoID")
-                Catch
-                        SQL.Notificao("", "Erro na consulta de produto pelo nome")
-                End Try
+                ' Try
+                conexao1("SELECT * FROM tbProdutoPDV WHERE ProdutoID=" & dgvListaProduto.CurrentRow.Cells(0).Value)
+                bdr1.Read()
+                txtProdutoID.Text = bdr1("ProdutoID")
+                txtCategoriaProduto.Text = bdr1("CategoriaPadrao")
+                On Error Resume Next
+                If IsDBNull(bdr1("Unidade")) = True Then
+                        txtUnidade.Text = "Null"
+                Else
+                        txtUnidade.Text = bdr1("Unidade")
+                End If
+
+                If IsDBNull(bdr1("Gênero")) = True Then
+                        txtGenero.Text = "Null"
+                Else
+                        txtGenero.Text = bdr1("Gênero")
+                End If
+                txtCusto.Text = "R$ " & bdr1("Custo")
+                txtSaldoEstoque.Text = bdr1("SaldoEstoque")
+                txtValorVendaTotal.Text = "R$ " & bdr1("ValorVenda")
+                txtCustoTotal.Text = bdr1(8)
+
+
         End Sub
 
         Private Sub btnAddPessoa_Click(sender As Object, e As EventArgs) Handles btnAddPessoa.Click
@@ -607,29 +648,16 @@ Prox:
         End Sub
 
         Private Sub txtPesqProduto_TextChanged(sender As Object, e As EventArgs) Handles txtPesqProduto.TextChanged
+                popularPesquisa(dgvListaProduto, txtPesqProduto.Text)
 
-                Dim strConn As String = sConnectionString
-                Dim conexao As New OleDbConnection(strConn)
-                Dim comando As New OleDbCommand("SELECT ProdutoID as ID, Produto, SaldoEstoque as Estoque FROM tbProdutoPDV WHERE Produto LIKE '%" & txtPesqProduto.Text & "%'", conexao)
-                Dim adaptador As New OleDbDataAdapter(comando)
-                Dim dsbiblio As New DataSet()
-                adaptador.Fill(dsbiblio, "Endereco")
-                dgvListaProduto.DataSource = dsbiblio.Tables("Endereco")
-
-                With dgvListaProduto
-                        .Columns(0).Width = 0
-                        .Columns(1).Width = 50
-                        .Columns(2).Width = 100
-                End With
         End Sub
+
+
 
         Private Sub Label20_Click(sender As Object, e As EventArgs)
 
         End Sub
 
-        Private Sub dgvListaProduto_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListaProduto.CellContentClick
-
-        End Sub
 
         Private Sub lblPesq_Click(sender As Object, e As EventArgs)
 
@@ -664,6 +692,7 @@ Prox:
 
         Private Sub txtAddProduto2_Click(sender As Object, e As EventArgs) Handles txtAddProduto2.Click
                 btnAdicionarProduto.PerformClick()
+
         End Sub
 
         Private Sub FrmPDV_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
@@ -696,13 +725,6 @@ Prox:
                 End If
         End Sub
 
-        Private Sub dgvCliente_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCliente.CellContentClick
-
-        End Sub
-
-        Private Sub dgvCliente_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCliente.CellEnter
-
-        End Sub
 
         Private Sub btnRE_Click(sender As Object, e As EventArgs)
                 dgvRE.BringToFront()
@@ -733,11 +755,51 @@ Prox:
 
         End Sub
 
+
         Private Sub txtProduto_TextChanged(sender As Object, e As EventArgs) Handles txtProduto.TextChanged
                 If txtProduto.Text = "" Then
                         lblProdutoDesc.Visible = True
                 Else
                         lblProdutoDesc.Visible = False
                 End If
+
+                popularPesquisa(dgvListaProduto, txtProduto.Text)
+
+
+
         End Sub
+
+        Private Sub dgvEnd_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEnd.CellEnter
+
+                txtEndID.Text = dgvEnd.CurrentRow.Cells(0).Value
+                txtLogradouro.Text = dgvEnd.CurrentRow.Cells(1).Value
+                txtEndNumero.Text = dgvEnd.CurrentRow.Cells(2).Value
+                txtBairro.Text = dgvEnd.CurrentRow.Cells(3).Value
+                txtCidade.Text = dgvEnd.CurrentRow.Cells(4).Value
+                txtUF.Text = dgvEnd.CurrentRow.Cells(5).Value
+                txtComplemento.Text = dgvEnd.CurrentRow.Cells(6).Value
+        End Sub
+
+        Private Sub txtContato_Click(sender As Object, e As EventArgs) Handles txtContato.Click
+                dgvContato.Visible = True
+        End Sub
+
+        Private Sub dgvContato_MouseLeave(sender As Object, e As EventArgs) Handles dgvContato.MouseLeave
+                dgvContato.Visible = False
+        End Sub
+
+
+        'Private Sub dgvListaProduto_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+        '        txtProdutoID.Text = dgvListaProduto.CurrentRow.Cells(0).Value
+        '        txtUnidade.Text = dgvListaProduto.CurrentRow.Cells(1).Value
+        '        txtGenero.Text = dgvListaProduto.CurrentRow.Cells(2).Value
+        '        txtCusto.Text = dgvListaProduto.CurrentRow.Cells(3).Value
+        '        txtCategoriaProduto.Text = dgvListaProduto.CurrentRow.Cells(4).Value
+        '        txtSaldoEstoque.Text = dgvListaProduto.CurrentRow.Cells(5).Value
+        '        txtValorVendaTotal.Text = dgvListaProduto.CurrentRow.Cells(6).Value
+        'End Sub
+
+
+
+
 End Class

@@ -107,6 +107,8 @@ Module ModPDV
                 On Error Resume Next
                 Dim QuantidadeCompra As Double = CDbl(FrmPDV.txtQuantidade.Text)
                 If CDbl(FrmPDV.txtSaldoEstoque.Text) < CDbl(FrmPDV.txtQuantidade.Text) Then 'VERIFICA A SE HÁ ESTOQUE SUFICIENTE PARA REALIZAR A COMPRA
+
+                        'analisar necessidade da fila de produção =====================================================================================================
                         If FrmPDV.txtCategoriaProduto.Text = "Producao" Then
                                 lSQL = "INSERTO INTO tbFilaProducao (Origem,ClienteID,ProdutoID,NomeProduto,Quantidade,Unidade,DataOrdemProducao,StatusProducao) " &
                                         "Values (""" & "Venda PDV Pedido: " & FrmPDV.lblNumeroPedido.Text & """,""" & ClienteID & """,""" & FrmPDV.txtProdutoID.Text & """,""" & FrmPDV.txtProduto.Text & """,""" & FrmPDV.txtQuantidade.Text &
@@ -116,6 +118,7 @@ Module ModPDV
                                 SQL.Notificao("", "NÃO HÁ ESTOQUE SUFICIENTE PARA REALIZAR A VENDA")
                                 GoTo prox
                         End If
+                        '==============================================================================================================================================
                 Else
                         If FrmPDV.txtPrecoFrete.Text = "" Then 'VERIFICA SE FOI COBRADO FRETE
                                 FrmPDV.txtPrecoFrete.Text = 0
@@ -147,18 +150,25 @@ Module ModPDV
                                                         Else
                                                                 EntregaDif = "Não"
                                                         End If
+
+
+
+
                                                         Connect.Conectardb("SELECT * FROM tbPedido2 ORDER BY PedidoID Desc")
                                                         NormalPD = cdr.Item("PedidoID")
                                                         Connect.Desconectardb()
                                                         Connect.Conectardb("SELECT * FROM tbPedido2vinc ORDER BY PedidoID Desc")
                                                         VinculadoPD = cdr.Item("PedidoID")
                                                         Connect.Desconectardb()
+
                                                         If NormalPD > VinculadoPD Then
                                                                 UltimoID = NormalPD
                                                         Else
                                                                 UltimoID = VinculadoPD
                                                         End If
+
                                                         UltimoID += 1
+
                                                         If PedidoVinculado = False Then
                                                                 TabelaEnviar = "tbPedido2"
                                                                 TabelaProduto = "tbProdutoVendaPDV"
@@ -166,6 +176,7 @@ Module ModPDV
                                                                 TabelaEnviar = "tbPedido2vinc"
                                                                 TabelaProduto = "tbProdutoVendaPDVvinc"
                                                         End If
+
                                                         If PedidoVinculado = False Then
                                                                 lSQL = "INSERT INTO " & TabelaEnviar & " (DataAbertura,Empresa,Status,Categoria,Vendedor,ClienteID,Cliente,Frete,EndID,EndEntID,EntregaB,EntregaDifB,PedidoID,Desconto)" &
                                                                                 "VALUES (""" & Today.ToShortDateString & """,""" & "Nova Litoral Gesso" & """,""" & "Não Faturado" &
@@ -181,12 +192,13 @@ Module ModPDV
                                                                                 """,""" & UltimoID & """,""" & 0 & """)"
                                                         End If
                                                         SQL.Comando()
+
                                                         Connect.Conectardb("SELECT * FROM " & TabelaEnviar & " ORDER BY PedidoID Desc")
                                                         FrmPDV.lblNumeroPedido.Text = cdr.Item("PedidoID")
-                                                        SQL.AnexoID = cdr.Item("PedidoID")
+                                                        SQL.AnexoID = cdr.Item("PedidoID") 'analisar essa função
                                                         Connect.Desconectardb()
                                                         FrmPDV.btnImprimir.Visible = True
-                                                        SaveNoti("UM NOVO PEDIDO N: " & FrmPDV.lblNumeroPedido.Text & " FOI ABERTO POR " & SQL.Usuario)
+                                                        '  SaveNoti("UM NOVO PEDIDO N: " & FrmPDV.lblNumeroPedido.Text & " FOI ABERTO POR " & SQL.Usuario)
                                                 End If
 LinePularEndEnt:
                                                 Connect.Conectardb("SELECT * FROM tbPedido2 ORDER BY PedidoID Desc")
@@ -208,10 +220,14 @@ LinePularEndEnt:
                                                         TabelaEnviar = "tbPedido2vinc"
                                                         TabelaProduto = "tbProdutoVendaPDVvinc"
                                                 End If
-                                                InstrucaoDireta("INSERT INTO " & TabelaProduto & " (ClienteID,NomeCliente,ProdutoID,PedidoID,CategoriaPadrao,Produto,Genero,Custo,SaldoEstoque,CustoTotal,ValorVenda,Quantidade,Soma,ValorCustoTotal,Retirado)" &
+
+
+                                                lSQL = "INSERT INTO " & TabelaProduto & " (ClienteID,NomeCliente,ProdutoID,PedidoID,CategoriaPadrao,Produto,Genero,Custo,SaldoEstoque,CustoTotal,ValorVenda,Quantidade,Soma,ValorCustoTotal,Retirado)" &
                                                 "VALUES (""" & FrmPDV.txtCodCliente.Text & """,""" & FrmPDV.txtCliente.Text & """,""" & FrmPDV.txtProdutoID.Text & """,""" & UltimoID & """,""" & FrmPDV.txtCategoriaProduto.Text & """,""" & FrmPDV.txtProduto.Text & """,""" & FrmPDV.txtGenero.Text &
                                                                 """,""" & FrmPDV.txtCusto.Text & """,""" & FrmPDV.txtSaldoEstoque.Text & """,""" & FrmPDV.txtCusto.Text & """,""" & FrmPDV.txtCustoTotal.Text & """,""" &
-                                                                FrmPDV.txtQuantidade.Text & """,""" & FrmPDV.txtSoma.Text & """,""" & FrmPDV.txtValorVendaTotal.Text & """,""" & FrmPDV.chkRetirar.Text & """)")
+                                                                FrmPDV.txtQuantidade.Text & """,""" & FrmPDV.txtSoma.Text & """,""" & FrmPDV.txtValorVendaTotal.Text & """,""" & FrmPDV.chkRetirar.Text & """)"
+
+                                                SQL.Comando()
 
                                                 Dim ProxEstoque As Double = CDbl(FrmPDV.txtSaldoEstoque.Text) - CDbl(FrmPDV.txtQuantidade.Text)
                                                 lSQL = "UPDATE " & TabelaProduto & " SET SaldoEstoque=""" & ProxEstoque & """"
@@ -246,7 +262,9 @@ prox:
                 FrmPDV.txtGenero.Text = ""
                 FrmPDV.txtSaldoEstoque.Text = ""
                 FrmPDV.txtQuantidade.Text = ""
+
                 If FrmPDV.lblNumeroPedido.Text <> "" Then
+
                 End If
                 QuantItens()
         End Sub
@@ -306,7 +324,7 @@ prox:
 
         Public Sub FiltroNomesClientes(textbox As TextBox, dgv As DataGridView)
                 FrmMdiHome.pbStatus.Value = 10
-                Dim Consulta As String = "SELECT Nome,Sobrenome,CPF,Código FROM tbClientes WHERE Nome LIKE '" & textbox.Text & "%'"
+                Dim Consulta As String = "SELECT Nome,Sobrenome,CPF,Código,InscricaoEstadual,Tipo FROM tbClientes WHERE Nome LIKE '" & textbox.Text & "%'"
                 Dim strConn As String = sConnectionString
                 Dim conexao As New OleDbConnection(strConn)
                 Dim comando As New OleDbCommand(Consulta, conexao)
@@ -322,6 +340,68 @@ prox:
                 dgv.Columns(2).Width = 0
                 dgv.Columns(3).Width = 0
         End Sub
+
+        'Consulta da tabela tbContato
+        Public Sub carrContato(ClienteID1 As Integer, dgv As DataGridView)
+                FrmMdiHome.pbStatus.Value = 10
+                Dim Consulta As String = "SELECT DDD,Numero,Tipo FROM tbContato WHERE ContatoID=" & ClienteID1
+                Dim strConn As String = sConnectionString
+                Dim conexao As New OleDbConnection(strConn)
+                Dim comando As New OleDbCommand(Consulta, conexao)
+                Dim adaptador As New OleDbDataAdapter(comando)
+                Dim dsbiblio As New DataSet()
+                adaptador.Fill(dsbiblio, "Contato")
+                dgv.DataSource = dsbiblio.Tables("Contato")
+                FrmMdiHome.pbStatus.Value = 100
+        End Sub
+
+        'Consulta da tabela tbProdutoPDV
+        Public Sub carrProduto(ClienteID1 As Integer, dgv As DataGridView)
+                FrmMdiHome.pbStatus.Value = 10
+                Dim Consulta As String = "SELECT ProdutoID,Unidade,Gênero,Custo,CategoriaPadrao,SaldoEstoque,Custo Total FROM tbProdutoPDV WHERE ProdutoID=" '& ClienteID1
+                Dim strConn As String = sConnectionString
+                Dim conexao As New OleDbConnection(strConn)
+                Dim comando As New OleDbCommand(Consulta, conexao)
+                Dim adaptador As New OleDbDataAdapter(comando)
+                Dim dsbiblio As New DataSet()
+                adaptador.Fill(dsbiblio, "Contato")
+                ' dgv.DataSource = dsbiblio.Tables("Contato")
+                dgv.DataSource = dsbiblio.Tables("dgvListaProduto")
+                FrmMdiHome.pbStatus.Value = 100
+        End Sub
+
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <param name="dataGrid">grid de dados</param>
+        ''' <param name="produto">nome do produto</param>
+        Public Sub popularPesquisa(dataGrid As DataGridView, produto As String)
+
+                Try
+                        Dim strConn As String = sConnectionString
+                        Dim conexao As New OleDbConnection(strConn)
+                        Dim comando As New OleDbCommand("SELECT ProdutoID as ID, Produto, SaldoEstoque as Estoque FROM tbProdutoPDV WHERE Produto LIKE '%" & produto & "%'", conexao)
+                        Dim adaptador As New OleDbDataAdapter(comando)
+                        Dim dsbiblio As New DataSet()
+                        adaptador.Fill(dsbiblio, "Endereco")
+                        dataGrid.DataSource = dsbiblio.Tables("Endereco")
+                Catch
+
+                End Try
+
+        End Sub
+
+        Public Sub tamanhoColuna(dgv As DataGridView)
+                Dim larguraGrid As Double = dgv.Width
+
+                With dgv
+
+                        .Columns(0).Width = larguraGrid * 25 / 100
+                        .Columns(1).Width = larguraGrid * 50 / 100
+                        .Columns(2).Width = larguraGrid * 35 / 100
+                End With
+        End Sub
+
 
 
 

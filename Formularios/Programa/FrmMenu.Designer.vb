@@ -126,6 +126,7 @@ Partial Class FrmMenu
 		Me.MaterialLabel3 = New MaterialSkin.Controls.MaterialLabel()
 		Me.btnLogout = New MaterialSkin.Controls.MaterialFlatButton()
 		Me.btnVisitas = New System.Windows.Forms.Button()
+		Me.Button2 = New System.Windows.Forms.Button()
 		Label11 = New System.Windows.Forms.Label()
 		CType(Me.TbProdutoVenda1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.SistemaGEDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1128,6 +1129,15 @@ Partial Class FrmMenu
 		Me.btnVisitas.Text = "Visitas"
 		Me.btnVisitas.UseVisualStyleBackColor = True
 		'
+		'Button2
+		'
+		Me.Button2.Location = New System.Drawing.Point(314, 91)
+		Me.Button2.Name = "Button2"
+		Me.Button2.Size = New System.Drawing.Size(75, 23)
+		Me.Button2.TabIndex = 70
+		Me.Button2.Text = "Button2"
+		Me.Button2.UseVisualStyleBackColor = True
+		'
 		'FrmMenu
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1138,6 +1148,7 @@ Partial Class FrmMenu
 		Me.CausesValidation = False
 		Me.ClientSize = New System.Drawing.Size(980, 602)
 		Me.ControlBox = False
+		Me.Controls.Add(Me.Button2)
 		Me.Controls.Add(Me.btnVisitas)
 		Me.Controls.Add(Me.btnLogout)
 		Me.Controls.Add(Me.MaterialLabel3)
@@ -1303,4 +1314,5 @@ Partial Class FrmMenu
 	Friend WithEvents btnLogout As MaterialSkin.Controls.MaterialFlatButton
 	Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
 	Friend WithEvents btnVisitas As Button
+	Friend WithEvents Button2 As Button
 End Class

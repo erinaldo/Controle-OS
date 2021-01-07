@@ -242,11 +242,9 @@ Public Class FrmListaVisita
         End Sub
 
         Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-	      InstrucaoDireta("DELETE FROM tbItensVisita WHERE VisitaID=" & CDbl(txtIdentificacao.Text))
 
-	      For Each row In dgvServico
 
-	      Next
+
 
 
 
