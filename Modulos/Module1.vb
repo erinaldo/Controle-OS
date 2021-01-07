@@ -1,8 +1,9 @@
 ﻿Imports System.Data.OleDb
+Imports System.Data.SqlClient
 Imports Tulpep.NotificationWindow
 Imports Tulpep
 Imports MaterialSkin
-
+Imports System.Text
 
 Module SQL
         Public UsuarioID As Integer
@@ -33,158 +34,189 @@ Module SQL
         Public CorFundo As Color
         Public CorTexto As Color
 
+        Dim IpLocation As String
+        Dim Porta As String
+        Dim SqlString As String
+
+        Public Function ConexaoSQL(Query As String)
+	      Dim sql As New StringBuilder()
+	      Dim conn As New SqlConnection(SqlString)
+	      sql.Append(Query)
+	      Try
+		    conn.Open()
+		    Dim cmd As New SqlCommand(sql.ToString(), conn)
+		    Dim dr As SqlDataReader = cmd.ExecuteReader()
+		    Return dr
+		    dr.Close()
+		    conn.Close()
+	      Catch
+		    MsgBox("Não foi possivel abrir a conexão")
+	      End Try
+        End Function
+
+
+        Public Function PopularDataGrid(Instrucao As String)
+	      Dim strConn As String = sConnectionString
+	      Dim conexao As New OleDbConnection(strConn)
+	      Dim comando As New OleDbCommand(Instrucao, conexao)
+	      Dim adaptador As New OleDbDataAdapter(comando)
+	      Dim dsbiblio As New DataSet()
+	      adaptador.Fill(dsbiblio, "Cliente")
+	      Return dsbiblio.Tables("Cliente")
+        End Function
+
         Public Sub Comando()
-                If lSQL <> "" Then
-                        If objConn.State = ConnectionState.Closed Then
-                                objConn.ConnectionString = sConnectionString
-                                objConn.Open()
-                        End If
-                        Dim objcmd As New OleDbCommand(lSQL, objConn)
-                        On Error Resume Next
-                        dr = objcmd.ExecuteReader(CommandBehavior.SingleRow)
-                        dr.Read()
-                        Dim linha As String = dr.HasRows
-                        Debug.Print(linha)
-                        'OBEJETO.dr.item() '\\SERVE PARA SELECIONAR UM CAMPO EM ESPECIFICO
-                        dr.Close()
-                        dr = Nothing
-                        objConn.Close()
-                End If
+	      If lSQL <> "" Then
+		    If objConn.State = ConnectionState.Closed Then
+			  objConn.ConnectionString = sConnectionString
+			  objConn.Open()
+		    End If
+		    Dim objcmd As New OleDbCommand(lSQL, objConn)
+		    On Error Resume Next
+		    dr = objcmd.ExecuteReader(CommandBehavior.SingleRow)
+		    dr.Read()
+		    '  Dim linha As String = dr.HasRo  ws
+		    '  Debug.Print(linha)
+		    'OBEJETO.dr.item() '\\SERVE PARA SELECIONAR UM CAMPO EM ESPECIFICO
+		    dr.Close()
+		    dr = Nothing
+		    objConn.Close()
+	      End If
         End Sub
 
         Public Sub Notificao(ByVal Titulo As String, ByVal Mensagem As String)
-                Dim notificacao = New PopupNotifier() '\\NOTIFICAÇÃO CASO OS DADOS SEJAM EXCLUIDOS DO BD
-                notificacao.TitleText = Titulo
-                notificacao.ContentText = Mensagem
-                notificacao.IsRightToLeft = False
-                notificacao.ShowCloseButton = True
-                notificacao.ContentColor = Color.Black
-                ' notificacao.Image.from "C:\Users\macks\Desktop\ControleOS\Resources\NLG2.png"
-                'notificacao.Image = Image.FromFile("c:\dados\img\macnet.png", True)
-                notificacao.Popup()
+	      Dim notificacao = New PopupNotifier() '\\NOTIFICAÇÃO CASO OS DADOS SEJAM EXCLUIDOS DO BD
+	      notificacao.TitleText = Titulo
+	      notificacao.ContentText = Mensagem
+	      notificacao.IsRightToLeft = False
+	      notificacao.ShowCloseButton = True
+	      notificacao.ContentColor = Color.Black
+	      ' notificacao.Image.from "C:\Users\macks\Desktop\ControleOS\Resources\NLG2.png"
+	      'notificacao.Image = Image.FromFile("c:\dados\img\macnet.png", True)
+	      notificacao.Popup()
         End Sub
 
         Public Sub Popup(ByVal Titulo As String, ByVal Mensagem As String)
-                Dim notificacao = New PopupNotifier() '\\NOTIFICAÇÃO CASO OS DADOS SEJAM EXCLUIDOS DO BD
-                notificacao.TitleText = Titulo
-                notificacao.ContentText = Mensagem
-                notificacao.IsRightToLeft = False
-                notificacao.ShowCloseButton = True
-                notificacao.ContentColor = Color.Black
-                notificacao.BorderColor = Color.Blue
-                'notificacao.Image = Image.FromFile("c:\dados\img\macnet.png", True)
-                notificacao.Popup()
+	      Dim notificacao = New PopupNotifier() '\\NOTIFICAÇÃO CASO OS DADOS SEJAM EXCLUIDOS DO BD
+	      notificacao.TitleText = Titulo
+	      notificacao.ContentText = Mensagem
+	      notificacao.IsRightToLeft = False
+	      notificacao.ShowCloseButton = True
+	      notificacao.ContentColor = Color.Black
+	      notificacao.BorderColor = Color.Blue
+	      'notificacao.Image = Image.FromFile("c:\dados\img\macnet.png", True)
+	      notificacao.Popup()
         End Sub
 
         Public Sub CadastroEnderecoCliente(ByRef CD As String)
-                objConn.Close()
-                objConn.Open()
-                Dim objcmd As New OleDbCommand(CD, objConn)
-                dr = objcmd.ExecuteReader(CommandBehavior.SingleRow)
-                dr.Read()
-                'OBEJETO.dr.item() '\\SERVE PARA SELECIONAR UM CAMPO EM ESPECIFICO
-                dr.Close()
-                dr = Nothing
-                objConn.Close()
-                SQL.Notificao("NOVA LITORAL GESSO", "ENDEREÇO CADASTRO COM SUCESSO")
+	      objConn.Close()
+	      objConn.Open()
+	      Dim objcmd As New OleDbCommand(CD, objConn)
+	      dr = objcmd.ExecuteReader(CommandBehavior.SingleRow)
+	      dr.Read()
+	      'OBEJETO.dr.item() '\\SERVE PARA SELECIONAR UM CAMPO EM ESPECIFICO
+	      dr.Close()
+	      dr = Nothing
+	      objConn.Close()
+	      SQL.Notificao("NOVA LITORAL GESSO", "ENDEREÇO CADASTRO COM SUCESSO")
         End Sub
 
         Public Sub Registro(ByVal Usuario As String, ByVal Alterecao As String)
-                lSQL = "INSERT INTO tbLogs (Usuario,Alteracao,Data,Hora)" & "VALUES (""" & Usuario & """,""" & Alterecao & """,""" & Today.ToShortDateString.ToString &
-                    """,""" & TimeOfDay.ToShortTimeString & """)"
-                SQL.Comando()
+	      lSQL = "INSERT INTO tbLogs (Usuario,Alteracao,Data,Hora)" & "VALUES (""" & Usuario & """,""" & Alterecao & """,""" & Today.ToShortDateString.ToString &
+		""",""" & TimeOfDay.ToShortTimeString & """)"
+	      SQL.Comando()
         End Sub
 
         Public Sub FecharLogin()
-                FrmLogin.Close()
+	      FrmLogin.Close()
         End Sub
 
         Public Sub NegarNotificacao()
-                Notificao("NOVA LITORAL GESSO", "ESTE USUARIO NÃO TEM PERMISSÃO PARA EXECUTAR ESSA AÇÃO")
+	      Notificao("NOVA LITORAL GESSO", "ESTE USUARIO NÃO TEM PERMISSÃO PARA EXECUTAR ESSA AÇÃO")
         End Sub
 
         Public Sub adm()
 
-                UsuarioAdm = InputBox("Insira o nome de usuario 'Administrador'", "BLOQUEIO",)
-                If IsNothing(Usuario) Then
-                Else
-                        Connect.Conectardb("SELECT * FROM tbUsuario WHERE Nome='" & Usuario & "'")
-                        If cdr.HasRows = True Then
-                                Connect.Desconectardb()
-                                Connect.Conectardb("SELECT * FROM tbUsuario Where Nome='" & Usuario & "'")
-                                SenhaAdm = InputBox("Insira a senha do usario " & Usuario & " para continuar", "BLOQUEIO",)
-                                If cdr.Item("Senha") = SenhaAdm Then
-                                        AcessoAdm = True
-                                        SQL.Notificao("", "Acesso Liberado")
-                                Else
-                                        SQL.Notificao("", "Usuario e senha não conferem")
-                                End If
-                        Else
-                                Connect.Desconectardb()
-                                SQL.Notificao("", "Não foi possivel encontrar esse usuario")
-                                Return
-                        End If
+	      UsuarioAdm = InputBox("Insira o nome de usuario 'Administrador'", "BLOQUEIO",)
+	      If IsNothing(Usuario) Then
+	      Else
+		    Connect.Conectardb("SELECT * FROM tbUsuario WHERE Nome='" & Usuario & "'")
+		    If cdr.HasRows = True Then
+			  Connect.Desconectardb()
+			  Connect.Conectardb("SELECT * FROM tbUsuario Where Nome='" & Usuario & "'")
+			  SenhaAdm = InputBox("Insira a senha do usario " & Usuario & " para continuar", "BLOQUEIO",)
+			  If cdr.Item("Senha") = SenhaAdm Then
+				AcessoAdm = True
+				SQL.Notificao("", "Acesso Liberado")
+			  Else
+				SQL.Notificao("", "Usuario e senha não conferem")
+			  End If
+		    Else
+			  Connect.Desconectardb()
+			  SQL.Notificao("", "Não foi possivel encontrar esse usuario")
+			  Return
+		    End If
 
-                End If
+	      End If
         End Sub
 
         Public Function SaveNoti(descricao As String)
-                Dim comando As String = "SELECT * FROM tbUsuario"
-                objConnection.Close()
-                objConnection.Open()
-                Dim objcmd As New OleDbCommand(comando, objConnection)
-                cdr = objcmd.ExecuteReader(CommandBehavior.Default)
+	      Dim comando As String = "SELECT * FROM tbUsuario"
+	      objConnection.Close()
+	      objConnection.Open()
+	      Dim objcmd As New OleDbCommand(comando, objConnection)
+	      cdr = objcmd.ExecuteReader(CommandBehavior.Default)
 
-                While cdr.Read
-                        lSQL = "INSERT INTO tbNotificacao(Descricao,Status,Usuario)" & "VALUES(""" & descricao & """,""" & "Não Lido" & """,""" & cdr.Item(0) & """)"
-                        SQL.Comando()
-                End While
+	      While cdr.Read
+		    lSQL = "INSERT INTO tbNotificacao(Descricao,Status,Usuario)" & "VALUES(""" & descricao & """,""" & "Não Lido" & """,""" & cdr.Item(0) & """)"
+		    SQL.Comando()
+	      End While
 
-                cdr.Close()
-                cdr = Nothing
-                objConn.Close()
+	      cdr.Close()
+	      cdr = Nothing
+	      objConn.Close()
         End Function
 
         Public Sub InstrucaoDireta(Instrucao As String)
-                If objConn2.State = ConnectionState.Closed Then
-                        objConn2.ConnectionString = sConnectionString
-                        objConn2.Open()
-                End If
-                Dim objcmd2 As New OleDbCommand(Instrucao, objConn2)
-                On Error Resume Next
-                dr2 = objcmd2.ExecuteReader()
-                dr2.Read()
-                dr2.Close()
-                dr2 = Nothing
-                objConn2.Close()
+	      If objConn2.State = ConnectionState.Closed Then
+		    objConn2.ConnectionString = sConnectionString
+		    objConn2.Open()
+	      End If
+	      Dim objcmd2 As New OleDbCommand(Instrucao, objConn2)
+	      On Error Resume Next
+	      dr2 = objcmd2.ExecuteReader()
+	      dr2.Read()
+	      dr2.Close()
+	      dr2 = Nothing
+	      objConn2.Close()
         End Sub
 
         Public Sub ConectarBaseInterna(Comando As String)
 
-                My.Settings.StringDataInterno = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & Application.StartupPath & "\DataInterno.mdb" & ";Jet OLEDB:Database Password=AezakmiPdnejoh;"
+	      My.Settings.StringDataInterno = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & Application.StartupPath & "\DataInterno.mdb" & ";Jet OLEDB:Database Password=AezakmiPdnejoh;"
 
-                If objConexao.State = ConnectionState.Closed Then
-                        objConexao.Open()
-                End If
-                Dim objcmd As New OleDbCommand(Comando, objConexao)
-                hdr = objcmd.ExecuteReader()
+	      If objConexao.State = ConnectionState.Closed Then
+		    objConexao.Open()
+	      End If
+	      Dim objcmd As New OleDbCommand(Comando, objConexao)
+	      hdr = objcmd.ExecuteReader()
 
         End Sub
 
         Public Sub DesconectarBaseInterna()
 
-                hdr = Nothing
-                objConexao.Close()
+	      hdr = Nothing
+	      objConexao.Close()
         End Sub
 
         Public Function LetraCaixaAlta(texto As String)
-                texto = texto.ToUpper
-                Return texto
+	      texto = texto.ToUpper
+	      Return texto
         End Function
 
         Public Function LetraCaixaBaixa(texto As String)
-                texto = texto.ToUpper
-                Return texto
+	      texto = texto.ToUpper
+	      Return texto
         End Function
         ''' <summary>
         ''' 
@@ -193,70 +225,70 @@ Module SQL
         ''' <param name="formulario">formulario para aplicar o tema</param>
         ''' <param name="modo">Dark para tema escuro ou Light para tema claro</param>
         Public Sub DefinirTema(formulario As Form, modo As String)
-                Select Case modo
-                        Case = "Light"
-                                Dim MaterialSkinManeger As MaterialSkinManager = MaterialSkinManager.Instance
-                                MaterialSkinManeger.AddFormToManage(formulario)
-                                MaterialSkinManeger.Theme = MaterialSkinManager.Themes.DARK
-                                MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE)
-                        Case = "Dark"
-                                Dim MaterialSkinManeger As MaterialSkinManager = MaterialSkinManager.Instance
-                                MaterialSkinManeger.AddFormToManage(formulario)
-                                MaterialSkinManeger.Theme = MaterialSkinManager.Themes.DARK
-                                MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.BLACK)
-                        Case Else
+	      Select Case modo
+		    Case = "Light"
+			  Dim MaterialSkinManeger As MaterialSkinManager = MaterialSkinManager.Instance
+			  MaterialSkinManeger.AddFormToManage(formulario)
+			  MaterialSkinManeger.Theme = MaterialSkinManager.Themes.DARK
+			  MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE)
+		    Case = "Dark"
+			  Dim MaterialSkinManeger As MaterialSkinManager = MaterialSkinManager.Instance
+			  MaterialSkinManeger.AddFormToManage(formulario)
+			  MaterialSkinManeger.Theme = MaterialSkinManager.Themes.DARK
+			  MaterialSkinManeger.ColorScheme = New ColorScheme(Primary.Blue500, Primary.Blue500, Primary.Blue500, Accent.LightBlue200, TextShade.BLACK)
+		    Case Else
 
-                End Select
+	      End Select
         End Sub
 
         Public Sub GetCepCombo(combobox As ComboBox)
-                With combobox.Items
-                        .Clear()
-                        .Add("AC")
-                        .Add("AL")
-                        .Add("AP")
-                        .Add("AM")
-                        .Add("BA")
-                        .Add("CE")
-                        .Add("DF")
-                        .Add("ES")
-                        .Add("GO")
-                        .Add("MA")
-                        .Add("MT")
-                        .Add("MS")
-                        .Add("MG")
-                        .Add("PA")
-                        .Add("PB")
-                        .Add("PR")
-                        .Add("PE")
-                        .Add("PI")
-                        .Add("RJ")
-                        .Add("RN")
-                        .Add("RS")
-                        .Add("RO")
-                        .Add("RR")
-                        .Add("SC")
-                        .Add("SP")
-                        .Add("SE")
-                        .Add("TO")
-                End With
+	      With combobox.Items
+		    .Clear()
+		    .Add("AC")
+		    .Add("AL")
+		    .Add("AP")
+		    .Add("AM")
+		    .Add("BA")
+		    .Add("CE")
+		    .Add("DF")
+		    .Add("ES")
+		    .Add("GO")
+		    .Add("MA")
+		    .Add("MT")
+		    .Add("MS")
+		    .Add("MG")
+		    .Add("PA")
+		    .Add("PB")
+		    .Add("PR")
+		    .Add("PE")
+		    .Add("PI")
+		    .Add("RJ")
+		    .Add("RN")
+		    .Add("RS")
+		    .Add("RO")
+		    .Add("RR")
+		    .Add("SC")
+		    .Add("SP")
+		    .Add("SE")
+		    .Add("TO")
+	      End With
         End Sub
 
         Public Function ControleObrigatorio(CamposObrigatorios As List(Of Control))
-                Dim CamposPreenchidos As Boolean = True
-                For Each Controle In CamposObrigatorios
-                        If Controle.Text = "" Then
-                                CamposPreenchidos = False
-                                Controle.BackColor = Color.Red
-                        Else
-                                Controle.BackColor = Color.FromArgb(34, 36, 49)
-                        End If
-                Next
-                Return CamposPreenchidos
+	      Dim CamposPreenchidos As Boolean = True
+	      For Each Controle In CamposObrigatorios
+		    If Controle.Text = "" Then
+			  CamposPreenchidos = False
+			  Controle.BackColor = Color.Red
+		    Else
+			  Controle.BackColor = Color.FromArgb(34, 36, 49)
+		    End If
+	      Next
+	      Return CamposPreenchidos
         End Function
 
         Public Sub DesingText(controle As Control)
-                controle.BackColor = CorFundo
-                controle.ForeColor = CorTexto
+	      controle.BackColor = CorFundo
+	      controle.ForeColor = CorTexto
         End Sub
 End Module

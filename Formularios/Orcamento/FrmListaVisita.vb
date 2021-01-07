@@ -1,15 +1,24 @@
 ﻿Imports System.Data.OleDb
-
-
+Imports System.IO
+Imports Microsoft.Win32
 
 Public Class FrmListaVisita
         Private Sub FrmListaVisita_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 	      AtualizarGrid()
 	      BloquearControles()
 	      btnAtualizarcadastro.Enabled = False
-	      dgvServico.Columns.Add("Tipo", "Tipo")
-	      dgvServico.Columns.Add("Item", "Item")
-	      dgvServico.Columns.Add("QuantMed", "QuantMed")
+
+	      Try
+		    If My.Settings.CaminhoPlanilha = "" Then
+			  Dim ofdCaminhoPlanilha As New FolderBrowserDialog
+			  ofdCaminhoPlanilha.ShowDialog()
+			  My.Settings.CaminhoPlanilha = ofdCaminhoPlanilha.SelectedPath
+		    End If
+	      Catch
+		    MsgBox("não foi possivel localizar o caminho de arquivamento de planilhas, por favor indique a pasta.")
+	      End Try
+
+	      btnGoogleForms.PerformClick()
 
         End Sub
 
@@ -19,6 +28,7 @@ Public Class FrmListaVisita
 	      LimparControles()
 	      btnConcluir.Enabled = True
 	      picDataEnvio.Enabled = False
+	      PicDataVisita.Enabled = False
         End Sub
 
         Private Sub btnConcluir_Click(sender As Object, e As EventArgs) Handles btnConcluir.Click
@@ -46,7 +56,7 @@ Public Class FrmListaVisita
         End Sub
 
         Public Sub AtualizarGrid()
-	      Dim Instrucao As String = "SELECT Nome, VisitaID as 'Identificação', DataContato as 'Data Contato', Telefone, EndOrcamento as 'Endereço Orçamento' FROM tbVisita"
+	      Dim Instrucao As String = "SELECT VisitaID as 'Identificação', Nome, DataContato as 'Data Contato', Telefone, EndOrcamento as 'Endereço Orçamento' FROM tbVisita"
 	      Dim strConn As String = sConnectionString
 	      Dim conexao As New OleDbConnection(strConn)
 	      Dim comando As New OleDbCommand(Instrucao, conexao)
@@ -107,7 +117,7 @@ Public Class FrmListaVisita
 
         Private Sub dgvVisita_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvVisita.CellEnter
 
-	      txtIdentificacao.Text = dgvVisita.CurrentRow.Cells(1).Value
+	      txtIdentificacao.Text = dgvVisita.CurrentRow.Cells(0).Value
 	      BloquearControles()
 	      Dim dr As OleDbDataReader = GetDR_semRead("SELECT * FROM tbVisita WHERE VisitaID=" & CDbl(txtIdentificacao.Text))
 	      dr.Read()
@@ -127,6 +137,24 @@ Public Class FrmListaVisita
 	      PicDataContato.Text = dr("DataContato")
 	      picDataEnvio.Text = dr("DataEnvio")
 	      PicDataVisita.Text = dr("DataVisita")
+
+	      Dim drPlanilha As OleDbDataReader = GetDR_semRead("SELECT * FROM tbVisita WHERE VisitaID=" & CDbl(txtIdentificacao.Text))
+	      drPlanilha.Read()
+	      Try
+		    If drPlanilha.HasRows = True Then
+			  LocalAnexoPlanilha = drPlanilha("LocalPlanilha")
+			  btnAnexarExcel.Enabled = False
+			  btnAbrirAnexo.Enabled = True
+		    Else
+			  btnAnexarExcel.Enabled = True
+			  btnAbrirAnexo.Enabled = False
+		    End If
+	      Catch
+		    btnAbrirAnexo.Enabled = False
+		    btnAnexarExcel.Enabled = True
+	      End Try
+
+
         End Sub
 
         Public Sub LimparControles()
@@ -178,6 +206,8 @@ Public Class FrmListaVisita
 	      BloquearControles()
 	      dgvVisita.Enabled = True
 	      AtualizarGrid()
+
+
         End Sub
 
         Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
@@ -185,6 +215,14 @@ Public Class FrmListaVisita
 	      txtNomeCliente.Enabled = False
 	      dgvVisita.Enabled = False
 	      btnAtualizarcadastro.Enabled = True
+
+
+	      If chkVisitaFeita.Checked = True Then
+		    PicDataVisita.Enabled = True
+	      Else
+		    PicDataVisita.Enabled = False
+	      End If
+
         End Sub
 
         Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -209,45 +247,100 @@ Public Class FrmListaVisita
 	      End If
         End Sub
 
-        Private Sub chkTipoServico_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTipoServico.SelectedIndexChanged
-
-	      Dim Instrucao As String = ""
-
-	      Select Case cboTipoServico.Text
-		    Case = "MATERIAL"
-			  Instrucao = "SELECT Produto FROM tbProdutoPDV"
-		    Case = "SERVIÇO"
-			  Instrucao = "SELECT Descricao FROM tbServico"
-		    Case Else
-
-	      End Select
+        Private Sub chkTipoServico_SelectedIndexChanged(sender As Object, e As EventArgs)
 
 
 
-	      Dim strConn As String = sConnectionString
-	      Dim conexao As New OleDbConnection(strConn)
-	      Dim comando As New OleDbCommand(Instrucao, conexao)
-	      Dim adaptador As New OleDbDataAdapter(comando)
-	      Dim dsbiblio As New DataSet()
-	      adaptador.Fill(dsbiblio, "escolha")
-	      dgvEscolha.DataSource = dsbiblio.Tables("escolha")
         End Sub
 
-        Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
+        Private Sub btnAddItem_Click(sender As Object, e As EventArgs)
+
+        End Sub
+
+        Private Sub Button3_Click(sender As Object, e As EventArgs)
+	      InstrucaoDireta("DELETE FROM tbItensVisita WHERE VisitaID=" & CDbl(txtIdentificacao.Text))
+
+
+
+
+
+        End Sub
+
+        Private Sub btnAnexarExcel_Click(sender As Object, e As EventArgs) Handles btnAnexarExcel.Click
 	      Try
-		    dgvServico.Rows.Add(cboTipoServico.Text, dgvEscolha.CurrentRow.Cells(0).Value)
+		    ofdPlanilha.ShowDialog()
+		    Dim Destino As String = My.Settings.CaminhoPlanilha & "\" & txtIdentificacao.Text & ".xlsx"
+		    My.Computer.FileSystem.CopyFile(ofdPlanilha.FileName, Destino)
+		    InstrucaoDireta("UPDATE tbVisita SET LocalPlanilha=""" & Destino & """ WHERE VisitaID=" & txtIdentificacao.Text)
+		    SQL.Notificao("", "Planilha Anexada com sucesso")
 	      Catch
-		    MsgBox("Selecione um item valido")
+		    MsgBox("não foi possivel salvar")
+	      End Try
+
+        End Sub
+
+        Private Sub btnLocAnexo_Click(sender As Object, e As EventArgs) Handles btnLocAnexo.Click
+	      MsgBox("ATENÇÃO, essa alteração pode causar perda de dados")
+	      Try
+		    Dim ofdCaminhoPlanilha As New FolderBrowserDialog
+		    ofdCaminhoPlanilha.ShowDialog()
+		    My.Settings.CaminhoPlanilha = ofdCaminhoPlanilha.SelectedPath
+	      Catch
+		    MsgBox("Erro ao salvar caminho!!! (consulta o administrador do sistema)")
 	      End Try
         End Sub
 
-        Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Public LocalAnexoPlanilha As String
+
+        Private Sub btnAbrirAnexo_Click(sender As Object, e As EventArgs) Handles btnAbrirAnexo.Click
+	      Process.Start(LocalAnexoPlanilha)
+        End Sub
+
+        Private Sub chkVisitaFeita_CheckedChanged(sender As Object, e As EventArgs) Handles chkVisitaFeita.CheckedChanged
+	      If chkVisitaFeita.Checked = True Then
+		    PicDataVisita.Enabled = True
+	      Else
+		    PicDataVisita.Enabled = False
+	      End If
+        End Sub
+
+        Private Sub btnGoogleForms_Click(sender As Object, e As EventArgs) Handles btnGoogleForms.Click
+	      webFormsGoogle.ScriptErrorsSuppressed = False
 
 
 
 
+	      Dim versaoNavegador As Integer, RegVal As Integer
+	      Try
+		    ' obtem a versão instalada do IE
+		    Using Wb As New WebBrowser()
+			  versaoNavegador = Wb.Version.Major
+		    End Using
+		    ' define a versão do IE
+		    If versaoNavegador >= 11 Then
+			  RegVal = 11001
+		    ElseIf versaoNavegador = 10 Then
+			  RegVal = 10001
+		    ElseIf versaoNavegador = 9 Then
+			  RegVal = 9999
+		    ElseIf versaoNavegador = 8 Then
+			  RegVal = 8888
+		    Else
+			  RegVal = 7000
+		    End If
+
+		    ' define a chave atual
+		    Dim Key As RegistryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION", True)
+		    Key.SetValue(System.Diagnostics.Process.GetCurrentProcess().ProcessName + ".exe", RegVal, RegistryValueKind.DWord)
+		    Key.Close()
 
 
+	      Catch ex As Exception
 
+		    End Try
+
+		    webFormsGoogle.Url = New Uri("https://docs.google.com/forms/d/e/1FAIpQLScr6QGSy14f8qZ4G1tDBZxtSM54oyGu5XK4lP1pf7wU3n4qrQ/viewform?usp=sf_link")
+
+	      ' webFormsGoogle.Url = New Uri("https://www.google.com.br/maps/@-24.0339177,-46.416132,13z")
         End Sub
 End Class

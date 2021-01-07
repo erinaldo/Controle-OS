@@ -22,6 +22,9 @@ Partial Class FrmListaVisita
         'Não o modifique usando o editor de códigos.
         <System.Diagnostics.DebuggerStepThrough()> _
         Private Sub InitializeComponent()
+		Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.dgvVisita = New System.Windows.Forms.DataGridView()
 		Me.txtIdentificacao = New System.Windows.Forms.TextBox()
 		Me.Label1 = New System.Windows.Forms.Label()
@@ -33,8 +36,6 @@ Partial Class FrmListaVisita
 		Me.txtTelefone = New System.Windows.Forms.TextBox()
 		Me.Label5 = New System.Windows.Forms.Label()
 		Me.txtEndOrcamento = New System.Windows.Forms.TextBox()
-		Me.dgvServico = New System.Windows.Forms.DataGridView()
-		Me.Label6 = New System.Windows.Forms.Label()
 		Me.chkNecessitaVisita = New System.Windows.Forms.CheckBox()
 		Me.chkVisitaFeita = New System.Windows.Forms.CheckBox()
 		Me.chkNeceEletrica = New System.Windows.Forms.CheckBox()
@@ -54,38 +55,68 @@ Partial Class FrmListaVisita
 		Me.chkConferidoPaulo = New System.Windows.Forms.CheckBox()
 		Me.btnEditar = New System.Windows.Forms.Button()
 		Me.btnAtualizarcadastro = New System.Windows.Forms.Button()
-		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
 		Me.GroupBox2 = New System.Windows.Forms.GroupBox()
 		Me.picDataEnvio = New System.Windows.Forms.DateTimePicker()
-		Me.dgvEscolha = New System.Windows.Forms.DataGridView()
-		Me.cboTipoServico = New System.Windows.Forms.ComboBox()
-		Me.btnAddItem = New System.Windows.Forms.Button()
-		Me.Button1 = New System.Windows.Forms.Button()
-		Me.Button3 = New System.Windows.Forms.Button()
+		Me.sfdExcel = New System.Windows.Forms.SaveFileDialog()
+		Me.btnAnexarExcel = New System.Windows.Forms.Button()
+		Me.ofdPlanilha = New System.Windows.Forms.OpenFileDialog()
+		Me.btnLocAnexo = New System.Windows.Forms.Button()
+		Me.btnAbrirAnexo = New System.Windows.Forms.Button()
+		Me.webFormsGoogle = New System.Windows.Forms.WebBrowser()
+		Me.btnGoogleForms = New System.Windows.Forms.Button()
+		Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
 		CType(Me.dgvVisita, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.dgvServico, System.ComponentModel.ISupportInitialize).BeginInit()
-		Me.GroupBox1.SuspendLayout()
 		Me.GroupBox2.SuspendLayout()
-		CType(Me.dgvEscolha, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'dgvVisita
 		'
 		Me.dgvVisita.AllowUserToAddRows = False
 		Me.dgvVisita.AllowUserToDeleteRows = False
+		Me.dgvVisita.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+			Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.dgvVisita.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-		Me.dgvVisita.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvVisita.Location = New System.Drawing.Point(12, 54)
+		Me.dgvVisita.BackgroundColor = System.Drawing.Color.White
+		DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+		DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+		DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+		DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White
+		DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
+		DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.dgvVisita.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+		Me.dgvVisita.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+		DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+		DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+		DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+		DataGridViewCellStyle8.Padding = New System.Windows.Forms.Padding(2)
+		DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+		DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
+		DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+		Me.dgvVisita.DefaultCellStyle = DataGridViewCellStyle8
+		Me.dgvVisita.Location = New System.Drawing.Point(5, 31)
 		Me.dgvVisita.Name = "dgvVisita"
 		Me.dgvVisita.ReadOnly = True
+		DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+		DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+		DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+		DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ButtonShadow
+		DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+		DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.dgvVisita.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+		Me.dgvVisita.RowHeadersVisible = False
+		Me.dgvVisita.RowTemplate.Height = 40
 		Me.dgvVisita.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		Me.dgvVisita.Size = New System.Drawing.Size(667, 267)
+		Me.dgvVisita.Size = New System.Drawing.Size(671, 358)
 		Me.dgvVisita.TabIndex = 0
 		'
 		'txtIdentificacao
 		'
 		Me.txtIdentificacao.Enabled = False
-		Me.txtIdentificacao.Location = New System.Drawing.Point(6, 47)
+		Me.txtIdentificacao.Location = New System.Drawing.Point(6, 187)
 		Me.txtIdentificacao.Name = "txtIdentificacao"
 		Me.txtIdentificacao.Size = New System.Drawing.Size(100, 20)
 		Me.txtIdentificacao.TabIndex = 1
@@ -93,7 +124,7 @@ Partial Class FrmListaVisita
 		'Label1
 		'
 		Me.Label1.AutoSize = True
-		Me.Label1.Location = New System.Drawing.Point(3, 31)
+		Me.Label1.Location = New System.Drawing.Point(3, 171)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(68, 13)
 		Me.Label1.TabIndex = 2
@@ -102,7 +133,7 @@ Partial Class FrmListaVisita
 		'Label2
 		'
 		Me.Label2.AutoSize = True
-		Me.Label2.Location = New System.Drawing.Point(109, 31)
+		Me.Label2.Location = New System.Drawing.Point(109, 171)
 		Me.Label2.Name = "Label2"
 		Me.Label2.Size = New System.Drawing.Size(35, 13)
 		Me.Label2.TabIndex = 4
@@ -110,7 +141,7 @@ Partial Class FrmListaVisita
 		'
 		'txtNomeCliente
 		'
-		Me.txtNomeCliente.Location = New System.Drawing.Point(112, 47)
+		Me.txtNomeCliente.Location = New System.Drawing.Point(112, 187)
 		Me.txtNomeCliente.Name = "txtNomeCliente"
 		Me.txtNomeCliente.Size = New System.Drawing.Size(100, 20)
 		Me.txtNomeCliente.TabIndex = 3
@@ -118,7 +149,7 @@ Partial Class FrmListaVisita
 		'PicDataContato
 		'
 		Me.PicDataContato.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-		Me.PicDataContato.Location = New System.Drawing.Point(218, 47)
+		Me.PicDataContato.Location = New System.Drawing.Point(218, 187)
 		Me.PicDataContato.Name = "PicDataContato"
 		Me.PicDataContato.Size = New System.Drawing.Size(97, 20)
 		Me.PicDataContato.TabIndex = 5
@@ -126,7 +157,7 @@ Partial Class FrmListaVisita
 		'Label3
 		'
 		Me.Label3.AutoSize = True
-		Me.Label3.Location = New System.Drawing.Point(215, 31)
+		Me.Label3.Location = New System.Drawing.Point(215, 171)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(85, 13)
 		Me.Label3.TabIndex = 6
@@ -135,7 +166,7 @@ Partial Class FrmListaVisita
 		'Label4
 		'
 		Me.Label4.AutoSize = True
-		Me.Label4.Location = New System.Drawing.Point(109, 74)
+		Me.Label4.Location = New System.Drawing.Point(3, 213)
 		Me.Label4.Name = "Label4"
 		Me.Label4.Size = New System.Drawing.Size(49, 13)
 		Me.Label4.TabIndex = 8
@@ -143,7 +174,7 @@ Partial Class FrmListaVisita
 		'
 		'txtTelefone
 		'
-		Me.txtTelefone.Location = New System.Drawing.Point(112, 90)
+		Me.txtTelefone.Location = New System.Drawing.Point(6, 229)
 		Me.txtTelefone.Name = "txtTelefone"
 		Me.txtTelefone.Size = New System.Drawing.Size(100, 20)
 		Me.txtTelefone.TabIndex = 7
@@ -151,7 +182,7 @@ Partial Class FrmListaVisita
 		'Label5
 		'
 		Me.Label5.AutoSize = True
-		Me.Label5.Location = New System.Drawing.Point(4, 74)
+		Me.Label5.Location = New System.Drawing.Point(3, 258)
 		Me.Label5.Name = "Label5"
 		Me.Label5.Size = New System.Drawing.Size(53, 13)
 		Me.Label5.TabIndex = 10
@@ -159,28 +190,10 @@ Partial Class FrmListaVisita
 		'
 		'txtEndOrcamento
 		'
-		Me.txtEndOrcamento.Location = New System.Drawing.Point(7, 90)
+		Me.txtEndOrcamento.Location = New System.Drawing.Point(6, 274)
 		Me.txtEndOrcamento.Name = "txtEndOrcamento"
-		Me.txtEndOrcamento.Size = New System.Drawing.Size(100, 20)
+		Me.txtEndOrcamento.Size = New System.Drawing.Size(309, 20)
 		Me.txtEndOrcamento.TabIndex = 9
-		'
-		'dgvServico
-		'
-		Me.dgvServico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-		Me.dgvServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvServico.Location = New System.Drawing.Point(706, 54)
-		Me.dgvServico.Name = "dgvServico"
-		Me.dgvServico.Size = New System.Drawing.Size(546, 267)
-		Me.dgvServico.TabIndex = 11
-		'
-		'Label6
-		'
-		Me.Label6.AutoSize = True
-		Me.Label6.Location = New System.Drawing.Point(703, 38)
-		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(95, 13)
-		Me.Label6.TabIndex = 12
-		Me.Label6.Text = "Serviços/Materiais"
 		'
 		'chkNecessitaVisita
 		'
@@ -267,30 +280,33 @@ Partial Class FrmListaVisita
 		Me.chkFoiEnviadoResp.AutoSize = True
 		Me.chkFoiEnviadoResp.Location = New System.Drawing.Point(142, 67)
 		Me.chkFoiEnviadoResp.Name = "chkFoiEnviadoResp"
-		Me.chkFoiEnviadoResp.Size = New System.Drawing.Size(191, 17)
+		Me.chkFoiEnviadoResp.Size = New System.Drawing.Size(144, 17)
 		Me.chkFoiEnviadoResp.TabIndex = 23
-		Me.chkFoiEnviadoResp.Text = "Enviado ao resposável (Materiais)?"
+		Me.chkFoiEnviadoResp.Text = "Enviado para a Roxane?"
 		Me.chkFoiEnviadoResp.UseVisualStyleBackColor = True
 		'
 		'btnAtualizar
 		'
-		Me.btnAtualizar.Location = New System.Drawing.Point(551, 28)
+		Me.btnAtualizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.btnAtualizar.BackColor = System.Drawing.SystemColors.ActiveCaption
+		Me.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+		Me.btnAtualizar.Location = New System.Drawing.Point(609, 5)
 		Me.btnAtualizar.Name = "btnAtualizar"
-		Me.btnAtualizar.Size = New System.Drawing.Size(128, 23)
+		Me.btnAtualizar.Size = New System.Drawing.Size(67, 23)
 		Me.btnAtualizar.TabIndex = 24
 		Me.btnAtualizar.Text = "Atulizar"
-		Me.btnAtualizar.UseVisualStyleBackColor = True
+		Me.btnAtualizar.UseVisualStyleBackColor = False
 		'
 		'Button2
 		'
-		Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+		Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaption
 		Me.Button2.FlatAppearance.BorderSize = 0
 		Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
 		Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-		Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Button2.Location = New System.Drawing.Point(7, 146)
+		Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+		Me.Button2.Location = New System.Drawing.Point(544, 275)
 		Me.Button2.Name = "Button2"
-		Me.Button2.Size = New System.Drawing.Size(317, 23)
+		Me.Button2.Size = New System.Drawing.Size(94, 23)
 		Me.Button2.TabIndex = 25
 		Me.Button2.Text = "Excluir"
 		Me.Button2.UseVisualStyleBackColor = False
@@ -298,7 +314,9 @@ Partial Class FrmListaVisita
 		'Label8
 		'
 		Me.Label8.AutoSize = True
-		Me.Label8.Location = New System.Drawing.Point(12, 38)
+		Me.Label8.BackColor = System.Drawing.Color.Transparent
+		Me.Label8.ForeColor = System.Drawing.Color.White
+		Me.Label8.Location = New System.Drawing.Point(12, 11)
 		Me.Label8.Name = "Label8"
 		Me.Label8.Size = New System.Drawing.Size(37, 13)
 		Me.Label8.TabIndex = 26
@@ -306,28 +324,28 @@ Partial Class FrmListaVisita
 		'
 		'btnInserir
 		'
-		Me.btnInserir.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+		Me.btnInserir.BackColor = System.Drawing.SystemColors.ActiveCaption
 		Me.btnInserir.FlatAppearance.BorderSize = 0
 		Me.btnInserir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
 		Me.btnInserir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-		Me.btnInserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnInserir.Location = New System.Drawing.Point(7, 178)
+		Me.btnInserir.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+		Me.btnInserir.Location = New System.Drawing.Point(434, 245)
 		Me.btnInserir.Name = "btnInserir"
-		Me.btnInserir.Size = New System.Drawing.Size(317, 23)
+		Me.btnInserir.Size = New System.Drawing.Size(94, 23)
 		Me.btnInserir.TabIndex = 27
 		Me.btnInserir.Text = "Inserir"
 		Me.btnInserir.UseVisualStyleBackColor = False
 		'
 		'btnConcluir
 		'
-		Me.btnConcluir.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+		Me.btnConcluir.BackColor = System.Drawing.SystemColors.ActiveCaption
 		Me.btnConcluir.FlatAppearance.BorderSize = 0
 		Me.btnConcluir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
 		Me.btnConcluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-		Me.btnConcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnConcluir.Location = New System.Drawing.Point(6, 178)
+		Me.btnConcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+		Me.btnConcluir.Location = New System.Drawing.Point(321, 245)
 		Me.btnConcluir.Name = "btnConcluir"
-		Me.btnConcluir.Size = New System.Drawing.Size(319, 23)
+		Me.btnConcluir.Size = New System.Drawing.Size(94, 23)
 		Me.btnConcluir.TabIndex = 28
 		Me.btnConcluir.Text = "Concluir"
 		Me.btnConcluir.UseVisualStyleBackColor = False
@@ -335,7 +353,7 @@ Partial Class FrmListaVisita
 		'Label9
 		'
 		Me.Label9.AutoSize = True
-		Me.Label9.Location = New System.Drawing.Point(215, 74)
+		Me.Label9.Location = New System.Drawing.Point(109, 213)
 		Me.Label9.Name = "Label9"
 		Me.Label9.Size = New System.Drawing.Size(73, 13)
 		Me.Label9.TabIndex = 30
@@ -344,7 +362,7 @@ Partial Class FrmListaVisita
 		'PicDataVisita
 		'
 		Me.PicDataVisita.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-		Me.PicDataVisita.Location = New System.Drawing.Point(218, 90)
+		Me.PicDataVisita.Location = New System.Drawing.Point(112, 229)
 		Me.PicDataVisita.Name = "PicDataVisita"
 		Me.PicDataVisita.Size = New System.Drawing.Size(97, 20)
 		Me.PicDataVisita.TabIndex = 29
@@ -361,75 +379,71 @@ Partial Class FrmListaVisita
 		'
 		'btnEditar
 		'
-		Me.btnEditar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+		Me.btnEditar.BackColor = System.Drawing.SystemColors.ActiveCaption
 		Me.btnEditar.FlatAppearance.BorderSize = 0
 		Me.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
 		Me.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-		Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnEditar.Location = New System.Drawing.Point(7, 207)
+		Me.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+		Me.btnEditar.Location = New System.Drawing.Point(544, 245)
 		Me.btnEditar.Name = "btnEditar"
-		Me.btnEditar.Size = New System.Drawing.Size(317, 23)
+		Me.btnEditar.Size = New System.Drawing.Size(94, 23)
 		Me.btnEditar.TabIndex = 32
 		Me.btnEditar.Text = "Editar"
 		Me.btnEditar.UseVisualStyleBackColor = False
 		'
 		'btnAtualizarcadastro
 		'
-		Me.btnAtualizarcadastro.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+		Me.btnAtualizarcadastro.BackColor = System.Drawing.SystemColors.ActiveCaption
 		Me.btnAtualizarcadastro.FlatAppearance.BorderSize = 0
 		Me.btnAtualizarcadastro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
 		Me.btnAtualizarcadastro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-		Me.btnAtualizarcadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnAtualizarcadastro.Location = New System.Drawing.Point(6, 207)
+		Me.btnAtualizarcadastro.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+		Me.btnAtualizarcadastro.Location = New System.Drawing.Point(321, 274)
 		Me.btnAtualizarcadastro.Name = "btnAtualizarcadastro"
-		Me.btnAtualizarcadastro.Size = New System.Drawing.Size(319, 23)
+		Me.btnAtualizarcadastro.Size = New System.Drawing.Size(206, 23)
 		Me.btnAtualizarcadastro.TabIndex = 33
 		Me.btnAtualizarcadastro.Text = "Atualizar Cadastro"
 		Me.btnAtualizarcadastro.UseVisualStyleBackColor = False
 		'
-		'GroupBox1
-		'
-		Me.GroupBox1.BackColor = System.Drawing.Color.Silver
-		Me.GroupBox1.Controls.Add(Me.txtIdentificacao)
-		Me.GroupBox1.Controls.Add(Me.Label1)
-		Me.GroupBox1.Controls.Add(Me.txtNomeCliente)
-		Me.GroupBox1.Controls.Add(Me.Label2)
-		Me.GroupBox1.Controls.Add(Me.PicDataContato)
-		Me.GroupBox1.Controls.Add(Me.Label9)
-		Me.GroupBox1.Controls.Add(Me.Label3)
-		Me.GroupBox1.Controls.Add(Me.PicDataVisita)
-		Me.GroupBox1.Controls.Add(Me.btnEditar)
-		Me.GroupBox1.Controls.Add(Me.txtTelefone)
-		Me.GroupBox1.Controls.Add(Me.Label4)
-		Me.GroupBox1.Controls.Add(Me.btnInserir)
-		Me.GroupBox1.Controls.Add(Me.txtEndOrcamento)
-		Me.GroupBox1.Controls.Add(Me.Label5)
-		Me.GroupBox1.Controls.Add(Me.Button2)
-		Me.GroupBox1.Location = New System.Drawing.Point(349, 403)
-		Me.GroupBox1.Name = "GroupBox1"
-		Me.GroupBox1.Size = New System.Drawing.Size(330, 243)
-		Me.GroupBox1.TabIndex = 34
-		Me.GroupBox1.TabStop = False
-		'
 		'GroupBox2
 		'
-		Me.GroupBox2.BackColor = System.Drawing.Color.Silver
+		Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.GroupBox2.BackColor = System.Drawing.SystemColors.InactiveCaption
+		Me.GroupBox2.Controls.Add(Me.btnGoogleForms)
+		Me.GroupBox2.Controls.Add(Me.btnAtualizarcadastro)
+		Me.GroupBox2.Controls.Add(Me.btnAnexarExcel)
+		Me.GroupBox2.Controls.Add(Me.btnAbrirAnexo)
+		Me.GroupBox2.Controls.Add(Me.Label9)
+		Me.GroupBox2.Controls.Add(Me.txtIdentificacao)
+		Me.GroupBox2.Controls.Add(Me.btnEditar)
+		Me.GroupBox2.Controls.Add(Me.PicDataVisita)
+		Me.GroupBox2.Controls.Add(Me.Label1)
+		Me.GroupBox2.Controls.Add(Me.btnConcluir)
+		Me.GroupBox2.Controls.Add(Me.btnInserir)
+		Me.GroupBox2.Controls.Add(Me.txtTelefone)
+		Me.GroupBox2.Controls.Add(Me.Label4)
+		Me.GroupBox2.Controls.Add(Me.Button2)
 		Me.GroupBox2.Controls.Add(Me.chkNecessitaVisita)
+		Me.GroupBox2.Controls.Add(Me.txtEndOrcamento)
+		Me.GroupBox2.Controls.Add(Me.txtNomeCliente)
+		Me.GroupBox2.Controls.Add(Me.Label5)
 		Me.GroupBox2.Controls.Add(Me.chkVisitaFeita)
+		Me.GroupBox2.Controls.Add(Me.Label2)
 		Me.GroupBox2.Controls.Add(Me.chkNeceEletrica)
+		Me.GroupBox2.Controls.Add(Me.PicDataContato)
 		Me.GroupBox2.Controls.Add(Me.chkPintura)
 		Me.GroupBox2.Controls.Add(Me.chkConferidoPaulo)
+		Me.GroupBox2.Controls.Add(Me.Label3)
 		Me.GroupBox2.Controls.Add(Me.chkOrcamentoFeito)
 		Me.GroupBox2.Controls.Add(Me.chkEnvCliente)
-		Me.GroupBox2.Controls.Add(Me.btnAtualizarcadastro)
 		Me.GroupBox2.Controls.Add(Me.chkClienteFechou)
-		Me.GroupBox2.Controls.Add(Me.btnConcluir)
 		Me.GroupBox2.Controls.Add(Me.chkFoiPreenForms)
 		Me.GroupBox2.Controls.Add(Me.chkFoiEnviadoResp)
 		Me.GroupBox2.Controls.Add(Me.picDataEnvio)
-		Me.GroupBox2.Location = New System.Drawing.Point(12, 403)
+		Me.GroupBox2.Location = New System.Drawing.Point(5, 407)
 		Me.GroupBox2.Name = "GroupBox2"
-		Me.GroupBox2.Size = New System.Drawing.Size(331, 243)
+		Me.GroupBox2.Size = New System.Drawing.Size(671, 310)
 		Me.GroupBox2.TabIndex = 35
 		Me.GroupBox2.TabStop = False
 		'
@@ -441,97 +455,97 @@ Partial Class FrmListaVisita
 		Me.picDataEnvio.Size = New System.Drawing.Size(97, 20)
 		Me.picDataEnvio.TabIndex = 20
 		'
-		'dgvEscolha
+		'sfdExcel
 		'
-		Me.dgvEscolha.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-		Me.dgvEscolha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvEscolha.Location = New System.Drawing.Point(706, 403)
-		Me.dgvEscolha.Name = "dgvEscolha"
-		Me.dgvEscolha.Size = New System.Drawing.Size(546, 267)
-		Me.dgvEscolha.TabIndex = 36
+		Me.sfdExcel.FileName = " "
 		'
-		'cboTipoServico
+		'btnAnexarExcel
 		'
-		Me.cboTipoServico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.cboTipoServico.FormattingEnabled = True
-		Me.cboTipoServico.Items.AddRange(New Object() {"MATERIAL", "SERVIÇO"})
-		Me.cboTipoServico.Location = New System.Drawing.Point(706, 376)
-		Me.cboTipoServico.Name = "cboTipoServico"
-		Me.cboTipoServico.Size = New System.Drawing.Size(221, 21)
-		Me.cboTipoServico.TabIndex = 37
+		Me.btnAnexarExcel.BackColor = System.Drawing.SystemColors.ActiveCaption
+		Me.btnAnexarExcel.FlatAppearance.BorderSize = 0
+		Me.btnAnexarExcel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+		Me.btnAnexarExcel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+		Me.btnAnexarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+		Me.btnAnexarExcel.Location = New System.Drawing.Point(434, 216)
+		Me.btnAnexarExcel.Name = "btnAnexarExcel"
+		Me.btnAnexarExcel.Size = New System.Drawing.Size(94, 23)
+		Me.btnAnexarExcel.TabIndex = 34
+		Me.btnAnexarExcel.Text = "Anexar Planilha"
+		Me.btnAnexarExcel.UseVisualStyleBackColor = False
 		'
-		'btnAddItem
+		'ofdPlanilha
 		'
-		Me.btnAddItem.BackColor = System.Drawing.Color.White
-		Me.btnAddItem.BackgroundImage = Global.ControleOS.My.Resources.Resources.seta_verde
-		Me.btnAddItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-		Me.btnAddItem.FlatAppearance.BorderSize = 0
-		Me.btnAddItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-		Me.btnAddItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-		Me.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.btnAddItem.Location = New System.Drawing.Point(1223, 327)
-		Me.btnAddItem.Name = "btnAddItem"
-		Me.btnAddItem.Size = New System.Drawing.Size(29, 21)
-		Me.btnAddItem.TabIndex = 38
-		Me.btnAddItem.UseVisualStyleBackColor = False
+		Me.ofdPlanilha.FileName = "OpenFileDialog1"
 		'
-		'Button1
+		'btnLocAnexo
 		'
-		Me.Button1.BackColor = System.Drawing.Color.White
-		Me.Button1.BackgroundImage = Global.ControleOS.My.Resources.Resources.Cancelar
-		Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-		Me.Button1.FlatAppearance.BorderSize = 0
-		Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
-		Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White
-		Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Button1.Location = New System.Drawing.Point(1188, 327)
-		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(29, 21)
-		Me.Button1.TabIndex = 40
-		Me.Button1.UseVisualStyleBackColor = False
+		Me.btnLocAnexo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.btnLocAnexo.BackColor = System.Drawing.SystemColors.ActiveCaption
+		Me.btnLocAnexo.FlatAppearance.BorderSize = 0
+		Me.btnLocAnexo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+		Me.btnLocAnexo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+		Me.btnLocAnexo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+		Me.btnLocAnexo.Location = New System.Drawing.Point(445, 5)
+		Me.btnLocAnexo.Name = "btnLocAnexo"
+		Me.btnLocAnexo.Size = New System.Drawing.Size(158, 23)
+		Me.btnLocAnexo.TabIndex = 36
+		Me.btnLocAnexo.Text = " Mudar Caminho de Anexos"
+		Me.btnLocAnexo.UseVisualStyleBackColor = False
 		'
-		'Button3
+		'btnAbrirAnexo
 		'
-		Me.Button3.BackColor = System.Drawing.Color.White
-		Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-		Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-		Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-		Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-		Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.Button3.Location = New System.Drawing.Point(706, 327)
-		Me.Button3.Name = "Button3"
-		Me.Button3.Size = New System.Drawing.Size(49, 28)
-		Me.Button3.TabIndex = 41
-		Me.Button3.Text = "Aplicar"
-		Me.Button3.UseVisualStyleBackColor = False
+		Me.btnAbrirAnexo.BackColor = System.Drawing.SystemColors.ActiveCaption
+		Me.btnAbrirAnexo.FlatAppearance.BorderSize = 0
+		Me.btnAbrirAnexo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+		Me.btnAbrirAnexo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+		Me.btnAbrirAnexo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+		Me.btnAbrirAnexo.Location = New System.Drawing.Point(321, 216)
+		Me.btnAbrirAnexo.Name = "btnAbrirAnexo"
+		Me.btnAbrirAnexo.Size = New System.Drawing.Size(94, 23)
+		Me.btnAbrirAnexo.TabIndex = 37
+		Me.btnAbrirAnexo.Text = " Abrir Anexo"
+		Me.btnAbrirAnexo.UseVisualStyleBackColor = False
+		'
+		'webFormsGoogle
+		'
+		Me.webFormsGoogle.Location = New System.Drawing.Point(682, 31)
+		Me.webFormsGoogle.MinimumSize = New System.Drawing.Size(20, 20)
+		Me.webFormsGoogle.Name = "webFormsGoogle"
+		Me.webFormsGoogle.ScriptErrorsSuppressed = True
+		Me.webFormsGoogle.Size = New System.Drawing.Size(518, 686)
+		Me.webFormsGoogle.TabIndex = 37
+		'
+		'btnGoogleForms
+		'
+		Me.btnGoogleForms.BackColor = System.Drawing.SystemColors.ActiveCaption
+		Me.btnGoogleForms.FlatAppearance.BorderSize = 0
+		Me.btnGoogleForms.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+		Me.btnGoogleForms.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+		Me.btnGoogleForms.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+		Me.btnGoogleForms.Location = New System.Drawing.Point(544, 216)
+		Me.btnGoogleForms.Name = "btnGoogleForms"
+		Me.btnGoogleForms.Size = New System.Drawing.Size(94, 23)
+		Me.btnGoogleForms.TabIndex = 38
+		Me.btnGoogleForms.Text = "Google Forms"
+		Me.btnGoogleForms.UseVisualStyleBackColor = False
 		'
 		'FrmListaVisita
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.BackColor = System.Drawing.Color.White
-		Me.ClientSize = New System.Drawing.Size(1264, 729)
-		Me.Controls.Add(Me.Button3)
-		Me.Controls.Add(Me.Button1)
-		Me.Controls.Add(Me.btnAddItem)
-		Me.Controls.Add(Me.cboTipoServico)
-		Me.Controls.Add(Me.dgvEscolha)
+		Me.BackColor = System.Drawing.Color.Black
+		Me.ClientSize = New System.Drawing.Size(1212, 729)
+		Me.Controls.Add(Me.webFormsGoogle)
+		Me.Controls.Add(Me.btnLocAnexo)
 		Me.Controls.Add(Me.GroupBox2)
-		Me.Controls.Add(Me.GroupBox1)
 		Me.Controls.Add(Me.Label8)
 		Me.Controls.Add(Me.btnAtualizar)
-		Me.Controls.Add(Me.Label6)
-		Me.Controls.Add(Me.dgvServico)
 		Me.Controls.Add(Me.dgvVisita)
 		Me.Name = "FrmListaVisita"
-		Me.Text = "FrmListaVisita"
+		Me.Text = " "
 		CType(Me.dgvVisita, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.dgvServico, System.ComponentModel.ISupportInitialize).EndInit()
-		Me.GroupBox1.ResumeLayout(False)
-		Me.GroupBox1.PerformLayout()
 		Me.GroupBox2.ResumeLayout(False)
 		Me.GroupBox2.PerformLayout()
-		CType(Me.dgvEscolha, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -548,15 +562,13 @@ Partial Class FrmListaVisita
     Friend WithEvents txtTelefone As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txtEndOrcamento As TextBox
-    Friend WithEvents dgvServico As DataGridView
-    Friend WithEvents Label6 As Label
-    Friend WithEvents chkNecessitaVisita As CheckBox
-    Friend WithEvents chkVisitaFeita As CheckBox
-    Friend WithEvents chkNeceEletrica As CheckBox
-    Friend WithEvents chkPintura As CheckBox
-    Friend WithEvents chkOrcamentoFeito As CheckBox
-    Friend WithEvents chkEnvCliente As CheckBox
-    Friend WithEvents chkClienteFechou As CheckBox
+	Friend WithEvents chkNecessitaVisita As CheckBox
+	Friend WithEvents chkVisitaFeita As CheckBox
+	Friend WithEvents chkNeceEletrica As CheckBox
+	Friend WithEvents chkPintura As CheckBox
+	Friend WithEvents chkOrcamentoFeito As CheckBox
+	Friend WithEvents chkEnvCliente As CheckBox
+	Friend WithEvents chkClienteFechou As CheckBox
 	Friend WithEvents chkFoiPreenForms As CheckBox
 	Friend WithEvents chkFoiEnviadoResp As CheckBox
 	Friend WithEvents btnAtualizar As Button
@@ -569,12 +581,14 @@ Partial Class FrmListaVisita
 	Friend WithEvents chkConferidoPaulo As CheckBox
 	Friend WithEvents btnEditar As Button
 	Friend WithEvents btnAtualizarcadastro As Button
-	Friend WithEvents GroupBox1 As GroupBox
 	Friend WithEvents GroupBox2 As GroupBox
 	Friend WithEvents picDataEnvio As DateTimePicker
-	Friend WithEvents dgvEscolha As DataGridView
-	Friend WithEvents cboTipoServico As ComboBox
-	Friend WithEvents btnAddItem As Button
-	Friend WithEvents Button1 As Button
-	Friend WithEvents Button3 As Button
+	Friend WithEvents sfdExcel As SaveFileDialog
+	Friend WithEvents btnAnexarExcel As Button
+	Friend WithEvents ofdPlanilha As OpenFileDialog
+	Friend WithEvents btnLocAnexo As Button
+	Friend WithEvents btnAbrirAnexo As Button
+	Friend WithEvents btnGoogleForms As Button
+	Friend WithEvents webFormsGoogle As WebBrowser
+	Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
 End Class

@@ -109,13 +109,14 @@ Module ModPDV
                 If CDbl(FrmPDV.txtSaldoEstoque.Text) < CDbl(FrmPDV.txtQuantidade.Text) Then 'VERIFICA A SE HÁ ESTOQUE SUFICIENTE PARA REALIZAR A COMPRA
 
                         'analisar necessidade da fila de produção =====================================================================================================
-                        If FrmPDV.txtCategoriaProduto.Text = "Producao" Then
-                                lSQL = "INSERTO INTO tbFilaProducao (Origem,ClienteID,ProdutoID,NomeProduto,Quantidade,Unidade,DataOrdemProducao,StatusProducao) " &
-                                        "Values (""" & "Venda PDV Pedido: " & FrmPDV.lblNumeroPedido.Text & """,""" & ClienteID & """,""" & FrmPDV.txtProdutoID.Text & """,""" & FrmPDV.txtProduto.Text & """,""" & FrmPDV.txtQuantidade.Text &
-                                        """,""" & FrmPDV.txtUnidade.Text & """,""" & Today.ToShortDateString & """,""" & "Aguardando Fabricação" & """)"
-                                SQL.Comando()
-                        Else
-                                SQL.Notificao("", "NÃO HÁ ESTOQUE SUFICIENTE PARA REALIZAR A VENDA")
+                        If SaldoEstoque < QuantidadeCompra Then 'VERIFICA A SE HÁ ESTOQUE SUFICIENTE PARA REALIZAR A COMPRA
+                                If FrmPDV.txtCategoriaProduto.Text = "Producao" Then
+                                        lSQL = "INSERTO INTO tbFilaProducao (Origem,ClienteID,ProdutoID,NomeProduto,Quantidade,Unidade,DataOrdemProducao,StatusProducao) " &
+                                                "Values (""" & "Venda PDV Pedido: " & FrmPDV.lblNumeroPedido.Text & """,""" & ClienteID & """,""" & FrmPDV.txtProdutoID.Text & """,""" & FrmPDV.txtProduto.Text & """,""" & FrmPDV.txtQuantidade.Text &
+                                                """,""" & FrmPDV.txtUnidade.Text & """,""" & Today.ToShortDateString & """,""" & "Aguardando Fabricação" & """)"
+                                        SQL.Comando()
+                                Else
+                                        SQL.Notificao("", "NÃO HÁ ESTOQUE SUFICIENTE PARA REALIZAR A VENDA")
                                 GoTo prox
                         End If
                         '==============================================================================================================================================
@@ -130,7 +131,10 @@ Module ModPDV
                                 If FrmPDV.txtProdutoID.Text = "" Then '\\VERIFICA SE FOI ESCOLHIDO UM PRODUTO
                                         SQL.Notificao("NOVA LITORAL GESSO", "Selecione um produto")
                                 Else
-                                        If FrmPDV.txtProduto.Text <> "" Then '\\VERIFICA SE O NOME DO PRODUTO ESTÁ PREENCHIDO
+                                        Dim nomeProduto As String = FrmPDV.txtProduto.Text
+                                        If nomeProduto <> "" Then '\\VERIFICA SE O NOME DO PRODUTO ESTÁ PREENCHIDO
+
+                                                Dim NumeroPedido As Double = FrmPDV.lblNumeroPedido.Text
                                                 If FrmPDV.lblNumeroPedido.Text = "" Then
                                                         If SQL.PodeEditarPedido = False Then
                                                                 'GoTo LinePularEndEnt
@@ -252,7 +256,7 @@ prox:
                         End If
                 End If
                 FrmPDV.txtCustoTotal.Text = ""
-                FrmPDV.txtQuantidade.Text = ""
+                '       FrmPDV.txtQuantidade.Text = ""
                 FrmPDV.txtProduto.Text = ""
                 FrmPDV.txtCategoriaProduto.Text = ""
                 FrmPDV.txtProdutoID.Text = ""

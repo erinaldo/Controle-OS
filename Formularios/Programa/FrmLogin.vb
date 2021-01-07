@@ -3,15 +3,20 @@ Imports System.Data.OleDb
 Imports MaterialSkin
 Imports System.Threading
 
+
+
 Public Class FrmLogin
 
         Inherits Controls.MaterialForm
+
+        Public sqlString As String = "Server=PC-TI;Database=SistemaGE;User Id=sa;Password=Granel03;"
 
         Public NivelAcesso As String
         Public ServidorConect As Boolean
         Public conInicio As String
         Public CaminhoBD As String
         Public SenhaBD As String
+
 
         '\\*************************************************************** BOTOES ********************************************************************
 
@@ -161,6 +166,10 @@ Public Class FrmLogin
                         Case Else
                 End Select
                 cboTema.Text = My.Settings.Tema
+
+                txtUsuario.Text = "adm"
+                txtSenha.Text = "admm"
+                btnLogin.PerformClick()
         End Sub
 
         Private Sub FrmLogin_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing 'verificar essa função em caso de erro
@@ -463,7 +472,7 @@ prox:
                 End If
                 Dim objcmd As New OleDbCommand(consulta, objInicio)
 
-                objcmd.Parameters.Clear()    'LIMPAR PARAMETROS PARA EVITAR COMFLITO
+                objcmd.Parameters.Clear()    'LIMPAR PARAMETROS PARA EVITAR CONFLITO
 
                 'INSERIR O PARAMETO COM O NOME DO USUARIO e SENHA
                 objcmd.Parameters.Add(Para_NomeUsuario)
@@ -563,4 +572,15 @@ prox:
                 End Select
         End Sub
 
+        Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+                txtUsuario.Text = "adm"
+                txtSenha.Text = "admm"
+                btnLogin.PerformClick()
+        End Sub
+
+        Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+                Dim strConn As String = sqlString
+                Dim conexao As New OleDbConnection(strConn)
+                Dim comando As New OleDbCommand("insert into dbo.tbLogin(Usuario,Senha)" & "values (""" & "teste" & """,""" & "teste" & """", conexao)
+        End Sub
 End Class

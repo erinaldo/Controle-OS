@@ -11,6 +11,7 @@ Public Class Lembrete
         Public VeiculoID As Double
         Public Status As String
         Public EnderecoID As Double
+        Public Tipo As String
 End Class
 
 Public Class Caixa

@@ -117,13 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="sfdExcel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="ilFig.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>432, 17</value>
   </metadata>
-  <metadata name="ofdPlanilha.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>112, 17</value>
-  </metadata>
-  <metadata name="FolderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>224, 17</value>
+  <data name="ilFig.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABW
+        CAAAAk1TRnQBSQFMAgEBAwEAARgBAAEYAQABFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
+        AwABFAMAAQEBAAEgBgABGWYAAzAB/wMwAf8DMAH/AzAB/wMwAf8DMAH/AzAB//8AJQADMAH/AzAB/wMw
+        Af8DMAH/AzAB/wMwAf8DMAH/AzAB/+gAAygEPQFnAzMBUgwAAx0BKQM9AWcDPQFnAxABFRAAAzAB/wMw
+        Af8DMAH/AzAB/wMwAf8DMAH/AzAB/wMwAf8DMAH/5AABVgFTAVEBmAH/AdwBtgH/AYYBhQF/AcwEAAMd
+        ASkDIwE0AksBSgGFAfwB8QHdAf8B7gHkAc8B/wMjATQMAANMAZMDMAH/AzAB/wMwAf8DMAH/AzAB/wMw
+        Af8DMAH/AzAB/wMwAf8DMAH/4AABVgFTAVEBmAH/AcwBhQH/AYYBeQFeAcwEAAOGAcsB/wHhAaQC/wHM
+        AWMC/wHMAWMC/wHMAWMB/wMjATQMAAMsAfwDMAH/AzAB/wMwAf8DMAH/AzAB/wMwAf8DMAH/AzAB/wMw
+        Af8DMAH/A0kBidwAAxYBHgFLAUoBSQGEAd0BsgFeAfUBhgF5AV4BzAHdAbgBcgH1Af8B0AFvAv8BzAFj
+        Av8BzAFjAv8BzAFjAf8DIwE0DAADNwFaAzAB/wMwAf8DMAH/AzAB/wMwAf8EAAMwAf8DMAH/AzAB/wNJ
+        AYkwAAM1AVc0AAMOARN0AAM4AVsBegF3AXMBwgH/AeUBsAL/AcwBYwL/AcwBYwL/AcwBYwL/AcwBYwL/
+        AcwBYwL/AcwBYwH/AyMBNBAAAzAB/wMwAf8DMAH/AzAB/wMwAf8DUAG8BAADSwHdA0UBfTQAAUQCQwHO
+        NAABDgEMAQ0B+WgAAxABFQM9AWcDPQFnAXcBcwFqAcEBlQGQAYgB1gFWAVUBVAGYAVYBUwFPAZgBuwGh
+        AWMB6gH/AcwBYwL/AcwBYwL/AcwBYwL/AcwBYwH/AUwCSwGGAx0BKRAAAzAB/wMwAf8DMAH/AzAB/wMw
+        Af8DCgENA0IBdAMuAUg0AAMUARsIAAM3AVsoAANJAb5gAAMWAR8DIwE0AzgBXAHzAcoBmQH/Af0BzAFt
+        Av8BzAFjAf8BZgFhAVcBrgMjATQDIwE0AZUBhAFnAdYB/gHMAWgC/wHMAWMC/wHMAWMC/wHMAWMB/wGV
+        AZABiwHWAzMBUhQAAzAB/wMwAf8DMAH/AzAB/wNFAX4DMgH+AzAB/wMuAUgsAANLAaMIAAM6AWEkAAM6
+        AdoEAAENAgwB+QEOAQwBDQH5XAADVQGYAfcB4gG6Av8BzAFjAv8BzAFjAv8BzAFjAv8BzAFjAv8BzAFj
+        Av8B0gF3Av8B7AHMAf8B8wHRAa4B/wH5AcsBgAL/AcwBYwL/AcwBYwL/AcwBYwH/AyMBNBwAAzAB/wMw
+        Af8DSQGJCAADMAH/AzAB/wMuAUjIAAMWAR4DIwEzAzgBXAH/AcwBYwL/AcwBYwL/AcwBYwL/AcwBYwL/
+        Ac0BZwL/AdIBdwH/Af0BzQFxAf8B/gHMAWgC/wHMAWMC/wHMAWMC/wHMAWMB/wGYAYUBbwHXAzMBUhwA
+        A0kBiRAAAzMB/gMwAf8DLwFJJAADSAGKOAABNwE0ATYB3gNLAZVkAAMPARQCPQE8AWYCPQE8AWYBdwFu
+        AVsBwQH/AcwBYwL/AcwBYwL/AcwBYwL/AcwBYwL/AcwBYwL/AcwBYwL/AcwBYwL/AcwBYwL/AcwBcwH/
+        Az0BZzQAAzMB/gMwAf8DMAFMPAABMgEuATEB45QAATgCNwFbAVYBUwFPAZgBZQFhAVcBrQH/AcwBYwL/
+        AcwBYwL/AcwBYwL/AcwBYwL/AcwBYwL/AcwBYwL/AcwBYwH/Az0BZzgAAzkB+QMwAf8DLwFJLAADTAGs
+        CAABMgEuATEB4wwAAR8BHQEeAe+MAAMdASkBhgF3AV0BywGGAXcBXQHLAbsBoAFjAeoB/wHMAWMC/wHM
+        AWMC/wHMAWMC/wHMAWMB/wM9AWc8AAMzAf4DMAH/Ay4BSCwAA0sBowNJAZADFwHzA0kBkANJAZADNwHc
+        nAABVgFTAU8BmAH/AcwBYwL/AcwBYwL/AcwBYwL/AcwBYwH/Az0BZ0AAAzAB/wMwAf8DMAH/AzAB/wMw
+        Af8DMAH/0AADFgEeAyMBMwM4AVwB/wHMAWMC/wHMAWMB/wGqAZ4BiQHhA0cBe0AAAzAB/wMwAf8DMAH/
+        AzAB/wMwAf/YAAMPARQCPQE8AWYCPQE8AWYCdwFzAcEDVwGZQAADMAH/A1EBwAMyAVADMAH/AzAB/+QA
+        AzgBWwM4AVtAAAMwAf8DNAH2AzAB/wM5Afn/ADEAAzAB/wMwAf8DMAH7/wA5AANJAYmsAAFCAU0BPgcA
+        AT4DAAEoAwABUAMAARQDAAEBAQABAQUAAfAXAAP/AQAC/wH4AQ8D/wHwBAAC/wH4AQcD/wHwBAAB/gE4
+        AXgBAwP/AfAEAAH+ASABcAEBA/8B8AQAAf4BIAFwAQAD/wHwBAAB/gEAAXABIQH/Ae8B/wGwBAAB/gEA
+        AXgBEwH/Ae8B/wGwBAAB8AEAATwBAwH/Ae0B/wGwBAABwAEAAT4BAQH/AdsB/gGQBAABwAEAAX8BGAP/
+        AfAEAAHAAQABPwG8AX8B3wH/AZAEAAHwAQABPwH+AT8B/wG/AfAEAAH+AQABPwH/AR8B/QG7AfAEAAH/
+        AYABPwH/AY8B/gEHAfAEAAH/AfABPwH/AcAC/wHwBAAB/wHwAR8B/wHgAv8B8AQAAf8B/AEfAf8B4AL/
+        AfAEAAL/AZ8B/wHhAv8B8AQABP8B4wL/AfAEAAT/AfcC/wHwBAAL
+</value>
+  </data>
+  <metadata name="tmPopularCalendario.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>265, 17</value>
   </metadata>
 </root>

@@ -1,27 +1,27 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmPDV
-	'Inherits System.Windows.Forms.Form
+        'Inherits System.Windows.Forms.Form
 
-	'Descartar substituições de formulário para limpar a lista de componentes.
-	<System.Diagnostics.DebuggerNonUserCode()>
-	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-		Try
-			If disposing AndAlso components IsNot Nothing Then
-				components.Dispose()
-			End If
-		Finally
-			MyBase.Dispose(disposing)
-		End Try
-	End Sub
+        'Descartar substituições de formulário para limpar a lista de componentes.
+        <System.Diagnostics.DebuggerNonUserCode()>
+        Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+	      Try
+		    If disposing AndAlso components IsNot Nothing Then
+			  components.Dispose()
+		    End If
+	      Finally
+		    MyBase.Dispose(disposing)
+	      End Try
+        End Sub
 
-	'Exigido pelo Windows Form Designer
-	Private components As System.ComponentModel.IContainer
+        'Exigido pelo Windows Form Designer
+        Private components As System.ComponentModel.IContainer
 
-	'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
-	'Pode ser modificado usando o Windows Form Designer.  
-	'Não o modifique usando o editor de códigos.
-	<System.Diagnostics.DebuggerStepThrough()>
-	Private Sub InitializeComponent()
+        'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
+        'Pode ser modificado usando o Windows Form Designer.  
+        'Não o modifique usando o editor de códigos.
+        <System.Diagnostics.DebuggerStepThrough()>
+        Private Sub InitializeComponent()
 	      Me.components = New System.ComponentModel.Container()
 	      Dim GêneroLabel As System.Windows.Forms.Label
 	      Dim CustoLabel As System.Windows.Forms.Label
@@ -48,21 +48,19 @@ Partial Class FrmPDV
 	      Dim Label20 As System.Windows.Forms.Label
 	      Dim Label23 As System.Windows.Forms.Label
 	      Dim Label6 As System.Windows.Forms.Label
-	      Dim Label27 As System.Windows.Forms.Label
+	      Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+	      Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+	      Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 	      Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 	      Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 	      Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-	      Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-	      Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+	      Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 	      Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 	      Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+	      Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 	      Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-	      Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 	      Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 	      Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-	      Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-	      Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-	      Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 	      Me.TbProdutoVendaPDVBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
 	      Me.DataPdv1 = New ControleOS.DataPdv()
 	      Me.TbProdutoPDVBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -261,16 +259,11 @@ Partial Class FrmPDV
 	      Me.txtProdutoID = New System.Windows.Forms.TextBox()
 	      Me.txtCodBarras = New System.Windows.Forms.TextBox()
 	      Me.Panel5 = New System.Windows.Forms.Panel()
-	      Me.btnRetQuant = New System.Windows.Forms.Button()
-	      Me.btnAddQuant = New System.Windows.Forms.Button()
-	      Me.btnAdicionarProduto = New System.Windows.Forms.Button()
 	      Me.txtCustoTotal = New System.Windows.Forms.TextBox()
 	      Me.txtSoma = New System.Windows.Forms.TextBox()
 	      Me.txtSomaTotal = New System.Windows.Forms.TextBox()
 	      Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
 	      Me.Panel3 = New System.Windows.Forms.Panel()
-	      Me.lblProdutoDesc = New System.Windows.Forms.Label()
-	      Me.Button1 = New System.Windows.Forms.Button()
 	      Me.txtTipo = New System.Windows.Forms.TextBox()
 	      Me.lblPrecoFrete = New System.Windows.Forms.Label()
 	      Me.txtComplemento = New System.Windows.Forms.TextBox()
@@ -290,13 +283,10 @@ Partial Class FrmPDV
 	      Me.txtCliente = New System.Windows.Forms.TextBox()
 	      Me.btnshow1 = New System.Windows.Forms.Button()
 	      Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
-	      Me.PictureBox4 = New System.Windows.Forms.PictureBox()
 	      Me.Label15 = New System.Windows.Forms.Label()
 	      Me.ToolStripContainer2 = New System.Windows.Forms.ToolStripContainer()
-	      Me.PictureBox5 = New System.Windows.Forms.PictureBox()
 	      Me.Label16 = New System.Windows.Forms.Label()
 	      Me.dgvEnd = New System.Windows.Forms.DataGridView()
-	      Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
 	      Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 	      Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 	      Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -306,43 +296,38 @@ Partial Class FrmPDV
 	      Me.btnAddPessoa = New System.Windows.Forms.Button()
 	      Me.btnMostraEnd = New System.Windows.Forms.Button()
 	      Me.Panel2 = New System.Windows.Forms.Panel()
-	      Me.dgvContato = New System.Windows.Forms.DataGridView()
 	      Me.btnCarregarPedido2 = New System.Windows.Forms.Button()
 	      Me.btnVoltar2 = New System.Windows.Forms.Button()
-	      Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 	      Me.Panel13 = New System.Windows.Forms.Panel()
 	      Me.Panel12 = New System.Windows.Forms.Panel()
-	      Me.btnConsulta = New System.Windows.Forms.Button()
-	      Me.txtCod = New System.Windows.Forms.TextBox()
 	      Me.Panel9 = New System.Windows.Forms.Panel()
 	      Me.txtItens = New System.Windows.Forms.TextBox()
 	      Me.Panel8 = New System.Windows.Forms.Panel()
 	      Me.Panel10 = New System.Windows.Forms.Panel()
-	      Me.Label26 = New System.Windows.Forms.Label()
-	      Me.btnRE = New System.Windows.Forms.Button()
-	      Me.Label25 = New System.Windows.Forms.Label()
-	      Me.btnAgendarEntrega = New System.Windows.Forms.Button()
-	      Me.Label24 = New System.Windows.Forms.Label()
-	      Me.btnPagamento = New System.Windows.Forms.Button()
-	      Me.Label4 = New System.Windows.Forms.Label()
-	      Me.btnImprimir = New System.Windows.Forms.Button()
-	      Me.Label22 = New System.Windows.Forms.Label()
-	      Me.btnVoltar = New System.Windows.Forms.Button()
-	      Me.grpshow2 = New System.Windows.Forms.Button()
-	      Me.Label21 = New System.Windows.Forms.Label()
-	      Me.Label17 = New System.Windows.Forms.Label()
-	      Me.btnCarregarPedido = New System.Windows.Forms.Button()
 	      Me.Panel11 = New System.Windows.Forms.Panel()
 	      Me.Panel1 = New System.Windows.Forms.Panel()
+	      Me.Panel4 = New System.Windows.Forms.Panel()
+	      Me.lblProdutoDesc = New System.Windows.Forms.Label()
+	      Me.Label4 = New System.Windows.Forms.Label()
+	      Me.Label17 = New System.Windows.Forms.Label()
+	      Me.Label21 = New System.Windows.Forms.Label()
+	      Me.Label22 = New System.Windows.Forms.Label()
+	      Me.Label24 = New System.Windows.Forms.Label()
+	      Me.Label25 = New System.Windows.Forms.Label()
+	      Me.Label26 = New System.Windows.Forms.Label()
+	      Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+	      Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+	      Me.PictureBox4 = New System.Windows.Forms.PictureBox()
 	      Me.Panel6 = New System.Windows.Forms.Panel()
 	      Me.PanelProdutos = New System.Windows.Forms.Panel()
-	      Me.dgvListaProduto = New System.Windows.Forms.DataGridView()
 	      Me.txtAddProduto2 = New System.Windows.Forms.Button()
 	      Me.Label8 = New System.Windows.Forms.Label()
 	      Me.txtCodePesq = New System.Windows.Forms.TextBox()
-	      Me.btnConfirmarEscolha = New System.Windows.Forms.Button()
 	      Me.lblPesquisarProdutos = New System.Windows.Forms.Label()
+	      Me.btnConfirmarEscolha = New System.Windows.Forms.Button()
 	      Me.txtPesqProduto = New System.Windows.Forms.TextBox()
+	      Me.dgvListaProduto = New System.Windows.Forms.DataGridView()
+	      Me.SaldoEstoque = New System.Windows.Forms.DataGridViewTextBoxColumn()
 	      Me.dgvRE = New System.Windows.Forms.DataGridView()
 	      Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 	      Me.DataGridViewComboBoxColumn1 = New System.Windows.Forms.DataGridViewComboBoxColumn()
@@ -375,7 +360,17 @@ Partial Class FrmPDV
 	      Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 	      Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 	      Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-	      Me.Panel4 = New System.Windows.Forms.Panel()
+	      Me.Button1 = New System.Windows.Forms.Button()
+	      Me.btnRetQuant = New System.Windows.Forms.Button()
+	      Me.btnAddQuant = New System.Windows.Forms.Button()
+	      Me.btnAdicionarProduto = New System.Windows.Forms.Button()
+	      Me.btnRE = New System.Windows.Forms.Button()
+	      Me.btnAgendarEntrega = New System.Windows.Forms.Button()
+	      Me.btnPagamento = New System.Windows.Forms.Button()
+	      Me.btnImprimir = New System.Windows.Forms.Button()
+	      Me.btnVoltar = New System.Windows.Forms.Button()
+	      Me.grpshow2 = New System.Windows.Forms.Button()
+	      Me.btnCarregarPedido = New System.Windows.Forms.Button()
 	      GêneroLabel = New System.Windows.Forms.Label()
 	      CustoLabel = New System.Windows.Forms.Label()
 	      Saldo_EstoqueLabel = New System.Windows.Forms.Label()
@@ -401,7 +396,6 @@ Partial Class FrmPDV
 	      Label20 = New System.Windows.Forms.Label()
 	      Label23 = New System.Windows.Forms.Label()
 	      Label6 = New System.Windows.Forms.Label()
-	      Label27 = New System.Windows.Forms.Label()
 	      CType(Me.TbProdutoVendaPDVBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
 	      CType(Me.DataPdv1, System.ComponentModel.ISupportInitialize).BeginInit()
 	      CType(Me.TbProdutoPDVBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -420,14 +414,10 @@ Partial Class FrmPDV
 	      CType(Me.dgvCliente, System.ComponentModel.ISupportInitialize).BeginInit()
 	      Me.ToolStripContainer1.ContentPanel.SuspendLayout()
 	      Me.ToolStripContainer1.SuspendLayout()
-	      CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
 	      Me.ToolStripContainer2.ContentPanel.SuspendLayout()
 	      Me.ToolStripContainer2.SuspendLayout()
-	      CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
 	      CType(Me.dgvEnd, System.ComponentModel.ISupportInitialize).BeginInit()
 	      Me.Panel2.SuspendLayout()
-	      CType(Me.dgvContato, System.ComponentModel.ISupportInitialize).BeginInit()
-	      CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 	      Me.Panel13.SuspendLayout()
 	      Me.Panel12.SuspendLayout()
 	      Me.Panel9.SuspendLayout()
@@ -435,6 +425,10 @@ Partial Class FrmPDV
 	      Me.Panel10.SuspendLayout()
 	      Me.Panel11.SuspendLayout()
 	      Me.Panel1.SuspendLayout()
+	      Me.Panel4.SuspendLayout()
+	      CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+	      CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+	      CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
 	      Me.Panel6.SuspendLayout()
 	      Me.PanelProdutos.SuspendLayout()
 	      CType(Me.dgvListaProduto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -442,7 +436,6 @@ Partial Class FrmPDV
 	      CType(Me.dgvProdutos, System.ComponentModel.ISupportInitialize).BeginInit()
 	      CType(Me.dgvProdutosVinc, System.ComponentModel.ISupportInitialize).BeginInit()
 	      CType(Me.dgvProdutosSemCusto, System.ComponentModel.ISupportInitialize).BeginInit()
-	      Me.Panel4.SuspendLayout()
 	      Me.SuspendLayout()
 	      '
 	      'GêneroLabel
@@ -662,7 +655,7 @@ Partial Class FrmPDV
 	      '
 	      CPFLabel.AutoSize = True
 	      CPFLabel.ForeColor = System.Drawing.Color.Black
-	      CPFLabel.Location = New System.Drawing.Point(384, 70)
+	      CPFLabel.Location = New System.Drawing.Point(295, 68)
 	      CPFLabel.Name = "CPFLabel"
 	      CPFLabel.Size = New System.Drawing.Size(68, 13)
 	      CPFLabel.TabIndex = 25
@@ -716,16 +709,6 @@ Partial Class FrmPDV
 	      Label6.Size = New System.Drawing.Size(43, 19)
 	      Label6.TabIndex = 113
 	      Label6.Text = "Itens"
-	      '
-	      'Label27
-	      '
-	      Label27.AutoSize = True
-	      Label27.ForeColor = System.Drawing.Color.Black
-	      Label27.Location = New System.Drawing.Point(296, 70)
-	      Label27.Name = "Label27"
-	      Label27.Size = New System.Drawing.Size(18, 13)
-	      Label27.TabIndex = 86
-	      Label27.Text = "ID"
 	      '
 	      'TbProdutoVendaPDVBindingSource1
 	      '
@@ -1065,7 +1048,6 @@ Partial Class FrmPDV
 	      Me.txtProduto.Name = "txtProduto"
 	      Me.txtProduto.Size = New System.Drawing.Size(602, 50)
 	      Me.txtProduto.TabIndex = 24
-	      Me.txtProduto.Text = "a"
 	      '
 	      'dgvPagamento
 	      '
@@ -2143,56 +2125,6 @@ Partial Class FrmPDV
 	      Me.Panel5.Size = New System.Drawing.Size(382, 138)
 	      Me.Panel5.TabIndex = 106
 	      '
-	      'btnRetQuant
-	      '
-	      Me.btnRetQuant.BackColor = System.Drawing.Color.Transparent
-	      Me.btnRetQuant.BackgroundImage = Global.ControleOS.My.Resources.Resources.subtrair
-	      Me.btnRetQuant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-	      Me.btnRetQuant.FlatAppearance.BorderSize = 0
-	      Me.btnRetQuant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo
-	      Me.btnRetQuant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet
-	      Me.btnRetQuant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-	      Me.btnRetQuant.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.btnRetQuant.Location = New System.Drawing.Point(117, 36)
-	      Me.btnRetQuant.Name = "btnRetQuant"
-	      Me.btnRetQuant.Size = New System.Drawing.Size(28, 28)
-	      Me.btnRetQuant.TabIndex = 107
-	      Me.btnRetQuant.UseVisualStyleBackColor = False
-	      '
-	      'btnAddQuant
-	      '
-	      Me.btnAddQuant.BackColor = System.Drawing.Color.Transparent
-	      Me.btnAddQuant.BackgroundImage = Global.ControleOS.My.Resources.Resources.adicionar
-	      Me.btnAddQuant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-	      Me.btnAddQuant.FlatAppearance.BorderSize = 0
-	      Me.btnAddQuant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo
-	      Me.btnAddQuant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet
-	      Me.btnAddQuant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-	      Me.btnAddQuant.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.btnAddQuant.Location = New System.Drawing.Point(120, 9)
-	      Me.btnAddQuant.Name = "btnAddQuant"
-	      Me.btnAddQuant.Size = New System.Drawing.Size(24, 24)
-	      Me.btnAddQuant.TabIndex = 106
-	      Me.btnAddQuant.UseVisualStyleBackColor = False
-	      '
-	      'btnAdicionarProduto
-	      '
-	      Me.btnAdicionarProduto.AutoEllipsis = True
-	      Me.btnAdicionarProduto.BackColor = System.Drawing.Color.Transparent
-	      Me.btnAdicionarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-	      Me.btnAdicionarProduto.DialogResult = System.Windows.Forms.DialogResult.Cancel
-	      Me.btnAdicionarProduto.FlatAppearance.BorderColor = System.Drawing.Color.LightSkyBlue
-	      Me.btnAdicionarProduto.FlatAppearance.BorderSize = 0
-	      Me.btnAdicionarProduto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo
-	      Me.btnAdicionarProduto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet
-	      Me.btnAdicionarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-	      Me.btnAdicionarProduto.Image = Global.ControleOS.My.Resources.Resources.Adicionar1
-	      Me.btnAdicionarProduto.Location = New System.Drawing.Point(329, 83)
-	      Me.btnAdicionarProduto.Name = "btnAdicionarProduto"
-	      Me.btnAdicionarProduto.Size = New System.Drawing.Size(35, 38)
-	      Me.btnAdicionarProduto.TabIndex = 33
-	      Me.btnAdicionarProduto.UseVisualStyleBackColor = False
-	      '
 	      'txtCustoTotal
 	      '
 	      Me.txtCustoTotal.BackColor = System.Drawing.Color.White
@@ -2201,6 +2133,7 @@ Partial Class FrmPDV
 	      Me.txtCustoTotal.Font = New System.Drawing.Font("Arial Narrow", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 	      Me.txtCustoTotal.Location = New System.Drawing.Point(7, 83)
 	      Me.txtCustoTotal.Name = "txtCustoTotal"
+	      Me.txtCustoTotal.ReadOnly = True
 	      Me.txtCustoTotal.Size = New System.Drawing.Size(112, 38)
 	      Me.txtCustoTotal.TabIndex = 104
 	      Me.txtCustoTotal.Text = "1"
@@ -2234,7 +2167,7 @@ Partial Class FrmPDV
 	      'Panel3
 	      '
 	      Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-	  Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		      Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 	      Me.Panel3.BackColor = System.Drawing.Color.White
 	      Me.Panel3.Controls.Add(Me.lblProdutoDesc)
 	      Me.Panel3.Controls.Add(Label3)
@@ -2251,34 +2184,6 @@ Partial Class FrmPDV
 	      Me.Panel3.Name = "Panel3"
 	      Me.Panel3.Size = New System.Drawing.Size(1048, 59)
 	      Me.Panel3.TabIndex = 97
-	      '
-	      'lblProdutoDesc
-	      '
-	      Me.lblProdutoDesc.AutoSize = True
-	      Me.lblProdutoDesc.Font = New System.Drawing.Font("Arial Narrow", 26.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.lblProdutoDesc.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-	      Me.lblProdutoDesc.Location = New System.Drawing.Point(613, 9)
-	      Me.lblProdutoDesc.Name = "lblProdutoDesc"
-	      Me.lblProdutoDesc.Size = New System.Drawing.Size(162, 42)
-	      Me.lblProdutoDesc.TabIndex = 119
-	      Me.lblProdutoDesc.Text = "PRODUTO"
-	      '
-	      'Button1
-	      '
-	      Me.Button1.AccessibleDescription = "Procurar Produtos"
-	      Me.Button1.BackColor = System.Drawing.Color.Transparent
-	      Me.Button1.BackgroundImage = Global.ControleOS.My.Resources.Resources.lupa2
-	      Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-	      Me.Button1.FlatAppearance.BorderSize = 0
-	      Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo
-	      Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet
-	      Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-	      Me.Button1.ForeColor = System.Drawing.Color.White
-	      Me.Button1.Location = New System.Drawing.Point(996, 3)
-	      Me.Button1.Name = "Button1"
-	      Me.Button1.Size = New System.Drawing.Size(48, 50)
-	      Me.Button1.TabIndex = 109
-	      Me.Button1.UseVisualStyleBackColor = False
 	      '
 	      'txtTipo
 	      '
@@ -2376,14 +2281,14 @@ Partial Class FrmPDV
 	      Me.dgvCliente.BackgroundColor = System.Drawing.Color.White
 	      Me.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 	      Me.dgvCliente.ColumnHeadersVisible = False
-	      DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-	      DataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window
-	      DataGridViewCellStyle29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      DataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText
-	      DataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.White
-	      DataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.Black
-	      DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-	      Me.dgvCliente.DefaultCellStyle = DataGridViewCellStyle29
+	      DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+	      DataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window
+	      DataGridViewCellStyle27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      DataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText
+	      DataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.White
+	      DataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.Black
+	      DataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+	      Me.dgvCliente.DefaultCellStyle = DataGridViewCellStyle27
 	      Me.dgvCliente.GridColor = System.Drawing.Color.White
 	      Me.dgvCliente.Location = New System.Drawing.Point(14, 106)
 	      Me.dgvCliente.Name = "dgvCliente"
@@ -2423,7 +2328,7 @@ Partial Class FrmPDV
 	      '
 	      'txtCPFCliente
 	      '
-	      Me.txtCPFCliente.Location = New System.Drawing.Point(384, 84)
+	      Me.txtCPFCliente.Location = New System.Drawing.Point(298, 84)
 	      Me.txtCPFCliente.Name = "txtCPFCliente"
 	      Me.txtCPFCliente.Size = New System.Drawing.Size(136, 20)
 	      Me.txtCPFCliente.TabIndex = 26
@@ -2481,16 +2386,6 @@ Partial Class FrmPDV
 	      Me.ToolStripContainer1.TopToolStripPanel.Padding = New System.Windows.Forms.Padding(0, 0, 25, 25)
 	      Me.ToolStripContainer1.TopToolStripPanelVisible = False
 	      '
-	      'PictureBox4
-	      '
-	      Me.PictureBox4.BackgroundImage = Global.ControleOS.My.Resources.Resources.Usuarios
-	      Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-	      Me.PictureBox4.Location = New System.Drawing.Point(3, 7)
-	      Me.PictureBox4.Name = "PictureBox4"
-	      Me.PictureBox4.Size = New System.Drawing.Size(39, 35)
-	      Me.PictureBox4.TabIndex = 4
-	      Me.PictureBox4.TabStop = False
-	      '
 	      'Label15
 	      '
 	      Me.Label15.AutoSize = True
@@ -2525,16 +2420,6 @@ Partial Class FrmPDV
 	      Me.ToolStripContainer2.TopToolStripPanel.Padding = New System.Windows.Forms.Padding(0, 0, 25, 25)
 	      Me.ToolStripContainer2.TopToolStripPanelVisible = False
 	      '
-	      'PictureBox5
-	      '
-	      Me.PictureBox5.BackgroundImage = Global.ControleOS.My.Resources.Resources.Entrega
-	      Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-	      Me.PictureBox5.Location = New System.Drawing.Point(3, 7)
-	      Me.PictureBox5.Name = "PictureBox5"
-	      Me.PictureBox5.Size = New System.Drawing.Size(39, 35)
-	      Me.PictureBox5.TabIndex = 4
-	      Me.PictureBox5.TabStop = False
-	      '
 	      'Label16
 	      '
 	      Me.Label16.AutoSize = True
@@ -2554,9 +2439,9 @@ Partial Class FrmPDV
 	      Me.dgvEnd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 	      Me.dgvEnd.BackgroundColor = System.Drawing.Color.White
 	      Me.dgvEnd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-	      Me.dgvEnd.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
+	      Me.dgvEnd.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
 	      Me.dgvEnd.DataSource = Me.TbEndBindingSource
-	      Me.dgvEnd.Location = New System.Drawing.Point(12, 67)
+	      Me.dgvEnd.Location = New System.Drawing.Point(12, 104)
 	      Me.dgvEnd.Name = "dgvEnd"
 	      Me.dgvEnd.ReadOnly = True
 	      Me.dgvEnd.RowHeadersVisible = False
@@ -2564,13 +2449,6 @@ Partial Class FrmPDV
 	      Me.dgvEnd.Size = New System.Drawing.Size(634, 163)
 	      Me.dgvEnd.TabIndex = 42
 	      Me.dgvEnd.Visible = False
-	      '
-	      'ID
-	      '
-	      Me.ID.DataPropertyName = "ID"
-	      Me.ID.HeaderText = "ID"
-	      Me.ID.Name = "ID"
-	      Me.ID.ReadOnly = True
 	      '
 	      'DataGridViewTextBoxColumn2
 	      '
@@ -2648,7 +2526,6 @@ Partial Class FrmPDV
 	      '
 	      Me.Panel2.BackColor = System.Drawing.Color.White
 	      Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-	      Me.Panel2.Controls.Add(Me.dgvContato)
 	      Me.Panel2.Controls.Add(Me.btnCarregarPedido2)
 	      Me.Panel2.Controls.Add(Me.btnVoltar2)
 	      Me.Panel2.Controls.Add(Me.PictureBox1)
@@ -2660,32 +2537,6 @@ Partial Class FrmPDV
 	      Me.Panel2.Name = "Panel2"
 	      Me.Panel2.Size = New System.Drawing.Size(1030, 489)
 	      Me.Panel2.TabIndex = 94
-	      '
-	      'dgvContato
-	      '
-	      Me.dgvContato.AllowUserToAddRows = False
-	      Me.dgvContato.AllowUserToDeleteRows = False
-	      Me.dgvContato.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-	      Me.dgvContato.BackgroundColor = System.Drawing.Color.White
-	      Me.dgvContato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-	      Me.dgvContato.ColumnHeadersVisible = False
-	      DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-	      DataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window
-	      DataGridViewCellStyle30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      DataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText
-	      DataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.White
-	      DataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.Black
-	      DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-	      Me.dgvContato.DefaultCellStyle = DataGridViewCellStyle30
-	      Me.dgvContato.GridColor = System.Drawing.Color.White
-	      Me.dgvContato.Location = New System.Drawing.Point(302, 150)
-	      Me.dgvContato.Name = "dgvContato"
-	      Me.dgvContato.ReadOnly = True
-	      Me.dgvContato.RowHeadersVisible = False
-	      Me.dgvContato.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-	      Me.dgvContato.Size = New System.Drawing.Size(262, 82)
-	      Me.dgvContato.TabIndex = 108
-	      Me.dgvContato.Visible = False
 	      '
 	      'btnCarregarPedido2
 	      '
@@ -2716,15 +2567,6 @@ Partial Class FrmPDV
 	      Me.btnVoltar2.TabIndex = 106
 	      Me.btnVoltar2.Text = "VOLTAR"
 	      Me.btnVoltar2.UseVisualStyleBackColor = False
-	      '
-	      'PictureBox1
-	      '
-	      Me.PictureBox1.Image = Global.ControleOS.My.Resources.Resources.NLG
-	      Me.PictureBox1.Location = New System.Drawing.Point(666, 5)
-	      Me.PictureBox1.Name = "PictureBox1"
-	      Me.PictureBox1.Size = New System.Drawing.Size(218, 209)
-	      Me.PictureBox1.TabIndex = 105
-	      Me.PictureBox1.TabStop = False
 	      '
 	      'Panel13
 	      '
@@ -2760,10 +2602,7 @@ Partial Class FrmPDV
 	      '
 	      Me.Panel12.BackColor = System.Drawing.Color.Silver
 	      Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-	      Me.Panel12.Controls.Add(Me.btnConsulta)
-	      Me.Panel12.Controls.Add(Label27)
 	      Me.Panel12.Controls.Add(Me.dgvCliente)
-	      Me.Panel12.Controls.Add(Me.txtCod)
 	      Me.Panel12.Controls.Add(Me.ToolStripContainer1)
 	      Me.Panel12.Controls.Add(Me.txtTipo)
 	      Me.Panel12.Controls.Add(Label12)
@@ -2780,32 +2619,10 @@ Partial Class FrmPDV
 	      Me.Panel12.Size = New System.Drawing.Size(655, 196)
 	      Me.Panel12.TabIndex = 103
 	      '
-	      'btnConsulta
-	      '
-	      Me.btnConsulta.BackColor = System.Drawing.Color.Indigo
-	      Me.btnConsulta.FlatAppearance.BorderSize = 0
-	      Me.btnConsulta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo
-	      Me.btnConsulta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet
-	      Me.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-	      Me.btnConsulta.ForeColor = System.Drawing.Color.White
-	      Me.btnConsulta.Location = New System.Drawing.Point(440, 121)
-	      Me.btnConsulta.Name = "btnConsulta"
-	      Me.btnConsulta.Size = New System.Drawing.Size(118, 21)
-	      Me.btnConsulta.TabIndex = 100
-	      Me.btnConsulta.Text = "Consultar contato"
-	      Me.btnConsulta.UseVisualStyleBackColor = False
-	      '
-	      'txtCod
-	      '
-	      Me.txtCod.Location = New System.Drawing.Point(298, 84)
-	      Me.txtCod.Name = "txtCod"
-	      Me.txtCod.Size = New System.Drawing.Size(80, 20)
-	      Me.txtCod.TabIndex = 85
-	      '
 	      'Panel9
 	      '
 	      Me.Panel9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-	  Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		      Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 	      Me.Panel9.BackColor = System.Drawing.Color.White
 	      Me.Panel9.Controls.Add(Me.txtItens)
 	      Me.Panel9.Controls.Add(Label6)
@@ -2829,7 +2646,7 @@ Partial Class FrmPDV
 	      'Panel8
 	      '
 	      Me.Panel8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-	  Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		      Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 	      Me.Panel8.BackColor = System.Drawing.Color.White
 	      Me.Panel8.Controls.Add(Me.txtSomaTotal)
 	      Me.Panel8.Controls.Add(Label23)
@@ -2861,208 +2678,6 @@ Partial Class FrmPDV
 	      Me.Panel10.Name = "Panel10"
 	      Me.Panel10.Size = New System.Drawing.Size(382, 164)
 	      Me.Panel10.TabIndex = 116
-	      '
-	      'Label26
-	      '
-	      Me.Label26.AutoSize = True
-	      Me.Label26.BackColor = System.Drawing.Color.Transparent
-	      Me.Label26.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.Label26.Location = New System.Drawing.Point(77, 125)
-	      Me.Label26.Name = "Label26"
-	      Me.Label26.Size = New System.Drawing.Size(57, 20)
-	      Me.Label26.TabIndex = 127
-	      Me.Label26.Text = "Retirada"
-	      Me.Label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-	      '
-	      'btnRE
-	      '
-	      Me.btnRE.BackColor = System.Drawing.Color.White
-	      Me.btnRE.BackgroundImage = Global.ControleOS.My.Resources.Resources.chkbox
-	      Me.btnRE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-	      Me.btnRE.FlatAppearance.BorderSize = 0
-	      Me.btnRE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-	      Me.btnRE.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.btnRE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-	      Me.btnRE.Location = New System.Drawing.Point(82, 87)
-	      Me.btnRE.Name = "btnRE"
-	      Me.btnRE.Size = New System.Drawing.Size(50, 36)
-	      Me.btnRE.TabIndex = 126
-	      Me.btnRE.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-	      Me.btnRE.UseVisualStyleBackColor = False
-	      '
-	      'Label25
-	      '
-	      Me.Label25.AutoSize = True
-	      Me.Label25.BackColor = System.Drawing.Color.Transparent
-	      Me.Label25.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.Label25.Location = New System.Drawing.Point(12, 125)
-	      Me.Label25.Name = "Label25"
-	      Me.Label25.Size = New System.Drawing.Size(57, 20)
-	      Me.Label25.TabIndex = 125
-	      Me.Label25.Text = "Agendar"
-	      Me.Label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-	      '
-	      'btnAgendarEntrega
-	      '
-	      Me.btnAgendarEntrega.BackColor = System.Drawing.Color.White
-	      Me.btnAgendarEntrega.BackgroundImage = Global.ControleOS.My.Resources.Resources.calendario
-	      Me.btnAgendarEntrega.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-	      Me.btnAgendarEntrega.FlatAppearance.BorderSize = 0
-	      Me.btnAgendarEntrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-	      Me.btnAgendarEntrega.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.btnAgendarEntrega.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-	      Me.btnAgendarEntrega.Location = New System.Drawing.Point(17, 87)
-	      Me.btnAgendarEntrega.Name = "btnAgendarEntrega"
-	      Me.btnAgendarEntrega.Size = New System.Drawing.Size(50, 36)
-	      Me.btnAgendarEntrega.TabIndex = 124
-	      Me.btnAgendarEntrega.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-	      Me.btnAgendarEntrega.UseVisualStyleBackColor = False
-	      '
-	      'Label24
-	      '
-	      Me.Label24.AutoSize = True
-	      Me.Label24.BackColor = System.Drawing.Color.Transparent
-	      Me.Label24.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.Label24.Location = New System.Drawing.Point(17, 49)
-	      Me.Label24.Name = "Label24"
-	      Me.Label24.Size = New System.Drawing.Size(50, 20)
-	      Me.Label24.TabIndex = 123
-	      Me.Label24.Text = "Faturar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-	      Me.Label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-	      '
-	      'btnPagamento
-	      '
-	      Me.btnPagamento.BackColor = System.Drawing.Color.White
-	      Me.btnPagamento.BackgroundImage = Global.ControleOS.My.Resources.Resources.Faturar
-	      Me.btnPagamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-	      Me.btnPagamento.FlatAppearance.BorderSize = 0
-	      Me.btnPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-	      Me.btnPagamento.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.btnPagamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-	      Me.btnPagamento.Location = New System.Drawing.Point(17, 11)
-	      Me.btnPagamento.Name = "btnPagamento"
-	      Me.btnPagamento.Size = New System.Drawing.Size(50, 36)
-	      Me.btnPagamento.TabIndex = 66
-	      Me.btnPagamento.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-	      Me.btnPagamento.UseVisualStyleBackColor = False
-	      '
-	      'Label4
-	      '
-	      Me.Label4.AutoSize = True
-	      Me.Label4.BackColor = System.Drawing.Color.Transparent
-	      Me.Label4.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.Label4.Location = New System.Drawing.Point(78, 49)
-	      Me.Label4.Name = "Label4"
-	      Me.Label4.Size = New System.Drawing.Size(58, 20)
-	      Me.Label4.TabIndex = 119
-	      Me.Label4.Text = "Carregar"
-	      Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-	      '
-	      'btnImprimir
-	      '
-	      Me.btnImprimir.BackColor = System.Drawing.Color.White
-	      Me.btnImprimir.BackgroundImage = Global.ControleOS.My.Resources.Resources.Imprimir1
-	      Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-	      Me.btnImprimir.FlatAppearance.BorderSize = 0
-	      Me.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue
-	      Me.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy
-	      Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-	      Me.btnImprimir.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-	      Me.btnImprimir.Location = New System.Drawing.Point(296, 11)
-	      Me.btnImprimir.Name = "btnImprimir"
-	      Me.btnImprimir.Size = New System.Drawing.Size(57, 36)
-	      Me.btnImprimir.TabIndex = 75
-	      Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-	      Me.btnImprimir.UseVisualStyleBackColor = False
-	      '
-	      'Label22
-	      '
-	      Me.Label22.AutoSize = True
-	      Me.Label22.BackColor = System.Drawing.Color.Transparent
-	      Me.Label22.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.Label22.Location = New System.Drawing.Point(151, 50)
-	      Me.Label22.Name = "Label22"
-	      Me.Label22.Size = New System.Drawing.Size(43, 20)
-	      Me.Label22.TabIndex = 122
-	      Me.Label22.Text = "Voltar"
-	      Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-	      '
-	      'btnVoltar
-	      '
-	      Me.btnVoltar.BackColor = System.Drawing.Color.White
-	      Me.btnVoltar.BackgroundImage = Global.ControleOS.My.Resources.Resources.Voltar2
-	      Me.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-	      Me.btnVoltar.FlatAppearance.BorderSize = 0
-	      Me.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-	      Me.btnVoltar.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.btnVoltar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-	      Me.btnVoltar.Location = New System.Drawing.Point(148, 11)
-	      Me.btnVoltar.Name = "btnVoltar"
-	      Me.btnVoltar.Size = New System.Drawing.Size(50, 36)
-	      Me.btnVoltar.TabIndex = 64
-	      Me.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-	      Me.btnVoltar.UseVisualStyleBackColor = False
-	      '
-	      'grpshow2
-	      '
-	      Me.grpshow2.BackColor = System.Drawing.Color.White
-	      Me.grpshow2.BackgroundImage = Global.ControleOS.My.Resources.Resources.Boleto2
-	      Me.grpshow2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-	      Me.grpshow2.FlatAppearance.BorderSize = 0
-	      Me.grpshow2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo
-	      Me.grpshow2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet
-	      Me.grpshow2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-	      Me.grpshow2.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.grpshow2.ForeColor = System.Drawing.Color.Black
-	      Me.grpshow2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-	      Me.grpshow2.Location = New System.Drawing.Point(218, 11)
-	      Me.grpshow2.Name = "grpshow2"
-	      Me.grpshow2.Size = New System.Drawing.Size(56, 36)
-	      Me.grpshow2.TabIndex = 98
-	      Me.grpshow2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-	      Me.grpshow2.UseVisualStyleBackColor = False
-	      '
-	      'Label21
-	      '
-	      Me.Label21.AutoSize = True
-	      Me.Label21.BackColor = System.Drawing.Color.Transparent
-	      Me.Label21.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.Label21.Location = New System.Drawing.Point(298, 49)
-	      Me.Label21.Name = "Label21"
-	      Me.Label21.Size = New System.Drawing.Size(55, 20)
-	      Me.Label21.TabIndex = 121
-	      Me.Label21.Text = "Imprimir"
-	      Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-	      '
-	      'Label17
-	      '
-	      Me.Label17.AutoSize = True
-	      Me.Label17.BackColor = System.Drawing.Color.Transparent
-	      Me.Label17.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.Label17.Location = New System.Drawing.Point(208, 49)
-	      Me.Label17.Name = "Label17"
-	      Me.Label17.Size = New System.Drawing.Size(74, 20)
-	      Me.Label17.TabIndex = 120
-	      Me.Label17.Text = "Info.Cliente"
-	      Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-	      '
-	      'btnCarregarPedido
-	      '
-	      Me.btnCarregarPedido.BackColor = System.Drawing.Color.White
-	      Me.btnCarregarPedido.BackgroundImage = Global.ControleOS.My.Resources.Resources.Carregar
-	      Me.btnCarregarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-	      Me.btnCarregarPedido.FlatAppearance.BorderSize = 0
-	      Me.btnCarregarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-	      Me.btnCarregarPedido.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.btnCarregarPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-	      Me.btnCarregarPedido.Location = New System.Drawing.Point(80, 11)
-	      Me.btnCarregarPedido.Name = "btnCarregarPedido"
-	      Me.btnCarregarPedido.Size = New System.Drawing.Size(55, 36)
-	      Me.btnCarregarPedido.TabIndex = 61
-	      Me.btnCarregarPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-	      Me.btnCarregarPedido.UseVisualStyleBackColor = False
-	      Me.btnCarregarPedido.Visible = False
 	      '
 	      'Panel11
 	      '
@@ -3106,11 +2721,143 @@ Partial Class FrmPDV
 	      Me.Panel1.Size = New System.Drawing.Size(1054, 503)
 	      Me.Panel1.TabIndex = 117
 	      '
+	      'Panel4
+	      '
+	      Me.Panel4.Controls.Add(Me.Panel2)
+	      Me.Panel4.Location = New System.Drawing.Point(1072, 76)
+	      Me.Panel4.Name = "Panel4"
+	      Me.Panel4.Size = New System.Drawing.Size(1054, 509)
+	      Me.Panel4.TabIndex = 118
+	      '
+	      'lblProdutoDesc
+	      '
+	      Me.lblProdutoDesc.AutoSize = True
+	      Me.lblProdutoDesc.Font = New System.Drawing.Font("Arial Narrow", 26.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.lblProdutoDesc.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+	      Me.lblProdutoDesc.Location = New System.Drawing.Point(613, 9)
+	      Me.lblProdutoDesc.Name = "lblProdutoDesc"
+	      Me.lblProdutoDesc.Size = New System.Drawing.Size(162, 42)
+	      Me.lblProdutoDesc.TabIndex = 119
+	      Me.lblProdutoDesc.Text = "PRODUTO"
+	      '
+	      'Label4
+	      '
+	      Me.Label4.AutoSize = True
+	      Me.Label4.BackColor = System.Drawing.Color.Transparent
+	      Me.Label4.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.Label4.Location = New System.Drawing.Point(78, 49)
+	      Me.Label4.Name = "Label4"
+	      Me.Label4.Size = New System.Drawing.Size(58, 20)
+	      Me.Label4.TabIndex = 119
+	      Me.Label4.Text = "Carregar"
+	      Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+	      '
+	      'Label17
+	      '
+	      Me.Label17.AutoSize = True
+	      Me.Label17.BackColor = System.Drawing.Color.Transparent
+	      Me.Label17.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.Label17.Location = New System.Drawing.Point(208, 49)
+	      Me.Label17.Name = "Label17"
+	      Me.Label17.Size = New System.Drawing.Size(74, 20)
+	      Me.Label17.TabIndex = 120
+	      Me.Label17.Text = "Info.Cliente"
+	      Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+	      '
+	      'Label21
+	      '
+	      Me.Label21.AutoSize = True
+	      Me.Label21.BackColor = System.Drawing.Color.Transparent
+	      Me.Label21.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.Label21.Location = New System.Drawing.Point(298, 49)
+	      Me.Label21.Name = "Label21"
+	      Me.Label21.Size = New System.Drawing.Size(55, 20)
+	      Me.Label21.TabIndex = 121
+	      Me.Label21.Text = "Imprimir"
+	      Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+	      '
+	      'Label22
+	      '
+	      Me.Label22.AutoSize = True
+	      Me.Label22.BackColor = System.Drawing.Color.Transparent
+	      Me.Label22.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.Label22.Location = New System.Drawing.Point(151, 50)
+	      Me.Label22.Name = "Label22"
+	      Me.Label22.Size = New System.Drawing.Size(43, 20)
+	      Me.Label22.TabIndex = 122
+	      Me.Label22.Text = "Voltar"
+	      Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+	      '
+	      'Label24
+	      '
+	      Me.Label24.AutoSize = True
+	      Me.Label24.BackColor = System.Drawing.Color.Transparent
+	      Me.Label24.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.Label24.Location = New System.Drawing.Point(17, 49)
+	      Me.Label24.Name = "Label24"
+	      Me.Label24.Size = New System.Drawing.Size(50, 20)
+	      Me.Label24.TabIndex = 123
+	      Me.Label24.Text = "Faturar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+	      Me.Label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+	      '
+	      'Label25
+	      '
+	      Me.Label25.AutoSize = True
+	      Me.Label25.BackColor = System.Drawing.Color.Transparent
+	      Me.Label25.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.Label25.Location = New System.Drawing.Point(12, 125)
+	      Me.Label25.Name = "Label25"
+	      Me.Label25.Size = New System.Drawing.Size(57, 20)
+	      Me.Label25.TabIndex = 125
+	      Me.Label25.Text = "Agendar"
+	      Me.Label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+	      '
+	      'Label26
+	      '
+	      Me.Label26.AutoSize = True
+	      Me.Label26.BackColor = System.Drawing.Color.Transparent
+	      Me.Label26.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.Label26.Location = New System.Drawing.Point(77, 125)
+	      Me.Label26.Name = "Label26"
+	      Me.Label26.Size = New System.Drawing.Size(57, 20)
+	      Me.Label26.TabIndex = 127
+	      Me.Label26.Text = "Retirada"
+	      Me.Label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+	      '
+	      'PictureBox1
+	      '
+	      Me.PictureBox1.Image = Global.ControleOS.My.Resources.Resources.NLG
+	      Me.PictureBox1.Location = New System.Drawing.Point(666, 5)
+	      Me.PictureBox1.Name = "PictureBox1"
+	      Me.PictureBox1.Size = New System.Drawing.Size(218, 209)
+	      Me.PictureBox1.TabIndex = 105
+	      Me.PictureBox1.TabStop = False
+	      '
+	      'PictureBox5
+	      '
+	      Me.PictureBox5.BackgroundImage = Global.ControleOS.My.Resources.Resources.Entrega
+	      Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+	      Me.PictureBox5.Location = New System.Drawing.Point(3, 7)
+	      Me.PictureBox5.Name = "PictureBox5"
+	      Me.PictureBox5.Size = New System.Drawing.Size(39, 35)
+	      Me.PictureBox5.TabIndex = 4
+	      Me.PictureBox5.TabStop = False
+	      '
+	      'PictureBox4
+	      '
+	      Me.PictureBox4.BackgroundImage = Global.ControleOS.My.Resources.Resources.Usuarios
+	      Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+	      Me.PictureBox4.Location = New System.Drawing.Point(3, 7)
+	      Me.PictureBox4.Name = "PictureBox4"
+	      Me.PictureBox4.Size = New System.Drawing.Size(39, 35)
+	      Me.PictureBox4.TabIndex = 4
+	      Me.PictureBox4.TabStop = False
+	      '
 	      'Panel6
 	      '
 	      Me.Panel6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-	  Or System.Windows.Forms.AnchorStyles.Left) _
-	  Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		      Or System.Windows.Forms.AnchorStyles.Left) _
+		      Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 	      Me.Panel6.AutoScroll = True
 	      Me.Panel6.BackColor = System.Drawing.Color.White
 	      Me.Panel6.BackgroundImage = Global.ControleOS.My.Resources.Resources.NLG
@@ -3130,32 +2877,19 @@ Partial Class FrmPDV
 	      '
 	      Me.PanelProdutos.BackColor = System.Drawing.Color.WhiteSmoke
 	      Me.PanelProdutos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-	      Me.PanelProdutos.Controls.Add(Me.dgvListaProduto)
 	      Me.PanelProdutos.Controls.Add(Me.txtAddProduto2)
 	      Me.PanelProdutos.Controls.Add(Me.Label8)
 	      Me.PanelProdutos.Controls.Add(Me.txtCodePesq)
 	      Me.PanelProdutos.Controls.Add(Me.btnConfirmarEscolha)
 	      Me.PanelProdutos.Controls.Add(Me.lblPesquisarProdutos)
 	      Me.PanelProdutos.Controls.Add(Me.txtPesqProduto)
+	      Me.PanelProdutos.Controls.Add(Me.dgvListaProduto)
 	      Me.PanelProdutos.Controls.Add(Me.dgvRE)
 	      Me.PanelProdutos.Location = New System.Drawing.Point(33, 64)
 	      Me.PanelProdutos.Name = "PanelProdutos"
 	      Me.PanelProdutos.Size = New System.Drawing.Size(595, 267)
 	      Me.PanelProdutos.TabIndex = 88
 	      Me.PanelProdutos.Visible = False
-	      '
-	      'dgvListaProduto
-	      '
-	      Me.dgvListaProduto.AllowUserToAddRows = False
-	      Me.dgvListaProduto.AllowUserToDeleteRows = False
-	      Me.dgvListaProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-	      Me.dgvListaProduto.Location = New System.Drawing.Point(16, 52)
-	      Me.dgvListaProduto.Name = "dgvListaProduto"
-	      Me.dgvListaProduto.ReadOnly = True
-	      Me.dgvListaProduto.RowHeadersVisible = False
-	      Me.dgvListaProduto.ScrollBars = System.Windows.Forms.ScrollBars.None
-	      Me.dgvListaProduto.Size = New System.Drawing.Size(574, 150)
-	      Me.dgvListaProduto.TabIndex = 119
 	      '
 	      'txtAddProduto2
 	      '
@@ -3197,6 +2931,16 @@ Partial Class FrmPDV
 	      Me.txtCodePesq.Size = New System.Drawing.Size(145, 20)
 	      Me.txtCodePesq.TabIndex = 114
 	      '
+	      'lblPesquisarProdutos
+	      '
+	      Me.lblPesquisarProdutos.AutoSize = True
+	      Me.lblPesquisarProdutos.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.lblPesquisarProdutos.Location = New System.Drawing.Point(16, 10)
+	      Me.lblPesquisarProdutos.Name = "lblPesquisarProdutos"
+	      Me.lblPesquisarProdutos.Size = New System.Drawing.Size(50, 16)
+	      Me.lblPesquisarProdutos.TabIndex = 111
+	      Me.lblPesquisarProdutos.Text = "Pesquisar"
+	      '
 	      'btnConfirmarEscolha
 	      '
 	      Me.btnConfirmarEscolha.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -3216,16 +2960,6 @@ Partial Class FrmPDV
 	      Me.btnConfirmarEscolha.TextAlign = System.Drawing.ContentAlignment.MiddleRight
 	      Me.btnConfirmarEscolha.UseVisualStyleBackColor = False
 	      '
-	      'lblPesquisarProdutos
-	      '
-	      Me.lblPesquisarProdutos.AutoSize = True
-	      Me.lblPesquisarProdutos.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      Me.lblPesquisarProdutos.Location = New System.Drawing.Point(16, 10)
-	      Me.lblPesquisarProdutos.Name = "lblPesquisarProdutos"
-	      Me.lblPesquisarProdutos.Size = New System.Drawing.Size(50, 16)
-	      Me.lblPesquisarProdutos.TabIndex = 111
-	      Me.lblPesquisarProdutos.Text = "Pesquisar"
-	      '
 	      'txtPesqProduto
 	      '
 	      Me.txtPesqProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
@@ -3235,13 +2969,45 @@ Partial Class FrmPDV
 	      Me.txtPesqProduto.Size = New System.Drawing.Size(364, 20)
 	      Me.txtPesqProduto.TabIndex = 91
 	      '
+	      'dgvListaProduto
+	      '
+	      Me.dgvListaProduto.AllowUserToAddRows = False
+	      Me.dgvListaProduto.AllowUserToDeleteRows = False
+	      Me.dgvListaProduto.AllowUserToResizeRows = False
+	      Me.dgvListaProduto.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+		      Or System.Windows.Forms.AnchorStyles.Left) _
+		      Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+	      Me.dgvListaProduto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+	      Me.dgvListaProduto.BackgroundColor = System.Drawing.Color.White
+	      Me.dgvListaProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+	      Me.dgvListaProduto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SaldoEstoque})
+	      Me.dgvListaProduto.EnableHeadersVisualStyles = False
+	      Me.dgvListaProduto.Location = New System.Drawing.Point(16, 52)
+	      Me.dgvListaProduto.Name = "dgvListaProduto"
+	      Me.dgvListaProduto.ReadOnly = True
+	      Me.dgvListaProduto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+	      Me.dgvListaProduto.RowHeadersVisible = False
+	      Me.dgvListaProduto.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+	      Me.dgvListaProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+	      Me.dgvListaProduto.Size = New System.Drawing.Size(566, 167)
+	      Me.dgvListaProduto.TabIndex = 2
+	      Me.dgvListaProduto.Visible = False
+	      '
+	      'SaldoEstoque
+	      '
+	      Me.SaldoEstoque.DataPropertyName = "SaldoEstoque"
+	      Me.SaldoEstoque.FillWeight = 15.0!
+	      Me.SaldoEstoque.HeaderText = "SaldoEstoque"
+	      Me.SaldoEstoque.Name = "SaldoEstoque"
+	      Me.SaldoEstoque.ReadOnly = True
+	      '
 	      'dgvRE
 	      '
 	      Me.dgvRE.AllowUserToAddRows = False
 	      Me.dgvRE.AllowUserToDeleteRows = False
 	      Me.dgvRE.AllowUserToOrderColumns = True
 	      Me.dgvRE.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-	  Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		      Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 	      Me.dgvRE.AutoGenerateColumns = False
 	      Me.dgvRE.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 	      Me.dgvRE.BackgroundColor = System.Drawing.Color.White
@@ -3249,14 +3015,14 @@ Partial Class FrmPDV
 	      Me.dgvRE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 	      Me.dgvRE.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn26, Me.DataGridViewComboBoxColumn1})
 	      Me.dgvRE.DataSource = Me.TbProdutoVendaPDVBindingSource1
-	      DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-	      DataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Window
-	      DataGridViewCellStyle31.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      DataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.ControlText
-	      DataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(65, Byte), Integer))
-	      DataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-	      DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-	      Me.dgvRE.DefaultCellStyle = DataGridViewCellStyle31
+	      DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+	      DataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window
+	      DataGridViewCellStyle28.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      DataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText
+	      DataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(65, Byte), Integer))
+	      DataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+	      DataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+	      Me.dgvRE.DefaultCellStyle = DataGridViewCellStyle28
 	      Me.dgvRE.Location = New System.Drawing.Point(198, 88)
 	      Me.dgvRE.Name = "dgvRE"
 	      Me.dgvRE.RowHeadersVisible = False
@@ -3290,21 +3056,21 @@ Partial Class FrmPDV
 	      Me.dgvProdutos.AllowUserToDeleteRows = False
 	      Me.dgvProdutos.AllowUserToOrderColumns = True
 	      Me.dgvProdutos.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-	  Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		      Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 	      Me.dgvProdutos.AutoGenerateColumns = False
 	      Me.dgvProdutos.BackgroundColor = System.Drawing.Color.White
 	      Me.dgvProdutos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
 	      Me.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 	      Me.dgvProdutos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProdutoIDDataGridViewTextBoxColumn, Me.CategoriaPadraoDataGridViewTextBoxColumn, Me.ProdutoDataGridViewTextBoxColumn, Me.Quantidade, Me.ValorVendaDataGridViewTextBoxColumn, Me.SomaDataGridViewTextBoxColumn, Me.ValorCustoTotal, Me.Retirado, Me.x})
 	      Me.dgvProdutos.DataSource = Me.TbProdutoVendaPDVBindingSource1
-	      DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-	      DataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window
-	      DataGridViewCellStyle35.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      DataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText
-	      DataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(65, Byte), Integer))
-	      DataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-	      DataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-	      Me.dgvProdutos.DefaultCellStyle = DataGridViewCellStyle35
+	      DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+	      DataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window
+	      DataGridViewCellStyle32.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      DataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText
+	      DataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(65, Byte), Integer))
+	      DataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+	      DataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+	      Me.dgvProdutos.DefaultCellStyle = DataGridViewCellStyle32
 	      Me.dgvProdutos.Location = New System.Drawing.Point(0, -1)
 	      Me.dgvProdutos.Name = "dgvProdutos"
 	      Me.dgvProdutos.ReadOnly = True
@@ -3353,9 +3119,9 @@ Partial Class FrmPDV
 	      'ValorVendaDataGridViewTextBoxColumn
 	      '
 	      Me.ValorVendaDataGridViewTextBoxColumn.DataPropertyName = "ValorVenda"
-	      DataGridViewCellStyle32.Format = "C2"
-	      DataGridViewCellStyle32.NullValue = Nothing
-	      Me.ValorVendaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle32
+	      DataGridViewCellStyle29.Format = "C2"
+	      DataGridViewCellStyle29.NullValue = Nothing
+	      Me.ValorVendaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle29
 	      Me.ValorVendaDataGridViewTextBoxColumn.FillWeight = 93.16631!
 	      Me.ValorVendaDataGridViewTextBoxColumn.HeaderText = "Valor Unit."
 	      Me.ValorVendaDataGridViewTextBoxColumn.Name = "ValorVendaDataGridViewTextBoxColumn"
@@ -3365,9 +3131,9 @@ Partial Class FrmPDV
 	      'SomaDataGridViewTextBoxColumn
 	      '
 	      Me.SomaDataGridViewTextBoxColumn.DataPropertyName = "Soma"
-	      DataGridViewCellStyle33.Format = "C2"
-	      DataGridViewCellStyle33.NullValue = Nothing
-	      Me.SomaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle33
+	      DataGridViewCellStyle30.Format = "C2"
+	      DataGridViewCellStyle30.NullValue = Nothing
+	      Me.SomaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle30
 	      Me.SomaDataGridViewTextBoxColumn.FillWeight = 93.16631!
 	      Me.SomaDataGridViewTextBoxColumn.HeaderText = "Subtotal"
 	      Me.SomaDataGridViewTextBoxColumn.Name = "SomaDataGridViewTextBoxColumn"
@@ -3377,9 +3143,9 @@ Partial Class FrmPDV
 	      'ValorCustoTotal
 	      '
 	      Me.ValorCustoTotal.DataPropertyName = "ValorCustoTotal"
-	      DataGridViewCellStyle34.Format = "C2"
-	      DataGridViewCellStyle34.NullValue = Nothing
-	      Me.ValorCustoTotal.DefaultCellStyle = DataGridViewCellStyle34
+	      DataGridViewCellStyle31.Format = "C2"
+	      DataGridViewCellStyle31.NullValue = Nothing
+	      Me.ValorCustoTotal.DefaultCellStyle = DataGridViewCellStyle31
 	      Me.ValorCustoTotal.FillWeight = 93.16631!
 	      Me.ValorCustoTotal.HeaderText = "Custo Total"
 	      Me.ValorCustoTotal.Name = "ValorCustoTotal"
@@ -3409,7 +3175,7 @@ Partial Class FrmPDV
 	      Me.dgvProdutosVinc.AllowUserToDeleteRows = False
 	      Me.dgvProdutosVinc.AllowUserToOrderColumns = True
 	      Me.dgvProdutosVinc.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-	  Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		      Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 	      Me.dgvProdutosVinc.AutoGenerateColumns = False
 	      Me.dgvProdutosVinc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 	      Me.dgvProdutosVinc.BackgroundColor = System.Drawing.Color.White
@@ -3417,14 +3183,14 @@ Partial Class FrmPDV
 	      Me.dgvProdutosVinc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 	      Me.dgvProdutosVinc.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23, Me.DataGridViewTextBoxColumn24})
 	      Me.dgvProdutosVinc.DataSource = Me.TbProdutoVendaPDVvincBindingSource
-	      DataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-	      DataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Window
-	      DataGridViewCellStyle39.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      DataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.ControlText
-	      DataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(65, Byte), Integer))
-	      DataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-	      DataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-	      Me.dgvProdutosVinc.DefaultCellStyle = DataGridViewCellStyle39
+	      DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+	      DataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window
+	      DataGridViewCellStyle36.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      DataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText
+	      DataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(65, Byte), Integer))
+	      DataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+	      DataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+	      Me.dgvProdutosVinc.DefaultCellStyle = DataGridViewCellStyle36
 	      Me.dgvProdutosVinc.Location = New System.Drawing.Point(0, -1)
 	      Me.dgvProdutosVinc.Name = "dgvProdutosVinc"
 	      Me.dgvProdutosVinc.ReadOnly = True
@@ -3469,9 +3235,9 @@ Partial Class FrmPDV
 	      'DataGridViewTextBoxColumn20
 	      '
 	      Me.DataGridViewTextBoxColumn20.DataPropertyName = "ValorVenda"
-	      DataGridViewCellStyle36.Format = "C2"
-	      DataGridViewCellStyle36.NullValue = Nothing
-	      Me.DataGridViewTextBoxColumn20.DefaultCellStyle = DataGridViewCellStyle36
+	      DataGridViewCellStyle33.Format = "C2"
+	      DataGridViewCellStyle33.NullValue = Nothing
+	      Me.DataGridViewTextBoxColumn20.DefaultCellStyle = DataGridViewCellStyle33
 	      Me.DataGridViewTextBoxColumn20.FillWeight = 109.6447!
 	      Me.DataGridViewTextBoxColumn20.HeaderText = "Valor Unit."
 	      Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
@@ -3480,9 +3246,9 @@ Partial Class FrmPDV
 	      'DataGridViewTextBoxColumn21
 	      '
 	      Me.DataGridViewTextBoxColumn21.DataPropertyName = "Soma"
-	      DataGridViewCellStyle37.Format = "C2"
-	      DataGridViewCellStyle37.NullValue = Nothing
-	      Me.DataGridViewTextBoxColumn21.DefaultCellStyle = DataGridViewCellStyle37
+	      DataGridViewCellStyle34.Format = "C2"
+	      DataGridViewCellStyle34.NullValue = Nothing
+	      Me.DataGridViewTextBoxColumn21.DefaultCellStyle = DataGridViewCellStyle34
 	      Me.DataGridViewTextBoxColumn21.FillWeight = 109.6447!
 	      Me.DataGridViewTextBoxColumn21.HeaderText = "Subtotal"
 	      Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
@@ -3491,9 +3257,9 @@ Partial Class FrmPDV
 	      'DataGridViewTextBoxColumn22
 	      '
 	      Me.DataGridViewTextBoxColumn22.DataPropertyName = "ValorCustoTotal"
-	      DataGridViewCellStyle38.Format = "C2"
-	      DataGridViewCellStyle38.NullValue = Nothing
-	      Me.DataGridViewTextBoxColumn22.DefaultCellStyle = DataGridViewCellStyle38
+	      DataGridViewCellStyle35.Format = "C2"
+	      DataGridViewCellStyle35.NullValue = Nothing
+	      Me.DataGridViewTextBoxColumn22.DefaultCellStyle = DataGridViewCellStyle35
 	      Me.DataGridViewTextBoxColumn22.FillWeight = 109.6447!
 	      Me.DataGridViewTextBoxColumn22.HeaderText = "Custo Total"
 	      Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
@@ -3520,7 +3286,7 @@ Partial Class FrmPDV
 	      Me.dgvProdutosSemCusto.AllowUserToDeleteRows = False
 	      Me.dgvProdutosSemCusto.AllowUserToOrderColumns = True
 	      Me.dgvProdutosSemCusto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-	  Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		      Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 	      Me.dgvProdutosSemCusto.AutoGenerateColumns = False
 	      Me.dgvProdutosSemCusto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 	      Me.dgvProdutosSemCusto.BackgroundColor = System.Drawing.Color.White
@@ -3528,14 +3294,14 @@ Partial Class FrmPDV
 	      Me.dgvProdutosSemCusto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 	      Me.dgvProdutosSemCusto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16})
 	      Me.dgvProdutosSemCusto.DataSource = Me.TbProdutoVendaPDVBindingSource1
-	      DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-	      DataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Window
-	      DataGridViewCellStyle42.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-	      DataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.ControlText
-	      DataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(65, Byte), Integer))
-	      DataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-	      DataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-	      Me.dgvProdutosSemCusto.DefaultCellStyle = DataGridViewCellStyle42
+	      DataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+	      DataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Window
+	      DataGridViewCellStyle39.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      DataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.ControlText
+	      DataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(65, Byte), Integer))
+	      DataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+	      DataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+	      Me.dgvProdutosSemCusto.DefaultCellStyle = DataGridViewCellStyle39
 	      Me.dgvProdutosSemCusto.Location = New System.Drawing.Point(0, 0)
 	      Me.dgvProdutosSemCusto.Name = "dgvProdutosSemCusto"
 	      Me.dgvProdutosSemCusto.ReadOnly = True
@@ -3580,9 +3346,9 @@ Partial Class FrmPDV
 	      'DataGridViewTextBoxColumn12
 	      '
 	      Me.DataGridViewTextBoxColumn12.DataPropertyName = "ValorVenda"
-	      DataGridViewCellStyle40.Format = "C2"
-	      DataGridViewCellStyle40.NullValue = Nothing
-	      Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle40
+	      DataGridViewCellStyle37.Format = "C2"
+	      DataGridViewCellStyle37.NullValue = Nothing
+	      Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle37
 	      Me.DataGridViewTextBoxColumn12.FillWeight = 109.6447!
 	      Me.DataGridViewTextBoxColumn12.HeaderText = "Valor Unit."
 	      Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
@@ -3591,9 +3357,9 @@ Partial Class FrmPDV
 	      'DataGridViewTextBoxColumn13
 	      '
 	      Me.DataGridViewTextBoxColumn13.DataPropertyName = "Soma"
-	      DataGridViewCellStyle41.Format = "C2"
-	      DataGridViewCellStyle41.NullValue = Nothing
-	      Me.DataGridViewTextBoxColumn13.DefaultCellStyle = DataGridViewCellStyle41
+	      DataGridViewCellStyle38.Format = "C2"
+	      DataGridViewCellStyle38.NullValue = Nothing
+	      Me.DataGridViewTextBoxColumn13.DefaultCellStyle = DataGridViewCellStyle38
 	      Me.DataGridViewTextBoxColumn13.FillWeight = 109.6447!
 	      Me.DataGridViewTextBoxColumn13.HeaderText = "Subtotal"
 	      Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
@@ -3615,13 +3381,190 @@ Partial Class FrmPDV
 	      Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
 	      Me.DataGridViewTextBoxColumn16.ReadOnly = True
 	      '
-	      'Panel4
+	      'Button1
 	      '
-	      Me.Panel4.Controls.Add(Me.Panel2)
-	      Me.Panel4.Location = New System.Drawing.Point(1072, 76)
-	      Me.Panel4.Name = "Panel4"
-	      Me.Panel4.Size = New System.Drawing.Size(1054, 509)
-	      Me.Panel4.TabIndex = 118
+	      Me.Button1.AccessibleDescription = "Procurar Produtos"
+	      Me.Button1.BackColor = System.Drawing.Color.Transparent
+	      Me.Button1.BackgroundImage = Global.ControleOS.My.Resources.Resources.lupa2
+	      Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+	      Me.Button1.FlatAppearance.BorderSize = 0
+	      Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo
+	      Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet
+	      Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+	      Me.Button1.ForeColor = System.Drawing.Color.White
+	      Me.Button1.Location = New System.Drawing.Point(996, 3)
+	      Me.Button1.Name = "Button1"
+	      Me.Button1.Size = New System.Drawing.Size(48, 50)
+	      Me.Button1.TabIndex = 109
+	      Me.Button1.UseVisualStyleBackColor = False
+	      '
+	      'btnRetQuant
+	      '
+	      Me.btnRetQuant.BackColor = System.Drawing.Color.Transparent
+	      Me.btnRetQuant.BackgroundImage = Global.ControleOS.My.Resources.Resources.subtrair
+	      Me.btnRetQuant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+	      Me.btnRetQuant.FlatAppearance.BorderSize = 0
+	      Me.btnRetQuant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo
+	      Me.btnRetQuant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet
+	      Me.btnRetQuant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+	      Me.btnRetQuant.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.btnRetQuant.Location = New System.Drawing.Point(117, 36)
+	      Me.btnRetQuant.Name = "btnRetQuant"
+	      Me.btnRetQuant.Size = New System.Drawing.Size(28, 28)
+	      Me.btnRetQuant.TabIndex = 107
+	      Me.btnRetQuant.UseVisualStyleBackColor = False
+	      '
+	      'btnAddQuant
+	      '
+	      Me.btnAddQuant.BackColor = System.Drawing.Color.Transparent
+	      Me.btnAddQuant.BackgroundImage = Global.ControleOS.My.Resources.Resources.adicionar
+	      Me.btnAddQuant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+	      Me.btnAddQuant.FlatAppearance.BorderSize = 0
+	      Me.btnAddQuant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo
+	      Me.btnAddQuant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet
+	      Me.btnAddQuant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+	      Me.btnAddQuant.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.btnAddQuant.Location = New System.Drawing.Point(120, 9)
+	      Me.btnAddQuant.Name = "btnAddQuant"
+	      Me.btnAddQuant.Size = New System.Drawing.Size(24, 24)
+	      Me.btnAddQuant.TabIndex = 106
+	      Me.btnAddQuant.UseVisualStyleBackColor = False
+	      '
+	      'btnAdicionarProduto
+	      '
+	      Me.btnAdicionarProduto.AutoEllipsis = True
+	      Me.btnAdicionarProduto.BackColor = System.Drawing.Color.Transparent
+	      Me.btnAdicionarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+	      Me.btnAdicionarProduto.DialogResult = System.Windows.Forms.DialogResult.Cancel
+	      Me.btnAdicionarProduto.FlatAppearance.BorderColor = System.Drawing.Color.LightSkyBlue
+	      Me.btnAdicionarProduto.FlatAppearance.BorderSize = 0
+	      Me.btnAdicionarProduto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo
+	      Me.btnAdicionarProduto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet
+	      Me.btnAdicionarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+	      Me.btnAdicionarProduto.Image = Global.ControleOS.My.Resources.Resources.Adicionar1
+	      Me.btnAdicionarProduto.Location = New System.Drawing.Point(329, 83)
+	      Me.btnAdicionarProduto.Name = "btnAdicionarProduto"
+	      Me.btnAdicionarProduto.Size = New System.Drawing.Size(35, 38)
+	      Me.btnAdicionarProduto.TabIndex = 33
+	      Me.btnAdicionarProduto.UseVisualStyleBackColor = False
+	      '
+	      'btnRE
+	      '
+	      Me.btnRE.BackColor = System.Drawing.Color.White
+	      Me.btnRE.BackgroundImage = Global.ControleOS.My.Resources.Resources.chkbox
+	      Me.btnRE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+	      Me.btnRE.FlatAppearance.BorderSize = 0
+	      Me.btnRE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+	      Me.btnRE.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.btnRE.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+	      Me.btnRE.Location = New System.Drawing.Point(82, 87)
+	      Me.btnRE.Name = "btnRE"
+	      Me.btnRE.Size = New System.Drawing.Size(50, 36)
+	      Me.btnRE.TabIndex = 126
+	      Me.btnRE.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+	      Me.btnRE.UseVisualStyleBackColor = False
+	      '
+	      'btnAgendarEntrega
+	      '
+	      Me.btnAgendarEntrega.BackColor = System.Drawing.Color.White
+	      Me.btnAgendarEntrega.BackgroundImage = Global.ControleOS.My.Resources.Resources.calendario
+	      Me.btnAgendarEntrega.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+	      Me.btnAgendarEntrega.FlatAppearance.BorderSize = 0
+	      Me.btnAgendarEntrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+	      Me.btnAgendarEntrega.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.btnAgendarEntrega.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+	      Me.btnAgendarEntrega.Location = New System.Drawing.Point(17, 87)
+	      Me.btnAgendarEntrega.Name = "btnAgendarEntrega"
+	      Me.btnAgendarEntrega.Size = New System.Drawing.Size(50, 36)
+	      Me.btnAgendarEntrega.TabIndex = 124
+	      Me.btnAgendarEntrega.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+	      Me.btnAgendarEntrega.UseVisualStyleBackColor = False
+	      '
+	      'btnPagamento
+	      '
+	      Me.btnPagamento.BackColor = System.Drawing.Color.White
+	      Me.btnPagamento.BackgroundImage = Global.ControleOS.My.Resources.Resources.Faturar
+	      Me.btnPagamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+	      Me.btnPagamento.FlatAppearance.BorderSize = 0
+	      Me.btnPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+	      Me.btnPagamento.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.btnPagamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+	      Me.btnPagamento.Location = New System.Drawing.Point(17, 11)
+	      Me.btnPagamento.Name = "btnPagamento"
+	      Me.btnPagamento.Size = New System.Drawing.Size(50, 36)
+	      Me.btnPagamento.TabIndex = 66
+	      Me.btnPagamento.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+	      Me.btnPagamento.UseVisualStyleBackColor = False
+	      '
+	      'btnImprimir
+	      '
+	      Me.btnImprimir.BackColor = System.Drawing.Color.White
+	      Me.btnImprimir.BackgroundImage = Global.ControleOS.My.Resources.Resources.Imprimir1
+	      Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+	      Me.btnImprimir.FlatAppearance.BorderSize = 0
+	      Me.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue
+	      Me.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy
+	      Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+	      Me.btnImprimir.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+	      Me.btnImprimir.Location = New System.Drawing.Point(296, 11)
+	      Me.btnImprimir.Name = "btnImprimir"
+	      Me.btnImprimir.Size = New System.Drawing.Size(57, 36)
+	      Me.btnImprimir.TabIndex = 75
+	      Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+	      Me.btnImprimir.UseVisualStyleBackColor = False
+	      '
+	      'btnVoltar
+	      '
+	      Me.btnVoltar.BackColor = System.Drawing.Color.White
+	      Me.btnVoltar.BackgroundImage = Global.ControleOS.My.Resources.Resources.Voltar2
+	      Me.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+	      Me.btnVoltar.FlatAppearance.BorderSize = 0
+	      Me.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+	      Me.btnVoltar.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.btnVoltar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+	      Me.btnVoltar.Location = New System.Drawing.Point(148, 11)
+	      Me.btnVoltar.Name = "btnVoltar"
+	      Me.btnVoltar.Size = New System.Drawing.Size(50, 36)
+	      Me.btnVoltar.TabIndex = 64
+	      Me.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+	      Me.btnVoltar.UseVisualStyleBackColor = False
+	      '
+	      'grpshow2
+	      '
+	      Me.grpshow2.BackColor = System.Drawing.Color.White
+	      Me.grpshow2.BackgroundImage = Global.ControleOS.My.Resources.Resources.Boleto2
+	      Me.grpshow2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+	      Me.grpshow2.FlatAppearance.BorderSize = 0
+	      Me.grpshow2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo
+	      Me.grpshow2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet
+	      Me.grpshow2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+	      Me.grpshow2.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.grpshow2.ForeColor = System.Drawing.Color.Black
+	      Me.grpshow2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+	      Me.grpshow2.Location = New System.Drawing.Point(218, 11)
+	      Me.grpshow2.Name = "grpshow2"
+	      Me.grpshow2.Size = New System.Drawing.Size(56, 36)
+	      Me.grpshow2.TabIndex = 98
+	      Me.grpshow2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+	      Me.grpshow2.UseVisualStyleBackColor = False
+	      '
+	      'btnCarregarPedido
+	      '
+	      Me.btnCarregarPedido.BackColor = System.Drawing.Color.White
+	      Me.btnCarregarPedido.BackgroundImage = Global.ControleOS.My.Resources.Resources.Carregar
+	      Me.btnCarregarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+	      Me.btnCarregarPedido.FlatAppearance.BorderSize = 0
+	      Me.btnCarregarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+	      Me.btnCarregarPedido.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+	      Me.btnCarregarPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+	      Me.btnCarregarPedido.Location = New System.Drawing.Point(80, 11)
+	      Me.btnCarregarPedido.Name = "btnCarregarPedido"
+	      Me.btnCarregarPedido.Size = New System.Drawing.Size(55, 36)
+	      Me.btnCarregarPedido.TabIndex = 61
+	      Me.btnCarregarPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+	      Me.btnCarregarPedido.UseVisualStyleBackColor = False
+	      Me.btnCarregarPedido.Visible = False
 	      '
 	      'FrmPDV
 	      '
@@ -3632,7 +3575,7 @@ Partial Class FrmPDV
 	      Me.AutoScrollMinSize = New System.Drawing.Size(600, 600)
 	      Me.BackColor = System.Drawing.Color.LightGray
 	      Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-	      Me.ClientSize = New System.Drawing.Size(1666, 812)
+	      Me.ClientSize = New System.Drawing.Size(1632, 778)
 	      Me.ControlBox = False
 	      Me.Controls.Add(Me.Panel4)
 	      Me.Controls.Add(Me.Panel1)
@@ -3661,16 +3604,12 @@ Partial Class FrmPDV
 	      Me.ToolStripContainer1.ContentPanel.PerformLayout()
 	      Me.ToolStripContainer1.ResumeLayout(False)
 	      Me.ToolStripContainer1.PerformLayout()
-	      CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
 	      Me.ToolStripContainer2.ContentPanel.ResumeLayout(False)
 	      Me.ToolStripContainer2.ContentPanel.PerformLayout()
 	      Me.ToolStripContainer2.ResumeLayout(False)
 	      Me.ToolStripContainer2.PerformLayout()
-	      CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
 	      CType(Me.dgvEnd, System.ComponentModel.ISupportInitialize).EndInit()
 	      Me.Panel2.ResumeLayout(False)
-	      CType(Me.dgvContato, System.ComponentModel.ISupportInitialize).EndInit()
-	      CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 	      Me.Panel13.ResumeLayout(False)
 	      Me.Panel13.PerformLayout()
 	      Me.Panel12.ResumeLayout(False)
@@ -3684,6 +3623,10 @@ Partial Class FrmPDV
 	      Me.Panel11.ResumeLayout(False)
 	      Me.Panel11.PerformLayout()
 	      Me.Panel1.ResumeLayout(False)
+	      Me.Panel4.ResumeLayout(False)
+	      CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+	      CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+	      CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
 	      Me.Panel6.ResumeLayout(False)
 	      Me.PanelProdutos.ResumeLayout(False)
 	      Me.PanelProdutos.PerformLayout()
@@ -3692,321 +3635,311 @@ Partial Class FrmPDV
 	      CType(Me.dgvProdutos, System.ComponentModel.ISupportInitialize).EndInit()
 	      CType(Me.dgvProdutosVinc, System.ComponentModel.ISupportInitialize).EndInit()
 	      CType(Me.dgvProdutosSemCusto, System.ComponentModel.ISupportInitialize).EndInit()
-	      Me.Panel4.ResumeLayout(False)
 	      Me.ResumeLayout(False)
 
         End Sub
         Friend WithEvents DataPdv As DataPdv
-	Friend WithEvents TbClientesBindingSource As BindingSource
-	Friend WithEvents TbClientesTableAdapter As DataPdvTableAdapters.tbClientesTableAdapter
-	Friend WithEvents TbProdutoVendaPDVBindingSource As BindingSource
-	Friend WithEvents TbProdutoVendaPDVTableAdapter As DataPdvTableAdapters.tbProdutoVendaPDVTableAdapter
-	Friend WithEvents TbProdutoPDVBindingSource As BindingSource
-	Friend WithEvents TbProdutoPDVTableAdapter As DataPdvTableAdapters.tbProdutoPDVTableAdapter
-	Friend WithEvents TableAdapterManager As DataPdvTableAdapters.TableAdapterManager
-	Friend WithEvents DataPdvBindingSource As BindingSource
-	Friend WithEvents ProdutoID As DataGridViewTextBoxColumn
-	Friend WithEvents DataPdv1 As DataPdv
-	Friend WithEvents TbProdutoVendaPDVBindingSource1 As BindingSource
-	Friend WithEvents TbEndBindingSource As BindingSource
-	Friend WithEvents TbEndTableAdapter As DataPdvTableAdapters.tbEndTableAdapter
-	Friend WithEvents EntregaBindingSource As BindingSource
-	Friend WithEvents EntregaTableAdapter As DataPdvTableAdapters.EntregaTableAdapter
-	Friend WithEvents TbPedido2BindingSource As BindingSource
-	Friend WithEvents TbPedido2TableAdapter As DataPdvTableAdapters.tbPedido2TableAdapter
-	Friend WithEvents TbFinanceiroBindingSource As BindingSource
-	Friend WithEvents TbFinanceiroTableAdapter As DataPdvTableAdapters.tbFinanceiroTableAdapter
-	Friend WithEvents TbProdutoVendaPDVvincBindingSource As BindingSource
-	Friend WithEvents TbProdutoVendaPDVvincTableAdapter As DataPdvTableAdapters.tbProdutoVendaPDVvincTableAdapter
-	Friend WithEvents tmAtualizardgv As Timer
-	Friend WithEvents btnVoltar As Button
-	Friend WithEvents btnCarregarPedido As Button
-	Friend WithEvents btnImprimir As Button
-	Friend WithEvents btnPagamento As Button
-	Friend WithEvents CódigoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents NomeDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents CPFDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents RazaoSocialDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents InscricaoEstadualDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents CustoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents CustoTotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents ValorVendaDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoIDDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents GêneroDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents UnidadeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents CategoriaPadrãoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents CodigoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents ClienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents TipoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents NumeroDocumentoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents SituacaoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents DataLancamentoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents VencimentoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents DescricaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents JurosAntecipacaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents ValorDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents IdentificacaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents ValorPagoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents PlanoContasDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents FormaPagamentoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents ClienteIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents NomeClienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoIDDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents PedidoIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents GeneroDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents CustoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents CustoTotalDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorVendaDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorCustoTotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents SomaDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents QuantidadeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents RetiradoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents ClienteIDDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents PedidoIDDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents CustoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoIDDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents SomaDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents GeneroDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents CustoTotalDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorVendaDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents NomeClienteDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents QuantidadeDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorCustoTotalDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents RetiradoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents ClienteIDDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents PedidoIDDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents CustoDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoIDDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents SomaDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents GeneroDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents CustoTotalDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorVendaDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents NomeClienteDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents QuantidadeDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorCustoTotalDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents RetiradoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents dgvPagamento As DataGridView
-	Friend WithEvents SituacaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents DataLancamentoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents VencimentoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents ValorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents ValorPagoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents FormaPagamentoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents txtCategoriaProduto As TextBox
-	Friend WithEvents dgvProdutosVinc As DataGridView
-	Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn20 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn21 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn23 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn24 As DataGridViewTextBoxColumn
-	Friend WithEvents btnAdicionarProduto As Button
-	Friend WithEvents chkRetirar As ComboBox
-	Friend WithEvents txtValorVendaTotal As TextBox
-	Friend WithEvents cboTabela As ComboBox
-	Friend WithEvents dgvProdutosSemCusto As DataGridView
-	Friend WithEvents lblRetirar As Label
-	Friend WithEvents txtCusto As TextBox
-	Friend WithEvents cboTabelaPagamento As ComboBox
-	Friend WithEvents txtGenero As TextBox
-	Friend WithEvents txtUnidade As TextBox
-	Friend WithEvents dgvProdutos As DataGridView
-	Friend WithEvents txtQuantidade As TextBox
-	Friend WithEvents txtProduto As TextBox
-	Friend WithEvents txtSaldoEstoque As TextBox
-	Friend WithEvents Label11 As Label
-	Friend WithEvents ProdutoDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-	Friend WithEvents CustoDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents CustoTotalDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorVendaDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoIDDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents GêneroDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents UnidadeDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents CategoriaPadrãoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents CodigoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents ClienteDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents TipoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents NumeroDocumentoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents SituacaoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents DataLancamentoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents VencimentoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents DescricaoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents JurosAntecipacaoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents IdentificacaoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorPagoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents PlanoContasDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents FormaPagamentoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents ClienteIDDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents NomeClienteDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoIDDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-	Friend WithEvents PedidoIDDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoDataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-	Friend WithEvents GeneroDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents CustoDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents CustoTotalDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorVendaDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorCustoTotalDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents SomaDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents QuantidadeDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents RetiradoDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents ClienteIDDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents PedidoIDDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoDataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-	Friend WithEvents CustoDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoIDDataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-	Friend WithEvents SomaDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-	Friend WithEvents GeneroDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-	Friend WithEvents CustoTotalDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorVendaDataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-	Friend WithEvents NomeClienteDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents QuantidadeDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorCustoTotalDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents RetiradoDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents ClienteIDDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents PedidoIDDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoDataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
-	Friend WithEvents CustoDataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoIDDataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-	Friend WithEvents SomaDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-	Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-	Friend WithEvents GeneroDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-	Friend WithEvents CustoTotalDataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorVendaDataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-	Friend WithEvents NomeClienteDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents QuantidadeDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents ValorCustoTotalDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents RetiradoDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents rdOcultarColCusto As CheckBox
-	Friend WithEvents Label9 As Label
-	Friend WithEvents Label1 As Label
-	Friend WithEvents lblkPedidoVinculado As Label
-	Friend WithEvents txtSomaPDV As Label
-	Friend WithEvents Label14 As Label
-	Friend WithEvents Label18 As Label
-	Friend WithEvents txtCodCliente As TextBox
-	Friend WithEvents lblNumeroPedido As Label
-	Friend WithEvents txtProdutoID As TextBox
-	Friend WithEvents grpshow2 As Button
-	Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
-	Friend WithEvents Panel3 As Panel
-	Friend WithEvents txtSoma As TextBox
-	Friend WithEvents ProdutoIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents ProdutoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents Quantidade As DataGridViewTextBoxColumn
-	Friend WithEvents ValorVendaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents SomaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-	Friend WithEvents ValorCustoTotal As DataGridViewTextBoxColumn
-	Friend WithEvents Retirado As DataGridViewTextBoxColumn
-	Friend WithEvents x As DataGridViewTextBoxColumn
-	Friend WithEvents Panel5 As Panel
-	Friend WithEvents txtCustoTotal As TextBox
-	Friend WithEvents Panel6 As Panel
-	Friend WithEvents txtTipo As TextBox
-	Friend WithEvents lblPrecoFrete As Label
-	Friend WithEvents txtComplemento As TextBox
-	Friend WithEvents txtLogradouro As TextBox
-	Friend WithEvents txtPrecoFrete As TextBox
-	Friend WithEvents txtInscEstadual As TextBox
-	Friend WithEvents txtCodBarras As TextBox
-	Friend WithEvents chkEntDif As CheckBox
-	Friend WithEvents txtUF As TextBox
-	Friend WithEvents txtEndNumero As TextBox
-	Friend WithEvents txtContato As TextBox
-	Friend WithEvents dgvCliente As DataGridView
-	Friend WithEvents chkEntrega As CheckBox
-	Friend WithEvents txtCidade As TextBox
-	Friend WithEvents txtBairro As TextBox
-	Friend WithEvents txtCPFCliente As TextBox
-	Friend WithEvents txtEndID As TextBox
-	Friend WithEvents txtCliente As TextBox
-	Friend WithEvents btnshow1 As Button
-	Friend WithEvents ToolStripContainer1 As ToolStripContainer
-	Friend WithEvents PictureBox4 As PictureBox
-	Friend WithEvents Label15 As Label
-	Friend WithEvents ToolStripContainer2 As ToolStripContainer
-	Friend WithEvents PictureBox5 As PictureBox
-	Friend WithEvents Label16 As Label
-	Friend WithEvents dgvEnd As DataGridView
-	Friend WithEvents btnAddPessoa As Button
+        Friend WithEvents TbClientesBindingSource As BindingSource
+        Friend WithEvents TbClientesTableAdapter As DataPdvTableAdapters.tbClientesTableAdapter
+        Friend WithEvents TbProdutoVendaPDVBindingSource As BindingSource
+        Friend WithEvents TbProdutoVendaPDVTableAdapter As DataPdvTableAdapters.tbProdutoVendaPDVTableAdapter
+        Friend WithEvents TbProdutoPDVBindingSource As BindingSource
+        Friend WithEvents TbProdutoPDVTableAdapter As DataPdvTableAdapters.tbProdutoPDVTableAdapter
+        Friend WithEvents TableAdapterManager As DataPdvTableAdapters.TableAdapterManager
+        Friend WithEvents DataPdvBindingSource As BindingSource
+        Friend WithEvents ProdutoID As DataGridViewTextBoxColumn
+        Friend WithEvents DataPdv1 As DataPdv
+        Friend WithEvents TbProdutoVendaPDVBindingSource1 As BindingSource
+        Friend WithEvents TbEndBindingSource As BindingSource
+        Friend WithEvents TbEndTableAdapter As DataPdvTableAdapters.tbEndTableAdapter
+        Friend WithEvents EntregaBindingSource As BindingSource
+        Friend WithEvents EntregaTableAdapter As DataPdvTableAdapters.EntregaTableAdapter
+        Friend WithEvents TbPedido2BindingSource As BindingSource
+        Friend WithEvents TbPedido2TableAdapter As DataPdvTableAdapters.tbPedido2TableAdapter
+        Friend WithEvents TbFinanceiroBindingSource As BindingSource
+        Friend WithEvents TbFinanceiroTableAdapter As DataPdvTableAdapters.tbFinanceiroTableAdapter
+        Friend WithEvents TbProdutoVendaPDVvincBindingSource As BindingSource
+        Friend WithEvents TbProdutoVendaPDVvincTableAdapter As DataPdvTableAdapters.tbProdutoVendaPDVvincTableAdapter
+        Friend WithEvents tmAtualizardgv As Timer
+        Friend WithEvents btnVoltar As Button
+        Friend WithEvents btnCarregarPedido As Button
+        Friend WithEvents btnImprimir As Button
+        Friend WithEvents btnPagamento As Button
+        Friend WithEvents CódigoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents NomeDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents CPFDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents RazaoSocialDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents InscricaoEstadualDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents CustoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents CustoTotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents ValorVendaDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoIDDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents GêneroDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents UnidadeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents CategoriaPadrãoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents CodigoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents ClienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents TipoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents NumeroDocumentoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents SituacaoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents DataLancamentoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents VencimentoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents DescricaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents JurosAntecipacaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents ValorDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents IdentificacaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents ValorPagoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents PlanoContasDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents FormaPagamentoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents ClienteIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents NomeClienteDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoIDDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents PedidoIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents GeneroDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents CustoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents CustoTotalDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorVendaDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorCustoTotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents SomaDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents QuantidadeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents RetiradoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents ClienteIDDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents PedidoIDDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents CustoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoIDDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents SomaDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents GeneroDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents CustoTotalDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorVendaDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents NomeClienteDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents QuantidadeDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorCustoTotalDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents RetiradoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents ClienteIDDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents PedidoIDDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents CustoDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoIDDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents SomaDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents GeneroDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents CustoTotalDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorVendaDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents NomeClienteDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents QuantidadeDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorCustoTotalDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents RetiradoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents dgvPagamento As DataGridView
+        Friend WithEvents SituacaoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents DataLancamentoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents VencimentoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents ValorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents ValorPagoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents FormaPagamentoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents txtCategoriaProduto As TextBox
+        Friend WithEvents dgvProdutosVinc As DataGridView
+        Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn20 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn21 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn23 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn24 As DataGridViewTextBoxColumn
+        Friend WithEvents btnAdicionarProduto As Button
+        Friend WithEvents chkRetirar As ComboBox
+        Friend WithEvents txtValorVendaTotal As TextBox
+        Friend WithEvents cboTabela As ComboBox
+        Friend WithEvents dgvProdutosSemCusto As DataGridView
+        Friend WithEvents lblRetirar As Label
+        Friend WithEvents txtCusto As TextBox
+        Friend WithEvents cboTabelaPagamento As ComboBox
+        Friend WithEvents txtGenero As TextBox
+        Friend WithEvents txtUnidade As TextBox
+        Friend WithEvents dgvProdutos As DataGridView
+        Friend WithEvents txtQuantidade As TextBox
+        Friend WithEvents txtProduto As TextBox
+        Friend WithEvents txtSaldoEstoque As TextBox
+        Friend WithEvents Label11 As Label
+        Friend WithEvents ProdutoDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+        Friend WithEvents CustoDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents CustoTotalDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorVendaDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoIDDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents GêneroDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents UnidadeDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents CategoriaPadrãoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents CodigoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents ClienteDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents TipoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents NumeroDocumentoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents SituacaoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents DataLancamentoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents VencimentoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents DescricaoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents JurosAntecipacaoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents IdentificacaoDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorPagoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents PlanoContasDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents FormaPagamentoDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+        Friend WithEvents ClienteIDDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents NomeClienteDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoIDDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+        Friend WithEvents PedidoIDDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoDataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+        Friend WithEvents GeneroDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents CustoDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents CustoTotalDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorVendaDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorCustoTotalDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents SomaDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents QuantidadeDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents RetiradoDataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+        Friend WithEvents ClienteIDDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents PedidoIDDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoDataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+        Friend WithEvents CustoDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoIDDataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+        Friend WithEvents SomaDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+        Friend WithEvents GeneroDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+        Friend WithEvents CustoTotalDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorVendaDataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+        Friend WithEvents NomeClienteDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents QuantidadeDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorCustoTotalDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents RetiradoDataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+        Friend WithEvents ClienteIDDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents PedidoIDDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoDataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+        Friend WithEvents CustoDataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoIDDataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+        Friend WithEvents SomaDataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+        Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+        Friend WithEvents GeneroDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents SaldoEstoqueDataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+        Friend WithEvents CustoTotalDataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorVendaDataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+        Friend WithEvents NomeClienteDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents QuantidadeDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents ValorCustoTotalDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents RetiradoDataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+        Friend WithEvents rdOcultarColCusto As CheckBox
+        Friend WithEvents Label9 As Label
+        Friend WithEvents Label1 As Label
+        Friend WithEvents lblkPedidoVinculado As Label
+        Friend WithEvents txtSomaPDV As Label
+        Friend WithEvents Label14 As Label
+        Friend WithEvents Label18 As Label
+        Friend WithEvents txtCodCliente As TextBox
+        Friend WithEvents lblNumeroPedido As Label
+        Friend WithEvents txtProdutoID As TextBox
+        Friend WithEvents grpshow2 As Button
+        Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+        Friend WithEvents Panel3 As Panel
+        Friend WithEvents txtSoma As TextBox
+        Friend WithEvents ProdutoIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents CategoriaPadraoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents ProdutoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents Quantidade As DataGridViewTextBoxColumn
+        Friend WithEvents ValorVendaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents SomaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+        Friend WithEvents ValorCustoTotal As DataGridViewTextBoxColumn
+        Friend WithEvents Retirado As DataGridViewTextBoxColumn
+        Friend WithEvents x As DataGridViewTextBoxColumn
+        Friend WithEvents Panel5 As Panel
+        Friend WithEvents txtCustoTotal As TextBox
+        Friend WithEvents Panel6 As Panel
+        Friend WithEvents txtTipo As TextBox
+        Friend WithEvents lblPrecoFrete As Label
+        Friend WithEvents txtComplemento As TextBox
+        Friend WithEvents txtLogradouro As TextBox
+        Friend WithEvents txtPrecoFrete As TextBox
+        Friend WithEvents txtInscEstadual As TextBox
+        Friend WithEvents txtCodBarras As TextBox
+        Friend WithEvents chkEntDif As CheckBox
+        Friend WithEvents txtUF As TextBox
+        Friend WithEvents txtEndNumero As TextBox
+        Friend WithEvents txtContato As TextBox
+        Friend WithEvents dgvCliente As DataGridView
+        Friend WithEvents chkEntrega As CheckBox
+        Friend WithEvents txtCidade As TextBox
+        Friend WithEvents txtBairro As TextBox
+        Friend WithEvents txtCPFCliente As TextBox
+        Friend WithEvents txtEndID As TextBox
+        Friend WithEvents txtCliente As TextBox
+        Friend WithEvents btnshow1 As Button
+        Friend WithEvents ToolStripContainer1 As ToolStripContainer
+        Friend WithEvents PictureBox4 As PictureBox
+        Friend WithEvents Label15 As Label
+        Friend WithEvents ToolStripContainer2 As ToolStripContainer
+        Friend WithEvents PictureBox5 As PictureBox
+        Friend WithEvents Label16 As Label
+        Friend WithEvents dgvEnd As DataGridView
+        Friend WithEvents btnAddPessoa As Button
+        Friend WithEvents dgvListaProduto As DataGridView
+        Friend WithEvents SaldoEstoque As DataGridViewTextBoxColumn
         Friend WithEvents btnMostraEnd As Button
         Friend WithEvents Panel2 As Panel
-	Friend WithEvents btnRetQuant As Button
-	Friend WithEvents btnAddQuant As Button
-	Friend WithEvents Button1 As Button
-	Friend WithEvents PanelProdutos As Panel
-	Friend WithEvents btnConfirmarEscolha As Button
-	Friend WithEvents txtPesqProduto As TextBox
-	Friend WithEvents txtSomaTotal As TextBox
-	Friend WithEvents lblPesquisarProdutos As Label
-	Friend WithEvents Label8 As Label
-	Friend WithEvents txtCodePesq As TextBox
-	Friend WithEvents Panel8 As Panel
-	Friend WithEvents txtItens As TextBox
-	Friend WithEvents Panel9 As Panel
-	Friend WithEvents Panel11 As Panel
-	Friend WithEvents Panel10 As Panel
-	Friend WithEvents Panel1 As Panel
-	Friend WithEvents Panel4 As Panel
-	Friend WithEvents txtAddProduto2 As Button
-	Friend WithEvents Panel13 As Panel
-	Friend WithEvents Panel12 As Panel
-	Friend WithEvents PictureBox1 As PictureBox
-	Friend WithEvents btnVoltar2 As Button
-	Friend WithEvents btnCarregarPedido2 As Button
-	Friend WithEvents dgvRE As DataGridView
-	Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn26 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewComboBoxColumn1 As DataGridViewComboBoxColumn
-	Friend WithEvents lblProdutoDesc As Label
-	Friend WithEvents Label4 As Label
-	Friend WithEvents Label17 As Label
-	Friend WithEvents Label21 As Label
-	Friend WithEvents Label22 As Label
-	Friend WithEvents Label24 As Label
-	Friend WithEvents Label26 As Label
-	Friend WithEvents btnRE As Button
-	Friend WithEvents Label25 As Label
-	Friend WithEvents btnAgendarEntrega As Button
-	Friend WithEvents ID As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-	Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-	Friend WithEvents dgvContato As DataGridView
-	Friend WithEvents txtCod As TextBox
-	Friend WithEvents btnConsulta As Button
-	Friend WithEvents dgvListaProduto As DataGridView
+        Friend WithEvents btnRetQuant As Button
+        Friend WithEvents btnAddQuant As Button
+        Friend WithEvents Button1 As Button
+        Friend WithEvents PanelProdutos As Panel
+        Friend WithEvents btnConfirmarEscolha As Button
+        Friend WithEvents txtPesqProduto As TextBox
+        Friend WithEvents txtSomaTotal As TextBox
+        Friend WithEvents lblPesquisarProdutos As Label
+        Friend WithEvents Label8 As Label
+        Friend WithEvents txtCodePesq As TextBox
+        Friend WithEvents Panel8 As Panel
+        Friend WithEvents txtItens As TextBox
+        Friend WithEvents Panel9 As Panel
+        Friend WithEvents Panel11 As Panel
+        Friend WithEvents Panel10 As Panel
+        Friend WithEvents Panel1 As Panel
+        Friend WithEvents Panel4 As Panel
+        Friend WithEvents txtAddProduto2 As Button
+        Friend WithEvents Panel13 As Panel
+        Friend WithEvents Panel12 As Panel
+        Friend WithEvents PictureBox1 As PictureBox
+        Friend WithEvents btnVoltar2 As Button
+        Friend WithEvents btnCarregarPedido2 As Button
+        Friend WithEvents dgvRE As DataGridView
+        Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewTextBoxColumn26 As DataGridViewTextBoxColumn
+        Friend WithEvents DataGridViewComboBoxColumn1 As DataGridViewComboBoxColumn
+        Friend WithEvents lblProdutoDesc As Label
+        Friend WithEvents Label4 As Label
+        Friend WithEvents Label17 As Label
+        Friend WithEvents Label21 As Label
+        Friend WithEvents Label22 As Label
+        Friend WithEvents Label24 As Label
+        Friend WithEvents Label26 As Label
+        Friend WithEvents btnRE As Button
+        Friend WithEvents Label25 As Label
+        Friend WithEvents btnAgendarEntrega As Button
 End Class

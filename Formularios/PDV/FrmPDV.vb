@@ -61,7 +61,7 @@ Public Class FrmPDV
 
         '\\CALCULAR VALOR EM RELAÇÃO A QUANTIDADE
         Private Sub txtQuantidade_TextChanged(sender As Object, e As EventArgs) Handles txtQuantidade.TextChanged
-                QuantValor()
+                ProdutoxQuantidade()
         End Sub
 
         '\\FILTRO DO DATAGRID CLIENTE A CADA CARACTER DIGITADO
@@ -118,21 +118,21 @@ Public Class FrmPDV
                 dgvEnd.Visible = False
         End Sub
 
-        Private Sub txtProduto_Click(sender As Object, e As EventArgs) Handles txtProduto.Click
-                dgvListaProduto.Visible = True
-                'Me.TbProdutoPDVTableAdapter.Fill(Me.DataPdv.tbProdutoPDV)
-
-                Dim strConn As String = sConnectionString
-                Dim conexao As New OleDbConnection(strConn)
-                Dim comando As New OleDbCommand("SELECT Produto, SaldoEstoque FROM tbProdutoPDV", conexao)
-                Dim adaptador As New OleDbDataAdapter(comando)
-                Dim dsbiblio As New DataSet()
-                adaptador.Fill(dsbiblio, "Produto")
-                dgvListaProduto.DataSource = dsbiblio.Tables("Produto")
-        End Sub
+        '      Private Sub txtProduto_Click(sender As Object, e As EventArgs) Handles txtProduto.Click
+        '               dgvListaProduto.Visible = True
+        'Me.TbProdutoPDVTableAdapter.Fill(Me.DataPdv.tbProdutoPDV)
+        '
+        '    Dim strConn As String = sConnectionString
+        '    Dim conexao As New OleDbConnection(strConn)
+        '    Dim comando As New OleDbCommand("SELECT Produto, SaldoEstoque FROM tbProdutoPDV", conexao)
+        '    Dim adaptador As New OleDbDataAdapter(comando)
+        '    Dim dsbiblio As New DataSet()
+        '    adaptador.Fill(dsbiblio, "Produto")
+        '    dgvListaProduto.DataSource = dsbiblio.Tables("Produto")
+        '     End Sub
 
         Private Sub dgvCliente_MouseLeave(sender As Object, e As EventArgs) Handles dgvCliente.MouseLeave
-                dgvCliente.Visible = False
+                '  dgvCliente.Visible = False
         End Sub
 
         Private Sub txtProduto_KeyDown(sender As Object, e As KeyEventArgs) Handles txtProduto.KeyDown
@@ -647,6 +647,11 @@ Prox:
                 dgvRE.Visible = False
         End Sub
 
+        ''' <summary>
+        ''' Pesquisar produtos por palavras chaves
+        ''' </summary>
+        ''' <param name="sender"></param>
+        ''' <param name="e"></param>
         Private Sub txtPesqProduto_TextChanged(sender As Object, e As EventArgs) Handles txtPesqProduto.TextChanged
                 popularPesquisa(dgvListaProduto, txtPesqProduto.Text)
 
@@ -671,6 +676,12 @@ Prox:
 
         End Sub
 
+
+        End Sub
+
+
+        End Sub
+
         Private Sub TextBox1_KeyDown_1(sender As Object, e As KeyEventArgs) Handles txtCodePesq.KeyDown
                 If txtCodePesq.Text <> "" Then
                         If e.KeyCode = Keys.Enter Then
@@ -685,14 +696,14 @@ Prox:
         Private Sub TextBox1_Click(sender As Object, e As EventArgs) Handles txtCodePesq.Click
                 txtCodePesq.Text = ""
         End Sub
+                btnAdicionarProduto.PerformClick()
 
         Private Sub btnAprovarVinc_Click(sender As Object, e As EventArgs)
 
-        End Sub
+                btnAdicionarProduto.PerformClick()
 
         Private Sub txtAddProduto2_Click(sender As Object, e As EventArgs) Handles txtAddProduto2.Click
                 btnAdicionarProduto.PerformClick()
-
         End Sub
 
         Private Sub FrmPDV_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
@@ -741,7 +752,7 @@ Prox:
         End Sub
 
         Private Sub btnAgendarEntrega_Click(sender As Object, e As EventArgs)
-                FrmAgendaEntrega.Show()
+                FrmAgendaEntregas.Show()
         End Sub
 
         Private Sub FrmPDV_Shown(sender As Object, e As EventArgs) Handles Me.Shown
@@ -781,25 +792,25 @@ Prox:
         End Sub
 
         Private Sub txtContato_Click(sender As Object, e As EventArgs) Handles txtContato.Click
+
+
+                'Private Sub dgvListaProduto_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+                '        txtProdutoID.Text = dgvListaProduto.CurrentRow.Cells(0).Value
+                '        txtUnidade.Text = dgvListaProduto.CurrentRow.Cells(1).Value
+                '        txtGenero.Text = dgvListaProduto.CurrentRow.Cells(2).Value
+                '        txtCusto.Text = dgvListaProduto.CurrentRow.Cells(3).Value
+                '        txtCategoriaProduto.Text = dgvListaProduto.CurrentRow.Cells(4).Value
+                '        txtSaldoEstoque.Text = dgvListaProduto.CurrentRow.Cells(5).Value
+                '        txtValorVendaTotal.Text = dgvListaProduto.CurrentRow.Cells(6).Value
+                'End Sub
+
+
+
+
                 dgvContato.Visible = True
         End Sub
 
         Private Sub dgvContato_MouseLeave(sender As Object, e As EventArgs) Handles dgvContato.MouseLeave
                 dgvContato.Visible = False
         End Sub
-
-
-        'Private Sub dgvListaProduto_CellClick(sender As Object, e As DataGridViewCellEventArgs)
-        '        txtProdutoID.Text = dgvListaProduto.CurrentRow.Cells(0).Value
-        '        txtUnidade.Text = dgvListaProduto.CurrentRow.Cells(1).Value
-        '        txtGenero.Text = dgvListaProduto.CurrentRow.Cells(2).Value
-        '        txtCusto.Text = dgvListaProduto.CurrentRow.Cells(3).Value
-        '        txtCategoriaProduto.Text = dgvListaProduto.CurrentRow.Cells(4).Value
-        '        txtSaldoEstoque.Text = dgvListaProduto.CurrentRow.Cells(5).Value
-        '        txtValorVendaTotal.Text = dgvListaProduto.CurrentRow.Cells(6).Value
-        'End Sub
-
-
-
-
 End Class
