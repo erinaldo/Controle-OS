@@ -287,12 +287,7 @@ Partial Class FrmPDV
 	      Me.ToolStripContainer2 = New System.Windows.Forms.ToolStripContainer()
 	      Me.Label16 = New System.Windows.Forms.Label()
 	      Me.dgvEnd = New System.Windows.Forms.DataGridView()
-	      Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-	      Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-	      Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-	      Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-	      Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-	      Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+
 	      Me.btnAddPessoa = New System.Windows.Forms.Button()
 	      Me.btnMostraEnd = New System.Windows.Forms.Button()
 	      Me.Panel2 = New System.Windows.Forms.Panel()
@@ -2439,7 +2434,6 @@ Partial Class FrmPDV
 	      Me.dgvEnd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 	      Me.dgvEnd.BackgroundColor = System.Drawing.Color.White
 	      Me.dgvEnd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-	      Me.dgvEnd.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
 	      Me.dgvEnd.DataSource = Me.TbEndBindingSource
 	      Me.dgvEnd.Location = New System.Drawing.Point(12, 104)
 	      Me.dgvEnd.Name = "dgvEnd"
@@ -2450,47 +2444,8 @@ Partial Class FrmPDV
 	      Me.dgvEnd.TabIndex = 42
 	      Me.dgvEnd.Visible = False
 	      '
-	      'DataGridViewTextBoxColumn2
-	      '
-	      Me.DataGridViewTextBoxColumn2.DataPropertyName = "Logradouro"
-	      Me.DataGridViewTextBoxColumn2.HeaderText = "Logradouro"
-	      Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-	      Me.DataGridViewTextBoxColumn2.ReadOnly = True
-	      '
-	      'DataGridViewTextBoxColumn3
-	      '
-	      Me.DataGridViewTextBoxColumn3.DataPropertyName = "EndNumero"
-	      Me.DataGridViewTextBoxColumn3.HeaderText = "Número"
-	      Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-	      Me.DataGridViewTextBoxColumn3.ReadOnly = True
-	      '
-	      'DataGridViewTextBoxColumn4
-	      '
-	      Me.DataGridViewTextBoxColumn4.DataPropertyName = "Bairro"
-	      Me.DataGridViewTextBoxColumn4.HeaderText = "Bairro"
-	      Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-	      Me.DataGridViewTextBoxColumn4.ReadOnly = True
-	      '
-	      'DataGridViewTextBoxColumn5
-	      '
-	      Me.DataGridViewTextBoxColumn5.DataPropertyName = "Cidade"
-	      Me.DataGridViewTextBoxColumn5.HeaderText = "Cidade"
-	      Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-	      Me.DataGridViewTextBoxColumn5.ReadOnly = True
-	      '
-	      'DataGridViewTextBoxColumn6
-	      '
-	      Me.DataGridViewTextBoxColumn6.DataPropertyName = "UF"
-	      Me.DataGridViewTextBoxColumn6.HeaderText = "UF"
-	      Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-	      Me.DataGridViewTextBoxColumn6.ReadOnly = True
-	      '
-	      'DataGridViewTextBoxColumn7
-	      '
-	      Me.DataGridViewTextBoxColumn7.DataPropertyName = "Complemento"
-	      Me.DataGridViewTextBoxColumn7.HeaderText = "Complemento"
-	      Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-	      Me.DataGridViewTextBoxColumn7.ReadOnly = True
+
+
 	      '
 	      'btnAddPessoa
 	      '
